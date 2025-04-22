@@ -30,8 +30,10 @@ def mots_de_n_lettres(n):
         for mot1, mot2 in product(mots[i], mots_de_n_lettres(n - i - 1)):
             yield f"{mot1} {mot2}"
             yield f"{mot2} {mot1}"
-    for i in range(2, ceil((n-1) / 2)):
         for mot1, mot2 in product(mots[i], mots_de_n_lettres(n - i - 2)):
+            yield f" {mot1} {mot2}"
+            yield f"{mot2} {mot1} "
+        for mot1, mot2 in product(mots[i-1], mots_de_n_lettres(n - i - 1)):
             yield f" {mot1} {mot2}"
             yield f"{mot2} {mot1} "
 
@@ -93,10 +95,10 @@ class Grille:
         self.lignes_restantes = set(range(self.hauteur))
         self.colonnes_restantes = set(range(self.largeur))
 
-        l = self.hauteur // 2
+        l = 0
         self.lignes_restantes.remove(l)
         for mot_lig in self.mots_de_n_lettres[self.largeur]:
-            if ' ' in mot:
+            if ' ' in mot_lig:
                 continue
             self.ligne[l] = mot_lig
             yield from self.trouve_une_colonne(l, mot_lig)
@@ -116,7 +118,7 @@ class Grille:
         self.colonnes_restantes.remove(c)
         pattern = compile(rf"\b{colonne}\b")
         for mot_col in self.mots_par_position[self.hauteur][(l, mot_lig[c])]:
-            if colonne == mot_col or pattern.match(mot_col):
+            if colonne == mot_col or ('.' in colonne and pattern.match(mot_col)):
                 self.colonne[c] = mot_col
                 if self.lignes_restantes:
                     yield from self.trouve_une_ligne(c, mot_col)
@@ -138,7 +140,7 @@ class Grille:
         self.lignes_restantes.remove(l)
         pattern = compile(rf"\b{ligne}\b")
         for mot_lig in self.mots_par_position[self.largeur][(c, mot_col[l])]:
-            if ligne == mot_lig or pattern.match(mot_lig):
+            if ligne == mot_lig or ('.' in ligne and pattern.match(mot_lig)):
                 self.ligne[l] = mot_lig
                 if self.colonnes_restantes:
                     yield from self.trouve_une_colonne(l, mot_lig)
