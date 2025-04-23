@@ -21,9 +21,9 @@ def melange(iterable):
     return sample(liste, len(liste))
 
 def mots_de_n_lettres(n):
-    for mot in melange(mots[n]):
+    for mot in mots[n]:
         yield mot
-    for mot in melange(mots[n-1]):
+    for mot in mots[n-1]:
         yield f"{mot} "
         yield f" {mot}"
     for i in range(2, ceil(n / 2)):
@@ -54,7 +54,7 @@ class Colonne:
         self.grille = grille
 
     def __getitem__(self, n):
-        return "".join(row[n] for row in self.grille)
+        return "".join(ligne[n] for ligne in self.grille)
 
     def __setitem__(self, n, mot):
         for i, char in enumerate(mot):
@@ -70,8 +70,8 @@ class Grille:
         self.colonne = Colonne(self.grille)
 
         self.mots_de_n_lettres = {
-            hauteur: set(mots_de_n_lettres(hauteur)),
-            largeur: set(mots_de_n_lettres(largeur)),
+            hauteur: melange(mots_de_n_lettres(hauteur)),
+            largeur: melange(mots_de_n_lettres(largeur)),
         }
         self.mots_par_position = defaultdict(lambda: defaultdict(set))
         for nb_lettres in (self.largeur, self.hauteur):
@@ -98,8 +98,8 @@ class Grille:
         l = 0
         self.lignes_restantes.remove(l)
         for mot_lig in self.mots_de_n_lettres[self.largeur]:
-            if ' ' in mot_lig:
-                continue
+            # if ' ' in mot_lig:
+                # continue
             self.ligne[l] = mot_lig
             yield from self.trouve_une_colonne(l, mot_lig)
         self.ligne[l] = "." * self.largeur
