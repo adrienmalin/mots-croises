@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('html_errors', 1);
+ini_set('error_reporting', E_ALL);
+
 $default_lignes = 3;
 $default_colonnes = 4;
 
@@ -30,100 +34,48 @@ if (($handle = fopen("dico.csv", "r")) !== FALSE) {
     fclose($handle);
 }
 
-$mots = [];
+$mots_de_n_lettres = [];
 foreach ($dico as $mot => $definition) {
-    $nb_lettres = strlen($mot);
-    if(!isset($mots[$nb_lettres])) {
-        $mots[$nb_lettres] = [];
+    $n = strlen($mot);
+    if (!isset($mots_de_n_lettres[$n])) {
+        $mots_de_n_lettres[$n] = [];
     }
-    $mots[$nb_lettres][] = $mot;
+    $mots_de_n_lettres[$n][] = $mot;
 }
-foreach ($mots as $nb_lettres => $liste_mots) {
-    shuffle($mots[$nb_lettres]);
+foreach ($mots_de_n_lettres as $n => $liste_mots) {
+    shuffle($mots_de_n_lettres[$n]);
 }
 
-$dimensions = [$hauteur, $largeur];
 $mots_par_position = [];
-foreach($dimensions as $nb_lettres) {
-    $mots_par_position[$nb_lettres] = [];
-    foreach($mots[$nb_lettres] as $mot) {
-        foreach(str_split($mot) as $i => $lettre) {
-            if (!isset($mots_par_position[$nb_lettres][$i])) {
-                $mots_par_position[$nb_lettres][$i] = [];
+foreach ([$hauteur, $largeur] as $n) {
+    $mots_par_position[$n] = [];
+    foreach ($mots_de_n_lettres[$n] as $mot) {
+        foreach (str_split($mot) as $i => $lettre) {
+            if (!isset($mots_par_position[$n][$i])) {
+                $mots_par_position[$n][$i] = [];
             }
-            if (!isset($mots_par_position[$nb_lettres][$i][$lettre])) {
-                $mots_par_position[$nb_lettres][$i][$lettre] = [];
+            if (!isset($mots_par_position[$n][$i][$lettre])) {
+                $mots_par_position[$n][$i][$lettre] = [];
             }
-            $mots_par_position[$nb_lettres][$i][$lettre][] = $mot;
+            $mots_par_position[$n][$i][$lettre][] = $mot;
         }
     }
 }
 
-$grille = [];
-for($l = 0; $l < $hauteur; $l++) {
-    $grille[$l] = array_fill(0, $largeur, '.');
-}
-
-function get_ligne($l) {
-    global $grille;
-    return implode("", $grille[$l]);
-}
-
-function set_ligne($l, $mot) {
-    global $grille;
-    for($i = 0; $i < strlen($mot); $i++) {
-        $grille[$l][$i] = $mot[$i];
-    }
-}
-
-function get_colonne($c) {
-    global $grille;
-    $colonne = "";
-    for($i = 0; $i < count($grille); $i++) {
-        $colonne .= $grille[$i][$c];
-    }
-    return $colonne;
-}
-
-function set_colonne($c, $mot) {
-    global $grille;
-    for($i = 0; $i < strlen($mot); $i++) {
-        $grille[$i][$c] = $mot[$i];
-    }
-}
-
-$lignes_restantes = range(0, $hauteur-1);
-$colonnes_restantes = range(0, $largeur-1);
-
-function genere() {
-    global $mots;
-    global $grille;
-    global $lignes_restantes;
-    global $largeur;
-
-    $l = $largeur / 2;
-    array_splice($lignes_restantes, $l, 1);
-    foreach($mots[$largeur] as $mot_lig) {
-        set_ligne($l, $mot_lig);
-        yield from trouve_une_colonne($l, $mot_lig);
-    }
-    $lignes_restantes[] = $l;
-    $grille[$l] = array_fill(0, $largeur, '.');
-}
-
-function pire_contrainte($tests, $nb_lettres, $i, $mot) {
+function pire_contrainte($tests, $nb_lettres, $i, $mot)
+{
     global $mots_par_position;
     $nb_mots_min = PHP_INT_MAX;
     $pire_contrainte = 0;
-    foreach($tests as $test) {
-        if(
+    foreach ($tests as $test) {
+        if (
             !array_key_exists($i, $mots_par_position[$nb_lettres]) ||
             !array_key_exists($mot[$test], $mots_par_position[$nb_lettres][$i])
         ) {
             return -1;
         } else {
             $nb_mots = count($mots_par_position[$nb_lettres][$i][$mot[$test]]);
-            if($nb_mots < $nb_mots_min) {
+            if ($nb_mots < $nb_mots_min) {
                 $pire_contrainte = $test;
                 $nb_mots_min = $nb_mots;
             }
@@ -132,69 +84,141 @@ function pire_contrainte($tests, $nb_lettres, $i, $mot) {
     return $pire_contrainte;
 }
 
-function trouve_une_colonne($l, $mot_lig) {
-    global $grille;
-    global $colonnes_restantes;
-    global $lignes_restantes;
-    global $hauteur;
-    global $mots_par_position;
-    
-    $c = pire_contrainte($colonnes_restantes, $hauteur, $l, $mot_lig);
-    if ($c == -1) {
-        return;
-    }   
-    $colonne = get_colonne($c);
-    array_splice($colonnes_restantes, $c, 1);
-    foreach ($mots_par_position[$hauteur][$l][$mot_lig[$c]] as $mot_col) {
-        if ($mot_col == $colonne || preg_match("/^$colonne$/", $mot_col)) {
-            set_colonne($c, $mot_col);
-            if (count($lignes_restantes)) {
-                yield from trouve_une_ligne($c, $mot_col);
-            } else if (count($colonnes_restantes)) {
-                yield from trouve_une_colonne($l, $mot_lig);
-            } else {
-                yield;
-            }
+
+class Grille
+{
+    public $hauteur;
+    public $largeur;
+    public $grille;
+    public $lignes_restantes;
+    public $colonnes_restantes;
+
+    public function __construct($hauteur, $largeur)
+    {
+        $this->hauteur = $hauteur;
+        $this->largeur = $largeur;
+        $this->grille = array_fill(0, $hauteur, array_fill(0, $largeur, '.'));
+        $this->lignes_restantes = range(0, $hauteur - 1);
+        $this->colonnes_restantes = range(0, $largeur - 1);
+    }
+
+    public function get_ligne($l)
+    {
+        return implode("", $this->grille[$l]);
+    }
+
+    public function set_ligne($l, $mot)
+    {
+        for ($i = 0; $i < strlen($mot); $i++) {
+            $this->grille[$l][$i] = $mot[$i];
         }
     }
-    $colonnes_restantes[] = $c;
-    set_colonne($c, $colonne);
-}
-
-function trouve_une_ligne($c, $mot_col) {
-    global $grille;
-    global $colonnes_restantes;
-    global $lignes_restantes;
-    global $largeur;
-    global $mots_par_position;
-
-    $l = pire_contrainte($lignes_restantes, $largeur, $c, $mot_col);
-    if ($l == -1) {
-        return;
+    public function get_colonne($c)
+    {
+        $colonne = "";
+        for ($i = 0; $i < $this->hauteur; $i++) {
+            $colonne .= $this->grille[$i][$c];
+        }
+        return $colonne;
     }
-    $ligne = get_ligne($l);
-    array_splice($lignes_restantes, $l, 1);
-    foreach ($mots_par_position[$largeur][$c][$mot_col[$l]] as $mot_lig) {
-        if ($mot_lig == $ligne || preg_match("/^$ligne$/", $mot_lig)) {
-            set_ligne($l, $mot_lig);
-            if (count($colonnes_restantes)) {
-                yield from trouve_une_colonne($l, $mot_lig);
-            } else if (count($lignes_restantes)) {
-                yield from trouve_une_ligne($c, $mot_col);
-            } else {
-                yield;
-            }
+    public function set_colonne($c, $mot)
+    {
+        for ($i = 0; $i < strlen($mot); $i++) {
+            $this->grille[$i][$c] = $mot[$i];
         }
     }
-    $lignes_restantes[] = $l;
-    set_ligne($l, $ligne);
+    public function genere()
+    {
+        global $mots_de_n_lettres;
+
+        $l = $this->largeur / 2;
+        array_splice($this->lignes_restantes, $l, 1);
+        foreach ($mots_de_n_lettres[$this->largeur] as $mot_lig) {
+            $this->set_ligne($l, $mot_lig);
+            yield from $this->trouve_une_colonne($l, $mot_lig);
+        }
+        $this->lignes_restantes[] = $l;
+        $this->grille[$l] = array_fill(0, $this->largeur, '.');
+    }
+
+    public function trouve_une_colonne($l, $mot_lig)
+    {
+        global $mots_par_position;
+
+        $c = pire_contrainte($this->colonnes_restantes, $this->hauteur, $l, $mot_lig);
+        if ($c == -1) {
+            return;
+        }
+        $colonne = $this->get_colonne($c);
+        array_splice($this->colonnes_restantes, $c, 1);
+        foreach ($mots_par_position[$this->hauteur][$l][$mot_lig[$c]] as $mot_col) {
+            if ($mot_col == $colonne || preg_match("/^$colonne$/", $mot_col)) {
+                $this->set_colonne($c, $mot_col);
+                if (count($this->lignes_restantes)) {
+                    yield from $this->trouve_une_ligne($c, $mot_col);
+                } else if (count($this->colonnes_restantes)) {
+                    yield from $this->trouve_une_colonne($l, $mot_lig);
+                } else {
+                    yield;
+                }
+            }
+        }
+        $this->colonnes_restantes[] = $c;
+        $this->set_colonne($c, $colonne);
+    }
+
+    public function trouve_une_ligne($c, $mot_col)
+    {
+        global $mots_par_position;
+
+        $l = pire_contrainte($this->lignes_restantes, $this->largeur, $c, $mot_col);
+        if ($l == -1) {
+            return;
+        }
+        $ligne = $this->get_ligne($l);
+        array_splice($this->lignes_restantes, $l, 1);
+        foreach ($mots_par_position[$this->largeur][$c][$mot_col[$l]] as $mot_lig) {
+            if ($mot_lig == $ligne || preg_match("/^$ligne$/", $mot_lig)) {
+                $this->set_ligne($l, $mot_lig);
+                if (count($this->colonnes_restantes)) {
+                    yield from $this->trouve_une_colonne($l, $mot_lig);
+                } else if (count($this->lignes_restantes)) {
+                    yield from $this->trouve_une_ligne($c, $mot_col);
+                } else {
+                    yield;
+                }
+            }
+        }
+        $this->lignes_restantes[] = $l;
+        $this->set_ligne($l, $ligne);
+    }
+
+    public function affiche()
+    {
+        echo "<table>";
+        echo "<tr><th></th>";
+        for ($c = 0; $c < $this->largeur; $c++) {
+            echo "<th>" . chr($c + 65) . "</th>";
+        }
+        echo "</tr>";
+        for ($l = 0; $l < $this->hauteur; $l++) {
+            echo "<tr><th>" . $l . "</th>";
+            for ($c = 0; $c < $this->largeur; $c++) {
+                echo "<td>" . $this->grille[$l][$c] . "</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+    }
 }
 
-genere()->current();
+$grille = new Grille($hauteur, $largeur);
+$grille->genere()->current();
 
 ?>
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Mots croisés</title>
@@ -202,6 +226,7 @@ genere()->current();
         table {
             border-collapse: collapse;
         }
+
         td {
             width: 30px;
             height: 30px;
@@ -210,21 +235,23 @@ genere()->current();
         }
     </style>
 </head>
+
 <body>
     <table>
         <tr>
             <th></th>
-            <?php for($c=0; $c<$largeur; $c++): ?>
-                <th><?=chr($c+65)?></th>
+            <?php for ($c = 0; $c < $largeur; $c++): ?>
+                <th><?= chr($c + 65) ?></th>
             <?php endfor; ?>
         </tr>
-        <?php for($l=0; $l<$hauteur; $l++): ?>
+        <?php for ($l = 0; $l < $hauteur; $l++): ?>
             <tr>
-                <th><?=$l?></th>
-                <?php for($c=0; $c<$largeur; $c++): ?>
-                    <td><?=$grille[$l][$c]?></td>
+                <th><?= $l ?></th>
+                <?php for ($c = 0; $c < $largeur; $c++): ?>
+                    <td><?= $grille->grille[$l][$c] ?></td>
                 <?php endfor; ?>
             </tr>
         <?php endfor; ?>
     </table>
+
 </html>
