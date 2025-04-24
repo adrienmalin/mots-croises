@@ -49,38 +49,35 @@ $grille = new Grille($hauteur, $largeur, $id);
 </head>
 
 <body>
-    <h1>
-        <table>
-            <tbody>
-                <tr>
-                    <td colspan="2"></td>
-                    <td>M</td>
-                </tr>
-                <tr>
-                    <td>c</td>
-                    <td>r</td>
-                    <td>o</td>
-                    <td>i</td>
-                    <td>s</td>
-                    <td>é</td>
-                    <td>s</td>
-                </tr>
-                <tr>
-                    <td colspan="2"></td>
-                    <td>t</td>
-                </tr>
-                <tr>
-                    <td colspan="2"></td>
-                    <td>s</td>
-                </tr>
-            </tbody>
-        </table>
-    </h1>
-    <form id="grilleForm" class="grille" method="get" location=".">
-        <input type="hidden" id="lignes" name="lignes" value="<?= $hauteur ?>" />
-        <input type="hidden" id="colonnes" name="colonnes" value="<?= $largeur ?>" />
-        <input type="hidden" id="solution_hashee" value="<?= $grille->hash() ?>" />
-        <table>
+    <form id="grilleForm" method="get" location=".">
+        <h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>M</td>
+                    </tr>
+                    <tr>
+                        <td>c</td>
+                        <td>r</td>
+                        <td>o</td>
+                        <td>i</td>
+                        <td>s</td>
+                        <td>é</td>
+                        <td>s</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>t</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>s</td>
+                    </tr>
+                </tbody>
+            </table>
+        </h1>
+        <table class="grille">
             <tr>
                 <th></th>
                 <?php for ($c = 0; $c < $largeur; $c++): ?>
@@ -95,35 +92,38 @@ $grille = new Grille($hauteur, $largeur, $id);
                             <?php if ($grille->grille[$l][$c] == " "): ?>
                                 <input type="text" maxlength="1" size="1" value=" " disabled />
                             <?php else: ?>
-                                <input type="text" maxlength="1" size="1" required pattern="[A-Z]" />
+                                <input type="text" maxlength="1" size="1" pattern="[A-Z]" />
                             <?php endif; ?>
                         </td>
                     <?php endfor; ?>
                 </tr>
             <?php endfor; ?>
         </table>
-    </form>
-    <div class="definitions">
-        <div class="horizontales">
-            <h2>Horizontalement</h2>
-            <ol>
-                <?php for ($l = 0; $l < $hauteur; $l++): ?>
-                    <li><?= $dico[$grille->get_ligne($l, $largeur)] ?></li>
-                <?php endfor; ?>
-            </ol>
+        <div class="definitions">
+            <div class="horizontales">
+                <h2>Horizontalement</h2>
+                <ol>
+                    <?php for ($l = 0; $l < $hauteur; $l++): ?>
+                        <li><?= $dico[$grille->get_ligne($l, $largeur)] ?></li>
+                    <?php endfor; ?>
+                </ol>
+            </div>
+            <div class="verticales">
+                <h2>Verticalement</h2>
+                <ol type="A">
+                    <?php for ($c = 0; $c < $largeur; $c++): ?>
+                        <li><?= $dico[$grille->get_colonne($c, $hauteur)] ?></li>
+                    <?php endfor; ?>
+                </ol>
+            </div>
         </div>
-        <div class="verticales">
-            <h2>Verticalement</h2>
-            <ol type="A">
-                <?php for ($c = 0; $c < $largeur; $c++): ?>
-                    <li><?= $dico[$grille->get_colonne($c, $hauteur)] ?></li>
-                <?php endfor; ?>
-            </ol>
-        </div>
-    </div>
 
-    <footer><a href=".">Nouvelle grille</a></footer>
-    
+        <input type="hidden" id="lignes" name="lignes" value="<?= $hauteur ?>" />
+        <input type="hidden" id="colonnes" name="colonnes" value="<?= $largeur ?>" />
+        <input type="hidden" id="solution_hashee" value="<?= $grille->hash() ?>" />
+        <button type="submit">Nouvelle grille</button>
+    </form>
+
     <script src="script.js"></script>
 </body>
 

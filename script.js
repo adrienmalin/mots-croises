@@ -40,7 +40,7 @@ inputs.forEach(input => {
         if (!input.checkValidity()) {
             input.value = '';
         }
-        if (grilleForm.checkValidity()) {
+        if (inputs.every(input => input.value.length == 1) && grilleForm.checkValidity()) {
             sha256(inputs.map(input => input.value).join('')).then(hash => {
                 if (hash == solution_hashee.value) {
                     if (confirm('Bravo ! \nUne nouvelle partie ?')) {
