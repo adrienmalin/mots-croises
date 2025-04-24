@@ -130,4 +130,12 @@ class Grille {
             unset($this->mots_utilises[$mot_col]);
         }
     }
+
+    public function hash() {
+        $string = "";
+        foreach ($this->grille as $ligne) {
+            $string .= implode("", $ligne);
+        }
+        return hash('sha256', $string);
+    }
 }

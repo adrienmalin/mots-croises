@@ -38,6 +38,33 @@ $grille = new Grille($hauteur, $largeur);
 </head>
 
 <body>
+    <h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2"></td>
+                    <td>M</td>
+                </tr>
+                <tr>
+                    <td>c</td>
+                    <td>r</td>
+                    <td>o</td>
+                    <td>i</td>
+                    <td>s</td>
+                    <td>é</td>
+                    <td>s</td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td>s</td>
+                </tr>
+            </tbody>
+        </table>
+    </h1>
     <form id="grilleForm" class="grille">
         <table>
             <tr>
@@ -84,22 +111,24 @@ $grille = new Grille($hauteur, $largeur);
     <script>
         const inputs = Array.from(grilleForm.querySelectorAll('input[type="text"]'))
         let largeur = <?= $largeur ?>;
-        let nb_cases = inputs.length
-        let index = 0
+        let nb_cases = inputs.length;
+        let index = 0;
+
+        async function sha256(text) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
         inputs.forEach(input => {
             input.index = index++
-            input.onfocus = function() {
-                this.select();
+
+            input.onfocus = function(event) {
+                input.select();
             }
-            input.oninput = function() {
-                this.value = this.value.toUpperCase()
-                if (!input.checkValidity()) {
-                    input.value = ""
-                }
-                if (grilleForm.checkValidity()) {
-                    window.setTimeout(() => alert("Grille validée !"), 100)
-                }
-            }
+
             input.onkeydown = function(event) {
                 switch (event.key) {
                     case "ArrowUp":
@@ -116,7 +145,27 @@ $grille = new Grille($hauteur, $largeur);
                         break;
                 }
             }
+
+            input.oninput = function(event) {
+                this.value = this.value.toUpperCase()
+                if (!input.checkValidity()) {
+                    input.value = ""
+                }
+                if (grilleForm.checkValidity()) {
+                    sha256(inputs.map(input => input.value).join("")).then(
+                        hash => {
+                            if (hash == "<?= $grille->hash() ?>") {
+                                alert("Bravo ! Vous avez trouvé la grille !")
+                                if (confirm("Bravo ! \nUne nouvelle partie ?")) {
+                                    location = "."
+                                }
+                            }
+                        }
+                    )
+                }
+            }
         })
+        // <?= $grille->hash() ?>
     </script>
 
 </html>
