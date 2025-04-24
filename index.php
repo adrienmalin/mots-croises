@@ -6,8 +6,8 @@ ini_set('error_reporting', E_ALL);
 include_once "dico.php";
 include_once "Grille.php";
 
-const HAUTEUR_PAR_DEFAUT = 5;
-const LARGEUR_PAR_DEFAUT = 5;
+const HAUTEUR_PAR_DEFAUT = 6;
+const LARGEUR_PAR_DEFAUT = 6;
 
 $hauteur = filter_input(INPUT_GET, 'lignes', FILTER_VALIDATE_INT, [
     "options" => [
@@ -47,7 +47,7 @@ $grille = new Grille($hauteur, $largeur);
             </tr>
             <?php for ($l = 0; $l < $hauteur; $l++): ?>
             <tr>
-                <th><?= $l ?></th>
+                <th><?= $l + 1 ?></th>
                 <?php for ($c = 0; $c < $largeur; $c++): ?>
                 <td class="case <?= $grille->grille[$l][$c]==" "?"noire": "blanche" ?>">
                     <?php if ($grille->grille[$l][$c] == " "): ?>

@@ -4,7 +4,6 @@ include_once "dico.php";
 
 
 const MIN_LETTRES = 1;
-const MAX_ESSAIS = 10000;
 
 
 class Grille {
@@ -28,7 +27,6 @@ class Grille {
         $this->mots_commencant_par = [];
         foreach ($dimensions as $dimension) {
             $this->mots_commencant_par[$dimension] = [];
-            // $nb_mots = 1;
             foreach(mots_espaces($dimension, MIN_LETTRES) as $mot) {
                 for ($i = 0; $i <= $dimension; $i++) {
                     $debut = substr($mot, 0, $i);
@@ -37,10 +35,6 @@ class Grille {
                     }
                     $this->mots_commencant_par[$dimension][$debut][] = $mot;
                 }
-                /* $nb_mots++;
-                if ($nb_mots > MAX_ESSAIS) {
-                    break;
-                } */
             }
         }
         $this->grilles = $this->generateur();
