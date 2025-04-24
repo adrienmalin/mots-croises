@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
+    font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 h1 table {
@@ -27,29 +28,34 @@ h2 {
     margin: 0 auto;
 }
 
-.grille tr:nth-of-type(2) td {
-    border-top: 3px solid black;
-}
-.grille tr:last-of-type td {
-    border-bottom: 3px solid black;
-}
-.grille td:first-of-type {
-    border-left: 3px solid black;
-}
-.grille td:last-child {
-    border-right: 3px solid black;
-}
-
-.grille td {
-    border: 1px solid black;
-    padding: 2px;
-}
-
 .grille th,
 .grille td {
     width: 30px;
     height: 30px;
     text-align: center;
+}
+
+.grille td {
+    border: 1px solid black;
+    padding: 2px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive, sans;
+}
+
+.grille tr:nth-of-type(2) td {
+    border-top-width: 3px;
+}
+.grille tr:last-of-type td {
+    border-bottom-width: 3px;
+}
+.grille td:first-of-type {
+    border-left-width: 3px;
+}
+.grille td:last-child {
+    border-right-width: 3px;
+}
+
+.grille .case.noire {
+    background-color: black;
 }
 
 .grille .case.noire {
@@ -81,4 +87,8 @@ h2 {
 
 .definitions li::marker {
     font-weight: bold;
+}
+
+footer {
+    text-align: center;
 }
