@@ -9,16 +9,16 @@ body {
 
 h1 table {
     margin: auto;
+    line-height: 0.7;
+}
+
+h1 td {
+    width: 0.7em;
 }
 
 h1, h2 {
     font-variant-caps: petite-caps;
     text-align: center;
-}
-  
-.grille {
-    margin: 2rem auto;
-    width: unset;
 }
 
 .grille table {
