@@ -23,19 +23,19 @@ def melange(iterable):
 def mots_de_n_lettres(n):
     for mot in mots[n]:
         yield mot
-    for mot in mots[n-1]:
-        yield f"{mot} "
-        yield f" {mot}"
+    # for mot in mots[n-1]:
+    #     yield f"{mot} "
+    #     yield f" {mot}"
     for i in range(2, ceil(n / 2)):
         for mot1, mot2 in product(mots[i], mots_de_n_lettres(n - i - 1)):
             yield f"{mot1} {mot2}"
             yield f"{mot2} {mot1}"
-        for mot1, mot2 in product(mots[i], mots_de_n_lettres(n - i - 2)):
-            yield f" {mot1} {mot2}"
-            yield f"{mot2} {mot1} "
-        for mot1, mot2 in product(mots[i-1], mots_de_n_lettres(n - i - 1)):
-            yield f" {mot1} {mot2}"
-            yield f"{mot2} {mot1} "
+        # for mot1, mot2 in product(mots[i], mots_de_n_lettres(n - i - 2)):
+        #     yield f" {mot1} {mot2}"
+        #     yield f"{mot2} {mot1} "
+        # for mot1, mot2 in product(mots[i-1], mots_de_n_lettres(n - i - 1)):
+        #     yield f" {mot1} {mot2}"
+        #     yield f"{mot2} {mot1} "
 
 
 class Ligne:
@@ -70,14 +70,14 @@ class Grille:
         self.colonne = Colonne(self.grille)
 
         self.mots_de_n_lettres = {
-            hauteur: melange(mots_de_n_lettres(hauteur)),
-            largeur: melange(mots_de_n_lettres(largeur)),
+            hauteur: set(mots_de_n_lettres(hauteur)),
+            largeur: set(mots_de_n_lettres(largeur)),
         }
-        self.mots_par_position = defaultdict(lambda: defaultdict(set))
+        self.mots_par_position = defaultdict(lambda: defaultdict(list))
         for nb_lettres in (self.largeur, self.hauteur):
             for mot in self.mots_de_n_lettres[nb_lettres]:
                 for i, lettre in enumerate(mot):
-                    self.mots_par_position[nb_lettres][(i, lettre)].add(mot)
+                    self.mots_par_position[nb_lettres][(i, lettre)].append(mot)
 
         self.generations = self.genere()
         try:
@@ -98,12 +98,12 @@ class Grille:
         l = 0
         self.lignes_restantes.remove(l)
         for mot_lig in self.mots_de_n_lettres[self.largeur]:
-            # if ' ' in mot_lig:
-                # continue
+            if ' ' in mot_lig:
+                continue
             self.ligne[l] = mot_lig
             yield from self.trouve_une_colonne(l, mot_lig)
-        self.ligne[l] = "." * self.largeur
-        self.lignes_restantes.add(l)
+        #self.ligne[l] = "." * self.largeur
+        #self.lignes_restantes.add(l)
 
     def trouve_une_colonne(self, l, mot_lig):
         #print((len(self.colonnes_restantes) + len(self.lignes_restantes)) / (self.largeur + self.hauteur))
@@ -177,8 +177,5 @@ if __name__ == "__main__":
             end = time.time()
             print(f"Execution time: {end - self.start:.2f} seconds")
 
-    for n in range(3, 14):
-        with Timer():
-            print(Grille(n, n))
-        with Timer():
-            print(Grille(n, n+1))
+    with Timer():
+        print(Grille(5, 5))

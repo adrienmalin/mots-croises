@@ -40,7 +40,7 @@ class Ligne:
         self.grille = grille
 
     def __getitem__(self, n):
-        return "".join(self.grille[n])
+        return "".join(self.grille[n][:n])
 
     def __setitem__(self, n, mot):
         self.grille[n] = list(mot)
@@ -51,7 +51,7 @@ class Colonne:
         self.grille = grille
 
     def __getitem__(self, n):
-        return "".join(ligne[n] for ligne in self.grille)
+        return "".join(ligne[n] for ligne in self.grille[:n+1])
 
     def __setitem__(self, n, mot):
         for i, char in enumerate(mot):
@@ -67,12 +67,10 @@ class Grille:
         self.colonne = Colonne(self.grille)
 
         self.mot_commencant_par = defaultdict(lambda: defaultdict(list))
-        self.mots_finissant_par = defaultdict(lambda: defaultdict(list))
         for dimension in (hauteur,) if hauteur == largeur else (hauteur, largeur):
             for mot in mots_espaces(dimension):
                 for i in range(dimension+1):
                     self.mot_commencant_par[dimension][mot[:i]].append(mot)
-                    self.mots_finissant_par[dimension][mot[i:]].append(mot)
 
         self.grilles = self.genere_grilles()
         next(self.grilles)
@@ -84,10 +82,11 @@ class Grille:
         return next(self.grilles)
 
     def genere_grilles(self):
+        print(f"Grille({self.hauteur}, {self.largeur})")
         yield from self.trouve_une_ligne(0)
 
     def trouve_une_ligne(self, i):
-        for mot in self.mots_finissant_par[self.largeur][self.ligne[i][self.largeur-i:]]:
+        for mot in self.mot_commencant_par[self.largeur][self.ligne[i]]:
             self.ligne[i] = mot
             if i < self.largeur:
                 yield from self.trouve_une_colonne(i)
@@ -97,8 +96,8 @@ class Grille:
                 yield self
 
     def trouve_une_colonne(self, i):
-        for mot in self.mot_commencant_par[self.hauteur][self.colonne[self.largeur-1-i][:i+1]]:
-            self.colonne[self.largeur-1-i] = mot
+        for mot in self.mot_commencant_par[self.hauteur][self.colonne[i]]:
+            self.colonne[i] = mot
             if i + 1 < self.hauteur:
                 yield from self.trouve_une_ligne(i + 1)
             elif i + 1 < self.largeur:
@@ -133,4 +132,4 @@ if __name__ == "__main__":
             print(f"Execution time: {end - self.start:.2f} seconds")
 
     with Timer():
-        print(Grille(5, 5))
+        print(Grille(6, 6))
