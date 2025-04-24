@@ -34,6 +34,7 @@ $grille = new Grille($hauteur, $largeur);
     <meta charset="utf-8">
     <title>Mots croisés</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
