@@ -13,7 +13,8 @@ $id = filter_input(INPUT_GET, 'grille', FILTER_VALIDATE_REGEXP, [
     ]
 ]);
 if (!$id) {
-    header("Location: " . $_SERVER['PHP_SELF'] . "?grille=" . uniqid() . "&" . http_build_query($_GET));
+    $_GET["grille"] = uniqid();
+    header("Location: " . $_SERVER['PHP_SELF'] . "?" . http_build_query($_GET));
     exit;
 }
 
@@ -78,7 +79,10 @@ $grille = new Grille($hauteur, $largeur, $id);
             </tbody>
         </table>
     </h1>
-    <form id="grilleForm" class="grille">
+    <form id="grilleForm" class="grille" method="get" location=".">
+        <input type="hidden" id="hauteur" name="lignes" value="<?= $hauteur ?>" />
+        <input type="hidden" id="largeur" name="colonnes" value="<?= $largeur ?>" />
+        <input type="hidden" id="solution_hashee" value="<?= $grille->hash() ?>" />
         <table>
             <tr>
                 <th></th>
@@ -92,9 +96,9 @@ $grille = new Grille($hauteur, $largeur, $id);
                     <?php for ($c = 0; $c < $largeur; $c++): ?>
                         <td class="case <?= $grille->grille[$l][$c] == " " ? "noire" : "blanche" ?>">
                             <?php if ($grille->grille[$l][$c] == " "): ?>
-                                <input type="text" maxlength="1" size="1" name="<?= $l . $c ?>" value=" " disabled />
+                                <input type="text" maxlength="1" size="1" value=" " disabled />
                             <?php else: ?>
-                                <input type="text" maxlength="1" size="1" name="<?= $l . $c ?>" required pattern="[A-Z]" />
+                                <input type="text" maxlength="1" size="1" required pattern="[A-Z]" />
                             <?php endif; ?>
                         </td>
                     <?php endfor; ?>
@@ -121,64 +125,7 @@ $grille = new Grille($hauteur, $largeur, $id);
         </div>
     </div>
 
-    <script>
-        const inputs = Array.from(grilleForm.querySelectorAll('input[type="text"]'))
-        let largeur = <?= $largeur ?>;
-        let nb_cases = inputs.length;
-        let index = 0;
-
-        async function sha256(text) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(text);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
-
-        inputs.forEach(input => {
-            input.index = index++
-
-            input.onfocus = function(event) {
-                input.select();
-            }
-
-            input.onkeydown = function(event) {
-                switch (event.key) {
-                    case "ArrowUp":
-                        inputs[(input.index - largeur + nb_cases) % nb_cases].focus()
-                        break;
-                    case "ArrowDown":
-                        inputs[(input.index + largeur) % nb_cases].focus()
-                        break;
-                    case "ArrowLeft":
-                        inputs[(input.index - 1 + nb_cases) % nb_cases].focus()
-                        break;
-                    case "ArrowRight":
-                        inputs[(input.index + 1) % nb_cases].focus()
-                        break;
-                }
-            }
-
-            input.oninput = function(event) {
-                this.value = this.value.toUpperCase()
-                if (!input.checkValidity()) {
-                    input.value = ""
-                }
-                if (grilleForm.checkValidity()) {
-                    sha256(inputs.map(input => input.value).join("")).then(
-                        hash => {
-                            if (hash == "<?= $grille->hash() ?>") {
-                                alert("Bravo ! Vous avez trouvé la grille !")
-                                if (confirm("Bravo ! \nUne nouvelle partie ?")) {
-                                    location = "."
-                                }
-                            }
-                        }
-                    )
-                }
-            }
-        })
-        // <?= $grille->hash() ?>
-    </script>
+    <script src="script.js"></script>
+</body>
 
 </html>
