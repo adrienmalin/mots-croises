@@ -25,15 +25,15 @@ class Grille {
             $dimensions = [$hauteur, $largeur];
         }
         $this->mots_commencant_par = [];
-        foreach ($dimensions as $dimension) {
-            $this->mots_commencant_par[$dimension] = [];
-            foreach(mots_espaces($dimension, MIN_LETTRES) as $mot) {
-                for ($i = 0; $i <= $dimension; $i++) {
+        foreach ($dimensions as $longueur) {
+            $this->mots_commencant_par[$longueur] = [];
+            foreach(mots_espaces($longueur, MIN_LETTRES) as $mot) {
+                for ($i = 0; $i <= $longueur; $i++) {
                     $debut = substr($mot, 0, $i);
-                    if (!isset($this->mots_commencant_par[$dimension][$debut])) {
-                        $this->mots_commencant_par[$dimension][$debut] = [];
+                    if (!isset($this->mots_commencant_par[$longueur][$debut])) {
+                        $this->mots_commencant_par[$longueur][$debut] = [];
                     }
-                    $this->mots_commencant_par[$dimension][$debut][] = $mot;
+                    $this->mots_commencant_par[$longueur][$debut][] = $mot;
                 }
             }
         }
@@ -41,10 +41,10 @@ class Grille {
         $this->grilles->current();
     }
 
-    public function get_ligne($l, $max = 100) {
+    public function get_ligne($l, $longueur = 100) {
+        $longueur = min($longueur, $this->largeur);
         $ligne = "";
-        $min = min($this->largeur, $max);
-        for ($i = 0; $i < $min; $i++) {
+        for ($i = 0; $i < $longueur; $i++) {
             $ligne .= $this->grille[$l][$i];
         }
         return $ligne;
@@ -56,10 +56,10 @@ class Grille {
         }
     }
 
-    public function get_colonne($c, $max = 100) {
+    public function get_colonne($c, $longueur = 100) {
+        $longueur = min($longueur, $this->hauteur);
         $colonne = "";
-        $min = min($this->hauteur, $max);
-        for ($i = 0; $i < $min; $i++) {
+        for ($i = 0; $i < $longueur; $i++) {
             $colonne .= $this->grille[$i][$c];
         }
         return $colonne;
