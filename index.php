@@ -3,6 +3,10 @@
 const HAUTEUR_PAR_DEFAUT = 6;
 const LARGEUR_PAR_DEFAUT = 6;
 
+echo "<!--\n";
+var_dump($_SERVER);
+echo "\n-->\n";
+
 
 $id = filter_input(INPUT_GET, 'grille', FILTER_VALIDATE_REGEXP, [
     "options" => [
@@ -11,7 +15,7 @@ $id = filter_input(INPUT_GET, 'grille', FILTER_VALIDATE_REGEXP, [
 ]);
 if (!$id) {
     $_GET["grille"] = uniqid();
-    header("Location: " . $_SERVER['PHP_SELF'] . "?" . http_build_query($_GET));
+    header("Location: " . $_SERVER['REQUEST_URI'] . "?" . http_build_query($_GET));
     exit;
 }
 

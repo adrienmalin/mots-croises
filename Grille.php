@@ -3,7 +3,7 @@
 include_once "dico.php";
 
 
-const MIN_LETTRES = 0;
+const MIN_LETTRES = 1;
 
 
 class Grille {
@@ -42,7 +42,6 @@ class Grille {
     }
 
     public function get_ligne($l, $longueur = 100) {
-        $longueur = min($longueur, $this->largeur);
         $ligne = "";
         for ($i = 0; $i < $longueur; $i++) {
             $ligne .= $this->grille[$l][$i];
@@ -57,7 +56,6 @@ class Grille {
     }
 
     public function get_colonne($c, $longueur = 100) {
-        $longueur = min($longueur, $this->hauteur);
         $colonne = "";
         for ($i = 0; $i < $longueur; $i++) {
             $colonne .= $this->grille[$i][$c];

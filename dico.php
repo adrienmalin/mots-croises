@@ -24,7 +24,7 @@ foreach ($dico as $mot => $definition) {
 
 function fisherYatesShuffle(&$items, $seed)
 {
-    @mt_srand($seed);
+    mt_srand($seed);
     for ($i = count($items) - 1; $i > 0; $i--)
     {
         $j = @mt_rand(0, $i);
@@ -32,6 +32,7 @@ function fisherYatesShuffle(&$items, $seed)
         $items[$i] = $items[$j];
         $items[$j] = $tmp;
     }
+    mt_srand();
 }
 
 function mots_espaces($max, $min=0, $seed=0) {

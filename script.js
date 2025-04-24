@@ -19,19 +19,25 @@ inputs.forEach(input => {
     };
 
     input.onkeydown = function (event) {
+        next_input = null;
         switch (event.key) {
             case 'ArrowUp':
-                inputs[(input.index - largeur + nb_cases) % nb_cases].focus();
+                next_input = inputs[(input.index - largeur + nb_cases) % nb_cases];
                 break;
             case 'ArrowDown':
-                inputs[(input.index + largeur) % nb_cases].focus();
+                next_input = inputs[(input.index + largeur) % nb_cases];
                 break;
             case 'ArrowLeft':
-                inputs[(input.index - 1 + nb_cases) % nb_cases].focus();
+                next_input = inputs[(input.index - 1 + nb_cases) % nb_cases];
                 break;
             case 'ArrowRight':
-                inputs[(input.index + 1) % nb_cases].focus();
+                next_input = inputs[(input.index + 1) % nb_cases];
                 break;
+        }
+        if (next_input) {
+            next_input.focus();
+            next_input.select();
+            event.preventDefault();
         }
     };
 
