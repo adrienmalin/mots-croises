@@ -21,14 +21,28 @@ foreach ($dico as $mot => $definition) {
     }
     $mots_de_n_lettres[$n][] = $mot;
 }
-foreach ($mots_de_n_lettres as $n => $mots) {
-    shuffle($mots_de_n_lettres[$n]);
+
+function fisherYatesShuffle(&$items, $seed)
+{
+    @mt_srand($seed);
+    for ($i = count($items) - 1; $i > 0; $i--)
+    {
+        $j = @mt_rand(0, $i);
+        $tmp = $items[$i];
+        $items[$i] = $items[$j];
+        $items[$j] = $tmp;
+    }
 }
 
-function mots_espaces($max, $min=0) {
+function mots_espaces($max, $min=0, $seed=0) {
     global $mots_de_n_lettres;
     global $dico;
 
+    if ($seed) {
+        fisherYatesShuffle($mots_de_n_lettres[$max], $seed);
+    } else {
+        shuffle($mots_de_n_lettres[$max]);
+    }
     foreach($mots_de_n_lettres[$max] as $mot) {
         yield $mot;
     }

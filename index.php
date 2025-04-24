@@ -3,28 +3,41 @@ ini_set('display_errors', 1);
 ini_set('html_errors', 1);
 ini_set('error_reporting', E_ALL);
 
+const HAUTEUR_PAR_DEFAUT = 6;
+const LARGEUR_PAR_DEFAUT = 6;
+
+
+$id = filter_input(INPUT_GET, 'grille', FILTER_VALIDATE_REGEXP, [
+    "options" => [
+        "regexp" => "/^[a-f0-9]{13}$/"
+    ]
+]);
+if (!$id) {
+    header("Location: " . $_SERVER['PHP_SELF'] . "?grille=" . uniqid() . "&" . http_build_query($_GET));
+    exit;
+}
+
+
 include_once "dico.php";
 include_once "Grille.php";
 
-const HAUTEUR_PAR_DEFAUT = 6;
-const LARGEUR_PAR_DEFAUT = 6;
 
 $hauteur = filter_input(INPUT_GET, 'lignes', FILTER_VALIDATE_INT, [
     "options" => [
         "default" => HAUTEUR_PAR_DEFAUT,
         "min_range" => 2,
-        "max_range" => 10
+        "max_range" => 30
     ]
 ]);
 $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
     "options" => [
         "default" => LARGEUR_PAR_DEFAUT,
         "min_range" => 2,
-        "max_range" => 10
+        "max_range" => 30
     ]
 ]);
 
-$grille = new Grille($hauteur, $largeur);
+$grille = new Grille($hauteur, $largeur, $id);
 
 ?>
 <!DOCTYPE HTML>

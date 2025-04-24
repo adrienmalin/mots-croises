@@ -14,7 +14,7 @@ class Grille {
     private $mots_commencant_par;
     private $mots_utilises = [];
 
-    public function __construct($hauteur, $largeur) {
+    public function __construct($hauteur, $largeur, $id="") {
         $this->hauteur = $hauteur;
         $this->largeur = $largeur;
         $this->grille = array_fill(0, $hauteur, array_fill(0, $largeur, '.'));
@@ -27,7 +27,7 @@ class Grille {
         $this->mots_commencant_par = [];
         foreach ($dimensions as $longueur) {
             $this->mots_commencant_par[$longueur] = [];
-            foreach(mots_espaces($longueur, MIN_LETTRES) as $mot) {
+            foreach(mots_espaces($longueur, MIN_LETTRES, crc32($id)) as $mot) {
                 for ($i = 0; $i <= $longueur; $i++) {
                     $debut = substr($mot, 0, $i);
                     if (!isset($this->mots_commencant_par[$longueur][$debut])) {
