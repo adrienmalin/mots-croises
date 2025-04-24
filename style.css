@@ -105,12 +105,12 @@ button[type='submit'] {
     background: none;
     font-family: inherit;
     font-size: 1em;
-    text-decoration: underline;
 }
 
 button[type="submit"]:hover {
     cursor: pointer;
     color: #2a6496;
+    text-decoration: underline;
 }
 
 button[type="submit"]:active {
