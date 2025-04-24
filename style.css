@@ -32,14 +32,15 @@ table.grille {
     margin: 0 auto;
 }
 
-.grille th,
-.grille td {
-    width: 30px;
+.grille th {
+    width: 25px;
     height: 30px;
     text-align: center;
 }
 
 .grille td {
+    width: 2rem;
+    height: 2rem;
     border: 1px solid black;
     padding: 2px;
     font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans;
@@ -115,4 +116,44 @@ button[type="submit"]:hover {
 
 button[type="submit"]:active {
     color: darkorchid;
+}
+
+
+@media (max-width: 640px) {
+	* {
+		box-sizing: border-box;
+	}
+    
+	body {
+		width: auto;
+		margin: 0;
+		padding: 0;
+	}
+    
+
+    h1 table {
+        line-height: 0.7;
+    }
+
+	.grille td {
+		width: 2.5rem;
+        height: 2.5rem;
+	}
+    
+    .definitions {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .definitions .horizontales,
+    .definitions .verticales {
+        width: 100%;
+    }
+}
+
+@media (max-device-width:768px) and (orientation: landscape) {
+  html {
+   -webkit-text-size-adjust: 100%;
+   -ms-text-size-adjust: 100%;
+  }
 }

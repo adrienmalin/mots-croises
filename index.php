@@ -3,10 +3,6 @@
 const HAUTEUR_PAR_DEFAUT = 6;
 const LARGEUR_PAR_DEFAUT = 6;
 
-echo "<!--\n";
-var_dump($_SERVER);
-echo "\n-->\n";
-
 
 $id = filter_input(INPUT_GET, 'grille', FILTER_VALIDATE_REGEXP, [
     "options" => [
@@ -15,7 +11,7 @@ $id = filter_input(INPUT_GET, 'grille', FILTER_VALIDATE_REGEXP, [
 ]);
 if (!$id) {
     $_GET["grille"] = uniqid();
-    header("Location: " . $_SERVER['REQUEST_URI'] . "?" . http_build_query($_GET));
+    header("Location: " . $_SERVER['DOCUMENT_URI'] . "?" . http_build_query($_GET));
     exit;
 }
 
@@ -50,6 +46,7 @@ $grille = new Grille($hauteur, $largeur, $id);
     <title>Mots croisés</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
