@@ -49,7 +49,13 @@ $grille = new Grille($hauteur, $largeur);
             <tr>
                 <th><?= $l ?></th>
                 <?php for ($c = 0; $c < $largeur; $c++): ?>
-                <td class="case <?= $grille->grille[$l][$c]==" "?"noire": "blanche" ?>"><?= $grille->grille[$l][$c] ?></td>
+                <td class="case <?= $grille->grille[$l][$c]==" "?"noire": "blanche" ?>">
+                    <?php if ($grille->grille[$l][$c] == " "): ?>
+                        <input type="text" maxlength="1" size="1" name="<?= $l . $c ?>" disabled/>
+                    <?php else: ?>
+                        <input type="text" maxlength="1" size="1" name="<?= $l . $c ?>" />
+                    <?php endif; ?>
+                </td>
                 <?php endfor; ?>
             </tr>
             <?php endfor; ?>
