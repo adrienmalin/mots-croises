@@ -1,0 +1,31 @@
+body {
+    margin: 1rem;
+}
+  
+.grille {
+    margin: 2rem auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+td {
+    border: 1px solid black;
+}
+
+.case.noire {
+    background-color: black;
+}
+
+.definitions {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.definitions h2 {
+    font-variant-caps: petite-caps;
+}

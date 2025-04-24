@@ -9,9 +9,9 @@ const MAX_ESSAIS = 10000;
 
 class Grille {
     public $grille;
+    public $hauteur;
+    public $largeur;
     private $grilles;
-    private $hauteur;
-    private $largeur;
     private $mots_commencant_par;
     private $mots_utilises = [];
 
