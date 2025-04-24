@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('html_errors', 1);
-ini_set('error_reporting', E_ALL);
 
 const HAUTEUR_PAR_DEFAUT = 6;
 const LARGEUR_PAR_DEFAUT = 6;
@@ -125,6 +122,8 @@ $grille = new Grille($hauteur, $largeur, $id);
         </div>
     </div>
 
+    <footer><a href=".">Nouvelle grille</a></footer>
+    
     <script src="script.js"></script>
 </body>
 

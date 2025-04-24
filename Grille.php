@@ -3,7 +3,7 @@
 include_once "dico.php";
 
 
-const MIN_LETTRES = 1;
+const MIN_LETTRES = 0;
 
 
 class Grille {
