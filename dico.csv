@@ -1956,7 +1956,7 @@ ROSE	Le vieux n’est pas tendre. <em>Pangloss</em>
 ROSE	Crevette ou saumon. <em>Michel Laclos</em>
 ROSE	Son eau est plate. <em>Jean-Paul Vanden Branden</em>
 ROSE	Il est moins vif quand il est vieux. <em>Chantal de Séréville</em>
-ROSE	Couleur chère à toulouse et à lautrec. <em>Didier Léonard</em>
+ROSE	Couleur chère à Toulouse et à Lautrec. <em>Didier Léonard</em>
 ROSEE	Dépôt de liquide. <em>Michel Laclos</em>
 ROSSIGNOL	Agréable à écouter mais difficile à écouler. <em>Thierry Larsan</em>
 ROSTRE	Nez qui coule. <em>Bernard Philippet</em>
@@ -2462,3 +2462,928 @@ XL	Grande taille ou du quarante. <em>Antoine Block</em>
 Y	
 Z	
 ZERO	Niveau à bulle. <em>Philippe Harang</em>
+ABELARD	Faire une allusion discrète à la mutilation opérée sur lui par Fulbert. <em>Gustave Flaubert</em>
+ABELARD	Inutile d’avoir la moindre idée de sa philosophie, ni même de connaître le titre de ses ouvrages. <em>Gustave Flaubert</em>
+ABELARD	Tombeau d’Héloïse et d’Abélard ; si l’on vous prouve qu’il est faux, s’écrier : « Vous m’ôtez mes illusions. » <em>Gustave Flaubert</em>
+ABRICOTS	Nous n’en aurons pas encore cette année. <em>Gustave Flaubert</em>
+ABSINTHE	A tué plus de soldats que les Bédouins. <em>Gustave Flaubert</em>
+ABSINTHE	Poison extra-violent. <em>Gustave Flaubert</em>
+ACADEMIE FRANCAISE	La dénigrer, mais tâcher d’en faire partie si on peut. <em>Gustave Flaubert</em>
+ACTRICES	La perte des fils de famille. <em>Gustave Flaubert</em>
+ACTRICES	Pardon ! il y en a qui sont bonnes mères de famille ! <em>Gustave Flaubert</em>
+ACTRICES	Sont d’une lubricité effrayante, se livrent à des orgies, avalent des millions (finissent à l’hôpital). <em>Gustave Flaubert</em>
+AFFAIRES	Passent avant tout. <em>Gustave Flaubert</em>
+AFFAIRES	Sont dans la vie ce qu’il y a de plus important. <em>Gustave Flaubert</em>
+AFFAIRES	Tout est là. <em>Gustave Flaubert</em>
+AFFAIRES	Une femme doit éviter de parler des siennes. <em>Gustave Flaubert</em>
+AGRICULTURE	Manque de bras. <em>Gustave Flaubert</em>
+AIR	Invariablement le fond de l’air est en contradiction avec la température : si elle est chaude, il est froid, et l’inverse. <em>Gustave Flaubert</em>
+AIR	Toujours se méfier des courants d’air. <em>Gustave Flaubert</em>
+AIRAIN	Métal de l’antiquité. <em>Gustave Flaubert</em>
+ALBÂTRE	Sert à décrire les plus belles parties du corps de la femme. <em>Gustave Flaubert</em>
+ALCOOLISME	Cause de toutes les maladies modernes. <em>Gustave Flaubert</em>
+ALLEMANDS	Peuple de rêveurs (vieux). <em>Gustave Flaubert</em>
+AMERIQUE	Bel exemple d’injustice : c’est Colomb qui la découvrit et elle tient son nom d’Améric Vespucci. <em>Gustave Flaubert</em>
+AMERIQUE	Faire une tirade sur le self-government. <em>Gustave Flaubert</em>
+ANGE	Fait bien en amour et en littérature. <em>Gustave Flaubert</em>
+ANGLAIS	Tous riches. <em>Gustave Flaubert</em>
+ANGLAISES	S’étonner de ce qu’elles ont de jolis enfants. <em>Gustave Flaubert</em>
+ANTIQUITE	Et tout ce qui se (sic) rapporte, poncif, embêtant. <em>Gustave Flaubert</em>
+ANTIQUITES	Sont toujours de fabrication moderne. <em>Gustave Flaubert</em>
+APPARTEMENT DE GARCON	Avec des colifichets de femme traînant çà et là. <em>Gustave Flaubert</em>
+APPARTEMENT DE GARCON	Odeur de cigarette. <em>Gustave Flaubert</em>
+APPARTEMENT DE GARCON	On doit y trouver des choses extraordinaires. <em>Gustave Flaubert</em>
+APPARTEMENT DE GARCON	Toujours en désordre. <em>Gustave Flaubert</em>
+ARCHIMÈDE	« Donnez-moi un point d’appui et je soulèverai le monde. » <em>Gustave Flaubert</em>
+ARCHIMÈDE	Dire à son nom : « Eurèka ». <em>Gustave Flaubert</em>
+ARCHIMÈDE	Il y a encore la vis d’Archimède ; mais on n’est pas tenu de savoir en quoi elle consiste. <em>Gustave Flaubert</em>
+ARCHITECTES	Oublient toujours l’escalier des maisons. <em>Gustave Flaubert</em>
+ARCHITECTES	Tous imbéciles. <em>Gustave Flaubert</em>
+ARCHITECTURE	Bien entendu qu’on ne compte pas l’égyptien, le cyclopéen, l’assyrien, l’indien, le chinois, gothique, roman, etc. <em>Gustave Flaubert</em>
+ARCHITECTURE	Il n’y a que quatre ordres d’architecture. <em>Gustave Flaubert</em>
+ARGENT	Cause de tout le mal. <em>Gustave Flaubert</em>
+ARGENT	Dire : Auri sacra fames. <em>Gustave Flaubert</em>
+ARSENIC	Cependant, il y a des peuples qui en mangent. <em>Gustave Flaubert</em>
+ARSENIC	Se trouve partout. Rappeler Mme Lafarge (?). <em>Gustave Flaubert</em>
+ARTISTES	Femme artiste ne peut être qu’une catin. <em>Gustave Flaubert</em>
+ARTISTES	Gagnent des sommes folles, mais les jettent par les fenêtres. <em>Gustave Flaubert</em>
+ARTISTES	S’étonner de ce qu’ils sont habillés comme tout le monde (vieux). <em>Gustave Flaubert</em>
+ARTISTES	Souvent invités à dîner en ville. <em>Gustave Flaubert</em>
+ARTISTES	Tous farceurs. <em>Gustave Flaubert</em>
+ARTISTES	Vanter leur désintéressement (vieux). <em>Gustave Flaubert</em>
+ARTS	Sont bien inutiles, puisqu’on les remplace par des machines qui fabriquent même plus promptement. <em>Gustave Flaubert</em>
+ASPIC	Animal connu par le panier de figues de Cléopâtre. <em>Gustave Flaubert</em>
+ASTRONOMIE	Belle science. <em>Gustave Flaubert</em>
+ASTRONOMIE	Et, à ce propos, rire de l’astrologie. <em>Gustave Flaubert</em>
+ASTRONOMIE	Très utile pour (n’est utile que pour) la marine. <em>Gustave Flaubert</em>
+ATHEE	Un peuple d’athées ne saurait subsister. <em>Gustave Flaubert</em>
+AUTEUR	On doit « connaître des auteurs » ; inutile de savoir leur nom. <em>Gustave Flaubert</em>
+AUTRUCHE	Digère les pierres. <em>Gustave Flaubert</em>
+AVOCATS	Dire d’un avocat qui parle mal : oui, mais il est fort en droit. <em>Gustave Flaubert</em>
+AVOCATS	Ont le jugement faussé. <em>Gustave Flaubert</em>
+AVOCATS	Trop d’avocats à la Chambre. <em>Gustave Flaubert</em>
+BACCALAUREAT	Tonner contre. <em>Gustave Flaubert</em>
+BADIGEON	Dans les églises. Tonner contre. Cette colère artistique est extrêmement bien portée. <em>Gustave Flaubert</em>
+BAGNOLET	Pays célèbre par ses aveugles. <em>Gustave Flaubert</em>
+BÂILLEMENT	Il faut dire : Excusez-moi, ça ne vient pas d’ennui, mais de l’estomac. <em>Gustave Flaubert</em>
+BALLONS	Avec les ballons, on finira par aller dans la lune. <em>Gustave Flaubert</em>
+BALLONS	On n’est pas près de les diriger. <em>Gustave Flaubert</em>
+BANQUET	La plus franche cordialité ne cesse d’y régner. <em>Gustave Flaubert</em>
+BANQUET	On en emporte le meilleur souvenir, et on ne se sépare jamais sans s’être donné rendez-vous à l’année prochaine. <em>Gustave Flaubert</em>
+BANQUET	Un farceur doit dire : Au banquet de la vie, infortuné convive. <em>Gustave Flaubert</em>
+BANQUIERS	Tous riches, Arabes, loups-cerviers. <em>Gustave Flaubert</em>
+BARAGOUIN	Manière de parler aux (sic) étrangers. <em>Gustave Flaubert</em>
+BARAGOUIN	Toujours rire de l’étranger qui parle mal français. <em>Gustave Flaubert</em>
+BARBE	Signe de force. <em>Gustave Flaubert</em>
+BARBE	Trop de barbe fait tomber les cheveux. <em>Gustave Flaubert</em>
+BARBE	Utile pour protéger les cravates. <em>Gustave Flaubert</em>
+BAS-BLEU	Citer Molière à l’appui : « Quand la capacité de son esprit se hausse, » etc. <em>Gustave Flaubert</em>
+BAS-BLEU	Terme de mépris pour désigner toute femme qui s’intéresse aux choses intellectuelles. <em>Gustave Flaubert</em>
+BASES	De la société, sont (id est) la propriété, la famille, la religion, le respect des autorités. <em>Gustave Flaubert</em>
+BASES	En parler avec colère si on les attaque. <em>Gustave Flaubert</em>
+BASILIQUE	Synonyme pompeux d’église ; est toujours imposante. <em>Gustave Flaubert</em>
+BASQUES	Le peuple qui court le mieux. <em>Gustave Flaubert</em>
+BÂTON	Plus redoutable que l’épée. <em>Gustave Flaubert</em>
+BAUDRUCHE	Ne sert pas qu’à faire des ballons. <em>Gustave Flaubert</em>
+BAYADÈRES	Ce mot entraîne l’imagination fort loin. <em>Gustave Flaubert</em>
+BAYADÈRES	Toutes les femmes de l’Orient sont des bayadères. <em>Gustave Flaubert</em>
+BIBLE	Le plus ancien livre du monde. <em>Gustave Flaubert</em>
+BIBLIOTHÈQUE	Toujours en avoir une chez soi, principalement quand on habite la campagne. <em>Gustave Flaubert</em>
+BILLARD	Indispensable à la campagne. <em>Gustave Flaubert</em>
+BILLARD	Noble jeu. <em>Gustave Flaubert</em>
+BLONDES	Plus chaudes que les brunes (voy. Brunes). <em>Gustave Flaubert</em>
+BOIS	À l’automne, quand on se promène, on doit dire : De la dépouille de nos bois, etc. <em>Gustave Flaubert</em>
+BOIS	Les bois font rêver. <em>Gustave Flaubert</em>
+BOIS	Sont propres à composer des vers. <em>Gustave Flaubert</em>
+BONNET GREC	Donne de la majesté au visage. <em>Gustave Flaubert</em>
+BONNET GREC	Indispensable à l’homme de cabinet. <em>Gustave Flaubert</em>
+BOSSUS	Ont beaucoup d’esprit. <em>Gustave Flaubert</em>
+BOSSUS	Sont très recherchés des femmes lascives. <em>Gustave Flaubert</em>
+BOUCHERS	Sont terribles en temps de révolution. <em>Gustave Flaubert</em>
+BOUDDHISME	« Fausse religion de l’Inde » (définition du dictionnaire Bouillet, Ire édition). <em>Gustave Flaubert</em>
+BOUDIN	Indispensable la nuit de Noël. <em>Gustave Flaubert</em>
+BOUDIN	Signe de gaieté dans les maisons. <em>Gustave Flaubert</em>
+BOUILLI	C’est sain. <em>Gustave Flaubert</em>
+BOUILLI	Inséparable du mot soupe : la soupe et le bouilli. <em>Gustave Flaubert</em>
+BOULET	Le vent des boulets rend aveugle (asphyxie). <em>Gustave Flaubert</em>
+BOURSE	Thermomètre de l’opinion publique. <em>Gustave Flaubert</em>
+BOURSIERS	Tous voleurs. <em>Gustave Flaubert</em>
+BOUTONS	Au visage ou ailleurs, signe de santé et de force du sang. <em>Gustave Flaubert</em>
+BOUTONS	Ne point les faire passer. <em>Gustave Flaubert</em>
+BRACONNIERS	Auteurs de tous les crimes commis dans les campagnes. <em>Gustave Flaubert</em>
+BRACONNIERS	Doivent exciter une colère frénétique : « Pas de pitié, monsieur, pas de pitié ! <em>Gustave Flaubert</em>
+BRACONNIERS	Tous forçats libérés. <em>Gustave Flaubert</em>
+BRAS	Pour gouverner la France, il faut un bras de fer. <em>Gustave Flaubert</em>
+BRETONS	Tous braves gens, mais entêtés. <em>Gustave Flaubert</em>
+BRUNES	Sont plus chaudes que les blondes (voy. Blondes). <em>Gustave Flaubert</em>
+BUDGET	Jamais en équilibre. <em>Gustave Flaubert</em>
+BUFFON	Mettait des manchettes pour écrire. <em>Gustave Flaubert</em>
+CAFE	Dans un grand dîner, doit se prendre debout. <em>Gustave Flaubert</em>
+CAFE	Donne de l’esprit. <em>Gustave Flaubert</em>
+CAFE	L’avaler sans sucre, très chic, donne l’air d’avoir vécu en Orient. <em>Gustave Flaubert</em>
+CAFE	N’est bon qu’en venant du Havre. <em>Gustave Flaubert</em>
+CALVITIE	Toujours précoce, et causée par des excès de jeunesse, ou la conception de grandes pensées. <em>Gustave Flaubert</em>
+CAMPAGNE	À la campagne tout est permis : habits bas, farces, etc. <em>Gustave Flaubert</em>
+CAMPAGNE	Les gens de la campagne meilleurs que ceux des villes ; envier leur sort. <em>Gustave Flaubert</em>
+CANARDS	Viennent tous de Rouen. <em>Gustave Flaubert</em>
+CANONNADE	Change le temps. <em>Gustave Flaubert</em>
+CARABINS	Dorment près des cadavres. <em>Gustave Flaubert</em>
+CARABINS	Il y a (sic) qui en mangent. <em>Gustave Flaubert</em>
+CARÊME	Au fond n’est qu’une mesure hygiénique. <em>Gustave Flaubert</em>
+CATAPLASME	Doit toujours être mis en attendant l’arrivée du médecin. <em>Gustave Flaubert</em>
+CATHOLICISME	A eu une influence très favorable sur les arts. <em>Gustave Flaubert</em>
+CAUCHEMAR	Vient de l’estomac. <em>Gustave Flaubert</em>
+CAVALERIE	Plus noble que l’infanterie. <em>Gustave Flaubert</em>
+CAVERNES	Habitation ordinaire des voleurs. <em>Gustave Flaubert</em>
+CAVERNES	Sont toujours remplies de serpents. <em>Gustave Flaubert</em>
+CÈDRE	Celui du Jardin des plantes a été rapporté dans un chapeau. <em>Gustave Flaubert</em>
+CELEBRITE	Les célébrités : s’inquiéter du moindre détail de leur vie privée, afin de pouvoir les dénigrer. <em>Gustave Flaubert</em>
+CELIBATAIRES	On devrait les imposer. <em>Gustave Flaubert</em>
+CELIBATAIRES	Se préparent une triste vieillesse. <em>Gustave Flaubert</em>
+CELIBATAIRES	Tous égoïstes et débauchés. <em>Gustave Flaubert</em>
+CENSURE	Utile ! on a beau dire. <em>Gustave Flaubert</em>
+CERCLE	On doit toujours faire partie d’un. <em>Gustave Flaubert</em>
+CERTIFICAT	Est toujours favorable. <em>Gustave Flaubert</em>
+CERTIFICAT	Garantie pour les familles et pour les parents. <em>Gustave Flaubert</em>
+CHALEUR	Ne pas boire quand il fait chaud. <em>Gustave Flaubert</em>
+CHALEUR	Toujours insupportable. <em>Gustave Flaubert</em>
+CHAMBRE À COUCHER	Dans un vieux château : Henri IV y a toujours passé une nuit. <em>Gustave Flaubert</em>
+CHAMEAU	À deux bosses et le dromadaire une seule. <em>Gustave Flaubert</em>
+CHAMEAU	Ou bien le chameau a une bosse et le dromadaire une seule (on ne sait pas au juste ; on s’y embrouille). <em>Gustave Flaubert</em>
+CHAMPAGNE	(Mais on ne le boit pas, on le « sable ».) <em>Gustave Flaubert</em>
+CHAMPAGNE	C’est par lui que les idées françaises se sont répandues en Europe. <em>Gustave Flaubert</em>
+CHAMPAGNE	Caractérise le dîner de cérémonie. <em>Gustave Flaubert</em>
+CHAMPAGNE	Faire semblant de le détester, en disant que « ce n’est pas un vin ». <em>Gustave Flaubert</em>
+CHAMPAGNE	La Russie en consomme plus que la France. <em>Gustave Flaubert</em>
+CHAMPAGNE	Provoque l’enthousiasme chez les petites gens. <em>Gustave Flaubert</em>
+CHAMPAGNE	Sous la Régence, on ne faisait pas autre chose que d’en boire. <em>Gustave Flaubert</em>
+CHAMPIGNONS	Ne doivent être achetés qu’au marché (ne manger que ceux qui viennent du marché). <em>Gustave Flaubert</em>
+CHAPEAU	Protester contre la forme des. <em>Gustave Flaubert</em>
+CHARCUTIER	Anecdote des pâtés faits avec de la chair humaine. <em>Gustave Flaubert</em>
+CHARCUTIER	Toutes les charcutières sont jolies. <em>Gustave Flaubert</em>
+CHARTREUX	Passent leur temps à faire de la chartreuse, à creuser leur tombe et à dire : Frère il faut mourir. <em>Gustave Flaubert</em>
+CHASSE	Excellent exercice que l’on doit feindre d’adorer. <em>Gustave Flaubert</em>
+CHASSE	Fait partie de la pompe des souverains. <em>Gustave Flaubert</em>
+CHASSE	Sujet de délire pour la magistrature. <em>Gustave Flaubert</em>
+CHAT	Les appeler tigres de salon (sic). <em>Gustave Flaubert</em>
+CHAT	Les chats sont traîtres. <em>Gustave Flaubert</em>
+CHAT	Leur couper la queue pour empêcher le vertigo. <em>Gustave Flaubert</em>
+CHÂTAIGNE	Femelle du marron. <em>Gustave Flaubert</em>
+CHÂTEAU FORT	A toujours subi un siège, sous Philippe Auguste. <em>Gustave Flaubert</em>
+CHEMINEE	Fume toujours. <em>Gustave Flaubert</em>
+CHEMINEE	Sujet de discussion à propos du chauffage. <em>Gustave Flaubert</em>
+CHEMINS DE FER	S’extasier sur leur invention et dire : « Moi, monsieur, qui vous parle, j’étais ce matin à X ; je suis parti par le train de X ; là-bas, j’ai fait mes affaires, etc., et à X heures, j’étais revenu ! » <em>Gustave Flaubert</em>
+CHEMINS DE FER	Si Napoléon les avait eus à sa disposition, il aurait été invincible. <em>Gustave Flaubert</em>
+CHEVAL	Beau sujet de brochure pour un homme qui désire se poser en personnage sérieux. <em>Gustave Flaubert</em>
+CHEVAL	De course : le mépriser. À quoi sert-il ? <em>Gustave Flaubert</em>
+CHEVAL	S’il connaissait sa force, ne se laisserait pas conduire. <em>Gustave Flaubert</em>
+CHEVAL	Viande de cheval. <em>Gustave Flaubert</em>
+CHIEN	(Le chien est l’idéal de) L’ami de l’homme, (parce qu’il est son esclave dévoué). <em>Gustave Flaubert</em>
+CHIEN	Spécialement créé pour sauver la vie à son maître. <em>Gustave Flaubert</em>
+CHIRURGIENS	Ont le cœur dur : les appeler bouchers. <em>Gustave Flaubert</em>
+CHOLERA	Le melon donne le choléra. <em>Gustave Flaubert</em>
+CHOLERA	On s’en guérit en prenant beaucoup de thé avec du rhum. <em>Gustave Flaubert</em>
+CHRISTIANISME	A affranchi les esclaves. <em>Gustave Flaubert</em>
+CIDRE	Gâte les dents. <em>Gustave Flaubert</em>
+CIGARES	Ceux de la Régie, « tous infects ! ». <em>Gustave Flaubert</em>
+CIGARES	Les seuls bons viennent par contrebande. <em>Gustave Flaubert</em>
+CIRAGE	N’est bon que si on le fait soi-même. <em>Gustave Flaubert</em>
+CLAIR-OBSCUR	On ne sait pas ce que c’est. <em>Gustave Flaubert</em>
+CLASSIQUES	On est censé les connaître. <em>Gustave Flaubert</em>
+CLOCHER	De village : fait battre le cœur. <em>Gustave Flaubert</em>
+CLOWN	A été disloqué dès l’enfance. <em>Gustave Flaubert</em>
+CLUB	Embarras et discussion sur la prononciation de ce mot. <em>Gustave Flaubert</em>
+CLUB	Sujet d’exaspération pour les conservateurs. <em>Gustave Flaubert</em>
+COCHON	L’intérieur de son corps étant « tout pareil à celui d’un homme », on devrait s’en servir dans les hôpitaux pour apprendre l’anatomie. <em>Gustave Flaubert</em>
+COCU	Toute femme doit faire son mari cocu. <em>Gustave Flaubert</em>
+COFFRES-FORTS	Leurs complications sont très faciles à déjouer. <em>Gustave Flaubert</em>
+COGNAC	Excellent dans plusieurs maladies. <em>Gustave Flaubert</em>
+COGNAC	Pris à jeun, tue le ver de l’estomac. <em>Gustave Flaubert</em>
+COGNAC	Très funeste. <em>Gustave Flaubert</em>
+COGNAC	Un bon verre de cognac ne fait jamais de mal. <em>Gustave Flaubert</em>
+COLLÈGE	Lycée. <em>Gustave Flaubert</em>
+COLLÈGE	Plus noble qu’une pension. <em>Gustave Flaubert</em>
+COLONIES	S’attrister quand on en parle. <em>Gustave Flaubert</em>
+COMEDIE	En vers, ne convient plus à notre époque. <em>Gustave Flaubert</em>
+COMEDIE	On doit cependant respecter la haute comédie. <em>Gustave Flaubert</em>
+COMÈTES	Rire des gens qui en avaient peur. <em>Gustave Flaubert</em>
+COMMERCE	Discuter pour savoir lequel est le plus noble, du commerce ou de l’industrie. <em>Gustave Flaubert</em>
+COMMUNION	La première communion : le plus beau jour de la vie. <em>Gustave Flaubert</em>
+CONFISEURS	Tous les Rouennais sont confiseurs. <em>Gustave Flaubert</em>
+CONFORTABLE	Précieuse découverte moderne. <em>Gustave Flaubert</em>
+CONSERVATOIRE	Il est indispensable d’être abonné au Conservatoire. <em>Gustave Flaubert</em>
+CONSTIPATION	Influe sur les convictions politiques. <em>Gustave Flaubert</em>
+CONSTIPATION	Tous les gens de lettres sont constipés. <em>Gustave Flaubert</em>
+CONVERSATION	La politique et la religion doivent en être exclues. <em>Gustave Flaubert</em>
+COPAHU	Feindre d’en ignorer l’usage. <em>Gustave Flaubert</em>
+COR	Indique le changement de temps mieux qu’un baromètre. <em>Gustave Flaubert</em>
+COR	Très dangereux quand il est mal coupé ; citer des exemples d’accidents terribles. <em>Gustave Flaubert</em>
+COR DE CHASSE	Dans les bois, fait bon effet (et le soir sur l’eau). <em>Gustave Flaubert</em>
+CORDE	Est plus solide que le fer. <em>Gustave Flaubert</em>
+CORDE	On ne connaît pas la force d’une corde. <em>Gustave Flaubert</em>
+CORPS	Si nous savions comment notre corps est fait, nous n’oserions pas faire un mouvement. <em>Gustave Flaubert</em>
+CORSET	Empêche d’avoir des enfants. <em>Gustave Flaubert</em>
+COSAQUES	Mangent de la chandelle. <em>Gustave Flaubert</em>
+COTON	Est surtout utile pour les oreilles. <em>Gustave Flaubert</em>
+COTON	Une des bases de la société dans la Seine Inférieure. <em>Gustave Flaubert</em>
+COURTISANNE	Est un mal nécessaire. <em>Gustave Flaubert</em>
+COURTISANNE	On ne peut plus sortir avec sa femme, à cause de leur présence sur le boulevard. <em>Gustave Flaubert</em>
+COURTISANNE	Ou bien : devraient être chassées impitoyablement. <em>Gustave Flaubert</em>
+COURTISANNE	Sauvegarde de nos filles et de nos sœurs (tant qu’il y aura des célibataires). <em>Gustave Flaubert</em>
+COURTISANNE	Sont toujours des filles du peuple débauchées par des bourgeois riches. <em>Gustave Flaubert</em>
+CRAPAUD	Habite l’intérieur des pierres. <em>Gustave Flaubert</em>
+CRAPAUD	Mâle de la grenouille. <em>Gustave Flaubert</em>
+CRAPAUD	Possède un venin fort dangereux. <em>Gustave Flaubert</em>
+CREOLE	Vit dans un hamac. <em>Gustave Flaubert</em>
+CRITIQUE	Est censé tout connaître, tout savoir, avoir tout lu, tout vu. <em>Gustave Flaubert</em>
+CRITIQUE	Quand il vous déplaît, l’appeler un Aristarque (ou eunuque). <em>Gustave Flaubert</em>
+CRITIQUE	Toujours éminent. <em>Gustave Flaubert</em>
+CROCODILE	Imite le cri des enfants pour attirer l’homme. <em>Gustave Flaubert</em>
+CROISADES	Ont été bienfaisantes (utiles seulement) pour le commerce de Venise. <em>Gustave Flaubert</em>
+CRUCIFIX	Fait bien dans une alcôve et à la guillotine. <em>Gustave Flaubert</em>
+CUISINE	Bourgeoise : toujours saine. <em>Gustave Flaubert</em>
+CUISINE	De restaurant : toujours échauffante. <em>Gustave Flaubert</em>
+CUISINE	Du Midi : trop épicée ou toute à l’huile. <em>Gustave Flaubert</em>
+CUJAS	Dire à tout homme étudiant le droit : Vous êtes enfermé dans Cujas et Bartholde. <em>Gustave Flaubert</em>
+CUJAS	Inséparable de Bartholde ; on ne sait pas ce qu’ils ont écrit, n’importe. <em>Gustave Flaubert</em>
+CYGNE	Avec son aile, peut casser la cuisse d’un homme. <em>Gustave Flaubert</em>
+CYGNE	Chante avant de mourir. <em>Gustave Flaubert</em>
+CYGNE	Le cygne de Cambrai n’était pas un oiseau, mais un homme (évêque) nommé Fénelon. <em>Gustave Flaubert</em>
+CYGNE	Le cygne de Mantoue, c’est Virgile. <em>Gustave Flaubert</em>
+CYGNE	Le cygne de Pesaro, c’est Rossini. <em>Gustave Flaubert</em>
+CYPRÈS	Ne pousse que dans les cimetières. <em>Gustave Flaubert</em>
+DAGUERREOTYPE	Remplacera la peinture. <em>Gustave Flaubert</em>
+DAMAS	Seul endroit où l’on sache faire les sabres. <em>Gustave Flaubert</em>
+DAMAS	Toute bonne lame est de Damas. <em>Gustave Flaubert</em>
+DAUPHIN	Porte les enfants sur son dos. <em>Gustave Flaubert</em>
+DEBAUCHE	Cause de toutes les maladies des célibataires. <em>Gustave Flaubert</em>
+DECOR DE THEÂTRE	N’est pas de la peinture : il suffit de jeter à vrac sur la toile un seau de couleurs ; puis on l’étend avec un balai ; et l’éloignement avec la lumière font l’illusion. <em>Gustave Flaubert</em>
+DECORATION	De la Légion d’honneur. <em>Gustave Flaubert</em>
+DECORATION	La blaguer, mais la convoiter. <em>Gustave Flaubert</em>
+DECORATION	Quand on l’obtient, toujours dire qu’on ne l’a pas demandée. <em>Gustave Flaubert</em>
+DECORUM	« Il en faut ! Il en faut ! » <em>Gustave Flaubert</em>
+DECORUM	Donne du prestige. <em>Gustave Flaubert</em>
+DECORUM	Frappe l’imagination des masses. <em>Gustave Flaubert</em>
+DEFAITE	S’essuie, et elle est tellement complète qu’il n’en reste personne pour en porter la nouvelle. <em>Gustave Flaubert</em>
+DEICIDE	S’indigner contre, bien que le crime ne soit pas fréquent. <em>Gustave Flaubert</em>
+DEJEUNER DE GARCONS	Exige des huîtres, du vin blanc et des gaudrioles. <em>Gustave Flaubert</em>
+DEMÊLOIR	Fait tomber les cheveux. <em>Gustave Flaubert</em>
+DEMOSTHENES	Ne prononçait pas de discours sans avoir un galet dans la bouche. <em>Gustave Flaubert</em>
+DENT	Sont gâtées par le cidre, le tabac, les dragées, la glace, dormir la bouche ouverte et boire de suite après le potage. <em>Gustave Flaubert</em>
+DENT ŒILLÈRE	Dangereux de l’arracher parce qu’elle correspond à l’œil. L’arrachement d’une dent « ne fait pas jouir ». <em>Gustave Flaubert</em>
+DEPURATIF	Se prend en cachette. <em>Gustave Flaubert</em>
+DEPUTE	L’être, comble de la gloire. <em>Gustave Flaubert</em>
+DEPUTE	Ne font rien. <em>Gustave Flaubert</em>
+DEPUTE	Tonner contre la Chambre des députés. <em>Gustave Flaubert</em>
+DEPUTE	Trop de bavards à la Chambre. <em>Gustave Flaubert</em>
+DESCARTES	« Cogito, ergo sum. » <em>Gustave Flaubert</em>
+DESERT	Produit des dattes. <em>Gustave Flaubert</em>
+DESSERT	Les gens vertueux le méprisent. « Non ! non ! pas de pâtisseries ! Jamais de dessert ! » <em>Gustave Flaubert</em>
+DESSERT	Regretter qu’on n’y chante plus. <em>Gustave Flaubert</em>
+DESSIN	Se compose de trois choses : la ligne, le grain, et le grainé fin ; de plus, le trait de force. Mais le trait de force, il n’y a que le maître seul qui le donne (Christophe.) <em>Gustave Flaubert</em>
+DEVOIRS	Les autres en ont envers nous, mais on n’en a pas envers eux. <em>Gustave Flaubert</em>
+DEVOIRS	Les exiger de la part des autres, s’en affranchir. <em>Gustave Flaubert</em>
+DEVOUEMENT	« Nous sommes bien inférieurs au chien, sous ce rapport ! » <em>Gustave Flaubert</em>
+DEVOUEMENT	Se plaindre de ce que les autres en manquent. <em>Gustave Flaubert</em>
+DIAMANT	Et dire que ce n’est que du charbon ! <em>Gustave Flaubert</em>
+DIAMANT	On finira par en faire ! <em>Gustave Flaubert</em>
+DIAMANT	Si nous en trouvions un dans son état naturel, nous ne le ramasserions pas ! <em>Gustave Flaubert</em>
+DICTIONNAIRE	En dire : N’est fait que pour les ignorants. <em>Gustave Flaubert</em>
+DICTIONNAIRE DE RIMES	S’en servir ? honteux ! <em>Gustave Flaubert</em>
+DIDEROT	Toujours suivi de d’Alembert. <em>Gustave Flaubert</em>
+DIEU	Voltaire lui-même l’a dit : « Si Dieu n’existait pas, il faudrait l’inventer. » <em>Gustave Flaubert</em>
+DILETTANTE	Homme riche, abonné à l’Opéra. <em>Gustave Flaubert</em>
+DILIGENCES	Regretter le temps des diligences. <em>Gustave Flaubert</em>
+DÎNER	Autrefois on dînait à midi, maintenant on dîne à des heures impossibles. <em>Gustave Flaubert</em>
+DÎNER	Dîner si tard que ça ne s’appelle pas dîner, mais souper. <em>Gustave Flaubert</em>
+DÎNER	Le dîner de nos pères était notre déjeuner, et notre déjeuner était leur dîner. <em>Gustave Flaubert</em>
+DIOGÈNE	« Je cherche un homme. » <em>Gustave Flaubert</em>
+DIOGÈNE	« Retire-toi de mon soleil. » <em>Gustave Flaubert</em>
+DIPLOMATIE	Belle carrière (mais hérissée de difficultés, pleine de mystères). <em>Gustave Flaubert</em>
+DIPLOMATIE	Métier d’une vague signification, mais au-dessus du commun. <em>Gustave Flaubert</em>
+DIPLOMATIE	Ne convient qu’aux gens nobles. <em>Gustave Flaubert</em>
+DIPLOMATIE	Un diplomate est toujours fin et pénétrant. <em>Gustave Flaubert</em>
+DIPLÔME	Ne prouve rien. <em>Gustave Flaubert</em>
+DIPLÔME	Signe de science. <em>Gustave Flaubert</em>
+DIRECTOIRE	« Dans ce temps-là, l’honneur s’était réfugié aux armées. » <em>Gustave Flaubert</em>
+DIRECTOIRE	Les femmes, à Paris, se promenaient toutes nues. <em>Gustave Flaubert</em>
+DIRECTOIRE	Les hontes du. <em>Gustave Flaubert</em>
+DISSECTION	Outrage à la majesté de la mort. <em>Gustave Flaubert</em>
+DIVORCE	Si Napoléon n’avait pas divorcé, il serait encore sur le trône. <em>Gustave Flaubert</em>
+DIX	C’était formidable ! <em>Gustave Flaubert</em>
+DIX	Délibérait masqué. <em>Gustave Flaubert</em>
+DIX	En trembler encore. <em>Gustave Flaubert</em>
+DJIN	Nom d’une danse orientale. <em>Gustave Flaubert</em>
+DOCTEUR	Toujours précéder de « bon », et, entre hommes, dans la conversation familière, de « foutre » : Ah ! foutre, docteur ! <em>Gustave Flaubert</em>
+DOCTEUR	Tous matérialistes. <em>Gustave Flaubert</em>
+DOCTRINAIRES	Les mépriser. Pourquoi ? On n’en sait rien. <em>Gustave Flaubert</em>
+DOGE	Épousait la mer. <em>Gustave Flaubert</em>
+DOGE	On n’en connaît qu’un : Marino Faliero. <em>Gustave Flaubert</em>
+DOLMEN	A rapport aux anciens Français. <em>Gustave Flaubert</em>
+DOLMEN	Il n’y en a qu’en Bretagne. <em>Gustave Flaubert</em>
+DOLMEN	On n’en sait pas davantage. <em>Gustave Flaubert</em>
+DOLMEN	Pierre qui servait au sacrifice des druides. <em>Gustave Flaubert</em>
+DÔME	Comment se tient-il ? (S’étonner de ce que cela puisse tenir seul). <em>Gustave Flaubert</em>
+DÔME	En citer deux : celui des Invalides et celui de Saint-Pierre de Rome. <em>Gustave Flaubert</em>
+DÔME	Tour de forme architecturale. <em>Gustave Flaubert</em>
+DOMINOS	On y joue d’autant mieux qu’on est gris. <em>Gustave Flaubert</em>
+DOMPTEURS DE BÊTES FEROCES	Emploient des pratiques obscènes. <em>Gustave Flaubert</em>
+DONJON	Éveille des idées lugubres. <em>Gustave Flaubert</em>
+DORMIR	Épaissit le sang. <em>Gustave Flaubert</em>
+DORTOIRS	Préférables aux chambres pour la moralité des élèves. <em>Gustave Flaubert</em>
+DORTOIRS	Toujours spacieux et bien aérés. <em>Gustave Flaubert</em>
+DOS	Une tape dans le dos peut rendre poitrinaire. <em>Gustave Flaubert</em>
+DOUANE	On doit se révolter contre, et la frauder. <em>Gustave Flaubert</em>
+DOULEUR	À toujours un résultat favorable. <em>Gustave Flaubert</em>
+DOULEUR	La véritable est toujours contenue. <em>Gustave Flaubert</em>
+DOUTE	Pire que la négation. <em>Gustave Flaubert</em>
+DRAPEAU	Sa vue fait battre le cœur. <em>Gustave Flaubert</em>
+DROIT	On ne sait pas ce que c’est. <em>Gustave Flaubert</em>
+DUEL	N’est pas une preuve de courage. <em>Gustave Flaubert</em>
+DUEL	Prestige de l’homme qui a eu un duel. <em>Gustave Flaubert</em>
+DUEL	Tonner contre. <em>Gustave Flaubert</em>
+DUPE	Mieux vaut être fripon que dupe. <em>Gustave Flaubert</em>
+EAU	L’eau de Cologne sent bon. <em>Gustave Flaubert</em>
+EAU	L’eau de mer soutient pour nager. <em>Gustave Flaubert</em>
+EAU	L’eau de Paris donne des coliques. <em>Gustave Flaubert</em>
+ECHAFAUD	S’arranger quand on y monte pour prononcer quelques mots éloquents avant de mourir. <em>Gustave Flaubert</em>
+ECHARPE	Poétique. <em>Gustave Flaubert</em>
+ECHECS	Image de la tactique militaire. <em>Gustave Flaubert</em>
+ECHECS	Tous les grands capitaines y étaient forts. <em>Gustave Flaubert</em>
+ECHECS	Trop sérieux pour un jeu, trop futile pour une science. <em>Gustave Flaubert</em>
+ECHO	Citer ceux du Panthéon et du pont de Neuilly. <em>Gustave Flaubert</em>
+ECLECTISME	Tonner contre comme étant une philosophie immorale. <em>Gustave Flaubert</em>
+ECOLES	À l’École de Médecine : tous exaltés. À l’École de Droit : jeunes gens de bonne famille. <em>Gustave Flaubert</em>
+ECOLES	À Saint-Cyr : jeunes gens nobles. <em>Gustave Flaubert</em>
+ECOLES	Dire simplement « l’École » fait accroire qu’on y a été. <em>Gustave Flaubert</em>
+ECOLES	Polytechnique, rêve de toutes les mères (vieux). <em>Gustave Flaubert</em>
+ECOLES	Terreur du bourgeois dans les émeutes quand il apprend que l’École polytechnique sympathise avec les ouvriers (vieux). <em>Gustave Flaubert</em>
+ECONOMIE	Citer l’anecdote de Laffitte ramassant une épingle dans la cour du banquier Perregaux. <em>Gustave Flaubert</em>
+ECONOMIE	Toujours précédé de « Ordre », mène à la fortune. <em>Gustave Flaubert</em>
+ECONOMIE POLITIQUE	Science sans entrailles. <em>Gustave Flaubert</em>
+ECRIT, BIEN ECRIT	Mots de portiers, pour désigner les romans-feuilletons qui les amusent. <em>Gustave Flaubert</em>
+ECRITURE	Indéchiffrable : signe de science ; exemple : les ordonnances des médecins. <em>Gustave Flaubert</em>
+ECRITURE	Une belle écriture mène à tout. <em>Gustave Flaubert</em>
+EGOÏSME	Se plaindre de celui des autres et ne pas s’apercevoir du sien. <em>Gustave Flaubert</em>
+ELEPHANTS	Se distinguent par leur mémoire, et adorent le soleil. <em>Gustave Flaubert</em>
+EMAIL	Le secret en est perdu. <em>Gustave Flaubert</em>
+EMBONPOINT	Signe de richesse et de fainéantise. <em>Gustave Flaubert</em>
+EMIGRES	Gagnaient leur vie à donner des leçons de guitare et à faire la salade. <em>Gustave Flaubert</em>
+EMIR	Ne se dit qu’en parlant d’Abd-el-Kader. <em>Gustave Flaubert</em>
+ENCEINTE	Fait bien dans un discours. <em>Gustave Flaubert</em>
+ENCEINTE	Le faire entrer dans un discours officiel : Messieurs, dans cette enceinte… <em>Gustave Flaubert</em>
+ENCRIER	Se donne en cadeau à un médecin. <em>Gustave Flaubert</em>
+ENCYCLOPEDIE	En rire de pitié comme étant un ouvrage rococo et même tonner contre… <em>Gustave Flaubert</em>
+ENFANTS	Affecter pour eux une tendresse lyrique quand il y a du monde. <em>Gustave Flaubert</em>
+ENGELURE	Signe de santé ; vient de s’être chauffé quand on avait froid. <em>Gustave Flaubert</em>
+ENTERREMENT	À propos du défunt : Et dire que je dînais avec lui il y a huit jours ! <em>Gustave Flaubert</em>
+ENTHOUSIASME	Ne peut être provoqué que par le retour des cendres de l’Empereur. <em>Gustave Flaubert</em>
+ENTR’ACTE	Toujours trop long. <em>Gustave Flaubert</em>
+ENVERGURE	Se disputer sur la prononciation du mot. <em>Gustave Flaubert</em>
+EPACTE, NOMBRE D’OR, LETTRE DOMINICALE	Sur les calendriers on ne sait pas ce que c’est. <em>Gustave Flaubert</em>
+EPARGNE	Occasion de vol pour les domestiques. <em>Gustave Flaubert</em>
+EPEE	Regretter le temps où on en portait. <em>Gustave Flaubert</em>
+EPERONS	Font bien à une paire de bottes. <em>Gustave Flaubert</em>
+EPICURE	Le mépriser. <em>Gustave Flaubert</em>
+EPOQUE	L’appeler époque de transition, de décadence. <em>Gustave Flaubert</em>
+EPOQUE	Se plaindre de ce qu’elle n’est pas poétique. <em>Gustave Flaubert</em>
+EPOQUE	Tonner contre elle. <em>Gustave Flaubert</em>
+EPUISEMENT	Toujours prématuré. <em>Gustave Flaubert</em>
+EQUITATION	Bon exercice pour faire maigrir. Exemple : tous les soldats de cavalerie sont maigres. <em>Gustave Flaubert</em>
+EQUITATION	Pour engraisser. Exemple : tous les officiers de cavalerie ont un gros ventre. <em>Gustave Flaubert</em>
+ERECTION	Ne se dit qu’en parlant des monuments. <em>Gustave Flaubert</em>
+ERUDITION	La mépriser comme étant la marque d’un esprit étroit. <em>Gustave Flaubert</em>
+ESCRIME	Les maîtres d’escrime savent des bottes secrètes. <em>Gustave Flaubert</em>
+ESCROC	Est toujours du grand monde. <em>Gustave Flaubert</em>
+ESPLANADE	Ne se voit qu’aux Invalides. <em>Gustave Flaubert</em>
+ESTOMAC	Toutes les maladies viennent de l’estomac. <em>Gustave Flaubert</em>
+ETAGERE	Indispensable chez une jolie femme. <em>Gustave Flaubert</em>
+ETALON	Pour les petites filles, cheval plus gros qu’un autre. <em>Gustave Flaubert</em>
+ETE	Toujours exceptionnel. <em>Gustave Flaubert</em>
+ETERNUEMENT	Après qu’on a dit : Dieu vous bénisse, engager une discussion sur l’origine de cet usage. <em>Gustave Flaubert</em>
+ETOILE	Chacun a la sienne. <em>Gustave Flaubert</em>
+ETRANGER	Dénigrement de tout ce qui n’est pas français, preuve de patriotisme. <em>Gustave Flaubert</em>
+ETRANGER	Engouement pour tout ce qui vient de l’étranger, preuve de l’esprit libéral. <em>Gustave Flaubert</em>
+ETRENNES	S’indigner contre. <em>Gustave Flaubert</em>
+ETRUSQUE	Tous les vases anciens sont étrusques. <em>Gustave Flaubert</em>
+ETYMOLOGIE	Rien de plus facile à trouver avec le latin et un peu de réflexion. <em>Gustave Flaubert</em>
+EUNUQUE	Fulminer contre les castrats de la chapelle Sixtine. <em>Gustave Flaubert</em>
+EXECUTIONS CAPITALES	Se plaindre des femmes qui vont les voir. <em>Gustave Flaubert</em>
+EXERCICE	Préserve de toutes les maladies : toujours conseiller d’en faire. <em>Gustave Flaubert</em>
+EXPOSITION	Sujet de délire du XIXe siècle. <em>Gustave Flaubert</em>
+EXTIRPER	Ce verbe ne s’emploie que pour les hérésies et les cors aux pieds. <em>Gustave Flaubert</em>
+FABRIQUE	Voisinage dangereux. <em>Gustave Flaubert</em>
+FACTURE	Toujours trop élevé. <em>Gustave Flaubert</em>
+FAISAN	Très chic dans un dîner. <em>Gustave Flaubert</em>
+FAISCEAUX	À former, est le comble de la difficulté dans garde nationale. <em>Gustave Flaubert</em>
+FARD	Abîme la peau. <em>Gustave Flaubert</em>
+FAUTE	« C’est pire qu’un crime, c’est une faute. » (Talleyrand.) « Il ne vous reste plus de faute à commettre » (Thiers.) <em>Gustave Flaubert</em>
+FAUTE	Ces deux phrases doivent être articulées avec profondeur. <em>Gustave Flaubert</em>
+FAUX MONNAYEURS	Travaillent toujours dans les souterrains. <em>Gustave Flaubert</em>
+FAUX RÂTELIERS	Prendre garde de l’avaler en dormant. <em>Gustave Flaubert</em>
+FAUX RÂTELIERS	Troisième dentition. <em>Gustave Flaubert</em>
+FEMMES DE CHAMBRE	Connaissent tous leurs secrets et les trahissent. <em>Gustave Flaubert</em>
+FEMMES DE CHAMBRE	Plus jolies que leurs maîtresses. <em>Gustave Flaubert</em>
+FEMMES DE CHAMBRE	Toujours déshonorées par le fils de la maison. <em>Gustave Flaubert</em>
+FEODALITE	N’en avoir aucune idée précise, mais tonner contre. <em>Gustave Flaubert</em>
+FERMIER	Tous à leur aise. <em>Gustave Flaubert</em>
+FEU	Purifie tout. <em>Gustave Flaubert</em>
+FEU	Quand on entend crier « au feu ! » on doit commencer par perdre la tête. <em>Gustave Flaubert</em>
+FEUILLETONS	Cause de démoralisation. <em>Gustave Flaubert</em>
+FEUILLETONS	Écrire à l’auteur pour lui donner (fournir) des idées. <em>Gustave Flaubert</em>
+FEUILLETONS	Se disputer sur le dénouement probable. <em>Gustave Flaubert</em>
+FIÈVRE	Est causée par les prunes. <em>Gustave Flaubert</em>
+FIÈVRE	Preuve de la force du sang. <em>Gustave Flaubert</em>
+FIGARO	Encore une des causes de la Révolution ! <em>Gustave Flaubert</em>
+FILLES	Articuler ce mot timidement. <em>Gustave Flaubert</em>
+FILLES	Les jeunes filles : Éviter pour elles tout espèce de livres. <em>Gustave Flaubert</em>
+FLAMANT	Oiseau ainsi nommé parce qu’il vient des Flandres. <em>Gustave Flaubert</em>
+FŒTUS	Toute pièce anatomique conservée dans l’esprit-de-vin. <em>Gustave Flaubert</em>
+FONCTIONNAIRE	Inspire le respect, quelque (sic) soit la fonction qu’il remplisse. <em>Gustave Flaubert</em>
+FONDEMENT	Toutes les nouvelles en manquent. <em>Gustave Flaubert</em>
+FONDS SECRETS	S’indigner contre. <em>Gustave Flaubert</em>
+FONDS SECRETS	Sommes incalculables avec lesquelles les ministres achètent les consciences. <em>Gustave Flaubert</em>
+FORCATS	Au bagne, il y a des hommes de génie. <em>Gustave Flaubert</em>
+FORCATS	Ont toujours une figure patibulaire. <em>Gustave Flaubert</em>
+FORCATS	Tous très adroits de leurs mains. <em>Gustave Flaubert</em>
+FORNARINA	C’était une belle femme ; inutile d’en savoir plus long. <em>Gustave Flaubert</em>
+FORTUNE	Quand on vous parle d’une grande fortune, ne pas manquer de dire. « Oui, mais est-elle bien sûre ? » <em>Gustave Flaubert</em>
+FOSSILES	Plaisanterie de bon goût, en parlant d’un académicien. <em>Gustave Flaubert</em>
+FOSSILES	Preuve du déluge. <em>Gustave Flaubert</em>
+FOUDRES DU VATICAN	En rire. <em>Gustave Flaubert</em>
+FOULARD	Il est « comme il faut » de se moucher dedans (dans un foulard). <em>Gustave Flaubert</em>
+FOULE	À toujours de bons instincts. <em>Gustave Flaubert</em>
+FOURMIS	Bel exemple à citer devant un dissipateur. <em>Gustave Flaubert</em>
+FOURMIS	Ont donné l’idée des caisses d’épargne. <em>Gustave Flaubert</em>
+FOURRURE	Signe de richesse. <em>Gustave Flaubert</em>
+FRANC-MACONNERIE	Cause de dispute dans les ménages. <em>Gustave Flaubert</em>
+FRANC-MACONNERIE	Encore une des causes de la Révolution ! <em>Gustave Flaubert</em>
+FRANC-MACONNERIE	Les épreuves d’initiation sont terribles : quelques-uns en sont morts ! <em>Gustave Flaubert</em>
+FRANC-MACONNERIE	Mal vue des ecclésiastiques. <em>Gustave Flaubert</em>
+FRANC-MACONNERIE	Quel peut bien être son secret ? <em>Gustave Flaubert</em>
+FRANCAIS	Le premier peuple de l’Univers. <em>Gustave Flaubert</em>
+FRANCS-TIREURS	Plus terribles que l’ennemi. <em>Gustave Flaubert</em>
+FRESQUE	On n’en fait plus. <em>Gustave Flaubert</em>
+FRICASSEE	Ne se fait bien qu’à la campagne. <em>Gustave Flaubert</em>
+FRISER, FRISURE	Ne convient pas à un homme. <em>Gustave Flaubert</em>
+FROID	Plus sain que la chaleur. <em>Gustave Flaubert</em>
+FROMAGE	Citer l’aphorisme de Brillat-Savarin : « un dîner sans fromage est une belle à qui il manque un œil. » <em>Gustave Flaubert</em>
+FRONT	Large et chauve, signe de génie. <em>Gustave Flaubert</em>
+FRONTISPICE	Les grands hommes font bien dessus. <em>Gustave Flaubert</em>
+FRUSTE	À bien se rappeler quand on achète des curiosités. <em>Gustave Flaubert</em>
+FRUSTE	Tout ce qui antique est fruste, et tout ce qui est fruste est antique. <em>Gustave Flaubert</em>
+FUGUE	On ignore en quoi cela consiste, mais il faut affirmer que c’est difficile et très ennuyeux. <em>Gustave Flaubert</em>
+FULMINER	Joli verbe. <em>Gustave Flaubert</em>
+FUSIL	Toujours en avoir un à la campagne. <em>Gustave Flaubert</em>
+FUSILLER	Joie de l’individu à qui on accorde cette faveur. <em>Gustave Flaubert</em>
+FUSILLER	Plus noble que guillotiner. <em>Gustave Flaubert</em>
+FUSION DES BRANCHES ROYALES	L’espérer toujours ! <em>Gustave Flaubert</em>
+GAGNE-PETIT	Belle enseigne pour une boutique, comme inspirant la confiance. <em>Gustave Flaubert</em>
+GALBE	Dire devant toute statue qu’on examine : « Ça ne manque pas de galbe. » <em>Gustave Flaubert</em>
+GALETS	Il [faut] en rapporter de la mer. <em>Gustave Flaubert</em>
+GAMIN	A invariablement beaucoup d’esprit. <em>Gustave Flaubert</em>
+GAMIN	Toujours suivi « de Paris ». <em>Gustave Flaubert</em>
+GARES DE CHEMIN DE FER	S’extasier devant elles et les donner comme modèles d’architecture. <em>Gustave Flaubert</em>
+GARNISON DE JEUNE HOMME	Id est culex pubensis. <em>Gustave Flaubert</em>
+GAUCHERS	Plus adroits que ceux qui se servent de la main droite. <em>Gustave Flaubert</em>
+GAUCHERS	Terribles à l’escrime. <em>Gustave Flaubert</em>
+GENDARMES	Rempart de la société. <em>Gustave Flaubert</em>
+GENERATION SPONTANEE	Idée de socialiste. <em>Gustave Flaubert</em>
+GENIE	Inutile de l’admirer, c’est une névrose. <em>Gustave Flaubert</em>
+GENOVEFAIN	On ne sait pas ce que c’est. <em>Gustave Flaubert</em>
+GENRE EPISTOLAIRE	Genre de style exclusivement réservé aux femmes. <em>Gustave Flaubert</em>
+GENTILHOMME	Il n’y [en] a plus. <em>Gustave Flaubert</em>
+GIAOUR	Expression farouche, d’une signification inconnue, mais on sait que ça a rapport à l’Orient. <em>Gustave Flaubert</em>
+GIBELOTTE	Toujours faite avec du chat. <em>Gustave Flaubert</em>
+GIBERNE	Étui pour bâton de maréchal de France. <em>Gustave Flaubert</em>
+GIBIER	N’est bon que faisandé. <em>Gustave Flaubert</em>
+GIRONDINS	Plus à plaindre qu’à blâmer. <em>Gustave Flaubert</em>
+GLACES	Il est dangereux d’en prendre. <em>Gustave Flaubert</em>
+GLÈBE	S’apitoyer sur la… <em>Gustave Flaubert</em>
+GLOIRE	N’est qu’un peu de fumée. <em>Gustave Flaubert</em>
+GOBELINS	Est une œuvre inouïe et qui demande cinquante ans à finir. <em>Gustave Flaubert</em>
+GOBELINS	L’ouvrier ne sait pas ce qu’il fait. <em>Gustave Flaubert</em>
+GOBELINS	S’écrier devant : c’est plus beau que la peinture ! <em>Gustave Flaubert</em>
+GOD SAVE THE KING	Chez Béranger se prononce : God savé te King, et rime avec Sauvé (Préservé). <em>Gustave Flaubert</em>
+GOMME ELASTIQUE	Est faite avec le scrotum de cheval. <em>Gustave Flaubert</em>
+GOTHIQUE	Style d’architecture portant plus à la religion que les autres. <em>Gustave Flaubert</em>
+GRAMMAIRE	L’apprendre aux enfants dès le plus bas âge, comme étant une chose claire et facile. <em>Gustave Flaubert</em>
+GRAS	Font le désespoir des bourreaux parce qu’elles offrent des difficultés d’exécution. Exemple : la Dubarry. <em>Gustave Flaubert</em>
+GRAS	Les personnes grasses n’ont pas besoin d’apprendre à nager. <em>Gustave Flaubert</em>
+GRÊLE	Les femmes grêlées sont toutes lascives. <em>Gustave Flaubert</em>
+GRENIER	On y est bien à vingt ans. <em>Gustave Flaubert</em>
+GRENOUILLE	La femelle du crapaud. <em>Gustave Flaubert</em>
+GROG	Pas comme il faut. <em>Gustave Flaubert</em>
+GROTTES À STALACTITES	Il y a eu dedans une fête célèbre, bal ou souper, donné par un grand personnage. <em>Gustave Flaubert</em>
+GROTTES À STALACTITES	On y a dit la messe pendant la Révolution. <em>Gustave Flaubert</em>
+GROTTES À STALACTITES	On y voit « comme des tuyaux d’orgue ». <em>Gustave Flaubert</em>
+GROUPE	Convient sur une cheminée et en politique. <em>Gustave Flaubert</em>
+GUERILLA	Fait plus de mal à l’ennemi que l’armée régulière. <em>Gustave Flaubert</em>
+GULF-STREAM	Ville célèbre de Norvège, nouvellement découverte. <em>Gustave Flaubert</em>
+GYMNASE	Succursale de la Comédie-Française. <em>Gustave Flaubert</em>
+GYMNASTIQUE	Exténue les enfants. <em>Gustave Flaubert</em>
+GYMNASTIQUE	On ne saurait trop en faire. <em>Gustave Flaubert</em>
+HABIT NOIR	En province, est le dernier terme de la cérémonie et du dérangement. <em>Gustave Flaubert</em>
+HALEINE	L’avoir « forte » donne « l’air distingué ». <em>Gustave Flaubert</em>
+HAMAC	Indispensable dans un jardin. <em>Gustave Flaubert</em>
+HAMAC	Propre aux créoles. <em>Gustave Flaubert</em>
+HAMAC	Se persuader qu’on y est mieux que dans un lit. <em>Gustave Flaubert</em>
+HAMEAU	Fait bien en poésie. <em>Gustave Flaubert</em>
+HAMEAU	Substantif attendrissant. <em>Gustave Flaubert</em>
+HANNETONS	Beau sujet d’opuscule. Leur destruction radicale est le rêve de tout préfet. <em>Gustave Flaubert</em>
+HAQUENEE	Animal blanc du Moyen Âge dont la race est disparue. <em>Gustave Flaubert</em>
+HARAS	Beau sujet de discussion parlementaire. <em>Gustave Flaubert</em>
+HARENGS	Fortune de la Hollande. <em>Gustave Flaubert</em>
+HARPE	Fait valoir le bras et la main. <em>Gustave Flaubert</em>
+HARPE	Ne se joue, en gravure, que sur des ruines ou au bord d’un torrent. <em>Gustave Flaubert</em>
+HARPE	Produit des harmonies célestes. <em>Gustave Flaubert</em>
+HEBREU	Est hébreu tout ce qu’on ne comprend pas. <em>Gustave Flaubert</em>
+HEIDUQUE	Le confondre avec Eunuque. <em>Gustave Flaubert</em>
+HELICE	Avenir de la mécanique. <em>Gustave Flaubert</em>
+HEMICYCLE	Ne connaître que celui des Beaux-Arts. <em>Gustave Flaubert</em>
+HEMORROÏDES	Vient de s’asseoir sur les poêles et sur les bancs de pierre. <em>Gustave Flaubert</em>
+HENRI III ET HENRI IV	À propos de ces rois, ne pas manquer de dire : « Tous les Henri ont été malheureux. » <em>Gustave Flaubert</em>
+HERMAPHRODITE	Chercher à en voir. <em>Gustave Flaubert</em>
+HERMAPHRODITE	Excite la curiosité malsaine. <em>Gustave Flaubert</em>
+HERNIE	Tout le monde en a sans le savoir. <em>Gustave Flaubert</em>
+HIATUS	Ne pas le tolérer. <em>Gustave Flaubert</em>
+HIEROGLYPHES	Ancienne langue des Égyptiens, inventée par les prêtres pour cacher leurs secrets criminels. <em>Gustave Flaubert</em>
+HIEROGLYPHES	Après tout, c’est peut-être une blague ? <em>Gustave Flaubert</em>
+HIEROGLYPHES	Et dire qu’il y a des gens qui les comprennent ! <em>Gustave Flaubert</em>
+HIPPOCRATE	On doit toujours le citer en latin, parce qu’il écrivait en grec. <em>Gustave Flaubert</em>
+HIVER	Est plus sain que les autres saisons. <em>Gustave Flaubert</em>
+HIVER	Toujours exceptionnel (voy. Été). <em>Gustave Flaubert</em>
+HOBEREAUX DE CAMPAGNE	Avoir pour eux le plus souverain mépris. <em>Gustave Flaubert</em>
+HOMÈRE	Célèbre par sa façon de rire : un rire homérique. <em>Gustave Flaubert</em>
+HOMÈRE	N’a jamais existé. <em>Gustave Flaubert</em>
+HORIZONS	Trouver beaux ceux de la nature, et sombres ceux de la politique. <em>Gustave Flaubert</em>
+HOSPODAR	Fait bien dans une phrase, à propos de « la question d’Orient ». <em>Gustave Flaubert</em>
+HÔTELS	Ne sont bons qu’en Suisse. <em>Gustave Flaubert</em>
+HUGO	A eu bien tort vraiment de s’occuper de politique. <em>Gustave Flaubert</em>
+HUILE D’OLIVE	Il faut avoir un ami de Marseille qui vous en fait venir un petit tonneau. <em>Gustave Flaubert</em>
+HUILE D’OLIVE	N’est jamais bonne. <em>Gustave Flaubert</em>
+HUÎTRES	On n’en mange plus ! elles sont trop chères ! <em>Gustave Flaubert</em>
+HUMEUR	Se réjouir quand elle sort, et s’étonner que le corps humain puisse en contenir de si grandes quantités. <em>Gustave Flaubert</em>
+HUMIDITE	Cause de toutes les maladies. <em>Gustave Flaubert</em>
+HYDRE	Tâcher de la vaincre. <em>Gustave Flaubert</em>
+HYDROTHERAPIE	Enlève toutes les maladies et les procure. <em>Gustave Flaubert</em>
+HYPOTHÈQUE	Demander « la réforme du régime hypothécaire », très chic. <em>Gustave Flaubert</em>
+HYSTERIE	La confondre avec la nymphomanie. <em>Gustave Flaubert</em>
+IDEAL	Tout à fait inutile. <em>Gustave Flaubert</em>
+IDEOLOGUE	Tous les journalistes le sont. <em>Gustave Flaubert</em>
+IDOLÂTRES	Sont cannibales. <em>Gustave Flaubert</em>
+ILLISIBLE	Une ordonnance de médecin doit l’être ; toute signature, id. <em>Gustave Flaubert</em>
+ILLUSIONS	Affecter d’en avoir beaucoup, se plaindre de ce qu’on les a perdues. <em>Gustave Flaubert</em>
+ILOTES	Exemple à donner à son fils, mais on ne sait où les trouver. <em>Gustave Flaubert</em>
+IMAGES	Il y en a toujours trop dans la poésie. <em>Gustave Flaubert</em>
+IMAGINATION	Et la dénigrer chez les autres. <em>Gustave Flaubert</em>
+IMAGINATION	S’en défier. <em>Gustave Flaubert</em>
+IMAGINATION	Toujours vive. <em>Gustave Flaubert</em>
+IMBECILLES	Ceux qui ne pensent pas comme vous. <em>Gustave Flaubert</em>
+IMBROGLIO	Le fond de toutes les pièces de théâtre. <em>Gustave Flaubert</em>
+IMMORALITE	Ce mot bien prononcé rehausse celui qui l’emploie. <em>Gustave Flaubert</em>
+IMPERATRICES	Toutes belles. <em>Gustave Flaubert</em>
+IMPERIALISTES	Tous gens honnêtes, paisibles, polis, distingués. <em>Gustave Flaubert</em>
+IMPERMEABLE	Meurtrier (dangereux) (nuisible), à cause de la transpiration empêchée. <em>Gustave Flaubert</em>
+IMPERMEABLE	Très avantageux comme vêtement. <em>Gustave Flaubert</em>
+IMPIE	Tonner contre. <em>Gustave Flaubert</em>
+IMPORTATION	Ver rongeur du commerce. <em>Gustave Flaubert</em>
+IMPRIMERIE	A fait plus de mal que de bien. <em>Gustave Flaubert</em>
+IMPRIMERIE	Découverte merveilleuse. <em>Gustave Flaubert</em>
+INAUGURATION	Sujet de joie. <em>Gustave Flaubert</em>
+INCENDIE	Un spectacle à voir. <em>Gustave Flaubert</em>
+INCOGNITO	Costumes des princes en voyage. <em>Gustave Flaubert</em>
+INDOLENCE	Résultat des pays chauds. <em>Gustave Flaubert</em>
+INDUSTRIE	(Voy. Commerce.) <em>Gustave Flaubert</em>
+INFANTICIDE	Ne se commet que dans le peuple. <em>Gustave Flaubert</em>
+INFINITESIMAL	On ne sait pas ce que c’est, mais a rapport à l’homéopathie. <em>Gustave Flaubert</em>
+INGENIEUR	Connaît toutes les sciences. <em>Gustave Flaubert</em>
+INGENIEUR	La première carrière pour un jeune homme. <em>Gustave Flaubert</em>
+INHUMATION	Trop souvent précipitée : raconter des histoires de cadavres qui s’étaient dévoré le bras pour apaiser leur faim. <em>Gustave Flaubert</em>
+INNEES	Les blaguer. <em>Gustave Flaubert</em>
+INNOCENCE	L’impossibilité la prouve. <em>Gustave Flaubert</em>
+INNOVATION	Toujours dangereuse. <em>Gustave Flaubert</em>
+INONDES	Toujours de la Loire. <em>Gustave Flaubert</em>
+INQUISITION	On a bien exagéré ses crimes. <em>Gustave Flaubert</em>
+INSCRIPTION	Toujours cunéiforme. <em>Gustave Flaubert</em>
+INSPIRATION	Choses qui la provoquent : la vue de la mer, l’amour, la femme, etc. <em>Gustave Flaubert</em>
+INSTITUT	Les membres de l’Institut sont tous des vieillards, et portent des abat-jour en taffetas vert. <em>Gustave Flaubert</em>
+INSTITUTRICES	Dangereuses dans les maisons : corrompent le mari. <em>Gustave Flaubert</em>
+INSTITUTRICES	Sont toujours d’une excellente famille qui a éprouvé des malheurs. <em>Gustave Flaubert</em>
+INSTRUCTION	Laisser croire qu’on en a reçu beaucoup. <em>Gustave Flaubert</em>
+INSTRUCTION	Le peuple n’en a pas besoin pour gagner sa vie. <em>Gustave Flaubert</em>
+INTEGRITE	Appartient surtout à la magistrature. <em>Gustave Flaubert</em>
+INTRIGUE	Mène à tout. <em>Gustave Flaubert</em>
+INTRODUCTION	Mot obscène. <em>Gustave Flaubert</em>
+INVENTEURS	Meurent tous à l’hôpital. <em>Gustave Flaubert</em>
+INVENTEURS	Un autre profite de leur découverte, ce n’est pas juste. <em>Gustave Flaubert</em>
+ITALIE	Doit se voir immédiatement après le mariage. <em>Gustave Flaubert</em>
+ITALIE	Donne bien des déceptions, n’est pas si belle qu’on dit. <em>Gustave Flaubert</em>
+ITALIENS	Tous musiciens, traîtres. <em>Gustave Flaubert</em>
+IVOIRE	Ne s’emploie qu’en parlant des dents. <em>Gustave Flaubert</em>
+JALOUSIE	Passion terrible. <em>Gustave Flaubert</em>
+JAMBAGE	Ne pas y croire. <em>Gustave Flaubert</em>
+JAMBON	S’en méfier, à cause des trichines. <em>Gustave Flaubert</em>
+JAMBON	Toujours de Mayence. <em>Gustave Flaubert</em>
+JANSENISME	On ne sait pas ce que c’est, mais il est très chic d’en parler. <em>Gustave Flaubert</em>
+JARDIN ANGLAIS	Plus naturels que les jardins à la française. <em>Gustave Flaubert</em>
+JARNAC	S’indigner contre ce coup, qui, du reste, était fort loyal. <em>Gustave Flaubert</em>
+JAVELOT	Vaut bien un fusil, quand on sait s’en servir. <em>Gustave Flaubert</em>
+JESUITES	Ne point parler de « la bataille des Jésuites ». <em>Gustave Flaubert</em>
+JESUITES	On ne se doute pas du nombre qu’il y en a. <em>Gustave Flaubert</em>
+JESUITES	Ont la main dans toutes les révolutions. <em>Gustave Flaubert</em>
+JEU	S’indigner contre cette fatale passion. <em>Gustave Flaubert</em>
+JEUNE HOMME	Il doit l’être. <em>Gustave Flaubert</em>
+JEUNE HOMME	S’étonner quand il ne l’est pas. <em>Gustave Flaubert</em>
+JEUNE HOMME	Toujours farceur. <em>Gustave Flaubert</em>
+JOCKEY	Déplorer la race des. <em>Gustave Flaubert</em>
+JOCKEY-CLUB	Ses membres sont tous des jeunes gens farceurs et très riches. Dire simplement « le Jockey », très chic, donne à croire qu’on en fait partie. <em>Gustave Flaubert</em>
+JOUETS	Devraient toujours être scientifiques. <em>Gustave Flaubert</em>
+JOUISSANCE	Mot obscène. <em>Gustave Flaubert</em>
+JOURNAUX	Mais tonner contre. <em>Gustave Flaubert</em>
+JOURNAUX	Ne pouvoir s’en passer. <em>Gustave Flaubert</em>
+JUJUBE	On ne sait pas avec quoi c’est fait. <em>Gustave Flaubert</em>
+JUSTICE	Ne jamais s’en inquiéter. <em>Gustave Flaubert</em>
+KEEPSAKE	Doit se trouver sur la table d’un salon. <em>Gustave Flaubert</em>
+KIOSQUE	Lieu de délices dans un jardin. <em>Gustave Flaubert</em>
+KNOUT	Mot qui vexe les Russes. <em>Gustave Flaubert</em>
+KORAN	Livre de Mahomet, où il n’est question que de femmes. <em>Gustave Flaubert</em>
+LABORATOIRE	On doit en avoir un à la campagne. <em>Gustave Flaubert</em>
+LABOUREURS	Que serions-nous sans eux ? <em>Gustave Flaubert</em>
+LAC	Avoir une femme près de soi, quand on se promène dessus. <em>Gustave Flaubert</em>
+LACONISME	Langue qu’on ne parle plus. <em>Gustave Flaubert</em>
+LACUSTRE	Nier leur existence, parce qu’on ne peut pas vivre sous l’eau. <em>Gustave Flaubert</em>
+LAGUNE	Ville de l’Adriatique. <em>Gustave Flaubert</em>
+LAIT	Attire les serpents. <em>Gustave Flaubert</em>
+LAIT	Blanchit la peau ; des femmes, à Paris, prennent un bain de lait tous les matins. <em>Gustave Flaubert</em>
+LAIT	Dissout les huîtres. <em>Gustave Flaubert</em>
+LANCELLE	En avoir toujours une dans sa poche, mais craindre de s’en servir. <em>Gustave Flaubert</em>
+LANGOUSTE	Femelle du homard. <em>Gustave Flaubert</em>
+LANGUES VIVANTES	Les malheurs de la France viennent de ce qu’on n’en sait pas assez. <em>Gustave Flaubert</em>
+LATIN	Est seulement utile pour lire les inscriptions des fontaines publiques. <em>Gustave Flaubert</em>
+LATIN	Gâte l’écriture. <em>Gustave Flaubert</em>
+LATIN	Langue naturelle à l’homme. <em>Gustave Flaubert</em>
+LATIN	Se méfier des citations en latin : elles cachent toujours quelque chose de leste. <em>Gustave Flaubert</em>
+LETHARGIES	On en a vu qui duraient des années. <em>Gustave Flaubert</em>
+LIBELLE	On n’en fait plus. <em>Gustave Flaubert</em>
+LIBERTE	Nous avons toutes celles qui sont nécessaires. <em>Gustave Flaubert</em>
+LIBERTE	Ô liberté ! que de crimes on commet en ton nom ! <em>Gustave Flaubert</em>
+LIBERTINAGE	Ne se voit que dans les grandes villes. <em>Gustave Flaubert</em>
+LIBRE ECHANGE	Cause de tous les maux, des souffrances du commerce. <em>Gustave Flaubert</em>
+LIÈVRE	Dort les yeux ouverts. <em>Gustave Flaubert</em>
+LIGUEURS	Précurseurs du libéralisme en France. <em>Gustave Flaubert</em>
+LILAS	Fait plaisir parce qu’il annonce l’été. <em>Gustave Flaubert</em>
+LINGE	On n’en montre jamais trop (assez). <em>Gustave Flaubert</em>
+LION	Est généreux. <em>Gustave Flaubert</em>
+LION	Joue toujours avec une boule. <em>Gustave Flaubert</em>
+LITTERATURE	Occupation des oisifs. <em>Gustave Flaubert</em>
+LITTRE	Ricaner quand on entend son nom : « Ce monsieur qui dit que nous descendons des singes ! ». <em>Gustave Flaubert</em>
+LIVRE	Quel qu’il soit, toujours trop long. <em>Gustave Flaubert</em>
+LORD	Anglais riche. <em>Gustave Flaubert</em>
+LORGNON	Insolent et distingué. <em>Gustave Flaubert</em>
+LUNE	Est peut-être habitée ? <em>Gustave Flaubert</em>
+LUNE	Inspire la mélancolie. <em>Gustave Flaubert</em>
+LUXE	Perd les États. <em>Gustave Flaubert</em>
+LYNX	Animal célèbre par son œil. <em>Gustave Flaubert</em>
+MACADAM	A supprimé les révolutions : plus moyen de faire des barricades. <em>Gustave Flaubert</em>
+MACADAM	Est néanmoins bien incommode. <em>Gustave Flaubert</em>
+MACHIAVEL	Ne pas l’avoir lu, mais le regarder comme un scélérat. <em>Gustave Flaubert</em>
+MACHIAVELISME	Mot qu’on ne doit prononcer qu’en frémissant. <em>Gustave Flaubert</em>
+MAGIE	S’en moquer. <em>Gustave Flaubert</em>
+MAGISTRATURE	Belle carrière pour un jeune homme (voy. Ingénieur). <em>Gustave Flaubert</em>
+MAGNETISME	Joli sujet de conversation, et qui sert à « faire des femmes ». <em>Gustave Flaubert</em>
+MAIRE DE VILLAGE	Toujours ridicule. <em>Gustave Flaubert</em>
+MAJOR	Ne se trouve plus que dans les tables d’hôte. <em>Gustave Flaubert</em>
+MAL DE MER	Pour ne pas l’éprouver, il suffit de penser à autre chose. <em>Gustave Flaubert</em>
+MALADE	Pour remonter le moral d’un malade, rire de son affection et nier ses souffrances. <em>Gustave Flaubert</em>
+MALADIE DE NERFS	Toujours des grimaces. <em>Gustave Flaubert</em>
+MALEDICTION	Toujours donné par un père. <em>Gustave Flaubert</em>
+MALTHUS	« L’infâme Malthus ». <em>Gustave Flaubert</em>
+MAMELUCKS	Ancien peuple de l’Orient (Égypte). <em>Gustave Flaubert</em>
+MANDOLINE	Indispensable pour séduire les Espagnoles. <em>Gustave Flaubert</em>
+MARSEILLAIS	Tous gens d’esprit. <em>Gustave Flaubert</em>
+MARTYRS	Tous les premiers chrétiens l’ont été. <em>Gustave Flaubert</em>
+MASQUE	Donne de l’esprit. <em>Gustave Flaubert</em>
+MATELAS	Plus il est dur, plus il est hygiénique. <em>Gustave Flaubert</em>
+MATHEMATIQUES	Dessèchent le cœur. <em>Gustave Flaubert</em>
+MATINAL	L’être, preuve de moralité. <em>Gustave Flaubert</em>
+MATINAL	Si l’on se couche à 4 heures du matin et qu’on se lève à 8, on est paresseux, mais si l’on se met au lit à 9 heures du soir, pour en sortir le lendemain à 5, on est actif. <em>Gustave Flaubert</em>
+MAZARINADES	Les mépriser. Inutile d’en connaître une seule. <em>Gustave Flaubert</em>
+MECANIQUE	Partie inférieure des mathématiques. <em>Gustave Flaubert</em>
+MEDAILLE	On n’en faisait que dans l’antiquité. <em>Gustave Flaubert</em>
+MEDECINE	S’en moquer quand on se porte bien. <em>Gustave Flaubert</em>
+MELANCOLIE	Signe de distinction du cœur et d’élévation de l’esprit. <em>Gustave Flaubert</em>
+MELODRAMES	Moins immoraux que les drames. <em>Gustave Flaubert</em>
+MELON	Joli sujet de conversation à table. Est-ce un légume ? est-ce un fruit ? <em>Gustave Flaubert</em>
+MELON	Les Anglais les mangent au dessert, ce qui étonne. <em>Gustave Flaubert</em>
+MEMOIRE	Mais rugir si on vous dit que vous n’avez pas de jugement. <em>Gustave Flaubert</em>
+MEMOIRE	Se plaindre de la science, et même se vanter de n’en pas avoir. <em>Gustave Flaubert</em>
+MENAGE	En parler toujours avec respect. <em>Gustave Flaubert</em>
+MENDICITE	Devrait être interdite et ne l’est jamais. <em>Gustave Flaubert</em>
+MER	Donne de grandes pensées. <em>Gustave Flaubert</em>
+MER	Image de l’infini. <em>Gustave Flaubert</em>
+MER	N’a pas de fond. <em>Gustave Flaubert</em>
+MERCURE	Tue la maladie et le malade. <em>Gustave Flaubert</em>
+MERIDIONAUX	Tous poètes. <em>Gustave Flaubert</em>
+MESSAGE	Plus noble que lettre. <em>Gustave Flaubert</em>
+METALLURGIE	Très chic. <em>Gustave Flaubert</em>
+METAMORPHOSE	Ovide en est l’inventeur. <em>Gustave Flaubert</em>
+METAMORPHOSE	Rire du temps où on y croyait. <em>Gustave Flaubert</em>
+METAPHORES	Il y en a toujours trop dans le style. <em>Gustave Flaubert</em>
+METAPHYSIQUE	En rire : donne l’air (c’est une preuve) d’esprit supérieur. <em>Gustave Flaubert</em>
+METHODE	Ne sert à rien. <em>Gustave Flaubert</em>
+MIDI	Toujours à l’ail. Tonner contre. <em>Gustave Flaubert</em>
+MINISTRE	Dernier terme de la gloire humaine. <em>Gustave Flaubert</em>
+MINUIT	Limite du bonheur et des plaisirs honnêtes ; tout ce qu’on fait au-delà est immoral. <em>Gustave Flaubert</em>
+MISSIONNAIRES	Sont tous mangés ou crucifiés. <em>Gustave Flaubert</em>
+MOBILIER	Tout craindre pour son —. <em>Gustave Flaubert</em>
+MONSTRES	On n’en voit plus. <em>Gustave Flaubert</em>
+MONTRE	Dans les féeries, quand un personnage tire la sienne, ce doit être un oignon : cette plaisanterie est infaillible. <em>Gustave Flaubert</em>
+MONTRE	N’est bonne que si elle vient de Genève. <em>Gustave Flaubert</em>
+MOSAÏQUES	Le secret en est perdu. <em>Gustave Flaubert</em>
+MOUCHARDS	Tous de la police. <em>Gustave Flaubert</em>
+MOULIN	Fait bien dans un paysage. <em>Gustave Flaubert</em>
+MOUSTIQUE	Plus dangereux que n’importe quelle bête féroce. <em>Gustave Flaubert</em>
+MOUTARDE	Ruine l’estomac. <em>Gustave Flaubert</em>
+MUSEE	Belle idée du roi Louis-Philippe. <em>Gustave Flaubert</em>
+MUSEE	De Versailles : retrace les hauts faits de la gloire nationale. <em>Gustave Flaubert</em>
+MUSEE	Du Louvre : à éviter pour les jeunes filles. <em>Gustave Flaubert</em>
+MUSEE	Dupuytren : très utile à montrer aux jeunes gens. <em>Gustave Flaubert</em>
+MUSICIEN	Le propre du véritable musicien, c’est de ne composer aucune musique, de ne jouer d’aucun instrument, et de mépriser les virtuoses. <em>Gustave Flaubert</em>
+MUSIQUE	Adoucit les mœurs. Ex. : la Marseillaise. <em>Gustave Flaubert</em>
+MUSIQUE	Fait penser à un tas de choses. <em>Gustave Flaubert</em>
+NATION	Réunir ici tous les peuples (?). <em>Gustave Flaubert</em>
+NAVIRE	On ne les construit bien qu’à Bayonne. <em>Gustave Flaubert</em>
+NECTAR	Le confondre avec l’ambroisie. <em>Gustave Flaubert</em>
+NÈGRES	S’étonner que leur salive soit blanche, et de ce qu’ils parlent français. <em>Gustave Flaubert</em>
+NEGRESSES	Plus chaudes que les blanches (voy. Brunes et Blondes). <em>Gustave Flaubert</em>
+NEOLOGISME	La peste de la langue française. <em>Gustave Flaubert</em>
+NERVEUX	Se dit à chaque fois qu’on ne comprend rien à une maladie ; cette explication satisfait l’auditeur. <em>Gustave Flaubert</em>
+NOBLESSE	La mépriser et l’envier. <em>Gustave Flaubert</em>
+NŒUD GORDIEN	A rapport à l’antiquité. <em>Gustave Flaubert</em>
+NORMANDS	Croire qu’ils prononcent des hâvresâcs, et les blaguer sur le bonnet de coton. <em>Gustave Flaubert</em>
+NOTAIRES	Maintenant ne pas s’y fier. <em>Gustave Flaubert</em>
+NUMISMATIQUE	A rapport aux hautes sciences, inspire un immense respect. <em>Gustave Flaubert</em>
+OASIS	Auberge dans le désert. <em>Gustave Flaubert</em>
+OBUS	Servent à faire des pendules et des encriers. <em>Gustave Flaubert</em>
+OCTROI	On doit le frauder. <em>Gustave Flaubert</em>
+ODALISQUE	(voy. Bayadère.) <em>Gustave Flaubert</em>
+ODEON	Plaisanteries sur son éloignement. <em>Gustave Flaubert</em>
+ODEUR	Signe de santé. <em>Gustave Flaubert</em>
+ŒUF	Point de départ pour une dissertation philosophique sur la genèse des êtres. <em>Gustave Flaubert</em>
+OFFENBACH	Dès qu’on entend son nom, il faut fermer deux doigts de la main droite pour se préserver du mauvais œil. Très parisien, bien porté. <em>Gustave Flaubert</em>
+OISEAU	Désirer en être un, et dire en soupirant : « Des ailes ! Des ailes ! », marque une âme poétique. <em>Gustave Flaubert</em>
+OMEGA	Deuxième lettre de l’alphabet grec, puisqu’on dit toujours l’alpha et l’oméga. <em>Gustave Flaubert</em>
+OMNIBUS	« Moi, Monsieur, j’ai connu les tricycles qui n’avaient que trois roues ! » <em>Gustave Flaubert</em>
+OMNIBUS	On n’y trouve jamais de place. <em>Gustave Flaubert</em>
+OMNIBUS	Ont été inventés par Louis XIV. <em>Gustave Flaubert</em>
+OPERA	Est le paradis de Mahomet sur la terre. <em>Gustave Flaubert</em>
+OPTIMISTE	Équivalent d’imbécille (sic). <em>Gustave Flaubert</em>
+ORAISON	Tout discours de Bossuet. <em>Gustave Flaubert</em>
+ORCHESTRE	Image de la société ; chacun fait sa partie, et il y a un chef. <em>Gustave Flaubert</em>
+ORCHITE	Maladie de Monsieur. <em>Gustave Flaubert</em>
+ORDRE	Que de crime on commet en ton nom ! <em>Gustave Flaubert</em>
+OREILLER	Ne jamais s’en servir, ça rend bossu. <em>Gustave Flaubert</em>
+ORGUE	Élève l’âme vers Dieu. <em>Gustave Flaubert</em>
+ORIENTALISTE	Homme qui a beaucoup voyagé. <em>Gustave Flaubert</em>
+ORIGINAL	Rire de tout ce qui est original, le haïr, le bafouer, et l’exterminer si l’on peut. <em>Gustave Flaubert</em>
+ORTHOGRAPHE	Y croire comme aux mathématiques (à la géométrie). <em>Gustave Flaubert</em>
+OURS	Citer l’anecdote de l’invalide qui, voyant une montre tombée dans sa fosse, y est descendu, et a été dévoré. <em>Gustave Flaubert</em>
+OURS	S’appelle généralement Martin. <em>Gustave Flaubert</em>
+OUVRIER	Toujours honnête, quand il ne fait pas d’émeutes. <em>Gustave Flaubert</em>
+PAGANINI	Célèbre par la longueur de ses doigts. <em>Gustave Flaubert</em>
+PAGANINI	N’accordait jamais son violon. <em>Gustave Flaubert</em>
+PAIN	On ne sait pas toutes les saletés qu’il y a dans le pain. <em>Gustave Flaubert</em>
+PALLADIUM	Forteresse de l’Antiquité <em>Gustave Flaubert</em>
+PALMIER	Donne de la couleur locale. <em>Gustave Flaubert</em>
+PALMYRE	Une reine d’Égypte ? des ruines ? on ne sait pas. <em>Gustave Flaubert</em>
+PARADOXE	Se dit toujours sur le boulevard des Italiens, entre deux bouffées de cigarette. <em>Gustave Flaubert</em>
+PARAPHE	Plus il est compliqué, plus il est beau. <em>Gustave Flaubert</em>
+PARENTS	Cacher ceux qui ne sont pas riches. <em>Gustave Flaubert</em>
+PARENTS	Toujours désagréables. <em>Gustave Flaubert</em>
+PAUVRES	S’en occuper tient lieu de toutes les vertus. <em>Gustave Flaubert</em>
+PAYSAGES	Toujours des plats d’épinards. <em>Gustave Flaubert</em>
+PEDANTISME	Doit être bafoué, si ce n’est quand il s’applique à des choses légères. <em>Gustave Flaubert</em>
+PEDERASTIE	Maladie dont tous les hommes sont affectés à un certain âge. <em>Gustave Flaubert</em>
+PEIGNE	Si on coupe les cheveux, ils saignent (?). <em>Gustave Flaubert</em>
+PEINTURE SUR VERRE	Le secret en est perdu. <em>Gustave Flaubert</em>
+PENSER	Pénible ; les choses qui nous y forcent sont généralement délaissées. <em>Gustave Flaubert</em>
+PEROU	Pays où tout est en or. <em>Gustave Flaubert</em>
+PEUR	Donne des ailes. <em>Gustave Flaubert</em>
+PHAETON	Inventeur des voitures de ce nom. <em>Gustave Flaubert</em>
+PHENIX	Beau nom pour une compagnie d’assurances contre l’incendie. <em>Gustave Flaubert</em>
+PHILIPPE D’ORLEANS-EGALITE	A commis tous les crimes de cette époque néfaste. <em>Gustave Flaubert</em>
+PHILIPPE D’ORLEANS-EGALITE	Encore une des causes de la Révolution. <em>Gustave Flaubert</em>
+PHILIPPE D’ORLEANS-EGALITE	Tonner contre. <em>Gustave Flaubert</em>
+PHILOSOPHIE	On doit toujours en ricaner. <em>Gustave Flaubert</em>
+PIANO	Indispensable dans un salon. <em>Gustave Flaubert</em>
+PIPE	Pas comme il faut, sauf aux bains de mer. <em>Gustave Flaubert</em>
+PITIE	Toujours s’en garder. <em>Gustave Flaubert</em>
+PLACE	Toujours en demander une. <em>Gustave Flaubert</em>
+POESIE	Est tout à fait inutile : passée de mode. <em>Gustave Flaubert</em>
+POÈTE	Synonyme noble de nigaud (rêveur). <em>Gustave Flaubert</em>
+POLICE	A toujours tort. <em>Gustave Flaubert</em>
+PONSARD	Seul poète qui ait eu du bon sens. <em>Gustave Flaubert</em>
+POPILIUS	Inventeur d’une espèce de cercle. <em>Gustave Flaubert</em>
+PORTEFEUILLE	En avoir un sous le bras donne l’air d’un ministre. <em>Gustave Flaubert</em>
+PORTRAIT	Le difficile est de rendre le sourire. <em>Gustave Flaubert</em>
+POURPRE	Citer l’anecdote du chien qui découvrit la pourpre en mordant un coquillage. <em>Gustave Flaubert</em>
+POURPRE	Mot plus noble que rouge. <em>Gustave Flaubert</em>
+PRADON	Ne pas lui pardonner d’avoir été l’émule de Racine. <em>Gustave Flaubert</em>
+PRATIQUE	Supérieure à la théorie. <em>Gustave Flaubert</em>
+PRÊTRES	C’est égal, il y en a de bons, tout de même ! <em>Gustave Flaubert</em>
+PRÊTRES	Couchent avec leurs bonnes et ont des enfants qu’ils appellent leurs neveux. <em>Gustave Flaubert</em>
+PRIAPISME	Culte de l’antiquité. <em>Gustave Flaubert</em>
+PRINCIPES	Toujours indiscutables ; on ne peut en dire ni la nature, ni le nombre, n’importe, sont sacrés. <em>Gustave Flaubert</em>
+PRISE DE TABAC	Convient à l’homme de cabinet. <em>Gustave Flaubert</em>
+PROGRÈS	Toujours mal entendu et trop hâtif. <em>Gustave Flaubert</em>
+PROSE	Plus facile à faire que les vers. <em>Gustave Flaubert</em>
+PUCELLE	Ne s’emploie que pour Jeanne d’Arc, et avec « d’Orléans ». <em>Gustave Flaubert</em>
+PUDEUR	Le plus bel ornement de la femme. <em>Gustave Flaubert</em>
+PUNCH	Convient à une soirée de garçons. <em>Gustave Flaubert</em>
+PUNCH	Et ça produit des flammes fantastiques ! <em>Gustave Flaubert</em>
+PUNCH	Éteindre les lumières quand on l’allume. <em>Gustave Flaubert</em>
+PUNCH	Source de délire. <em>Gustave Flaubert</em>
+PYRAMIDE	Ouvrage inutile. <em>Gustave Flaubert</em>
+QUADRATURE DU CERCLE	On ne sait pas ce que c’est, mais il faut lever les épaules quand on en parle. <em>Gustave Flaubert</em>
+RACINE	Polisson ! <em>Gustave Flaubert</em>
+RADICALISME	D’autant plus dangereux qu’il est latent. <em>Gustave Flaubert</em>
+RATE	Autrefois, on l’enlevait au coureur. <em>Gustave Flaubert</em>
+RECONNAISSANCE	N’a pas besoin d’être exprimée. <em>Gustave Flaubert</em>
+RELIGION	« La religion de nos pères » doit se dire avec onction. <em>Gustave Flaubert</em>
+RELIGION	Est nécessaire pour le peuple, cependant pas trop n’en faut. <em>Gustave Flaubert</em>
+RELIGION	Fait partie des bases de la société. <em>Gustave Flaubert</em>
+REPUBLICAINS	Les républicains ne sont pas tous des voleurs, mais les voleurs sont tous républicains. <em>Gustave Flaubert</em>
+RICHESSE	Tient lieu de tout, et même de considération. <em>Gustave Flaubert</em>
+RIME	Ne s’accorde jamais avec la raison. <em>Gustave Flaubert</em>
+RINCE-BOUCHE	Signe de richesse dans une maison. <em>Gustave Flaubert</em>
+ROBE	Inspire le respect. <em>Gustave Flaubert</em>
+ROMANCES	Le chanteur de <em>Gustave Flaubert</em>
+ROMANCES	plaît aux dames. <em>Gustave Flaubert</em>
+ROMANS	Il y a des romans écrits avec la pointe d’un scalpel, d’autres qui reposent sur la pointe d’une aiguille. <em>Gustave Flaubert</em>
+ROMANS	Pervertissent les masses. <em>Gustave Flaubert</em>
+ROMANS	Seuls les romans historiques peuvent être tolérés parce qu’ils enseignent l’histoire. <em>Gustave Flaubert</em>
+ROMANS	Sont moins immoraux en feuilletons qu’en volumes. <em>Gustave Flaubert</em>
+RONSARD	Ridicule avec ses mots grecs et latins. <em>Gustave Flaubert</em>
+ROUSSE	(Voy. Blondes, Brunes et Négresses.) <em>Gustave Flaubert</em>
+ROUSSEAU	Croire que J.-J. Rousseau et J.-B. Rousseau sont les deux frères, comme l’étaient les deux Corneille. <em>Gustave Flaubert</em>
+RUINES	Font rêver et donnent de la poésie à un paysage. <em>Gustave Flaubert</em>
+SABOTS	Un homme riche qui a eu des commencements difficiles est toujours venu à Paris en sabots. <em>Gustave Flaubert</em>
+SABRE	Les Français veulent être gouvernés par un sabre. <em>Gustave Flaubert</em>
+SAIGNER	Se faire saigner au printemps. <em>Gustave Flaubert</em>
+SAINT-BARTHELEMY	Vieille blague. <em>Gustave Flaubert</em>
+SAINTE-BEUVE	Le Vendredi Saint, dînait exclusivement de charcuterie. <em>Gustave Flaubert</em>
+SAINTE-HELENE	Île connue par son rocher. <em>Gustave Flaubert</em>
+SALON	Début littéraire qui pose très bien son homme. <em>Gustave Flaubert</em>
+SANTE	Trop de —, cause de maladie. <em>Gustave Flaubert</em>
+SAPHIQUE ET ADONIQUE	Produit un excellent effet dans un article de littérature. <em>Gustave Flaubert</em>
+SATRAPE	Homme riche et débauché. <em>Gustave Flaubert</em>
+SATURNALES	Fêtes du Directoires. <em>Gustave Flaubert</em>
+SAVANTS	Les blaguer. <em>Gustave Flaubert</em>
+SAVANTS	Pour être savant il ne faut pas que de la mémoire et du travail. <em>Gustave Flaubert</em>
+SCUDERY	On doit le blaguer, sans savoir si c’était un homme ou une femme. <em>Gustave Flaubert</em>
+SENEQUE	Écrivait sur un pupitre d’or. <em>Gustave Flaubert</em>
+SERPENT	Tous venimeux. <em>Gustave Flaubert</em>
+SERVICE	C’est rendre service aux enfants, que de les calotter ; aux animaux, que de les battre ; aux domestiques, que de les chasser ; aux malfaiteurs, que de les punir. <em>Gustave Flaubert</em>
+SITE	Endroits pour faire des vers. Séville. Célèbre par son barbier (voy. Naples). <em>Gustave Flaubert</em>
+SOCIETE	Ce qui cause sa perte. <em>Gustave Flaubert</em>
+SOCIETE	Ses ennemis. <em>Gustave Flaubert</em>
+SOMNANBULE	Se promène la nuit sur la crête des toits. <em>Gustave Flaubert</em>
+SOUPERS DE LA REGENCE	On y dépensait encore plus d’esprit que de champagne. <em>Gustave Flaubert</em>
+SOUPIR	Doit s’exhaler près d’une femme. <em>Gustave Flaubert</em>
+SPIRITUALISME	Le meilleur système de philosophie. <em>Gustave Flaubert</em>
+STOÏCISME	Est impossible. <em>Gustave Flaubert</em>
+STUART	S’apitoyer sur son sort. <em>Gustave Flaubert</em>
+SUFFRAGE UNIVERSEL	Dernier terme de la science politique. <em>Gustave Flaubert</em>
+SUICIDE	Preuve de lâcheté. <em>Gustave Flaubert</em>
+SYBARITES	Tonner contre. <em>Gustave Flaubert</em>
+SYPHILIS	Plus ou moins, tout le monde en est affecté. <em>Gustave Flaubert</em>
+TABAC	Cause de toutes les maladies du cerveau et de la moelle épinière. <em>Gustave Flaubert</em>
+TALLEYRAND	S’indigner contre. <em>Gustave Flaubert</em>
+TEMPS	Éternel sujet de conversation. <em>Gustave Flaubert</em>
+TEMPS	Toujours s’en plaindre. <em>Gustave Flaubert</em>
+THÈME	Au collège, prouve l’application, comme la version prouve l’intelligence. <em>Gustave Flaubert</em>
+THÈME	Mais, dans le monde, il faut rire des forts en thème. <em>Gustave Flaubert</em>
+TOILETTE DES DAMES	Trouble l’imagination. <em>Gustave Flaubert</em>
+TOLERANCE	N’est pas celle où l’on a des opinions tolérantes. <em>Gustave Flaubert</em>
+TOUR	Indispensable à avoir dans son grenier, à la campagne, les jours de pluie. <em>Gustave Flaubert</em>
+TRANSPIRATION DES PIEDS	Signe de santé. <em>Gustave Flaubert</em>
+UKASE	Appeler ukase tout décret autoritaire, ça vexe le gouvernement. <em>Gustave Flaubert</em>
+UNIVERSITE	« Alma mater. » <em>Gustave Flaubert</em>
+VACCINE	Ne fréquenter que des personnes vaccinées. <em>Gustave Flaubert</em>
+VALSE	S’indigner contre. <em>Gustave Flaubert</em>
+VEILLEE	Celles de la campagne sont morales. <em>Gustave Flaubert</em>
+VELOURS	Sur les habits, distinction et richesse. <em>Gustave Flaubert</em>
+VENTE	Vendre et acheter, but de la vie. <em>Gustave Flaubert</em>
+VIEILLARD	À propos d’une inondation, d’un orage, etc., les vieillards du pays ne se rappellent jamais en avoir vu un semblable. <em>Gustave Flaubert</em>
+VINS	Le meilleur est le bordeaux, puisque les médecins l’ordonnent. <em>Gustave Flaubert</em>
+VINS	Plus il est mauvais, plus il est naturel. <em>Gustave Flaubert</em>
+VINS	Sujet de conversation entre hommes. <em>Gustave Flaubert</em>
+VISIR	Tremble à la vue d’un cordon. <em>Gustave Flaubert</em>
+VOISINS	Tâcher de se faire rendre par eux des services sans qu’il en coûte rien. <em>Gustave Flaubert</em>
+VOITURES	Plus commode d’en louer que d’en posséder : de cette manière, on n’a pas le tracas des domestiques, ni des chevaux qui sont toujours malades. <em>Gustave Flaubert</em>
+VOLTAIRE	Célèbre par son « rictus » épouvantable. <em>Gustave Flaubert</em>
+VOLTAIRE	Science superficielle. <em>Gustave Flaubert</em>
+VOYAGE	Doit être fait rapidement. <em>Gustave Flaubert</em>
+WAGNER	Ricaner quand on entend son nom, et faire des plaisanteries sur la musique de l’avenir. <em>Gustave Flaubert</em>
+YVETOT	Voir Yvetot et mourir. <em>Gustave Flaubert</em>
