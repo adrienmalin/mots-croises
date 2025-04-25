@@ -3,9 +3,6 @@
 include_once "dico.php";
 
 
-const MIN_LETTRES = 1;
-
-
 class Grille {
     public $grille;
     public $hauteur;
@@ -19,15 +16,16 @@ class Grille {
         $this->largeur = $largeur;
         $this->grille = array_fill(0, $hauteur, array_fill(0, $largeur, '.'));
 
-        if ($hauteur == $largeur) {
-            $dimensions = [$hauteur];
+        if ($id == "") {
+            mt_srand();
         } else {
-            $dimensions = [$hauteur, $largeur];
+            mt_srand(crc32($id));
         }
         $this->mots_commencant_par = [];
-        foreach ($dimensions as $longueur) {
+        foreach ($hauteur == $largeur? [$hauteur]: [$hauteur, $largeur] as $longueur) {
             $this->mots_commencant_par[$longueur] = [];
-            foreach(mots_espaces($longueur, MIN_LETTRES, crc32($id)) as $mot) {
+            $nb_mots = 0;
+            foreach(mots_espaces($longueur) as $mot) {
                 for ($i = 0; $i <= $longueur; $i++) {
                     $debut = substr($mot, 0, $i);
                     if (!isset($this->mots_commencant_par[$longueur][$debut])) {
@@ -37,6 +35,8 @@ class Grille {
                 }
             }
         }
+        mt_srand();
+        
         $this->grilles = $this->generateur();
         $this->grilles->current();
     }

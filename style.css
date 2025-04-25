@@ -12,6 +12,10 @@ form {
     justify-content: space-evenly;
 }
 
+h1 {
+    margin: 0;
+}
+
 h1 table {
     margin: auto;
     line-height: 0.8;
@@ -19,6 +23,7 @@ h1 table {
 
 h1 td {
     width: 0.7em;
+    text-align: center;
 }
 
 h1,

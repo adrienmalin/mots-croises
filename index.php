@@ -1,23 +1,23 @@
 <?php
+ini_set('display_errors', '1');
+ini_set('error_reporting', E_ALL);
 
-const HAUTEUR_PAR_DEFAUT = 6;
-const LARGEUR_PAR_DEFAUT = 6;
 
-
-$id = filter_input(INPUT_GET, 'grille', FILTER_VALIDATE_REGEXP, [
-    "options" => [
-        "regexp" => "/^[a-f0-9]{13}$/"
-    ]
-]);
-if (!$id) {
+if (!isset($_GET["grille"])) {
     $_GET["grille"] = uniqid();
-    header("Location: " . $_SERVER['DOCUMENT_URI'] . "?" . http_build_query($_GET));
+    header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
     exit;
+} else {
+    $id = htmlspecialchars($_GET["grille"]);
 }
 
 
 include_once "dico.php";
 include_once "Grille.php";
+
+
+const HAUTEUR_PAR_DEFAUT = 6;
+const LARGEUR_PAR_DEFAUT = 6;
 
 
 $hauteur = filter_input(INPUT_GET, 'lignes', FILTER_VALIDATE_INT, [
@@ -118,9 +118,9 @@ $grille = new Grille($hauteur, $largeur, $id);
                 </ol>
             </div>
         </div>
-
-        <input type="hidden" id="lignes" name="lignes" value="<?= $hauteur ?>" />
-        <input type="hidden" id="colonnes" name="colonnes" value="<?= $largeur ?>" />
+        
+        <input type="hidden" id="lignes" <?php if (isset($_GET["lignes"])): ?>name="lignes" <?php endif ?>value="<?= $hauteur ?>" />
+        <input type="hidden" id="colonnes" <?php if (isset($_GET["colonnes"])): ?>name="colonnes" <?php endif ?>value="<?= $largeur ?>" />
         <input type="hidden" id="solution_hashee" value="<?= $grille->hash() ?>" />
         <button type="submit">Nouvelle grille</button>
     </form>
