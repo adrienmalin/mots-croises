@@ -41,10 +41,10 @@ class Grille {
         $this->grilles->current();
     }
 
-    public function get_ligne($l, $longueur = 100) {
+    public function get_ligne($l, $largeur) {
         $ligne = "";
-        for ($i = 0; $i < $longueur; $i++) {
-            $ligne .= $this->grille[$l][$i];
+        for ($c = 0; $c < $largeur; $c++) {
+            $ligne .= $this->grille[$l][$c];
         }
         return $ligne;
     }
@@ -55,10 +55,10 @@ class Grille {
         }
     }
 
-    public function get_colonne($c, $longueur = 100) {
+    public function get_colonne($c, $hauteur) {
         $colonne = "";
-        for ($i = 0; $i < $longueur; $i++) {
-            $colonne .= $this->grille[$i][$c];
+        for ($l = 0; $l < $hauteur; $l++) {
+            $colonne .= $this->grille[$l][$c];
         }
         return $colonne;
     }
@@ -76,11 +76,13 @@ class Grille {
 
     private function trouve_une_ligne($l) {
         global $mots_de_n_lettres;
-        foreach ($this->mots_commencant_par[$this->largeur][$this->get_ligne($l, $l)] as $mot_lig) {
+        $largeur = min($l, $this->largeur);
+        $hauteur = min($l + 1, $this->hauteur);
+        foreach ($this->mots_commencant_par[$this->largeur][$this->get_ligne($l, $largeur)] as $mot_lig) {
             $this->set_ligne($l, $mot_lig);
             $ok = true;
             for ($c = $l; $c < $this->largeur; $c++) {
-                if (!isset($this->mots_commencant_par[$this->hauteur][$this->get_colonne($c, $l+1)])) {
+                if (!isset($this->mots_commencant_par[$this->hauteur][$this->get_colonne($c, $hauteur)])) {
                     $ok = false;
                     break;
                 }
@@ -102,14 +104,16 @@ class Grille {
 
     private function trouve_une_colonne($c) {
         global $mots_de_n_lettres;
-        foreach ($this->mots_commencant_par[$this->hauteur][$this->get_colonne($c, $c + 1)] as $mot_col) {
+        $hauteur = min($c + 1, $this->hauteur);
+        $largeur = min($c + 1, $this->largeur);
+        foreach ($this->mots_commencant_par[$this->hauteur][$this->get_colonne($c, $hauteur)] as $mot_col) {
             if (isset($this->mots_utilises[$mot_col])) {
                 continue;
             }
             $this->set_colonne($c, $mot_col);
             $ok = true;
             for ($l = $c; $l < $this->hauteur; $l++) {
-                if (!isset($this->mots_commencant_par[$this->largeur][$this->get_ligne($l, $c+1)])) {
+                if (!isset($this->mots_commencant_par[$this->largeur][$this->get_ligne($l, $largeur)])) {
                     $ok = false;
                     break;
                 }
