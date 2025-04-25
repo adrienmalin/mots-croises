@@ -95,8 +95,20 @@ table.grille {
     width: 45%;
 }
 
-.definitions li::marker {
+.definitions ol {
+    padding-left: 2em;
+}
+
+.definitions > div > ol > li::marker {
     font-weight: bold;
+}
+
+.definitions li ol {
+    padding-left: 1em;
+}
+
+.definitions li li::marker {
+    font-size: small;
 }
 
 button[type='submit'] {
