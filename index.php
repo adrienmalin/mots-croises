@@ -84,6 +84,7 @@ $grille = new Grille($hauteur, $largeur, $id);
                 <?php for ($c = 0; $c < $largeur; $c++): ?>
                     <th><?= chr($c + 65) ?></th>
                 <?php endfor; ?>
+                <th></th>
             </tr>
             <?php for ($l = 0; $l < $hauteur; $l++): ?>
                 <tr>
@@ -97,7 +98,6 @@ $grille = new Grille($hauteur, $largeur, $id);
                             <?php endif; ?>
                         </td>
                     <?php endfor; ?>
-                    <th></th>
                 </tr>
             <?php endfor; ?>
         </table>
