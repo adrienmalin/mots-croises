@@ -97,6 +97,7 @@ $grille = new Grille($hauteur, $largeur, $id);
                             <?php endif; ?>
                         </td>
                     <?php endfor; ?>
+                    <th></th>
                 </tr>
             <?php endfor; ?>
         </table>

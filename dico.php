@@ -45,8 +45,7 @@ function mots_espaces($longueur) {
     fisherYatesShuffle($mots_de_n_lettres[$longueur]);
     foreach($mots_de_n_lettres[$longueur] as $mot) {
         yield $mot;
-        $nb_mots++;
-        if ($nb_mots > MAX_MOTS) {
+        if (++$nb_mots > MAX_MOTS) {
             return;
         }
     }
@@ -60,7 +59,7 @@ function mots_espaces($longueur) {
                     yield "$mot2 $mot1";
                     $nb_mots += 2;
                     if ($nb_mots > MAX_MOTS) {
-                        break;
+                        return;
                     }
                 }
             }
