@@ -8,7 +8,7 @@ class Grille {
     public $hauteur;
     public $largeur;
     private $grilles;
-    private $mots_commencant_par;
+    private $debuts;
     private $mots_utilises = [];
 
     public function __construct($hauteur, $largeur, $id="") {
@@ -21,17 +21,17 @@ class Grille {
         } else {
             mt_srand(crc32($id));
         }
-        $this->mots_commencant_par = [];
+        $this->debuts = [];
         foreach ($hauteur == $largeur? [$hauteur]: [$hauteur, $largeur] as $longueur) {
-            $this->mots_commencant_par[$longueur] = [];
+            $this->debuts[$longueur] = [];
             $nb_mots = 0;
             foreach(mots_espaces($longueur) as $mot) {
                 for ($i = 0; $i <= $longueur; $i++) {
                     $debut = substr($mot, 0, $i);
-                    if (!isset($this->mots_commencant_par[$longueur][$debut])) {
-                        $this->mots_commencant_par[$longueur][$debut] = [];
+                    if (!isset($this->debuts[$longueur][$debut])) {
+                        $this->debuts[$longueur][$debut] = [];
                     }
-                    $this->mots_commencant_par[$longueur][$debut][] = $mot;
+                    $this->debuts[$longueur][$debut][] = $mot;
                 }
             }
         }
@@ -78,11 +78,11 @@ class Grille {
         global $mots_de_n_lettres;
         $largeur = min($l, $this->largeur);
         $hauteur = min($l + 1, $this->hauteur);
-        foreach ($this->mots_commencant_par[$this->largeur][$this->get_ligne($l, $largeur)] as $mot_lig) {
+        foreach ($this->debuts[$this->largeur][$this->get_ligne($l, $largeur)] as $mot_lig) {
             $this->set_ligne($l, $mot_lig);
             $ok = true;
             for ($c = $l; $c < $this->largeur; $c++) {
-                if (!isset($this->mots_commencant_par[$this->hauteur][$this->get_colonne($c, $hauteur)])) {
+                if (!isset($this->debuts[$this->hauteur][$this->get_colonne($c, $hauteur)])) {
                     $ok = false;
                     break;
                 }
@@ -106,14 +106,14 @@ class Grille {
         global $mots_de_n_lettres;
         $hauteur = min($c + 1, $this->hauteur);
         $largeur = min($c + 1, $this->largeur);
-        foreach ($this->mots_commencant_par[$this->hauteur][$this->get_colonne($c, $hauteur)] as $mot_col) {
+        foreach ($this->debuts[$this->hauteur][$this->get_colonne($c, $hauteur)] as $mot_col) {
             if (isset($this->mots_utilises[$mot_col])) {
                 continue;
             }
             $this->set_colonne($c, $mot_col);
             $ok = true;
             for ($l = $c; $l < $this->hauteur; $l++) {
-                if (!isset($this->mots_commencant_par[$this->largeur][$this->get_ligne($l, $largeur)])) {
+                if (!isset($this->debuts[$this->largeur][$this->get_ligne($l, $largeur)])) {
                     $ok = false;
                     break;
                 }
