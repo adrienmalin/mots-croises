@@ -13,9 +13,13 @@ if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
         if (substr($ligne[0], 0, 1) != "#" && count($ligne) >= 3) {
             [$mot, $definition, $auteur] = $ligne;
             if ($auteur) {
-                $dico[$mot] = "$definition <small><em>$auteur</em></small>";
+                $dico[strtoupper($mot)] = "$definition <small><em>$auteur</em></small>";
             } else {
-                $dico[$mot] = $definition;
+                $dico[strtoupper($mot)] = $definition;
+            }
+            $nb_espaces = substr_count($mot, ' ');
+            if ($nb_espaces > 0) {
+                $dico[$mot] .= " <small>(" . ($nb_espaces + 1) . " mots)</small>";
             }
         }
     }
