@@ -12,15 +12,20 @@ if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
     while (($ligne = fgetcsv($lecteur, 0, "\t")) !== FALSE) {
         if (substr($ligne[0], 0, 1) != "#" && count($ligne) >= 3) {
             [$mot, $definition, $auteur] = $ligne;
+            $mot = strtoupper($mot);
             if ($auteur) {
-                $dico[strtoupper($mot)] = "$definition <small><em>$auteur</em></small>";
-            } else {
-                $dico[strtoupper($mot)] = $definition;
+                $definition .= " <small><em>$auteur</em></small>";
             }
             $nb_espaces = substr_count($mot, ' ');
             if ($nb_espaces > 0) {
-                $dico[$mot] .= " <small>(" . ($nb_espaces + 1) . " mots)</small>";
+                $definition .= " <small>(" . ($nb_espaces + 1) . " mots)</small>";
             }
+            if (strlen($definition)) {
+                $dico[$mot] = [$definition];
+            } else {
+                $dico[$mot] = [];
+            }
+            
         }
     }
     fclose($lecteur);
@@ -62,9 +67,9 @@ function mots_espaces($longueur)
         foreach ($mots_de_n_lettres[$i] as $mot1) {
             foreach (mots_espaces($longueur - $i - 1) as $mot2) {
                 if ($mot1 != $mot2) {
-                    $dico["$mot1 $mot2"] = $dico[$mot1] && $dico[$mot2] ? "<li>{$dico[$mot1]}</li><li>{$dico[$mot2]}</li>" : $dico[$mot1] . $dico[$mot2];
+                    $dico["$mot1 $mot2"] = array_merge($dico[$mot1], $dico[$mot2]);
                     yield "$mot1 $mot2";
-                    $dico["$mot2 $mot1"] = $dico[$mot2] && $dico[$mot1] ? "<li>{$dico[$mot2]}</li><li>{$dico[$mot1]}</li>" : $dico[$mot2] . $dico[$mot1];
+                    $dico["$mot2 $mot1"] = array_merge($dico[$mot2], $dico[$mot1]);
                     yield "$mot2 $mot1";
                     $nb_mots += 2;
                     if ($nb_mots > MAX_MOTS) {

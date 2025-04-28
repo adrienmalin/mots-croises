@@ -106,7 +106,18 @@ $grille = new Grille($hauteur, $largeur, $id);
                 <h2>Horizontalement</h2>
                 <ol>
                     <?php for ($l = 0; $l < $hauteur; $l++): ?>
-                        <li><ol><?= $dico[$grille->get_ligne($l, $largeur)] ?></ol></li>
+                        <li>
+                            <?php $definitions = $dico[$grille->get_ligne($l, $largeur)] ?>
+                            <?php if (count($definitions) == 1): ?>
+                                <?= $definitions[0] ?>
+                            <?php else: ?>
+                                <ol>
+                                    <?php foreach ($dico[$grille->get_ligne($l, $largeur)] as $definition) : ?>
+                                        <li><?= $definition ?></li>
+                                    <?php endforeach ?>
+                                </ol>
+                            <?php endif ?>
+                        </li>
                     <?php endfor; ?>
                 </ol>
             </div>
@@ -114,12 +125,23 @@ $grille = new Grille($hauteur, $largeur, $id);
                 <h2>Verticalement</h2>
                 <ol type="A">
                     <?php for ($c = 0; $c < $largeur; $c++): ?>
-                        <li><ol><?= $dico[$grille->get_colonne($c, $hauteur)] ?></ol></li>
+                        <li>
+                            <?php $definitions = $dico[$grille->get_colonne($c, $hauteur)] ?>
+                            <?php if (count($definitions) == 1): ?>
+                                <?= $definitions[0] ?>
+                            <?php else: ?>
+                                <ol>
+                                    <?php foreach ($dico[$grille->get_colonne($c, $hauteur)] as $definition) : ?>
+                                        <li><?= $definition ?></li>
+                                    <?php endforeach ?>
+                                </ol>
+                            <?php endif ?>
+                        </li>
                     <?php endfor; ?>
                 </ol>
             </div>
         </div>
-        
+
         <input type="hidden" id="lignes" <?php if (isset($_GET["lignes"])): ?>name="lignes" <?php endif ?>value="<?= $hauteur ?>" />
         <input type="hidden" id="colonnes" <?php if (isset($_GET["colonnes"])): ?>name="colonnes" <?php endif ?>value="<?= $largeur ?>" />
         <input type="hidden" id="solution_hashee" value="<?= $grille->hash() ?>" />
