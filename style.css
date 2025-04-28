@@ -48,7 +48,6 @@ table.grille {
     height: 2rem;
     border: 1px solid black;
     padding: 2px;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans;
 }
 
 .grille tr:nth-of-type(2) td {
@@ -79,6 +78,8 @@ table.grille {
     padding: 0;
     text-align: center;
     font-size: 1.2em;
+    font-family: 'Comic Sans MS', 'Comic Sans', sans;
+    color: darkblue;
 }
 
 .grille input[disabled] {
@@ -104,7 +105,11 @@ table.grille {
 }
 
 .definitions li ol {
-    padding-left: 0.8em;
+    padding-left: 0em;
+}
+
+.definitions li li {
+    margin-left: 0.8em;
 }
 
 .definitions li li::marker {
