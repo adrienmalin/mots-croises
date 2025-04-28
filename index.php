@@ -145,7 +145,7 @@ $grille = new Grille($hauteur, $largeur, $id);
         <input type="hidden" id="lignes" <?php if (isset($_GET["lignes"])): ?>name="lignes" <?php endif ?>value="<?= $hauteur ?>" />
         <input type="hidden" id="colonnes" <?php if (isset($_GET["colonnes"])): ?>name="colonnes" <?php endif ?>value="<?= $largeur ?>" />
         <input type="hidden" id="solution_hashee" value="<?= $grille->hash() ?>" />
-        <button type="submit">Nouvelle grille</button>
+        <button type="submit"><img src="favicon.ico">Nouvelle grille</button>
     </form>
 
     <script src="script.js"></script>
