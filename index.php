@@ -36,6 +36,8 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
 ]);
 
 $grille = new Grille($hauteur, $largeur, $id);
+$grille->current();
+
 
 ?>
 <!DOCTYPE HTML>
@@ -78,69 +80,73 @@ $grille = new Grille($hauteur, $largeur, $id);
                 </tbody>
             </table>
         </h1>
-        <table class="grille">
-            <tr>
-                <th></th>
-                <?php for ($c = 0; $c < $largeur; $c++): ?>
-                    <th><?= chr($c + 65) ?></th>
-                <?php endfor; ?>
-                <th></th>
-            </tr>
-            <?php for ($l = 0; $l < $hauteur; $l++): ?>
+        <?php if ($grille->valid()): ?>
+            <table class="grille">
                 <tr>
-                    <th><?= $l + 1 ?></th>
+                    <th></th>
                     <?php for ($c = 0; $c < $largeur; $c++): ?>
-                        <td class="case <?= $grille->grille[$l][$c] == " " ? "noire" : "blanche" ?>">
-                            <?php if ($grille->grille[$l][$c] == " "): ?>
-                                <input type="text" maxlength="1" size="1" value=" " disabled />
-                            <?php else: ?>
-                                <input type="text" maxlength="1" size="1" pattern="[A-Z]" />
-                            <?php endif; ?>
-                        </td>
+                        <th><?= chr($c + 65) ?></th>
                     <?php endfor; ?>
+                    <th></th>
                 </tr>
-            <?php endfor; ?>
-        </table>
-        <div class="definitions">
-            <div class="horizontales">
-                <h2>Horizontalement</h2>
-                <ol>
-                    <?php for ($l = 0; $l < $hauteur; $l++): ?>
-                        <li>
-                            <?php $definitions = $dico[$grille->get_ligne($l, $largeur)] ?>
-                            <?php if (count($definitions) == 1): ?>
-                                <?= $definitions[0] ?>
-                            <?php else: ?>
-                                <ol>
-                                    <?php foreach ($dico[$grille->get_ligne($l, $largeur)] as $definition) : ?>
-                                        <li><?= $definition ?></li>
-                                    <?php endforeach ?>
-                                </ol>
-                            <?php endif ?>
-                        </li>
-                    <?php endfor; ?>
-                </ol>
+                <?php for ($l = 0; $l < $hauteur; $l++): ?>
+                    <tr>
+                        <th><?= $l + 1 ?></th>
+                        <?php for ($c = 0; $c < $largeur; $c++): ?>
+                            <td class="case <?= $grille->grille[$l][$c] == " " ? "noire" : "blanche" ?>">
+                                <?php if ($grille->grille[$l][$c] == " "): ?>
+                                    <input type="text" maxlength="1" size="1" value=" " disabled />
+                                <?php else: ?>
+                                    <input type="text" maxlength="1" size="1" pattern="[A-Z]" />
+                                <?php endif; ?>
+                            </td>
+                        <?php endfor; ?>
+                    </tr>
+                <?php endfor; ?>
+            </table>
+            <div class="definitions">
+                <div class="horizontales">
+                    <h2>Horizontalement</h2>
+                    <ol>
+                        <?php for ($l = 0; $l < $hauteur; $l++): ?>
+                            <li>
+                                <?php $definitions = $dico[$grille->get_ligne($l, $largeur)] ?>
+                                <?php if (count($definitions) == 1): ?>
+                                    <?= $definitions[0] ?>
+                                <?php else: ?>
+                                    <ol>
+                                        <?php foreach ($dico[$grille->get_ligne($l, $largeur)] as $definition) : ?>
+                                            <li><?= $definition ?></li>
+                                        <?php endforeach ?>
+                                    </ol>
+                                <?php endif ?>
+                            </li>
+                        <?php endfor; ?>
+                    </ol>
+                </div>
+                <div class="verticales">
+                    <h2>Verticalement</h2>
+                    <ol type="A">
+                        <?php for ($c = 0; $c < $largeur; $c++): ?>
+                            <li>
+                                <?php $definitions = $dico[$grille->get_colonne($c, $hauteur)] ?>
+                                <?php if (count($definitions) == 1): ?>
+                                    <?= $definitions[0] ?>
+                                <?php else: ?>
+                                    <ol>
+                                        <?php foreach ($dico[$grille->get_colonne($c, $hauteur)] as $definition) : ?>
+                                            <li><?= $definition ?></li>
+                                        <?php endforeach ?>
+                                    </ol>
+                                <?php endif ?>
+                            </li>
+                        <?php endfor; ?>
+                    </ol>
+                </div>
             </div>
-            <div class="verticales">
-                <h2>Verticalement</h2>
-                <ol type="A">
-                    <?php for ($c = 0; $c < $largeur; $c++): ?>
-                        <li>
-                            <?php $definitions = $dico[$grille->get_colonne($c, $hauteur)] ?>
-                            <?php if (count($definitions) == 1): ?>
-                                <?= $definitions[0] ?>
-                            <?php else: ?>
-                                <ol>
-                                    <?php foreach ($dico[$grille->get_colonne($c, $hauteur)] as $definition) : ?>
-                                        <li><?= $definition ?></li>
-                                    <?php endforeach ?>
-                                </ol>
-                            <?php endif ?>
-                        </li>
-                    <?php endfor; ?>
-                </ol>
-            </div>
-        </div>
+        <?php else: ?>
+            <h3 class="erreur">Erreur de génération de la grille</h3>
+        <?php endif ?>
 
         <input type="hidden" id="lignes" <?php if (isset($_GET["lignes"])): ?>name="lignes" <?php endif ?>value="<?= $hauteur ?>" />
         <input type="hidden" id="colonnes" <?php if (isset($_GET["colonnes"])): ?>name="colonnes" <?php endif ?>value="<?= $largeur ?>" />

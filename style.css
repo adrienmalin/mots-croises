@@ -130,6 +130,10 @@ table.grille {
     text-wrap: nowrap;
 }
 
+.erreur {
+    text-align: center;
+}
+
 button[type='submit'] {
     width: fit-content;
     margin: 0 auto;

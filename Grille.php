@@ -38,7 +38,6 @@ class Grille {
         mt_srand();
         
         $this->grilles = $this->generateur();
-        $this->grilles->current();
     }
 
     public function get_ligne($l, $largeur) {
@@ -131,6 +130,14 @@ class Grille {
             }
             unset($this->mots_utilises[$mot_col]);
         }
+    }
+
+    public function current() {
+        return $this->grilles->current();
+    }
+
+    public function valid() {
+        return $this->grilles->valid();
     }
 
     public function hash() {
