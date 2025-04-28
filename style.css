@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: white;
     font-family: Times, 'Times New Roman', Georgia, serif;
 }
 
@@ -48,6 +49,7 @@ table.grille {
     height: 2rem;
     border: 1px solid black;
     padding: 2px;
+    background-color: white;
 }
 
 .grille tr:nth-of-type(2) td {
@@ -178,4 +180,12 @@ button[type="submit"]:active {
    -webkit-text-size-adjust: 100%;
    -ms-text-size-adjust: 100%;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+    body,
+    button {
+        background-color: #02081a;
+        color: #c6c6c6;
+    }
 }
