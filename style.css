@@ -109,14 +109,25 @@ table.grille {
 
 .definitions li ol {
     padding-left: 0em;
+    list-style: parenthese;
+}
+
+@counter-style parenthese {
+    system: extends decimal;
+    suffix: ") ";
 }
 
 .definitions li li {
     margin-left: 0.8em;
+    counter-increment: count;
 }
 
 .definitions li li::marker {
     font-size: small;
+}
+
+.definitions em {
+    text-wrap: nowrap;
 }
 
 button[type='submit'] {
