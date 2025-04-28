@@ -62,9 +62,9 @@ function mots_espaces($longueur)
         foreach ($mots_de_n_lettres[$i] as $mot1) {
             foreach (mots_espaces($longueur - $i - 1) as $mot2) {
                 if ($mot1 != $mot2) {
-                    $dico["$mot1 $mot2"] = $dico[$mot1] && $dico[$mot2] ? "<ol><li>{$dico[$mot1]}</li><li>{$dico[$mot2]}</li></ol>" : $dico[$mot1] . $dico[$mot2];
+                    $dico["$mot1 $mot2"] = $dico[$mot1] && $dico[$mot2] ? "<li>{$dico[$mot1]}</li><li>{$dico[$mot2]}</li>" : $dico[$mot1] . $dico[$mot2];
                     yield "$mot1 $mot2";
-                    $dico["$mot2 $mot1"] = $dico[$mot2] && $dico[$mot1] ? "<ol><li>{$dico[$mot2]}</li><li>{$dico[$mot1]}</li></ol>" : $dico[$mot2] . $dico[$mot1];
+                    $dico["$mot2 $mot1"] = $dico[$mot2] && $dico[$mot1] ? "<li>{$dico[$mot2]}</li><li>{$dico[$mot1]}</li>" : $dico[$mot2] . $dico[$mot1];
                     yield "$mot2 $mot1";
                     $nb_mots += 2;
                     if ($nb_mots > MAX_MOTS) {

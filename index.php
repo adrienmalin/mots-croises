@@ -106,7 +106,7 @@ $grille = new Grille($hauteur, $largeur, $id);
                 <h2>Horizontalement</h2>
                 <ol>
                     <?php for ($l = 0; $l < $hauteur; $l++): ?>
-                        <li><?= $dico[$grille->get_ligne($l, $largeur)] ?></li>
+                        <li><ol><?= $dico[$grille->get_ligne($l, $largeur)] ?></ol></li>
                     <?php endfor; ?>
                 </ol>
             </div>
@@ -114,7 +114,7 @@ $grille = new Grille($hauteur, $largeur, $id);
                 <h2>Verticalement</h2>
                 <ol type="A">
                     <?php for ($c = 0; $c < $largeur; $c++): ?>
-                        <li><?= $dico[$grille->get_colonne($c, $hauteur)] ?></li>
+                        <li><ol><?= $dico[$grille->get_colonne($c, $hauteur)] ?></ol></li>
                     <?php endfor; ?>
                 </ol>
             </div>

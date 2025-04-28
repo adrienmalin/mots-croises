@@ -104,7 +104,7 @@ table.grille {
 }
 
 .definitions li ol {
-    padding-left: 1em;
+    padding-left: 0.8em;
 }
 
 .definitions li li::marker {
