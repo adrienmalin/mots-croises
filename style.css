@@ -82,6 +82,7 @@ table.grille {
     font-size: 1.2em;
     font-family: 'Comic Sans MS', 'Comic Sans', sans;
     color: darkblue;
+    background-color: white;
 }
 
 .grille input[disabled] {
@@ -187,5 +188,18 @@ button[type="submit"]:active {
     button {
         background-color: #02081a;
         color: #c6c6c6;
+    }
+    
+    .grille td,
+    .grille input {
+        background-color: #edeeee;
+    }
+    
+    button[type="submit"]:hover {
+        color: #479fec;
+    }
+    
+    button[type="submit"]:active {
+        color: orchid;
     }
 }
