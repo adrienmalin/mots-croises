@@ -3,7 +3,8 @@
 include_once "dico.php";
 
 
-class Grille {
+class Grille
+{
     public $grille;
     public $hauteur;
     public $largeur;
@@ -11,9 +12,9 @@ class Grille {
     private $lettres_suivantes;
     private $positions;
     private $nb_positions;
-    private $mots_utilises = [];
 
-    public function __construct($hauteur, $largeur, $id="") {
+    public function __construct($hauteur, $largeur, $id = "")
+    {
         $this->hauteur = $hauteur;
         $this->largeur = $largeur;
         $this->grille = array_fill(0, $hauteur, array_fill(0, $largeur, ''));
@@ -24,9 +25,9 @@ class Grille {
             mt_srand(crc32($id));
         }
         $this->lettres_suivantes = [];
-        foreach ($hauteur == $largeur? [$hauteur]: [$hauteur, $largeur] as $longueur) {
+        foreach ($hauteur == $largeur ? [$hauteur] : [$hauteur, $largeur] as $longueur) {
             $this->lettres_suivantes[$longueur] = [];
-            foreach(mots_espaces($longueur) as $mot) {
+            foreach (mots_espaces($longueur) as $mot) {
                 for ($i = 0; $i <= $longueur; $i++) {
                     $debut = substr($mot, 0, $i);
                     if (!isset($this->lettres_suivantes[$longueur][$debut])) {
@@ -45,11 +46,12 @@ class Grille {
             }
         }
         $this->nb_positions = count($this->positions);
-        
+
         $this->grilles = $this->generateur();
     }
 
-    public function get_ligne($y, $largeur) {
+    public function get_ligne($y, $largeur)
+    {
         $ligne = "";
         for ($x = 0; $x < $largeur; $x++) {
             $ligne .= $this->grille[$y][$x];
@@ -57,69 +59,72 @@ class Grille {
         return $ligne;
     }
 
-    public function get_colonne($x, $hauteur) {
+    public function get_colonne($x, $hauteur)
+    {
         $colonne = "";
         for ($y = 0; $y < $hauteur; $y++) {
             $colonne .= $this->grille[$y][$x];
         }
         return $colonne;
     }
-    
-    public function generateur($index=0) {
-        if ($index == $this->nb_positions) {
-            yield $this;
-            return;
+
+    public function generateur()
+    {
+        $mots_utilises = [];
+        $pile = [];
+        $lettres_possibles = array_intersect_assoc(
+            $this->lettres_suivantes[$this->largeur][""],
+            $this->lettres_suivantes[$this->hauteur][""]
+        );
+        foreach ($lettres_possibles as $lettre => $_) {
+            $pile[] = [0, $lettre];
         }
 
-        [$x, $y] = $this->positions[$index];
-
-        $lettres_possibles = array_intersect_assoc(
-            $this->lettres_suivantes[$this->largeur][$this->get_ligne($y, $x)],
-            $this->lettres_suivantes[$this->hauteur][$this->get_colonne($x, $y)]
-        );
-
-        foreach ($lettres_possibles as $lettre => $_) {
+        while (!empty($pile)) {
+            [$i, $lettre] = array_pop($pile);
+            [$x, $y] = $this->positions[$i];
             $this->grille[$y][$x] = $lettre;
 
-            $mot_ligne = NULL;
             if ($x == $this->largeur - 1) {
-                $mot_ligne = $this->get_ligne($y, $x);
-                if (isset($this->mots_utilises[$mot_ligne])) {
-                    continue;
-                } else {
-                    $this-> mots_utilises[$mot_ligne] = true;
-                }
+                $mots_utilises[$y] = $this->get_ligne($y, $x);
+            } else {
+                unset($mots_utilises[$y]);
             }
-            $mot_colonne = NULL;
             if ($y == $this->hauteur - 1) {
-                $mot_colonne = $this->get_colonne($x, $y);
-                if (isset($this->mots_utilises[$mot_colonne])) {
+                if (in_array($this->get_colonne($x, $y), $mots_utilises)) {
                     continue;
-                } else {
-                    $this-> mots_utilises[$mot_colonne] = true;
                 }
             }
-            
-            yield from $this->generateur($index + 1);
 
-            if ($mot_ligne) {
-                unset($this-> mots_utilises[$mot_ligne]);
+            $i++;
+            if ($i == $this->nb_positions) {
+                yield $this;
+                continue;
             }
-            if ($mot_colonne) {
-                unset($this-> mots_utilises[$mot_colonne]);
+
+            [$x, $y] = $this->positions[$i];
+            $lettres_possibles = array_intersect_assoc(
+                $this->lettres_suivantes[$this->largeur][$this->get_ligne($y, $x)],
+                $this->lettres_suivantes[$this->hauteur][$this->get_colonne($x, $y)]
+            );
+            foreach ($lettres_possibles as $lettre => $_) {
+                $pile[] = [$i, $lettre];
             }
         }
     }
 
-    public function current() {
+    public function current()
+    {
         return $this->grilles->current();
     }
 
-    public function valid() {
+    public function valid()
+    {
         return $this->grilles->valid();
     }
 
-    public function hash() {
+    public function hash()
+    {
         $string = "";
         foreach ($this->grille as $ligne) {
             $string .= implode("", $ligne);

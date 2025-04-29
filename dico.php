@@ -3,8 +3,7 @@
 
 const MIN_LETTRES_MOT_1 = 2;
 const MIN_LETTRES_MOT_2 = 1;
-// const MAX_MOTS = 100000;
-
+const MAX_MOTS = 100000;
 
 $dico = [];
 if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
@@ -25,7 +24,6 @@ if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
             } else {
                 $dico[$mot] = [];
             }
-            
         }
     }
     fclose($lecteur);
@@ -59,9 +57,9 @@ function mots_espaces($longueur)
     fisherYatesShuffle($mots_de_n_lettres[$longueur]);
     foreach ($mots_de_n_lettres[$longueur] as $mot) {
         yield $mot;
-        // if (++$nb_mots > MAX_MOTS) {
-        //     return;
-        // }
+        if (++$nb_mots >= MAX_MOTS) {
+            return;
+        }
     }
     for ($i = MIN_LETTRES_MOT_1; $longueur - $i - 1 >= MIN_LETTRES_MOT_2; $i++) {
         foreach ($mots_de_n_lettres[$i] as $mot1) {
@@ -69,12 +67,14 @@ function mots_espaces($longueur)
                 if ($mot1 != $mot2) {
                     $dico["$mot1 $mot2"] = array_merge($dico[$mot1], $dico[$mot2]);
                     yield "$mot1 $mot2";
+                    if (++$nb_mots >= MAX_MOTS) {
+                        return;
+                    }
                     $dico["$mot2 $mot1"] = array_merge($dico[$mot2], $dico[$mot1]);
                     yield "$mot2 $mot1";
-                    // $nb_mots += 2;
-                    // if ($nb_mots > MAX_MOTS) {
-                    //     return;
-                    // }
+                    if (++$nb_mots >= MAX_MOTS) {
+                        return;
+                    }
                 }
             }
         }
