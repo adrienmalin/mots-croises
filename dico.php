@@ -2,7 +2,7 @@
 
 
 const MIN_LETTRES_MOT_1 = 2;
-const MIN_LETTRES_MOT_2 = 0;
+const MIN_LETTRES_MOT_2 = 1;
 // const MAX_MOTS = 100000;
 
 
