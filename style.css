@@ -9,7 +9,6 @@ form {
     display: flex;
     flex-flow: column;
     min-height: calc(100vh - 4rem);
-    justify-content: space-between;
 }
 
 h1 {
@@ -44,16 +43,25 @@ h2 {
 .grille-et-definitions {
     display: flex;
     flex-flow: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     height: max-content;
+    flex-grow: 1;
     align-items: flex-start;
+    margin: 0;
+}
+
+.grille {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .grille table {
     border-collapse: collapse;
-    margin: 0 auto;
-    height: fit-content;
+    margin: auto;
 }
 
 .grille th,
@@ -158,7 +166,7 @@ button[type='submit'] {
 
 button[type='submit'] {
     width: 100%;
-    /*! margin: auto; */
+    margin: auto;
     border: none;
     background: none;
     font-family: inherit;
