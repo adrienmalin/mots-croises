@@ -38,6 +38,7 @@ h1,
 h2 {
     font-variant-caps: petite-caps;
     text-align: center;
+    grow: 1;
 }
 
 .grille-et-definitions {
@@ -46,9 +47,9 @@ h2 {
     justify-content: space-around;
     flex-wrap: wrap;
     height: max-content;
-    flex-grow: 1;
+    /*! flex-grow: 1; */
     align-items: flex-start;
-    margin: 0;
+    margin: auto;
 }
 
 .grille {
