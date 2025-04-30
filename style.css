@@ -36,6 +36,7 @@ h2 {
 table.grille {
     border-collapse: collapse;
     margin: 0 auto;
+    height: fit-content;
 }
 
 .grille th {
