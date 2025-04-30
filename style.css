@@ -38,7 +38,6 @@ h1,
 h2 {
     font-variant-caps: petite-caps;
     text-align: center;
-    grow: 1;
 }
 
 .grille-et-definitions {
@@ -47,7 +46,6 @@ h2 {
     justify-content: space-around;
     flex-wrap: wrap;
     height: max-content;
-    /*! flex-grow: 1; */
     align-items: flex-start;
     margin: auto;
 }
@@ -56,8 +54,7 @@ h2 {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto 0;
 }
 
 .grille table {
@@ -167,7 +164,7 @@ button[type='submit'] {
 
 button[type='submit'] {
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
     border: none;
     background: none;
     font-family: inherit;
