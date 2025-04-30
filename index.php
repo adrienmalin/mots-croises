@@ -110,7 +110,7 @@ for ($x = 0; $x < $largeur; $x++) {
                                             <input type="text" maxlength="1" size="1" value=" " disabled />
                                         <?php else: ?>
                                             <input type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>"
-                                                title="<?= "Horizontalement\n" . strip_tags(implode("\n", $definitions["horizontales"][$y])) . "\nVerticalement\n" . strip_tags(implode("\n", $definitions["verticales"][$x])) ?>" />
+                                                title="<?= "➡️ " . strip_tags(implode(" ➡️ ", $definitions["horizontales"][$y])) . "\n⬇️ " . strip_tags(implode("\n⬇️ ", $definitions["verticales"][$x])) ?>" />
                                         <?php endif; ?>
                                     </td>
                                 <?php endfor; ?>
