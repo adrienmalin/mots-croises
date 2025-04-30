@@ -7,7 +7,7 @@ body {
 
 form {
     padding: 1rem;
-    height: calc(100vh - 2rem);
+    min-height: calc(100vh - 2rem);
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;

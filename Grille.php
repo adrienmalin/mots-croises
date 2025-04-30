@@ -3,6 +3,14 @@
 include_once "dico.php";
 
 
+function melanger_cles($tableau) {
+    uksort($tableau, function($a, $b) {
+        return mt_rand(-1, 1);
+    });
+    return $tableau;
+}
+
+
 class Grille
 {
     public $grille;
@@ -19,25 +27,21 @@ class Grille
         $this->largeur = $largeur;
         $this->grille = array_fill(0, $hauteur, array_fill(0, $largeur, ''));
 
-        if ($id == "") {
-            mt_srand();
-        } else {
-            mt_srand(crc32($id));
-        }
         $this->lettres_suivantes = [];
         foreach ($hauteur == $largeur ? [$hauteur] : [$hauteur, $largeur] as $longueur) {
             $this->lettres_suivantes[$longueur] = [];
             foreach (mots_espaces($longueur) as $mot) {
-                for ($i = 0; $i <= $longueur; $i++) {
-                    $debut = substr($mot, 0, $i);
-                    if (!isset($this->lettres_suivantes[$longueur][$debut])) {
-                        $this->lettres_suivantes[$longueur][$debut] = [];
+                $ref = &$this->lettres_suivantes[$longueur];
+                for ($i = 0; $i < $longueur; $i++) {
+                    $lettre = $mot[$i];
+                    if (!isset($ref[$lettre])) {
+                        $ref[$lettre] = [];
                     }
-                    $this->lettres_suivantes[$longueur][$debut][substr($mot, $i, 1)] = true;
+                    $ref = &$ref[$lettre];
                 }
+                $ref = [];
             }
         }
-        mt_srand();
 
         $this->positions = [];
         for ($y = 0; $y < $hauteur; $y++) {
@@ -47,7 +51,7 @@ class Grille
         }
         $this->nb_positions = count($this->positions);
 
-        $this->grilles = $this->generateur();
+        $this->grilles = $this->generateur($id);
     }
 
     public function get_ligne($y, $largeur)
@@ -68,15 +72,18 @@ class Grille
         return $colonne;
     }
 
-    public function generateur()
+    public function generateur($id = "")
     {
+        mt_srand($id == ""? null : crc32($id));
+        
         $mots_utilises = [];
         $pile = [];
-        $lettres_possibles = array_intersect_assoc(
-            $this->lettres_suivantes[$this->largeur][""],
-            $this->lettres_suivantes[$this->hauteur][""]
-        );
-        foreach ($lettres_possibles as $lettre => $_) {
+
+        $lettres_communes = melanger_cles(array_intersect_key(
+            $this->lettres_suivantes[$this->largeur],
+            $this->lettres_suivantes[$this->hauteur]
+        ));
+        foreach ($lettres_communes as $lettre => $_) {
             $pile[] = [0, $lettre];
         }
 
@@ -84,6 +91,11 @@ class Grille
             [$i, $lettre] = array_pop($pile);
             [$x, $y] = $this->positions[$i];
             $this->grille[$y][$x] = $lettre;
+
+            if ($i == $this->nb_positions - 1) {
+                yield $this;
+                continue;
+            }
 
             if ($x == $this->largeur - 1) {
                 $mots_utilises[$y] = $this->get_ligne($y, $x);
@@ -97,18 +109,23 @@ class Grille
             }
 
             $i++;
-            if ($i == $this->nb_positions) {
-                yield $this;
-                continue;
+            [$x, $y] = $this->positions[$i];
+            $lettres_suivantes_ligne = $this->lettres_suivantes[$this->largeur];
+            for ($x2 = 0; $x2 < $x; $x2++) {
+                $lettres_suivantes_ligne = $lettres_suivantes_ligne[$this->grille[$y][$x2]];
             }
 
-            [$x, $y] = $this->positions[$i];
-            $lettres_possibles = array_intersect_assoc(
-                $this->lettres_suivantes[$this->largeur][$this->get_ligne($y, $x)],
-                $this->lettres_suivantes[$this->hauteur][$this->get_colonne($x, $y)]
-            );
-            foreach ($lettres_possibles as $lettre => $_) {
-                $pile[] = [$i, $lettre];
+            $lettres_suivantes_colonne = $this->lettres_suivantes[$this->hauteur];
+            for ($y2 = 0; $y2 < $y; $y2++) {
+                $lettres_suivantes_colonne = $lettres_suivantes_colonne[$this->grille[$y2][$x]];
+            }
+            
+            $lettres_communes = melanger_cles(array_intersect_key(
+                $lettres_suivantes_ligne,
+                $lettres_suivantes_colonne
+            ));
+            foreach ($lettres_communes as $lettre => $_) {
+                $pile[] = [$i, $lettre, $lettres_suivantes_ligne[$lettre]];
             }
         }
     }

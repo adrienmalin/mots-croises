@@ -16,8 +16,8 @@ include_once "dico.php";
 include_once "Grille.php";
 
 
+const LARGEUR_PAR_DEFAUT = 7;
 const HAUTEUR_PAR_DEFAUT = 6;
-const LARGEUR_PAR_DEFAUT = 6;
 
 
 $hauteur = filter_input(INPUT_GET, 'lignes', FILTER_VALIDATE_INT, [
@@ -97,7 +97,7 @@ $grille->current();
                                 <?php if ($grille->grille[$y][$x] == " "): ?>
                                     <input type="text" maxlength="1" size="1" value=" " disabled />
                                 <?php else: ?>
-                                    <input type="text" maxlength="1" size="1" pattern="[A-Z]" />
+                                    <input type="text" maxlength="1" size="1" pattern="[A-Z]"/>
                                 <?php endif; ?>
                             </td>
                         <?php endfor; ?>
