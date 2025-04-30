@@ -12,7 +12,7 @@ function melanger_cles($tableau)
 }
 
 
-class Grille implements ArrayAccess {
+class Grille implements Iterator, ArrayAccess {
     public $grille;
     public $hauteur;
     public $largeur;
@@ -96,17 +96,17 @@ class Grille implements ArrayAccess {
             $lettres_suivantes_ligne,
             $lettres_suivantes_colonne
         ));
-        
+
         foreach ($lettres_communes as $lettre => $_) {
             $this->grille[$y][$x] = $lettre;
 
             if ($x == $this->largeur - 1) {
-                $mots_utilises[$y] = $this->get_ligne($y, $x);
+                $this->mots_utilises[$y] = $this->get_ligne($y, $x);
             } else {
-                unset($mots_utilises[$y]);
+                unset($this->mots_utilises[$y]);
             }
             if ($y == $this->hauteur - 1) {
-                if (in_array($this->get_colonne($x, $y), $mots_utilises)) {
+                if (in_array($this->get_colonne($x, $y), $this->mots_utilises)) {
                     continue;
                 }
             }
@@ -128,12 +128,24 @@ class Grille implements ArrayAccess {
         return hash('sha256', $string);
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->grilles->current();
     }
 
-    public function valid()
+    public function key(): mixed {
+        return $this->grilles->key();
+    }
+
+    public function next(): void {
+        $this->grilles->next();
+    }
+
+    public function rewind(): void {
+        $this->grilles->rewind();
+    }
+
+    public function valid(): bool
     {
         return $this->grilles->valid();
     }

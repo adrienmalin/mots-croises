@@ -1,6 +1,6 @@
 <?php
-//ini_set('display_errors', '1');
-//ini_set('error_reporting', E_ALL);
+ini_set('display_errors', '1');
+ini_set('error_reporting', E_ALL);
 
 
 if (!isset($_GET["grille"])) {
@@ -37,7 +37,16 @@ $largeur = filter_input(INPUT_GET, 'c', FILTER_VALIDATE_INT, [
 
 $grille = new Grille($hauteur, $largeur, $id);
 $grille->current();
-
+$definitions = [
+    "horizontales" => [],
+    "verticales" => []
+];
+for ($y = 0; $y < $hauteur; $y++) {
+    $definitions["horizontales"][$y] = $dico[$grille->get_ligne($y, $largeur)];
+}
+for ($x = 0; $x < $largeur; $x++) {
+    $definitions["verticales"][$x] = $dico[$grille->get_colonne($x, $hauteur)];
+}
 
 ?>
 <!DOCTYPE HTML>
@@ -100,7 +109,8 @@ $grille->current();
                                         <?php if ($grille[$y][$x] == " "): ?>
                                             <input type="text" maxlength="1" size="1" value=" " disabled />
                                         <?php else: ?>
-                                            <input type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>" />
+                                            <input type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>"
+                                                title="<?= "Horizontalement\n" . strip_tags(implode("\n", $definitions["horizontales"][$y])) . "\nVerticalement\n" . strip_tags(implode("\n", $definitions["verticales"][$x])) ?>" />
                                         <?php endif; ?>
                                     </td>
                                 <?php endfor; ?>
@@ -113,12 +123,11 @@ $grille->current();
                     <ol>
                         <?php for ($y = 0; $y < $hauteur; $y++): ?>
                             <li>
-                                <?php $definitions = $dico[$grille->get_ligne($y, $largeur)] ?>
-                                <?php if (count($definitions) == 1): ?>
-                                    <?= $definitions[0] ?>
+                                <?php if (count($definitions["horizontales"][$y]) == 1): ?>
+                                    <?= $definitions["horizontales"][$y][0] ?>
                                 <?php else: ?>
                                     <ol>
-                                        <?php foreach ($dico[$grille->get_ligne($y, $largeur)] as $definition) : ?>
+                                        <?php foreach ($definitions["horizontales"][$y] as $definition) : ?>
                                             <li><?= $definition ?></li>
                                         <?php endforeach ?>
                                     </ol>
@@ -132,12 +141,11 @@ $grille->current();
                     <ol type="A">
                         <?php for ($x = 0; $x < $largeur; $x++): ?>
                             <li>
-                                <?php $definitions = $dico[$grille->get_colonne($x, $hauteur)] ?>
-                                <?php if (count($definitions) == 1): ?>
-                                    <?= $definitions[0] ?>
+                                <?php if (count($definitions["horizontales"][$x]) == 1): ?>
+                                    <?= $definitions["horizontales"][$x][0] ?>
                                 <?php else: ?>
                                     <ol>
-                                        <?php foreach ($dico[$grille->get_colonne($x, $hauteur)] as $definition) : ?>
+                                        <?php foreach ($definitions["horizontales"][$x] as $definition) : ?>
                                             <li><?= $definition ?></li>
                                         <?php endforeach ?>
                                     </ol>
