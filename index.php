@@ -16,8 +16,8 @@ include_once "dico.php";
 include_once "Grille.php";
 
 
-const LARGEUR_PAR_DEFAUT = 7;
 const HAUTEUR_PAR_DEFAUT = 6;
+const LARGEUR_PAR_DEFAUT = 6;
 
 
 $hauteur = filter_input(INPUT_GET, 'l', FILTER_VALIDATE_INT, [
