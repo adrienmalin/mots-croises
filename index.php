@@ -1,6 +1,6 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('error_reporting', E_ALL);
+//ini_set('display_errors', '1');
+//ini_set('error_reporting', E_ALL);
 
 
 if (!isset($_GET["grille"])) {
@@ -20,14 +20,14 @@ const LARGEUR_PAR_DEFAUT = 7;
 const HAUTEUR_PAR_DEFAUT = 6;
 
 
-$hauteur = filter_input(INPUT_GET, 'lignes', FILTER_VALIDATE_INT, [
+$hauteur = filter_input(INPUT_GET, 'l', FILTER_VALIDATE_INT, [
     "options" => [
         "default" => HAUTEUR_PAR_DEFAUT,
         "min_range" => 2,
         "max_range" => 30
     ]
 ]);
-$largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
+$largeur = filter_input(INPUT_GET, 'c', FILTER_VALIDATE_INT, [
     "options" => [
         "default" => LARGEUR_PAR_DEFAUT,
         "min_range" => 2,
