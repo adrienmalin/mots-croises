@@ -3,16 +3,16 @@
 include_once "dico.php";
 
 
-function melanger_cles($tableau) {
-    uksort($tableau, function($a, $b) {
+function melanger_cles($tableau)
+{
+    uksort($tableau, function ($a, $b) {
         return mt_rand(-1, 1);
     });
     return $tableau;
 }
 
 
-class Grille
-{
+class Grille implements ArrayAccess {
     public $grille;
     public $hauteur;
     public $largeur;
@@ -20,6 +20,7 @@ class Grille
     private $lettres_suivantes;
     private $positions;
     private $nb_positions;
+    private $mots_utilises;
 
     public function __construct($hauteur, $largeur, $id = "")
     {
@@ -51,7 +52,9 @@ class Grille
         }
         $this->nb_positions = count($this->positions);
 
-        $this->grilles = $this->generateur($id);
+        mt_srand($id == "" ? null : crc32($id));
+        $this->mots_utilises = [];
+        $this->grilles = $this->generateur();
     }
 
     public function get_ligne($y, $largeur)
@@ -72,30 +75,30 @@ class Grille
         return $colonne;
     }
 
-    public function generateur($id = "")
+    public function generateur($i = 0)
     {
-        mt_srand($id == ""? null : crc32($id));
-        
-        $mots_utilises = [];
-        $pile = [];
-
-        $lettres_communes = melanger_cles(array_intersect_key(
-            $this->lettres_suivantes[$this->largeur],
-            $this->lettres_suivantes[$this->hauteur]
-        ));
-        foreach ($lettres_communes as $lettre => $_) {
-            $pile[] = [0, $lettre];
+        if ($i == $this->nb_positions) {
+            yield $this;
+            return;
         }
 
-        while (!empty($pile)) {
-            [$i, $lettre] = array_pop($pile);
-            [$x, $y] = $this->positions[$i];
-            $this->grille[$y][$x] = $lettre;
+        [$x, $y] = $this->positions[$i];
 
-            if ($i == $this->nb_positions - 1) {
-                yield $this;
-                continue;
-            }
+        $lettres_suivantes_ligne = $this->lettres_suivantes[$this->largeur];
+        for ($x2 = 0; $x2 < $x; $x2++) {
+            $lettres_suivantes_ligne = $lettres_suivantes_ligne[$this->grille[$y][$x2]];
+        }
+        $lettres_suivantes_colonne = $this->lettres_suivantes[$this->hauteur];
+        for ($y2 = 0; $y2 < $y; $y2++) {
+            $lettres_suivantes_colonne = $lettres_suivantes_colonne[$this->grille[$y2][$x]];
+        }
+        $lettres_communes = melanger_cles(array_intersect_key(
+            $lettres_suivantes_ligne,
+            $lettres_suivantes_colonne
+        ));
+        
+        foreach ($lettres_communes as $lettre => $_) {
+            $this->grille[$y][$x] = $lettre;
 
             if ($x == $this->largeur - 1) {
                 $mots_utilises[$y] = $this->get_ligne($y, $x);
@@ -108,26 +111,21 @@ class Grille
                 }
             }
 
-            $i++;
-            [$x, $y] = $this->positions[$i];
-            $lettres_suivantes_ligne = $this->lettres_suivantes[$this->largeur];
-            for ($x2 = 0; $x2 < $x; $x2++) {
-                $lettres_suivantes_ligne = $lettres_suivantes_ligne[$this->grille[$y][$x2]];
-            }
-
-            $lettres_suivantes_colonne = $this->lettres_suivantes[$this->hauteur];
-            for ($y2 = 0; $y2 < $y; $y2++) {
-                $lettres_suivantes_colonne = $lettres_suivantes_colonne[$this->grille[$y2][$x]];
-            }
-            
-            $lettres_communes = melanger_cles(array_intersect_key(
-                $lettres_suivantes_ligne,
-                $lettres_suivantes_colonne
-            ));
-            foreach ($lettres_communes as $lettre => $_) {
-                $pile[] = [$i, $lettre, $lettres_suivantes_ligne[$lettre]];
+            if ($i < $this->nb_positions) {
+                yield from $this->generateur($i + 1);
+            } else {
+                yield $this;
             }
         }
+    }
+
+    public function hash()
+    {
+        $string = "";
+        foreach ($this->grille as $ligne) {
+            $string .= implode("", $ligne);
+        }
+        return hash('sha256', $string);
     }
 
     public function current()
@@ -139,13 +137,21 @@ class Grille
     {
         return $this->grilles->valid();
     }
-
-    public function hash()
-    {
-        $string = "";
-        foreach ($this->grille as $ligne) {
-            $string .= implode("", $ligne);
-        }
-        return hash('sha256', $string);
+    
+    public function offsetExists(mixed $offset): bool {
+        return isset($this->grille[$offset]);
     }
+
+    public function offsetGet(mixed $offset): mixed {
+        return $this->grille[$offset];
+    }
+
+    public function offsetSet(mixed $offset, mixed $value): void {
+        $this->grille[$offset] = $value;
+    }
+
+    public function offsetUnset(mixed $offset): void {
+        unset($this->grille[$offset]);
+    }
+
 }

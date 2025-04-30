@@ -43,23 +43,17 @@ h2 {
 .grille-et-definitions {
     display: flex;
     flex-flow: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     height: max-content;
-    align-items: flex-start;
-    margin: auto;
-}
-
-.grille {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  margin: auto 0;
+    flex-grow: 1;
+    align-items: center;
 }
 
 .grille table {
     border-collapse: collapse;
-    margin: auto;
+    margin: 0 auto;
+    height: fit-content;
 }
 
 .grille th,
@@ -114,6 +108,10 @@ h2 {
     background-color: black;
 }
 
+.grille input::placeholder {
+    color: transparent;
+}
+
 .definitions {
     width: 30%;
 }
@@ -164,7 +162,7 @@ button[type='submit'] {
 
 button[type='submit'] {
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
     border: none;
     background: none;
     font-family: inherit;

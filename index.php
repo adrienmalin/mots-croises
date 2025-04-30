@@ -96,11 +96,11 @@ $grille->current();
                             <tr>
                                 <th><?= $y + 1 ?></th>
                                 <?php for ($x = 0; $x < $largeur; $x++): ?>
-                                    <td class="case <?= $grille->grille[$y][$x] == " " ? "noire" : "blanche" ?>">
-                                        <?php if ($grille->grille[$y][$x] == " "): ?>
+                                    <td class="case <?= $grille[$y][$x] == " " ? "noire" : "blanche" ?>">
+                                        <?php if ($grille[$y][$x] == " "): ?>
                                             <input type="text" maxlength="1" size="1" value=" " disabled />
                                         <?php else: ?>
-                                            <input type="text" maxlength="1" size="1" pattern="[A-Z]"/>
+                                            <input type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>" />
                                         <?php endif; ?>
                                     </td>
                                 <?php endfor; ?>
