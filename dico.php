@@ -28,22 +28,22 @@ if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
     fclose($lecteur);
 }
 
-function mots_espaces($longueur, $nb_mots=0)
+function mots_espaces($longueur, $nb_mots_restants=MAX_MOTS)
 {
     global $dico;
 
     foreach ($dico[$longueur] as $mot => $definition) {
         yield $mot;
-        if (++$nb_mots >= MAX_MOTS) return;
+        if (--$nb_mots_restants <= 0) return;
     }
     for ($i = MIN_LETTRES_MOT_1; $longueur - $i - 1 >= MIN_LETTRES_MOT_2; $i++) {
         foreach ($dico[$i] as $mot1 => $definition) {
             foreach (mots_espaces($longueur - $i - 1) as $mot2) {
                 if ($mot1 != $mot2) {
                     yield "$mot1 $mot2";
-                    if (++$nb_mots >= MAX_MOTS) return;
+                    if (--$nb_mots_restants <= 0) return;
                     yield "$mot2 $mot1";
-                    if (++$nb_mots >= MAX_MOTS) return;
+                    if (--$nb_mots_restants <= 0) return;
                 }
             }
         }
