@@ -42,10 +42,10 @@ $definitions = [
     "colonnes" => []
 ];
 for ($y = 0; $y < $hauteur; $y++) {
-    $definitions["lignes"][$y] = $dico[$grille->get_ligne($y, $largeur)];
+    $definitions["lignes"][$y] = $dico[$grille->lignes[$y]];
 }
 for ($x = 0; $x < $largeur; $x++) {
-    $definitions["colonnes"][$x] = $dico[$grille->get_colonne($x, $hauteur)];
+    $definitions["colonnes"][$x] = $dico[$grille->colonnes[$x]];
 }
 
 ?>

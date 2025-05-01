@@ -20,13 +20,16 @@ class Grille implements Iterator, ArrayAccess {
     private $lettres_suivantes;
     private $positions;
     private $nb_positions;
-    public $mots_utilises;
+    public $lignes;
+    public $colonnes;
 
     public function __construct($hauteur, $largeur, $id = "")
     {
         $this->hauteur = $hauteur;
         $this->largeur = $largeur;
         $this->grille = array_fill(0, $hauteur, array_fill(0, $largeur, ''));
+        $this->lignes = [];
+        $this->colonnes = [];
 
         $this->lettres_suivantes = [];
         foreach ($hauteur == $largeur ? [$hauteur] : [$hauteur, $largeur] as $longueur) {
@@ -53,7 +56,6 @@ class Grille implements Iterator, ArrayAccess {
         $this->nb_positions = count($this->positions);
 
         mt_srand($id == "" ? null : crc32($id));
-        $this->mots_utilises = [];
         $this->grilles = $this->generateur();
     }
 
@@ -101,14 +103,19 @@ class Grille implements Iterator, ArrayAccess {
             $this->grille[$y][$x] = $lettre;
 
             if ($x == $this->largeur - 1) {
-                $this->mots_utilises[$y] = $this->get_ligne($y, $x);
+                $this->lignes[$y] = $this->get_ligne($y, $this->largeur);
             } else {
-                unset($this->mots_utilises[$y]);
+                unset($this->lignes[$y]);
             }
             if ($y == $this->hauteur - 1) {
-                if (in_array($this->get_colonne($x, $y), $this->mots_utilises)) {
+                $colonne = $this->get_colonne($x, $this->hauteur);
+                if (in_array($this->get_colonne($x, $y), $this->lignes)) {
                     continue;
+                } else {
+                    $this->colonnes[$x] = $colonne;
                 }
+            } else {
+                unset($this->colonnes[$x]);
             }
 
             if ($i < $this->nb_positions) {
