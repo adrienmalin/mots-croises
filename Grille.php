@@ -34,7 +34,8 @@ class Grille implements Iterator, ArrayAccess {
         $this->lettres_suivantes = [];
         foreach ($hauteur == $largeur ? [$hauteur] : [$hauteur, $largeur] as $longueur) {
             $this->lettres_suivantes[$longueur] = [];
-            foreach (mots_espaces($longueur, $hauteur == $largeur ? MAX_MOTS : MAX_MOTS/2) as $mot) {
+            foreach (mots_espaces($longueur, $hauteur == $largeur ? MAX_MOTS : MAX_MOTS/2) as $mots) {
+                $mot = implode(" ", $mots);
                 $ref = &$this->lettres_suivantes[$longueur];
                 for ($i = 0; $i < $longueur; $i++) {
                     $lettre = $mot[$i];
@@ -103,8 +104,7 @@ class Grille implements Iterator, ArrayAccess {
             $this->grille[$y][$x] = $lettre;
 
             if ($x == $this->largeur - 1) {
-                $mots_ligne = explode(" ", $this->get_ligne($y, $this->largeur));
-                foreach ($mots_ligne as $mot_ligne) {
+                foreach (explode(" ", $this->get_ligne($y, $this->largeur)) as $mot_ligne) {
                     if (in_array($mot_ligne, array_merge(...$this->lignes, ...$this->colonnes))) {
                         continue 2;
                     }
@@ -117,8 +117,7 @@ class Grille implements Iterator, ArrayAccess {
                 unset($this->lignes[$y]);
             }
             if ($y == $this->hauteur - 1) {
-                $mots_colonne = explode(" ", $this->get_colonne($x, $this->hauteur));
-                foreach ($mots_colonne as $mot_colonne) {
+                foreach (explode(" ", $this->get_colonne($x, $this->hauteur)) as $mot_colonne) {
                     if (in_array($mot_colonne, array_merge(...$this->lignes, ...$this->colonnes))) {
                         continue 2;
                     }

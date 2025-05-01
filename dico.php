@@ -54,16 +54,16 @@ function mots_espaces($longueur, $nb_mots_restants=MAX_MOTS)
     global $dico;
 
     foreach ($dico[$longueur] as $mot => $definition) {
-        yield $mot;
+        yield [$mot];
         if (--$nb_mots_restants <= 0) return;
     }
     for ($i = MIN_LETTRES_MOT_1; $longueur - $i - 1 >= MIN_LETTRES_MOT_2; $i++) {
-        foreach ($dico[$i] as $mot1 => $definition) {
-            foreach (mots_espaces($longueur - $i - 1, $nb_mots_restants) as $mot2) {
-                if ($mot1 != $mot2) {
-                    yield "$mot1 $mot2";
+        foreach ($dico[$i] as $mot => $definition) {
+            foreach (mots_espaces($longueur - $i - 1, $nb_mots_restants) as $mots) {
+                if (!in_array($mot, $mots)) {
+                    yield [$mot, ...$mots];
                     if (--$nb_mots_restants <= 0) return;
-                    yield "$mot2 $mot1";
+                    yield [...$mots, $mot];
                     if (--$nb_mots_restants <= 0) return;
                 }
             }
