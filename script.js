@@ -60,7 +60,7 @@ for (let input of inputs) {
     ) {
       sha256(inputs.map((input) => input.value).join("")).then((hash) => {
         if (hash == solution_hashee.value) {
-          if (confirm("Bravo ! \nUne nouvelle partie ?")) {
+          if (confirm("Bravo !\nUne nouvelle partie ?")) {
             grilleForm.submit();
           }
         }

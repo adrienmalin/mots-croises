@@ -52,9 +52,13 @@ h2 {
   gap: 1em;
 }
 
+.grille {
+  display: flex;
+}
+
 .grille table {
   border-collapse: collapse;
-  margin: 0 auto;
+  margin: auto;
   height: fit-content;
 }
 
