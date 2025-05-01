@@ -44,11 +44,25 @@ $definitions = [
     "lignes" => [],
     "colonnes" => []
 ];
-for ($y = 0; $y < $hauteur; $y++) {
-    $definitions["lignes"][$y] = $dico[$grille->lignes[$y]];
+foreach ($grille->lignes as $y => $mots) {
+    $definitions["lignes"][$y] = [];
+    foreach (explode(" ", $mots) as $mot) {
+        $definitions_lignes = $dico[strlen($mot)][$mot];
+        $definition = $definitions_lignes[array_rand($definitions_lignes)];
+        if (strlen($definition)) {
+            $definitions["lignes"][$y][] = $definition;
+        }
+    }
 }
-for ($x = 0; $x < $largeur; $x++) {
-    $definitions["colonnes"][$x] = $dico[$grille->colonnes[$x]];
+foreach ($grille->colonnes as $x => $mots) {
+    $definitions["colonnes"][$y] = [];
+    foreach (explode(" ", $mots) as $mot) {
+        $definitions_colonnes = $dico[strlen($mot)][$mot];
+        $definition = $definitions_colonnes[array_rand($definitions_colonnes)];
+        if (strlen($definition)) {
+            $definitions["colonnes"][$x][] = $definition;
+        }
+    }
 }
 
 ?>
@@ -59,7 +73,7 @@ for ($x = 0; $x < $largeur; $x++) {
     <meta charset="utf-8">
     <title>Mots croisés</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -163,12 +177,12 @@ for ($x = 0; $x < $largeur; $x++) {
         </div>
         
         <div class="nouvelle-grille">
-            <img src="favicon.ico">
+            <img src="favicon.svg" width="16" height="16">
             <button type="submit">
                 Nouvelle grille de
-                <input type="number" id="lignes" name="lignes" value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>">
+                <input type="number" id="lignes" name="lignes" value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>"/>
                 lignes et
-                <input type="number" id="colonnes" name="colonnes" value="<?= $largeur ?>" min="<?=LARGEUR_MIN?>" max="<?=LARGEUR_MAX?>">
+                <input type="number" id="colonnes" name="colonnes" value="<?= $largeur ?>" min="<?=LARGEUR_MIN?>" max="<?=LARGEUR_MAX?>"/>
                 colonnes
             </button>
         </div>
