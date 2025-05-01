@@ -39,6 +39,15 @@ if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
     }
     fclose($lecteur);
 }
+foreach ($dico as $longueur => $mots) {
+    foreach ($mots as $mot => $definitions) {
+        if (count($definitions)) {
+            $dico[$longueur][$mot] = $definitions[array_rand($definitions)];
+        } else {
+            $dico[$longueur][$mot] = "";
+        }
+    }
+}
 
 function mots_espaces($longueur, $nb_mots_restants=MAX_MOTS)
 {
