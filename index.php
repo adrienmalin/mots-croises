@@ -43,21 +43,19 @@ $definitions = [
 ];
 foreach ($grille->lignes as $y => $mots) {
     $definitions["lignes"][$y] = [];
-    foreach (explode(" ", $mots) as $mot) {
+    foreach ($mots as $mot) {
         $definitions_lignes = $dico[strlen($mot)][$mot];
-        $definition = $definitions_lignes[array_rand($definitions_lignes)];
-        if (strlen($definition)) {
-            $definitions["lignes"][$y][] = $definition;
+        if (count($definitions_lignes)) {
+            $definitions["lignes"][$y][] = $definitions_lignes[array_rand($definitions_lignes)];
         }
     }
 }
 foreach ($grille->colonnes as $x => $mots) {
     $definitions["colonnes"][$y] = [];
-    foreach (explode(" ", $mots) as $mot) {
+    foreach ($mots as $mot) {
         $definitions_colonnes = $dico[strlen($mot)][$mot];
-        $definition = $definitions_colonnes[array_rand($definitions_colonnes)];
-        if (strlen($definition)) {
-            $definitions["colonnes"][$x][] = $definition;
+        if (count($definitions_colonnes)) {
+            $definitions["colonnes"][$x][] = $definitions_colonnes[array_rand($definitions_colonnes)];
         }
     }
 }

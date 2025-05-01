@@ -9,7 +9,7 @@ $dico = [[]];
 if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
     $header = fgetcsv($lecteur, 0, "\t");
     while (($ligne = fgetcsv($lecteur, 0, "\t")) !== FALSE) {
-        if ($ligne[0] != NULL && substr($ligne[0], 0, 1) == "#") {
+        if ($ligne[0] == NULL || substr($ligne[0], 0, 1) == "#") {
             continue;
         }
         switch(count($ligne)) {
@@ -33,7 +33,9 @@ if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
         if (!isset($dico[$longueur][$mot])) {
             $dico[$longueur][$mot] = [];
         }
-        $dico[$longueur][$mot][] = $definition;
+        if (strlen($definition)) {
+            $dico[$longueur][$mot][] = $definition;
+        }
     }
     fclose($lecteur);
 }

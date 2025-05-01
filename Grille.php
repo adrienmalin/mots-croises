@@ -103,17 +103,18 @@ class Grille implements Iterator, ArrayAccess {
             $this->grille[$y][$x] = $lettre;
 
             if ($x == $this->largeur - 1) {
-                $this->lignes[$y] = $this->get_ligne($y, $this->largeur);
+                $this->lignes[$y] = explode(" ", $this->get_ligne($y, $this->largeur));
             } else {
                 unset($this->lignes[$y]);
             }
             if ($y == $this->hauteur - 1) {
-                $colonne = $this->get_colonne($x, $this->hauteur);
-                if (in_array($this->get_colonne($x, $y), $this->lignes)) {
-                    continue;
-                } else {
-                    $this->colonnes[$x] = $colonne;
+                $mots_colonne = explode(" ", $this->get_colonne($x, $this->hauteur));
+                foreach ($mots_colonne as $mot_colonne) {
+                    if (in_array($mot_colonne, array_merge(...$this->lignes))) {
+                        continue 2;
+                    }
                 }
+                $this->colonnes[$x] = $mots_colonne;
             } else {
                 unset($this->colonnes[$x]);
             }
