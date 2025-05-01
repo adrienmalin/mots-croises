@@ -5,17 +5,28 @@ const MIN_LETTRES_MOT_1 = 2;
 const MIN_LETTRES_MOT_2 = 0;
 const MAX_MOTS = 1000000;
 
-$dico = [];
+$dico = [[]];
 if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
     $header = fgetcsv($lecteur, 0, "\t");
     while (($ligne = fgetcsv($lecteur, 0, "\t")) !== FALSE) {
-        if (substr($ligne[0], 0, 1) != "#" && count($ligne) >= 3) {
-            [$mot, $definition, $auteur] = $ligne;
+        if ($ligne[0] != NULL) {
+            if (substr($ligne[0], 0, 1) == "#") {
+                continue;
+            }
+            switch(count($ligne)) {
+                case 3:
+                    [$mot, $definition, $auteur] = $ligne;
+                    $definition .= " <small><em>$auteur</em></small>";
+                    break;
+                case 2:
+                    [$mot, $definition] = $ligne;
+                    break;
+                case 1:
+                    [$mot] = $ligne;
+                    $definition = "";
+            }
             $mot = strtoupper($mot);
             $longueur = strlen($mot);
-            if ($auteur) {
-                $definition .= " <small><em>$auteur</em></small>";
-            }
             if (!isset($dico[$longueur])) {
                 $dico[$longueur] = [];
             }
