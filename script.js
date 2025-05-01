@@ -6,11 +6,11 @@ async function sha256(text) {
   return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-const inputs = Array.from(grilleForm.querySelectorAll('input[type="text"]'));
+let inputs = grilleForm.querySelectorAll('.grille input')
 let largeur = Number(colonnes.value);
 let nb_cases = inputs.length;
 let index = 0;
-inputs.forEach((input) => {
+for (let input of inputs) {
   input.index = index++;
   input.x = input.index % largeur;
   input.y = Math.floor(input.index / largeur);
@@ -76,4 +76,10 @@ inputs.forEach((input) => {
       li.classList.remove("non-selectionee")
     }
   };
-});
+};
+
+for (let input of grilleForm.querySelectorAll('.nouvelle-grille input')) {
+  input.onfocus = function (event) {
+    input.select();
+  };
+}

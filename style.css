@@ -63,6 +63,7 @@ h2 {
   width: 2rem;
   height: 2rem;
   text-align: center;
+  vertical-align: middle;
 }
 
 .grille td {
@@ -173,32 +174,55 @@ h2 {
   text-align: center;
 }
 
-button[type="submit"] {
-  width: fit-content;
-  margin: 0 auto;
+.nouvelle-grille {
+  margin: 1em auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5em;
 }
 
-button[type="submit"] {
-  width: 100%;
-  margin: 1em auto 0 auto;
+.nouvelle-grille button,
+.nouvelle-grille input {
   border: none;
   background: none;
+  color: inherit;
   font-family: inherit;
   font-size: 1em;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  justify-content: center;
 }
 
-button[type="submit"]:hover {
+.nouvelle-grille button {
+  display: flex;
+}
+
+.nouvelle-grille button:hover {
   cursor: pointer;
   color: #2a6496;
+}
+
+.nouvelle-grille button:hover,
+.nouvelle-grille button:hover input {
   text-decoration: underline;
 }
 
-button[type="submit"]:active {
+.nouvelle-grille button:active {
   color: darkorchid;
+}
+
+.nouvelle-grille input { 
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: underline dotted; 
+  width: 1em;
+}
+
+.nouvelle-grille input::-webkit-inner-spin-button,
+.nouvelle-grille input::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 @media (max-width: 1024px) {
@@ -290,11 +314,11 @@ button[type="submit"]:active {
     background-color: #edeeee;
   }
 
-  button[type="submit"]:hover {
+  .nouvelle-grille button:hover {
     color: #479fec;
   }
 
-  button[type="submit"]:active {
+  .nouvelle-grille button:active {
     color: orchid;
   }
 }

@@ -15,23 +15,26 @@ if (!isset($_GET["grille"])) {
 include_once "dico.php";
 include_once "Grille.php";
 
+const HAUTEUR_DEFAUT = 7;
+const HAUTEUR_MIN = 2;
+const HAUTEUR_MAX = 10;
+const LARGEUR_DEFAUT = 7;
+const LARGEUR_MIN = 2;
+const LARGEUR_MAX = 10;
 
-const HAUTEUR_PAR_DEFAUT = 6;
-const LARGEUR_PAR_DEFAUT = 6;
 
-
-$hauteur = filter_input(INPUT_GET, 'l', FILTER_VALIDATE_INT, [
+$hauteur = filter_input(INPUT_GET, 'lignes', FILTER_VALIDATE_INT, [
     "options" => [
-        "default" => HAUTEUR_PAR_DEFAUT,
-        "min_range" => 2,
-        "max_range" => 30
+        "default" => HAUTEUR_DEFAUT,
+        "min_range" => HAUTEUR_MIN,
+        "max_range" => HAUTEUR_MAX
     ]
 ]);
-$largeur = filter_input(INPUT_GET, 'c', FILTER_VALIDATE_INT, [
+$largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
     "options" => [
-        "default" => LARGEUR_PAR_DEFAUT,
-        "min_range" => 2,
-        "max_range" => 30
+        "default" => LARGEUR_DEFAUT,
+        "min_range" => LARGEUR_MIN,
+        "max_range" => LARGEUR_MAX
     ]
 ]);
 
@@ -158,11 +161,17 @@ for ($x = 0; $x < $largeur; $x++) {
                 <h3 class="erreur">Erreur de génération de la grille</h3>
             <?php endif ?>
         </div>
-
-        <input type="hidden" id="lignes" <?php if (isset($_GET["lignes"])): ?>name="lignes" <?php endif ?>value="<?= $hauteur ?>" />
-        <input type="hidden" id="colonnes" <?php if (isset($_GET["colonnes"])): ?>name="colonnes" <?php endif ?>value="<?= $largeur ?>" />
-        <input type="hidden" id="solution_hashee" value="<?= $grille->hash() ?>" />
-        <button type="submit"><img src="favicon.ico">Nouvelle grille</button>
+        
+        <div class="nouvelle-grille">
+            <img src="favicon.ico">
+            <button type="submit">
+                Nouvelle grille de
+                <input type="number" id="lignes" name="lignes" value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>">
+                lignes et
+                <input type="number" id="colonnes" name="colonnes" value="<?= $largeur ?>" min="<?=LARGEUR_MIN?>" max="<?=LARGEUR_MAX?>">
+                colonnes
+            </button>
+        </div>
     </form>
 
     <script src="script.js"></script>
