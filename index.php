@@ -38,14 +38,14 @@ $largeur = filter_input(INPUT_GET, 'c', FILTER_VALIDATE_INT, [
 $grille = new Grille($hauteur, $largeur, $id);
 $grille->current();
 $definitions = [
-    "horizontales" => [],
-    "verticales" => []
+    "lignes" => [],
+    "colonnes" => []
 ];
 for ($y = 0; $y < $hauteur; $y++) {
-    $definitions["horizontales"][$y] = $dico[$grille->get_ligne($y, $largeur)];
+    $definitions["lignes"][$y] = $dico[$grille->get_ligne($y, $largeur)];
 }
 for ($x = 0; $x < $largeur; $x++) {
-    $definitions["verticales"][$x] = $dico[$grille->get_colonne($x, $hauteur)];
+    $definitions["colonnes"][$x] = $dico[$grille->get_colonne($x, $hauteur)];
 }
 
 ?>
@@ -107,10 +107,10 @@ for ($x = 0; $x < $largeur; $x++) {
                                 <?php for ($x = 0; $x < $largeur; $x++): ?>
                                     <td class="case <?= $grille[$y][$x] == " " ? "noire" : "blanche" ?>">
                                         <?php if ($grille[$y][$x] == " "): ?>
-                                            <input type="text" maxlength="1" size="1" value=" " disabled />
+                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" value=" " disabled />
                                         <?php else: ?>
-                                            <input type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>"
-                                                title="<?= "➡️ " . strip_tags(implode(" ➡️ ", $definitions["horizontales"][$y])) . "\n⬇️ " . strip_tags(implode("\n⬇️ ", $definitions["verticales"][$x])) ?>" />
+                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>"
+                                                title="<?= "→ " . strip_tags(implode("\n→ ", $definitions["lignes"][$y])) . "\n↓ " . strip_tags(implode("\n↓ ", $definitions["colonnes"][$x])) ?>" />
                                         <?php endif; ?>
                                     </td>
                                 <?php endfor; ?>
@@ -121,37 +121,37 @@ for ($x = 0; $x < $largeur; $x++) {
                 <div class="definitions horizontales">
                     <h2>Horizontalement</h2>
                     <ol>
-                        <?php for ($y = 0; $y < $hauteur; $y++): ?>
+                        <?php foreach ($definitions["lignes"] as $y => $definitions_ligne): ?>
                             <li>
-                                <?php if (count($definitions["horizontales"][$y]) == 1): ?>
-                                    <?= $definitions["horizontales"][$y][0] ?>
+                                <?php if (count($definitions_ligne) == 1): ?>
+                                    <?= $definitions_ligne[0] ?>
                                 <?php else: ?>
                                     <ol>
-                                        <?php foreach ($definitions["horizontales"][$y] as $definition) : ?>
+                                        <?php foreach ($definitions_ligne as $definition) : ?>
                                             <li><?= $definition ?></li>
                                         <?php endforeach ?>
                                     </ol>
                                 <?php endif ?>
                             </li>
-                        <?php endfor; ?>
+                        <?php endforeach; ?>
                     </ol>
                 </div>
                 <div class="definitions verticales">
                     <h2>Verticalement</h2>
                     <ol type="A">
-                        <?php for ($x = 0; $x < $largeur; $x++): ?>
+                        <?php foreach ($definitions["colonnes"] as $x => $definitions_colonne): ?>
                             <li>
-                                <?php if (count($definitions["horizontales"][$x]) == 1): ?>
-                                    <?= $definitions["horizontales"][$x][0] ?>
+                                <?php if (count($definitions_colonne) == 1): ?>
+                                    <?= $definitions_colonne[0] ?>
                                 <?php else: ?>
                                     <ol>
-                                        <?php foreach ($definitions["horizontales"][$x] as $definition) : ?>
+                                        <?php foreach ($definitions_colonne as $definition) : ?>
                                             <li><?= $definition ?></li>
                                         <?php endforeach ?>
                                     </ol>
                                 <?php endif ?>
                             </li>
-                        <?php endfor; ?>
+                        <?php endforeach; ?>
                     </ol>
                 </div>
             <?php else: ?>

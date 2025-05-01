@@ -1,283 +1,300 @@
 body {
-    margin: 0;
-    padding: 2rem 1rem;
-    background-color: white;
-    font-family: Times, 'Times New Roman', Georgia, serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 form {
-    display: flex;
-    flex-flow: column;
-    min-height: calc(100vh - 4rem);
+  display: flex;
+  padding: 1rem;
+  min-height: calc(100vh - 2rem);
+  flex-flow: column;
+  justify-content: space-between;
 }
 
 h1 {
-    margin: 0;
-    letter-spacing: 0.2em;
+  margin: 0;
+  letter-spacing: 0.2em;
 }
 
 h1.large.width {
-    display: inherit;
+  display: inherit;
+  padding-top: 1rem;
 }
 
 h1.small.width {
-    display: none;
+  display: none;
 }
 
 h1 table {
-    margin: auto;
-    line-height: 0.8;
+  margin: auto;
+  line-height: 0.8;
 }
 
 h1 td {
-    width: 0.7em;
-    text-align: center;
+  width: 0.7em;
+  text-align: center;
 }
 
 h1,
 h2 {
-    font-variant-caps: petite-caps;
-    text-align: center;
+  font-variant-caps: petite-caps;
+  text-align: center;
 }
 
 .grille-et-definitions {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    height: max-content;
-    flex-grow: 1;
-    align-items: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: max-content;
+  gap: 1em;
 }
 
 .grille table {
-    border-collapse: collapse;
-    margin: 0 auto;
-    height: fit-content;
+  border-collapse: collapse;
+  margin: 0 auto;
+  height: fit-content;
 }
 
 .grille th,
 .grille td {
-    width: 2rem;
-    height: 2rem;
-    text-align: center;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
 }
 
 .grille td {
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid black;
-    padding: 2px;
-    background-color: white;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid black;
+  padding: 2px;
+  background-color: white;
 }
 
 .grille tr:nth-of-type(2) td {
-    border-top-width: 3px;
+  border-top-width: 3px;
 }
 .grille tr:last-of-type td {
-    border-bottom-width: 3px;
+  border-bottom-width: 3px;
 }
 .grille td:first-of-type {
-    border-left-width: 3px;
+  border-left-width: 3px;
 }
 .grille td:last-child {
-    border-right-width: 3px;
+  border-right-width: 3px;
 }
 
 .grille .case.noire {
-    background-color: black;
+  background-color: black;
 }
 
 .grille .case.noire {
-    background-color: black;
+  background-color: black;
 }
 
 .grille input {
-    width: 100%;
-    height: 100%;
-    border: none;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em;
-    font-family: 'Comic Sans MS', 'Comic Sans', sans;
-    color: darkblue;
-    background-color: white;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0;
+  text-align: center;
+  font-size: 1.2em;
+  font-family: "Comic Sans MS", "Comic Sans", sans;
+  color: darkblue;
+  background-color: white;
 }
 
 .grille input[disabled] {
-    background-color: black;
+  background-color: black;
 }
 
 .grille input::placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 .definitions {
-    width: 30%;
+  width: 30%;
 }
 
 .definitions.horizontales {
-    order: -1;
+  order: -1;
 }
 
 .definitions ol {
-    padding-left: 2em;
+  padding-left: 2em;
 }
 
 .definitions > div > ol > li::marker {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .definitions li ol {
-    padding-left: 0em;
-    list-style: parenthese;
+  padding-left: 0em;
+  list-style: parenthese;
 }
 
 @counter-style parenthese {
-    system: extends decimal;
-    suffix: ") ";
+  system: extends decimal;
+  suffix: ") ";
 }
 
 .definitions li li {
-    margin-left: 0.8em;
-    counter-increment: count;
+  margin-left: 0.8em;
+  counter-increment: count;
 }
 
 .definitions li li::marker {
-    font-size: small;
+  font-size: small;
 }
 
 .definitions em {
-    text-wrap: nowrap;
+  text-wrap: nowrap;
+}
+
+.definitions.case ol.horizontales {
+  list-style-type: "→ ";
+}
+
+.definitions.case ol.verticales {
+  list-style-type: "↓ ";
+}
+
+.definitions li {
+  transition: opacity 0.3s;
+}
+
+.definitions li.non-selectionee {
+  opacity: 30%;
 }
 
 .erreur {
-    text-align: center;
+  text-align: center;
 }
 
-button[type='submit'] {
-    width: fit-content;
-    margin: 0 auto;
+button[type="submit"] {
+  width: fit-content;
+  margin: 0 auto;
 }
 
-button[type='submit'] {
-    width: 100%;
-    margin: auto;
-    border: none;
-    background: none;
-    font-family: inherit;
-    font-size: 1em;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    justify-content: center;
+button[type="submit"] {
+  width: 100%;
+  margin: 1em auto 0 auto;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  justify-content: center;
 }
 
 button[type="submit"]:hover {
-    cursor: pointer;
-    color: #2a6496;
-    text-decoration: underline;
+  cursor: pointer;
+  color: #2a6496;
+  text-decoration: underline;
 }
 
 button[type="submit"]:active {
-    color: darkorchid;
+  color: darkorchid;
 }
 
-
 @media (max-width: 1024px) {
-    body {
-        padding: 1.5rem 1rem;
-    }
+  h1.large.width {
+    display: none;
+  }
 
-    h1.large.width {
-        display: none;
-    }
+  h1.small.width {
+    display: initial;
+  }
 
-    h1.small.width {
-        display: initial;
-    }
+  h1 table {
+    line-height: 0.7;
+  }
 
-    h1 table {
-        line-height: 0.7;
-    }
-    
-    form {
-        min-height: calc(100vh - 2rem);
-    }
-    
-    .grille {
-        width: 100%;
-        margin: auto;
-    }
-    
-    .definitions {
-        width: 45%;
-    }
-    
-    .definitions.horizontales {
-        order: inherit
-    }
+  .grille {
+    width: 100%;
+    margin: auto;
+  }
+
+  .definitions {
+    width: 45%;
+  }
+
+  .definitions.horizontales {
+    order: inherit;
+  }
 }
 
 @media (max-width: 640px) {
-	* {
-		box-sizing: border-box;
-	}
-    
-	body {
-		width: auto;
-		margin: 0;
-		padding: 1rem 0;
-	}
+  * {
+    box-sizing: border-box;
+  }
 
-    h1.large.width {
-        display: none;
-    }
+  body {
+    width: auto;
+    margin: 0;
+    padding: 1rem 0;
+  }
 
-    h1.small.width {
-        display: none;
-    }
+  h1.large.width {
+    display: none;
+  }
 
-	.grille td {
-		width: 2.5rem;
-        height: 2.5rem;
-	}
-    
-    .definitions {
-        display: flex;
-        flex-flow: column;
-    }
+  h1.small.width {
+    display: none;
+  }
 
-    .definitions.horizontales,
-    .definitions.verticales {
-        width: 100%;
-    }
+  .grille td {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.2em;
+    margin: 1em 0 0.5em 0;
+  }
+
+  .definitions.horizontales,
+  .definitions.verticales {
+    width: 100%;
+  }
+  
+  .definitions > ol {
+    margin: 0;
+  }
+  
+  .definitions li.non-selectionee {
+    display: none;
+  }
 }
 
-@media (max-device-width:768px) and (orientation: landscape) {
+@media (max-device-width: 768px) and (orientation: landscape) {
   html {
-   -webkit-text-size-adjust: 100%;
-   -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-    body,
-    button {
-        background-color: #02081a;
-        color: #c6c6c6;
-    }
-    
-    .grille td,
-    .grille input {
-        background-color: #edeeee;
-    }
-    
-    button[type="submit"]:hover {
-        color: #479fec;
-    }
-    
-    button[type="submit"]:active {
-        color: orchid;
-    }
+  body,
+  button {
+    background-color: #02081a;
+    color: #c6c6c6;
+  }
+
+  .grille td,
+  .grille input {
+    background-color: #edeeee;
+  }
+
+  button[type="submit"]:hover {
+    color: #479fec;
+  }
+
+  button[type="submit"]:active {
+    color: orchid;
+  }
 }

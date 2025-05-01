@@ -35,6 +35,9 @@ foreach ($dico as $mot => $definition) {
         $mots_de_n_lettres[$n] = [];
     }
     $mots_de_n_lettres[$n][] = $mot;
+    if (!empty($definitions)) {
+        $dico[$mot] = [$definitions[array_rand($definitions)]];
+    }
 }
 
 function mots_espaces($longueur)

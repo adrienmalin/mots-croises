@@ -20,7 +20,7 @@ class Grille implements Iterator, ArrayAccess {
     private $lettres_suivantes;
     private $positions;
     private $nb_positions;
-    private $mots_utilises;
+    public $mots_utilises;
 
     public function __construct($hauteur, $largeur, $id = "")
     {
