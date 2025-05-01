@@ -9,32 +9,31 @@ $dico = [[]];
 if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
     $header = fgetcsv($lecteur, 0, "\t");
     while (($ligne = fgetcsv($lecteur, 0, "\t")) !== FALSE) {
-        if ($ligne[0] != NULL) {
-            if (substr($ligne[0], 0, 1) == "#") {
-                continue;
-            }
-            switch(count($ligne)) {
-                case 3:
-                    [$mot, $definition, $auteur] = $ligne;
-                    $definition .= " <small><em>$auteur</em></small>";
-                    break;
-                case 2:
-                    [$mot, $definition] = $ligne;
-                    break;
-                case 1:
-                    [$mot] = $ligne;
-                    $definition = "";
-            }
-            $mot = strtoupper($mot);
-            $longueur = strlen($mot);
-            if (!isset($dico[$longueur])) {
-                $dico[$longueur] = [];
-            }
-            if (!isset($dico[$longueur][$mot])) {
-                $dico[$longueur][$mot] = [];
-            }
-            $dico[$longueur][$mot][] = $definition;
+        if ($ligne[0] != NULL && substr($ligne[0], 0, 1) == "#") {
+            continue;
         }
+        switch(count($ligne)) {
+            case 1:
+                [$mot] = $ligne;
+                $definition = "";
+                break;
+            case 2:
+                [$mot, $definition] = $ligne;
+                break;
+            case 3:
+                [$mot, $definition, $auteur] = $ligne;
+                $definition .= " <small><em>$auteur</em></small>";
+                break;
+        }
+        $mot = strtoupper($mot);
+        $longueur = strlen($mot);
+        if (!isset($dico[$longueur])) {
+            $dico[$longueur] = [];
+        }
+        if (!isset($dico[$longueur][$mot])) {
+            $dico[$longueur][$mot] = [];
+        }
+        $dico[$longueur][$mot][] = $definition;
     }
     fclose($lecteur);
 }
