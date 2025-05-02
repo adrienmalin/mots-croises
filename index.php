@@ -1,8 +1,6 @@
 <?php
 
-if (isset($_GET["grille"])) {
-    $id = htmlspecialchars($_GET["grille"]);
-} else {
+if (!isset($_GET["grille"])) {
     $_GET["grille"] = uniqid();
     header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
     exit;
@@ -12,12 +10,12 @@ if (isset($_GET["grille"])) {
 include_once "dico.php";
 include_once "Grille.php";
 
-const HAUTEUR_DEFAUT = 6;
-const HAUTEUR_MIN = 2;
-const HAUTEUR_MAX = 10;
-const LARGEUR_DEFAUT = 6;
-const LARGEUR_MIN = 2;
-const LARGEUR_MAX = 10;
+const HAUTEUR_DEFAUT = 7;
+const HAUTEUR_MIN    = 2;
+const HAUTEUR_MAX    = 10;
+const LARGEUR_DEFAUT = 7;
+const LARGEUR_MIN    = 2;
+const LARGEUR_MAX    = 10;
 
 
 $hauteur = filter_input(INPUT_GET, 'lignes', FILTER_VALIDATE_INT, [
@@ -34,6 +32,7 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
         "max_range" => LARGEUR_MAX
     ]
 ]);
+$id = htmlspecialchars($_GET["grille"]);
 
 $grille = new Grille($hauteur, $largeur, $id);
 $grille->current();
@@ -180,13 +179,12 @@ foreach ($grille->colonnes as $x => $mots) {
         
         <div class="nouvelle-grille">
             <img src="favicon.svg" width="16" height="16">
-            <button type="submit">
-                Nouvelle grille de
-                <input type="number" id="lignes"<?= isset($_GET["lignes"])? 'name="lignes"': "" ?> value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>"/>
-                lignes et
-                <input type="number" id="colonnes"<?= isset($_GET["colonnes"])? 'name="colonnes"': "" ?> value="<?= $largeur ?>" min="<?=LARGEUR_MIN?>" max="<?=LARGEUR_MAX?>"/>
-                colonnes
-            </button>
+            <button type="submit">Nouvelle grille</button>
+            de
+            <input type="number" id="lignes"<?= isset($_GET["lignes"])? 'name="lignes"': "" ?> value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>"/>
+            lignes et
+            <input type="number" id="colonnes"<?= isset($_GET["colonnes"])? 'name="colonnes"': "" ?> value="<?= $largeur ?>" min="<?=LARGEUR_MIN?>" max="<?=LARGEUR_MAX?>"/>
+            colonnes
         </div>
     </form>
 

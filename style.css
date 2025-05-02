@@ -178,12 +178,14 @@ h2 {
   text-align: center;
 }
 
+.nouvelle-grille img {
+  margin: 0 0.5em;
+}
+
 .nouvelle-grille {
   margin: 1em auto 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.5em;
+  align-items: baseline;
 }
 
 .nouvelle-grille button,
@@ -193,20 +195,15 @@ h2 {
   color: inherit;
   font-family: inherit;
   font-size: 1em;
+  cursor: pointer;
 }
 
 .nouvelle-grille button {
-  display: flex;
+  text-decoration: underline;
 }
 
 .nouvelle-grille button:hover {
-  cursor: pointer;
   color: #2a6496;
-}
-
-.nouvelle-grille button:hover,
-.nouvelle-grille button:hover input {
-  text-decoration: underline;
 }
 
 .nouvelle-grille button:active {

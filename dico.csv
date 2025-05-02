@@ -3094,7 +3094,7 @@ WIFI	Définit comment les appareils se connectent les uns aux autres sans câble
 PPP	Utilisé dans les connexions point à point, telles que les anciennes connexions par accès commuté, pour établir une communication directe entre deux nœuds.
 ARP	Traduit les adresses IP en adresses MAC au sein d'un réseau local afin que les données atteignent le bon appareil.
 STP	Évitez les boucles dans les réseaux locaux complexes en déconnectant les liens redondants qui pourraient causer des problèmes.
-IP	L'un des protocoles de base, il attribue des adresses uniques (IPv4 ou IPv6) et est responsable du routage des paquets vers leur destination.
+IP	L'un des protocoles de base, il attribue des adresses uniques et est responsable du routage des paquets vers leur destination.
 ICMP	Il complète l'IP en tant que système de diagnostic, envoyant des messages d'erreur ou confirmant si les paquets sont arrivés.
 RIP	Il aide les routeurs à échanger des informations sur les meilleurs itinéraires.
 DHCP	Automatise l'attribution d'adresses IP au sein d'un réseau local sans intervention manuelle.
