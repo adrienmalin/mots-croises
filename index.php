@@ -37,13 +37,6 @@ $id = htmlspecialchars($_GET["grille"]);
 $grille = new Grille($hauteur, $largeur, $id);
 $grille->current();
 
-function melanger_valeurs(&$tableau)
-{
-    usort($tableau, function ($a, $b) {
-        return mt_rand(-1, 1);
-    });
-}
-
 $definitions_horizontales = [];
 foreach ($grille->lignes as $y => $mots) {
     $definitions_horizontales[$y] = [];
