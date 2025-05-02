@@ -49,10 +49,9 @@ $definitions_horizontales = [];
 foreach ($grille->lignes as $y => $mots) {
     $definitions_horizontales[$y] = [];
     foreach ($mots as $mot) {
-        $definition = $dico[strlen($mot)][$mot];
-        if (count($definition)) {
-            melanger_valeurs($definition);
-            $definitions_horizontales[$y][] = array_pop($definition);
+        $definitions = $dico[strlen($mot)][$mot];
+        if (count($definitions)) {
+            $definitions_horizontales[$y][] = array_pop($definitions);
         }
     }
 }
@@ -60,10 +59,9 @@ $definitions_verticales = [];
 foreach ($grille->colonnes as $x => $mots) {
     $definitions_verticales[$x] = [];
     foreach ($mots as $mot) {
-        $definition = $dico[strlen($mot)][$mot];
-        if (count($definition)) {
-            melanger_valeurs($definition);
-            $definitions_verticales[$x][] = array_pop($definition);
+        $definitions = $dico[strlen($mot)][$mot];
+        if (count($definitions)) {
+            $definitions_verticales[$x][] = array_pop($definitions);
         }
     }
 }

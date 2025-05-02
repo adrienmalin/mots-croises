@@ -99,7 +99,7 @@ class Grille implements Iterator, ArrayAccess {
             $this->grille[$y][$x] = $lettre;
 
             if ($x == $this->largeur - 1) {
-                foreach (explode(" ", $this->get_ligne($y, $this->largeur)) as $mot) {
+                foreach (explode(" ", $this->get_ligne($y, $this->largeur)) as $rang => $mot) {
                     if (strlen($mot) == 1) continue;
                     $nb_definitions = count($dico[strlen($mot)][$mot]);
                     $occurences = 1;
@@ -107,13 +107,13 @@ class Grille implements Iterator, ArrayAccess {
                         if ($mot != $mot2) continue;
                         if (++$occurences >= $nb_definitions) continue 3;
                     }
-                    $this->lignes[$y][] = $mot;
+                    $this->lignes[$y][$rang] = $mot;
                 }
             } else {
                 $this->lignes[$y] = [];
             }
             if ($y == $this->hauteur - 1) {
-                foreach (explode(" ", $this->get_colonne($x, $this->hauteur)) as $mot) {
+                foreach (explode(" ", $this->get_colonne($x, $this->hauteur)) as $rang => $mot) {
                     if (strlen($mot) == 1) continue;
                     $nb_definitions = count($dico[strlen($mot)][$mot]);
                     $occurences = 1;
@@ -121,7 +121,7 @@ class Grille implements Iterator, ArrayAccess {
                         if ($mot != $mot2) continue;
                         if (++$occurences >= $nb_definitions) continue 3;
                     }
-                    $this->colonnes[$x][] = $mot;
+                    $this->colonnes[$x][$rang] = $mot;
                 }
             } else {
                 $this->colonnes[$x] = [];
