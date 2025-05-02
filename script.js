@@ -6,7 +6,7 @@ async function sha256(text) {
   return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-let inputs = grilleForm.querySelectorAll('.grille input')
+let inputs = grilleForm.querySelectorAll(".grille input");
 let largeur = Number(colonnes.value);
 let nb_cases = inputs.length;
 let index = 0;
@@ -16,13 +16,21 @@ for (let input of inputs) {
   input.y = Math.floor(input.index / largeur);
 
   input.onfocus = function (event) {
-    for (li of document.querySelectorAll(`.definitions.horizontales > ol > li:nth-child(${input.y+1}), .definitions.verticales > ol > li:nth-child(${input.x+1})`)) {
-      li.classList.add("selectionee")
+    for (li of document.querySelectorAll(
+      `.definitions.horizontales > ol > li:nth-child(${
+        input.y + 1
+      }), .definitions.verticales > ol > li:nth-child(${input.x + 1})`
+    )) {
+      li.classList.add("selectionee");
     }
-    for (li of document.querySelectorAll(`.definitions.horizontales > ol > li:not(:nth-child(${input.y+1})), .definitions.verticales > ol > li:not(:nth-child(${input.x+1}))`)) {
-      li.classList.add("non-selectionee")
+    for (li of document.querySelectorAll(
+      `.definitions.horizontales > ol > li:not(:nth-child(${
+        input.y + 1
+      })), .definitions.verticales > ol > li:not(:nth-child(${input.x + 1}))`
+    )) {
+      li.classList.add("non-selectionee");
     }
-    
+
     input.select();
   };
 
@@ -69,17 +77,26 @@ for (let input of inputs) {
   };
 
   input.onblur = function (event) {
-    for (li of document.querySelectorAll(`.definitions.horizontales > ol > li:nth-child(${input.y+1}), .definitions.verticales > ol > li:nth-child(${input.x+1})`)) {
-      li.classList.remove("selectionee")
+    for (li of document.querySelectorAll(
+      `.definitions.horizontales > ol > li:nth-child(${
+        input.y + 1
+      }), .definitions.verticales > ol > li:nth-child(${input.x + 1})`
+    )) {
+      li.classList.remove("selectionee");
     }
-    for (li of document.querySelectorAll(`.definitions.horizontales > ol > li:not(:nth-child(${input.y+1})), .definitions.verticales > ol > li:not(:nth-child(${input.x+1}))`)) {
-      li.classList.remove("non-selectionee")
+    for (li of document.querySelectorAll(
+      `.definitions.horizontales > ol > li:not(:nth-child(${
+        input.y + 1
+      })), .definitions.verticales > ol > li:not(:nth-child(${input.x + 1}))`
+    )) {
+      li.classList.remove("non-selectionee");
     }
   };
-};
+}
 
-for (let input of grilleForm.querySelectorAll('.nouvelle-grille input')) {
+for (let input of grilleForm.querySelectorAll(".nouvelle-grille input")) {
   input.onfocus = function (event) {
+    input.name = input.id;
     input.select();
   };
 }

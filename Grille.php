@@ -34,14 +34,12 @@ class Grille implements Iterator, ArrayAccess {
         $this->lettres_suivantes = [];
         foreach ($hauteur == $largeur ? [$hauteur] : [$hauteur, $largeur] as $longueur) {
             $this->lettres_suivantes[$longueur] = [];
-            foreach (mots_espaces($longueur, $hauteur == $largeur ? MAX_MOTS : MAX_MOTS/2) as $mots) {
+            foreach (mots_espaces($longueur) as $mots) {
                 $mot = implode(" ", $mots);
                 $ref = &$this->lettres_suivantes[$longueur];
                 for ($i = 0; $i < $longueur; $i++) {
                     $lettre = $mot[$i];
-                    if (!isset($ref[$lettre])) {
-                        $ref[$lettre] = [];
-                    }
+                    if (!isset($ref[$lettre])) $ref[$lettre] = [];
                     $ref = &$ref[$lettre];
                 }
                 $ref = [];
@@ -50,9 +48,8 @@ class Grille implements Iterator, ArrayAccess {
 
         $this->positions = [];
         for ($y = 0; $y < $hauteur; $y++) {
-            for ($x = 0; $x < $largeur; $x++) {
+            for ($x = 0; $x < $largeur; $x++)
                 $this->positions[] = [$x, $y];
-            }
         }
         $this->nb_positions = count($this->positions);
 
@@ -63,23 +60,23 @@ class Grille implements Iterator, ArrayAccess {
     public function get_ligne($y, $largeur)
     {
         $ligne = "";
-        for ($x = 0; $x < $largeur; $x++) {
+        for ($x = 0; $x < $largeur; $x++) 
             $ligne .= $this->grille[$y][$x];
-        }
         return $ligne;
     }
 
     public function get_colonne($x, $hauteur)
     {
         $colonne = "";
-        for ($y = 0; $y < $hauteur; $y++) {
+        for ($y = 0; $y < $hauteur; $y++)
             $colonne .= $this->grille[$y][$x];
-        }
         return $colonne;
     }
 
     public function generateur($i = 0)
     {
+        global $dico;
+
         if ($i == $this->nb_positions) {
             yield $this;
             return;
@@ -88,13 +85,11 @@ class Grille implements Iterator, ArrayAccess {
         [$x, $y] = $this->positions[$i];
 
         $lettres_suivantes_ligne = $this->lettres_suivantes[$this->largeur];
-        for ($x2 = 0; $x2 < $x; $x2++) {
+        for ($x2 = 0; $x2 < $x; $x2++)
             $lettres_suivantes_ligne = $lettres_suivantes_ligne[$this->grille[$y][$x2]];
-        }
         $lettres_suivantes_colonne = $this->lettres_suivantes[$this->hauteur];
-        for ($y2 = 0; $y2 < $y; $y2++) {
+        for ($y2 = 0; $y2 < $y; $y2++)
             $lettres_suivantes_colonne = $lettres_suivantes_colonne[$this->grille[$y2][$x]];
-        }
         $lettres_communes = melanger_cles(array_intersect_key(
             $lettres_suivantes_ligne,
             $lettres_suivantes_colonne
@@ -104,30 +99,32 @@ class Grille implements Iterator, ArrayAccess {
             $this->grille[$y][$x] = $lettre;
 
             if ($x == $this->largeur - 1) {
-                foreach (explode(" ", $this->get_ligne($y, $this->largeur)) as $mot_ligne) {
-                    if (in_array($mot_ligne, array_merge(...$this->lignes, ...$this->colonnes))) {
-                        continue 2;
+                foreach (explode(" ", $this->get_ligne($y, $this->largeur)) as $mot) {
+                    if (strlen($mot) == 1) continue;
+                    $nb_definitions = count($dico[strlen($mot)][$mot]);
+                    $occurences = 1;
+                    foreach (array_merge(...$this->lignes, ...$this->colonnes) as $mot2) {
+                        if ($mot != $mot2) continue;
+                        if (++$occurences >= $nb_definitions) continue 3;
                     }
-                    if (!isset($this->lignes[$y])) {
-                        $this->lignes[$y] = [];
-                    }
-                    $this->lignes[$y][] = $mot_ligne;
+                    $this->lignes[$y][] = $mot;
                 }
             } else {
-                unset($this->lignes[$y]);
+                $this->lignes[$y] = [];
             }
             if ($y == $this->hauteur - 1) {
-                foreach (explode(" ", $this->get_colonne($x, $this->hauteur)) as $mot_colonne) {
-                    if (in_array($mot_colonne, array_merge(...$this->lignes, ...$this->colonnes))) {
-                        continue 2;
+                foreach (explode(" ", $this->get_colonne($x, $this->hauteur)) as $mot) {
+                    if (strlen($mot) == 1) continue;
+                    $nb_definitions = count($dico[strlen($mot)][$mot]);
+                    $occurences = 1;
+                    foreach (array_merge(...$this->lignes, ...$this->colonnes) as $mot2) {
+                        if ($mot != $mot2) continue;
+                        if (++$occurences >= $nb_definitions) continue 3;
                     }
-                    if (!isset($this->lignes[$x])) {
-                        $this->colonnes[$x] = [];
-                    }
-                    $this->colonnes[$x][] = $mot_colonne;
+                    $this->colonnes[$x][] = $mot;
                 }
             } else {
-                unset($this->colonnes[$x]);
+                $this->colonnes[$x] = [];
             }
 
             if ($i < $this->nb_positions) {
@@ -141,9 +138,8 @@ class Grille implements Iterator, ArrayAccess {
     public function hash()
     {
         $string = "";
-        foreach ($this->grille as $ligne) {
+        foreach ($this->grille as $ligne)
             $string .= implode("", $ligne);
-        }
         return hash('sha256', $string);
     }
 

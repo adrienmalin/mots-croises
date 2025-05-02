@@ -1,21 +1,21 @@
 <?php
 
-if (!isset($_GET["grille"])) {
+if (isset($_GET["grille"])) {
+    $id = htmlspecialchars($_GET["grille"]);
+} else {
     $_GET["grille"] = uniqid();
     header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
     exit;
-} else {
-    $id = htmlspecialchars($_GET["grille"]);
 }
 
 
 include_once "dico.php";
 include_once "Grille.php";
 
-const HAUTEUR_DEFAUT = 7;
+const HAUTEUR_DEFAUT = 6;
 const HAUTEUR_MIN = 2;
 const HAUTEUR_MAX = 10;
-const LARGEUR_DEFAUT = 7;
+const LARGEUR_DEFAUT = 6;
 const LARGEUR_MIN = 2;
 const LARGEUR_MAX = 10;
 
@@ -37,25 +37,33 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
 
 $grille = new Grille($hauteur, $largeur, $id);
 $grille->current();
-$definitions = [
-    "lignes" => [],
-    "colonnes" => []
-];
+
+function melanger_valeurs(&$tableau)
+{
+    usort($tableau, function ($a, $b) {
+        return mt_rand(-1, 1);
+    });
+}
+
+$definitions_horizontales = [];
 foreach ($grille->lignes as $y => $mots) {
-    $definitions["lignes"][$y] = [];
+    $definitions_horizontales[$y] = [];
     foreach ($mots as $mot) {
         $definition = $dico[strlen($mot)][$mot];
-        if ($dico[strlen($mot)][$mot] != "") {
-            $definitions["lignes"][$y][] = $definition;
+        if (count($definition)) {
+            melanger_valeurs($definition);
+            $definitions_horizontales[$y][] = array_pop($definition);
         }
     }
 }
+$definitions_verticales = [];
 foreach ($grille->colonnes as $x => $mots) {
-    $definitions["colonnes"][$x] = [];
+    $definitions_verticales[$x] = [];
     foreach ($mots as $mot) {
         $definition = $dico[strlen($mot)][$mot];
-        if ($dico[strlen($mot)][$mot] != "") {
-            $definitions["colonnes"][$x][] = $definition;
+        if (count($definition)) {
+            melanger_valeurs($definition);
+            $definitions_verticales[$x][] = array_pop($definition);
         }
     }
 }
@@ -116,14 +124,16 @@ foreach ($grille->colonnes as $x => $mots) {
                             <tr>
                                 <th><?= $y + 1 ?></th>
                                 <?php for ($x = 0; $x < $largeur; $x++): ?>
-                                    <td class="case <?= $grille[$y][$x] == " " ? "noire" : "blanche" ?>">
-                                        <?php if ($grille[$y][$x] == " "): ?>
+                                    <?php if ($grille[$y][$x] == " "): ?>
+                                        <td class="case noire">
                                             <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" value=" " disabled />
-                                        <?php else: ?>
+                                        </td>
+                                    <?php else: ?>
+                                        <td class="case blanche">
                                             <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>"
-                                                title="<?= "→ " . strip_tags(implode("\n→ ", $definitions["lignes"][$y])) . "\n↓ " . strip_tags(implode("\n↓ ", $definitions["colonnes"][$x])) ?>" />
-                                        <?php endif; ?>
-                                    </td>
+                                                title="<?= "→ " . strip_tags(implode("\n→ ", $definitions_horizontales[$y])) . "\n↓ " . strip_tags(implode("\n↓ ", $definitions_verticales[$x])) ?>" />
+                                        </td>
+                                    <?php endif; ?>
                                 <?php endfor; ?>
                             </tr>
                         <?php endfor; ?>
@@ -132,13 +142,13 @@ foreach ($grille->colonnes as $x => $mots) {
                 <div class="definitions horizontales">
                     <h2>Horizontalement</h2>
                     <ol>
-                        <?php foreach ($definitions["lignes"] as $y => $definitions_ligne): ?>
+                        <?php foreach ($definitions_horizontales as $y => $definitions): ?>
                             <li>
-                                <?php if (count($definitions_ligne) == 1): ?>
-                                    <?= $definitions_ligne[0] ?>
+                                <?php if (count($definitions) == 1): ?>
+                                    <?= $definitions[0] ?>
                                 <?php else: ?>
                                     <ol>
-                                        <?php foreach ($definitions_ligne as $definition) : ?>
+                                        <?php foreach ($definitions as $definition) : ?>
                                             <li><?= $definition ?></li>
                                         <?php endforeach ?>
                                     </ol>
@@ -150,13 +160,13 @@ foreach ($grille->colonnes as $x => $mots) {
                 <div class="definitions verticales">
                     <h2>Verticalement</h2>
                     <ol type="A">
-                        <?php foreach ($definitions["colonnes"] as $x => $definitions_colonne): ?>
+                        <?php foreach ($definitions_verticales as $x => $definitions): ?>
                             <li>
-                                <?php if (count($definitions_colonne) == 1): ?>
-                                    <?= $definitions_colonne[0] ?>
+                                <?php if (count($definitions) == 1): ?>
+                                    <?= $definitions[0] ?>
                                 <?php else: ?>
                                     <ol>
-                                        <?php foreach ($definitions_colonne as $definition) : ?>
+                                        <?php foreach ($definitions as $definition) : ?>
                                             <li><?= $definition ?></li>
                                         <?php endforeach ?>
                                     </ol>
@@ -165,7 +175,7 @@ foreach ($grille->colonnes as $x => $mots) {
                         <?php endforeach; ?>
                     </ol>
                 </div>
-            <?php else: ?>
+            <?php else: http_response_code(500); ?>
                 <h3 class="erreur">Erreur de génération de la grille</h3>
             <?php endif ?>
         </div>
@@ -174,9 +184,9 @@ foreach ($grille->colonnes as $x => $mots) {
             <img src="favicon.svg" width="16" height="16">
             <button type="submit">
                 Nouvelle grille de
-                <input type="number" id="lignes" name="lignes" value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>"/>
+                <input type="number" id="lignes"<?= isset($_GET["lignes"])? 'name="lignes"': "" ?> value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>"/>
                 lignes et
-                <input type="number" id="colonnes" name="colonnes" value="<?= $largeur ?>" min="<?=LARGEUR_MIN?>" max="<?=LARGEUR_MAX?>"/>
+                <input type="number" id="colonnes"<?= isset($_GET["colonnes"])? 'name="colonnes"': "" ?> value="<?= $largeur ?>" min="<?=LARGEUR_MIN?>" max="<?=LARGEUR_MAX?>"/>
                 colonnes
             </button>
         </div>
