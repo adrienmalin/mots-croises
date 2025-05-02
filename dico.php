@@ -2,7 +2,7 @@
 
 
 const MIN_LETTRES_MOT_1 = 2;
-const MIN_LETTRES_MOT_2 = 0;
+const MIN_LETTRES_MOT_2 = 1;
 const MAX_MOTS = 1000000;
 
 $dico = [[]];
@@ -40,9 +40,9 @@ function mots_espaces($longueur, $nb_mots_restants=MAX_MOTS)
         yield [$mot];
         if (--$nb_mots_restants <= 0) return;
     }
-    for ($i = MIN_LETTRES_MOT_1; $longueur - $i - 1 >= MIN_LETTRES_MOT_2; $i++) {
+    for ($i = MIN_LETTRES_MOT_1; ($j = $longueur - $i - 1) >= MIN_LETTRES_MOT_2; $i++) {
         foreach ($dico[$i] as $mot => $definition) {
-            foreach (mots_espaces($longueur - $i - 1, $nb_mots_restants) as $mots) {
+            foreach (mots_espaces($j, $nb_mots_restants) as $mots) {
                 if (!in_array($mot, $mots)) {
                     yield [$mot, ...$mots];
                     if (--$nb_mots_restants <= 0) return;

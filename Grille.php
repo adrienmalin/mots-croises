@@ -99,20 +99,22 @@ class Grille implements Iterator, ArrayAccess {
             $this->grille[$y][$x] = $lettre;
 
             $this->lignes[$y] = [];
-            if ($x == $this->largeur - 1) {
-                foreach (explode(" ", $this->get_ligne($y, $this->largeur)) as $rang => $mot) {
-                    if (strlen($mot) == 1) continue;
-                    if (in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
-                    $this->lignes[$y][$rang] = $mot;
-                }
+            $mots = [];
+            if ($x == $this->largeur - 1) $mots = explode(" ", $this->get_ligne($y, $this->largeur));
+            else if ($lettre == " ") $mots = explode(" ", $this->get_ligne($y, $x));
+            foreach ($mots as $rang => $mot) {
+                if (strlen($mot) <= 1) continue;
+                if (in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
+                $this->lignes[$y][$rang] = $mot;
             }
             $this->colonnes[$x] = [];
-            if ($y == $this->hauteur - 1) {
-                foreach (explode(" ", $this->get_colonne($x, $this->hauteur)) as $rang => $mot) {
-                    if (strlen($mot) == 1) continue;
-                    if (in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
-                    $this->colonnes[$x][$rang] = $mot;
-                }
+            $mots = [];
+            if ($y == $this->hauteur - 1) $mots = explode(" ", $this->get_colonne($x, $this->hauteur));
+            else if ($lettre == " ") $mots = explode(" ", $this->get_colonne($x, $y));
+            foreach ($mots as $rang => $mot) {
+                if (strlen($mot) == 1) continue;
+                if (in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
+                $this->colonnes[$x][$rang] = $mot;
             }
 
             if ($i < $this->nb_positions) {

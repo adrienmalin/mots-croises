@@ -2839,14 +2839,13 @@ BOSS	Quelqu'un qui arrive en avance quand vous êtes en retard, et en retard qua
 BOTTES	Grandes chaussures en coutchouc, permettant aux enfants de mesurer la profondeur des flaques
 CAFE	Breuvage qui fait dormir quand on n'en prend pas	Alphonse Allais
 CAGOULE	Couvre-chef inventé quand on a vu ta tête
-CANNE	À PÊCHE Bâton avec un crochet à un bout et un imbécile à l'autre
+CANNEAPECHE	Bâton avec un crochet à un bout et un imbécile à l'autre (3 mots)
 CANNIBALE	Qui aime son prochain, en sauce
 CARTE	ROUTIERE Carte indiquant à un automobiliste à peu près tout ce qu'il veut savoir, sauf la façon de la replier
 CELIBATAIRE	Homme qui peut avoir plusieurs femmes sur les genoux, mais aucune sur les bras
 CERVEAU	Organe grace auquel 1% des gens réfléchissent et 99% pensent qu'ils réfléchissent
 CHANDAIL	Vêtement que doit porter un enfant lorsque sa mère a froid
 CHAT	Allergène à quatre pattes
-CLINDOEIL	Méthode utilisée par une femme libre pour faire comprendre à un homme qu'il l'intéresse. Cette pratique, enseignée aux femmes dès leur plus jeune âge, comporte des difficultés : beaucoup de femmes ont quelque peine à regarder un homme droit dans les yeux, non pas à cause d'une éventuelle timidité, mais parce que le regard de l'homme est plutôt braqué sur leur poitrine.
 COCU	Homme qui a une femme et un meilleur ami
 COEUR	Siège de la passion chez les femmes. Ceci montre bien le respect des règles de l'adaptation dans l'évolution féminine, la femme n'ayant, on le sait, ni queue ni tête.
 COMMITE	Individus qui ne peuvent rien faire individuellement et se réunissent pour décider qu'ils ne peuvent rien faire ensemble
@@ -2993,135 +2992,6 @@ AINE	Fin de semaine
 IS	Sur la Tille
 IO	Bête à manger du foin
 CIL	On l'a à l'œil
-ACID	Propriétés garantissant la fiabilité des transactions dans les bases de données
-ADMINISTRATEUR	Personne responsable de la gestion, de la configuration et de la maintenance des systèmes informatiques, réseaux ou applications, veillant à leur bon fonctionnement, leur sécurité et leur disponibilité pour les utilisateurs
-ANSIBLE	Outil open source pour automatiser la gestion des configurations et déploiements
-APPLICATIF	Ensemble des logiciels ou applications utilisés dans une organisation pour répondre à des besoins spécifiques, comme la gestion commerciale, la paie, ou le traitement de données, et qui s’exécutent sur une infrastructure informatique
-APPLICATION	Logiciel conçu pour accomplir une tâche spécifique, qu’il s’agisse d’une utilisation personnelle comme un jeu ou une application mobile ou professionnelle comme la gestion de données ou la comptabilité, en interagissant avec l’utilisateur et souvent en s’appuyant sur des systèmes ou réseaux
-AWS	Plateforme de cloud computing proposant une large gamme de services comme le stockage, les bases de données, le calcul et l’analyse de données, permettant aux entreprises et développeurs de créer, héberger et faire évoluer des applications de manière flexible et à la demande
-BGP	Protocole principal pour le routage entre réseaux sur internet
-BIGDATA	L’ensemble des données volumineuses et complexes, difficiles à traiter avec les outils classiques, qui nécessitent des technologies spécifiques pour être collectées, stockées, analysées et exploitées afin d’en extraire des informations utiles. (2 mots)
-BLOCKCHAIN	Technologie de registre distribué sécurisé et transparent pour les transactions
-BTREE	Structure de données optimisée pour les systèmes de stockage et bases de données
-CICD	Pratiques automatisant le développement, le test et le déploiement des applications
-CLOUD	L'ordinateur de quelqu'un d'autre
-CLUSTER	Ensemble d’ordinateurs interconnectés pour améliorer performances et disponibilité
-CONFIGURER	Ajuster les paramètres et les réglages d’un système, logiciel ou matériel pour qu’il fonctionne selon les besoins spécifiques de l’utilisateur ou de l’environnement
-CONFIGURE	Un appareil, un logiciel ou un système a été ajusté ou paramétré selon des spécifications particulières pour fonctionner de manière optimale ou répondre à des besoins spécifiques
-CONTAINERIZATION	Encapsulation d’applications dans des conteneurs pour leur portabilité
-CUDA	Plateforme Nvidia pour utiliser les GPU dans les calculs généraux
-CPS	Systèmes intégrant composants informatiques et physiques
-DATACENTER	Lieu physique ou virtuel où sont hébergés et gérés des infrastructures informatiques, comme des serveurs, des stockages et des systèmes de réseaux, destinés à supporter le fonctionnement d’applications, de services en ligne ou de traitements de données à grande échelle
-DDOS	Attaque visant à rendre un service indisponible par saturation
-DEPLOYER	Mettre en production un logiciel, une application ou une mise à jour sur un environnement opérationnel, rendant ainsi les nouvelles fonctionnalités ou corrections disponibles pour les utilisateurs finaux
-DEVELOPPEUR	Personne qui conçoit, crée et met en œuvre des logiciels, applications ou systèmes informatiques en utilisant des langages de programmation, en transformant les besoins utilisateurs en solutions fonctionnelles
-DISTANT	En informatique désigne les ressources, appareils ou services accessibles depuis un endroit différent par un réseau
-DOCKER	Plateforme simplifiant la création et exécution d’applications dans des conteneurs
-DSI	La direction des systèmes d’information est le département d’une organisation responsable de la gestion, du développement et de la maintenance des outils et technologies numériques pour soutenir les activités et objectifs de l’entreprise
-ELASTICSEARCH	Moteur de recherche distribué pour analyses rapides et scalables
-ENVIRONNEMENTS	Configurations logicielles, matérielles et réseau dans lesquelles un système ou une application est développé, testé ou exploité, généralement divisés en environnements de développement, de test, de recette et de production pour assurer la qualité et la stabilité
-ERP	Un système logiciel intégré qui permet de gérer et centraliser les différentes fonctions d’une entreprise (comptabilité, ressources humaines, supply chain, ventes, etc.) en unifiant les processus et les données pour améliorer l’efficacité opérationnelle et la prise de décision.
-ETHEREUM	Blockchain permettant contrats intelligents et applications décentralisées
-FIDO	Normes pour authentification forte sans mot de passe
-FPGA	Circuit programmable après fabrication pour performances spécifiques
-FUZZ	Méthode injectant entrées aléatoires pour tester robustesse logicielle
-GAN	Réseau comprenant générateur et discriminateur pour créer données synthétiques
-GIT	Système de contrôle de version distribué qui permet de gérer et de suivre les modifications apportées à un ensemble de fichiers, facilitant ainsi la collaboration entre développeurs sur des projets logiciels enregistrant l’historique des changements
-GPU	Un processeur spécialisé conçu pour traiter rapidement les données graphiques et les images, permettant de rendre les graphismes complexes dans les jeux vidéo, la 3d, le traitement d’images ou encore l’intelligence artificielle, en parallélisant les calculs nécessaires
-GRAPHQL	Langage de requête permettant récupération précise de données via api
-HADOOP	Framework pour traitement distribué de grandes quantités de données
-HEBERGEUR	Prestataire de services qui met à disposition des ressources techniques (serveurs, stockage, bande passante) pour héberger des sites web, applications ou données en ligne, garantissant leur accessibilité depuis internet
-HTTP	Protocole de communication utilisé pour transférer des données sur le world wide web, permettant aux navigateurs d’accéder à des ressources (comme des pages web) hébergées sur des serveurs via des requêtes et des réponses
-HYPERCONVERGENCE	Architecture combinant stockage, calcul et réseau dans un seul système
-IAC	Gestion automatique des infrastructures via fichiers configurables
-IAAS	Est un modèle de cloud computing où une infrastructure matérielle (serveurs, stockage, réseaux) est mise à disposition via internet par un fournisseur, permettant aux utilisateurs de louer et gérer ces ressources à la demande sans avoir besoin d’investir dans du matériel physique. Exemples
-JAVA	Langage de programmation orienté objet, créé par sun microsystems (aujourd’hui oracle), qui permet de développer des applications fonctionnant sur différentes plateformes grâce à sa machine virtuelle java (jvm). Il est largement utilisé pour les logiciels d’entreprise, les applications mobiles
-JWT	Standard pour tokens sécurisant échanges entre parties
-KUBERNETES	Plateforme pour gestion de conteneurs et orchestration d’applications
-KAFKA	Plateforme pour flux de données en temps réel tolérante aux pannes
-VM	Simulation logicielle d’un système informatique qui fonctionnent sur un ordinateur hôte, permettant d’exécuter plusieurs systèmes d’exploitation ou applications de manière isolée et indépendante, optimisant ainsi les ressources matérielles et facilitant le déploiement et les tests
-MICROSERVICES	Architecture décomposant une application en services indépendants
-AZURE	Plateforme de cloud computing proposant une large gamme de services (calcul, stockage, bases de données, intelligence artificielle, etc.) permettant aux entreprises et développeurs de créer, héberger et gérer des applications de manière flexible et évolutique, s’intégrant souvent avec l’écosystème Microsoft.
-MIGRATION	Processus de transfert de données, d’applications ou de systèmes d’un environnement à un autre, comme lors du passage d’une infrastructure locale vers le cloud, d’une version logicielle ancienne vers une nouvelle, ou du changement de plateforme, tout en assurant la continuité et l’intégrité des informations
-NAS	Dispositif de stockage connecté au réseau
-NGINX	Serveur web et proxy inverse open source léger et haute performance, conçu pour gérer simultanément un grand nombre de connexions, idéal pour servir des sites web statiques, gérer le load balancing et agir comme passerelle vers des applications web
-NLP	Intelligence artificielle traitant interaction langage humain-machine
-NOSQL	Bases de données non relationnelles pour flexibilité et scalabilité
-OAUTH	Protocole autorisant un accès limité à des ressources utilisateur sans partager les identifiants
-OBSERVABILITE	Capacité d’un système à fournir informations internes pour diagnostic
-ORACLE	Entreprise américaine spécialisée dans les logiciels et systèmes informatiques, principalement connue pour sa base de données relationnelle oracle database , largement utilisée pour stocker et gérer de grandes quantités d’informations de manière sécurisée et efficace
-PAREFEU	Une barrière de sécurité qui contrôle et filtre les flux de données entrants et sortants sur un réseau ou un appareil, en se basant sur des règles définies, afin de protéger contre les accès non autorisés et les menaces potentielles
-PIPELINE	Processus automatisant ingestion, traitement et transport de données
-CPU	Composants électroniques au cœur des ordinateurs et appareils électroniques, chargés d’exécuter les instructions et les calculs nécessaires au fonctionnement des logiciels et systèmes, agissant comme le « cerveau » de l’ordinateur
-PROTOCOLE	Ensemble de règles et de normes qui définissent comment les appareils, systèmes ou logiciels communiquent et échangent des données de manière structurée et efficace, comme par exemple le http pour le web ou le tcp/ip pour les réseaux
-PROVISIONING	Allocation et configuration de ressources informatiques pour exécution
-PROXY	Un serveur intermédiaire qui se place entre un appareil comme un ordinateur et un autre serveur par exemple, sur internet, permettant de relayer les requêtes et les réponses, tout en offrant des fonctions comme la sécurité, la mise en cache et l’anonymat
-QUBIT	Unité fondamentale d’information en informatique quantique
-RNN	Modélisation séquences comme texte ou parole
-REQUÊTE	Demande d’information ou d’action formulée par un utilisateur ou un système auprès d’une base de données, d’un serveur ou d’une application, généralement exprimée dans un langage spécifique comme sql pour les bases de données ou http pour les requêtes web.
-RPA	Automatisation tâches répétitives par robots logiciels
-SAAS	Logiciel hébergé accessible à partir d’internet
-SDN	Gestion réseau programmable et centralisée
-SERVEUR	Ordinateur ou logiciel qui fournit diverses ressources et services, comme le stockage de données, l’hébergement de sites web ou la gestion de courriels, aux appareils clients connectés sur un réseau
-SHARDING	Partitionnement horizontal bases de données pour meilleure scalabilité
-SOC	Centre surveillant incidents sécurité organisationnels
-SQL	Langage de programmation conçu pour gérer et interroger les bases de données relationnelles, permettant d’effectuer des opérations comme la création, la lecture, la mise à jour et la suppression de données (CRUD) grâce à des requêtes structurées
-SSH	Protocole de communication sécurisé qui permet d’accéder à distance et de gérer des systèmes informatiques de manière cryptée, offrant une connexion fiable et protégée contre les interceptions et les attaques
-TERRAFORM	Outil iac définissant et provisionnant ressources cloud
-TENSORFLOW	Bibliothèque open source pour calcul numérique et apprentissage automatique
-TLS	Protocole sécurisant communications réseaux
-TOKENISATION	Remplacement d’une donnée sensible comme un numéro de carte bancaire par un code unique, appelé token, utilisé uniquement pour une transaction spécifique
-TYPESCRIPT	Sur-ensemble typé javascript offrant typage statique et interfaces
-UML	Langage standardisé pour modélisation logicielle
-UDP	Protocole rapide mais sans garantie livraison
-URL	Adresse unique qui permet d’identifier et d’accéder à une ressource spécifique sur internet, comme une page web, un fichier ou une application, en indiquant son emplacement et le protocole à utiliser
-UX	Conception centrée utilisateur pour satisfaction
-VIRTUALISATION	Technique qui consiste à faire fonctionner plusieurs systèmes ou applications sur un même ordinateur en les séparant les uns des autres pour optimiser les ressources et la sécurité
-VLAN	Sous-réseaux logiques pour segmentation réseau
-VPN	Connexion sécurisée sur réseau public
-VCS	Système suivant modifications code pour collaboration
-WAF	Sécurité filtrant trafic http(s) vers applications web
-WEBASSEMBLY	Format binaire exécutant code haute performance dans navigateurs
-WEBHOOK	Mécanisme qui permet d’envoyer automatiquement une notification à une autre application lorsqu’un événement spécifique se produit
-SCRAPING	Technique d’extraction des données depuis le web à partir d’un script ou d’un logiciel dans le but de les étudier et de les transformer
-WEBSOCKET	Protocole bidirectionnel temps réel entre client et serveur
-XAAS	Services variés fournis sur le cloud
-XML	Langage structurant et transportant données
-XSS	Injection scripts malveillants dans sites web
-ZB	Unité de mesure équivalente à environ un milliard de téraoctets, souvent utilisée pour représenter les volumes massifs de données générés par le big data
-ETHERNET	C'est le protocole standard pour les réseaux câblés. Définit comment les informations sont transmises via les câbles LAN.
-WIFI	Définit comment les appareils se connectent les uns aux autres sans câbles
-PPP	Utilisé dans les connexions point à point, telles que les anciennes connexions par accès commuté, pour établir une communication directe entre deux nœuds
-ARP	Traduit les adresses IP en adresses MAC au sein d'un réseau local afin que les données atteignent le bon appareil
-STP	Évitez les boucles dans les réseaux locaux complexes en déconnectant les liens redondants qui pourraient causer des problèmes
-IP	L'un des protocoles de base, il attribue des adresses uniques et est responsable du routage des paquets vers leur destination
-ICMP	Il complète l'IP en tant que système de diagnostic, envoyant des messages d'erreur ou confirmant si les paquets sont arrivés
-RIP	Il aide les routeurs à échanger des informations sur les meilleurs itinéraires
-DHCP	Automatise l'attribution d'adresses IP au sein d'un réseau local sans intervention manuelle
-TCP	Garantit que tous les colis arrivent sans erreur, complets et dans le bon ordre
-HTTP	Protocole principal du Web. Permet aux navigateurs et aux serveurs Web de communiquer.
-HTTPS	Version sécurisée cryptée avec TLS, utilisée sur les sites Web contenant des données sensibles
-FTP	Utilisé pour télécharger et télécharger des fichiers entre les clients et les serveurs
-SMTP	Protocole standard pour l'envoi d'e-mails
-IMAP	Pour recevoir et gérer les e-mails provenant de serveurs distants
-DNS	Traduit les adresses Web (domaines) en adresses IP, agissant comme un carnet d'adresses Internet global
-SNMP	Facilite la gestion et la surveillance des périphériques réseau
-PING	echo
-ECHO	ping
-TELNET	À éviter !
-SMTP	Protocole simple de transfert de courrier 
-NICNAME	Service d’annuaire WHOIS 
-TACACS	Protocole d’authentification à distance 
-TFTP	Protocole simplifié de transfert de fichiers 
-GOPHER	Recherche de document 
-KERBEROS	Système d’authentification de réseau 
-POP	Protocole de bureau de poste pour la communication par e-mail 
-NTP	Service de synchronisation temporelle 
-IMAP	Protocole d’accès aux messages électroniques
-SNMP	Protocole simple de gestion de réseau 
-IRC	Discussion relayée par Internet 
-LDAP	Annuaire moderne
-SYSLOG	Service de connexion au système Unix
 IO	A vu pis	Georges Perec
 IO	A fini sur le plancher	Georges Perec
 IO	Victime de la traite des blanches	Georges Perec
@@ -3161,7 +3031,6 @@ IO	N'a jamais quitté son plancher	Michel Laclos
 IO	L'amour la rendit bête	Michel Laclos
 IO	N'était pas plus belle à poil !	Michel Laclos
 HTTP	Protocole de communication pour le Web ; permet la navigation entre sites web
-HTTPS	Version sécurisée de HTTP ; les données sont chiffrées via SSL/TLS
 FTP	Permet le transfert de fichiers entre ordinateurs via un réseau
 SFTP	Variante sécurisée de FTP utilisant le protocole SSH
 SMTP	Sert à envoyer des e-mails entre serveurs
@@ -3173,7 +3042,8 @@ TCP	Garantit la transmission fiable des données (paquets bien reçus et dans l�
 UDP	Envoie des paquets rapidement, sans garantie de réception (utile pour le streaming)
 DHCP	Attribue automatiquement une adresse IP aux appareils d’un réseau
 SSH	Permet une connexion sécurisée à distance à un autre ordinateur (souvent en ligne de commande)
-TLS/SSL	Assure le chiffrement des données entre deux machines (ex : HTTPS).
+TLS	Assure le chiffrement des données entre deux machines (ex : HTTPS)
+SSL	Assure le chiffrement des données entre deux machines (ex : HTTPS)
 ARP	Fait le lien entre une adresse IP et une adresse MAC sur un réseau local
 CPU	Unité centrale de traitement ; le « cerveau » de l’ordinateur qui exécute les instructions
 RAM	Mémoire vive utilisée pour stocker temporairement les données en cours d’utilisation
@@ -3193,31 +3063,6 @@ AI	Intelligence artificielle ; ensemble de techniques visant à imiter l’intel
 VPN	Réseau privé virtuel permettant de sécuriser la connexion sur Internet
 LAN	Réseau local (ex : réseau d’une maison ou d’un bureau)
 WAN	Réseau étendu couvrant de grandes zones géographiques (ex : Internet)
-DOC	Format de traitement de texte
-DOCX	Format de traitement de texte
-PDF	Format de document universel figé et partageable
-TXT	Format de texte brut sans mise en forme
-ODT	Format de traitement de texte libre
-JPG	Format d'image compressée
-JPEG	Format d'image compressée
-PNG	Format d'image sans perte avec transparence
-GIF	Format d'image animée ou simple
-SVG	Format d'image vectorielle redimensionnable
-BMP	Format d'image bitmap brute
-WEBP	Format d'image optimisée pour le web
-MP3	Format audio compressé
-WAV	Format audio non compressé
-FLAC	Format audio compressé sans perte
-AAC	Format audio haute qualité
-MP4	Format de vidéo universelle compressée
-MKV	Format de conteneur vidéo flexible
-AVI	Format de vidéo ancienne
-MOV	Format de vidéo Quicktime
-WEBM	Format de vidéo optimisée pour le web
-ZIP	Format d'archive compressée standard
-RAR	Format d'archive compressée (efficace)
-TAR	Format d'archive de regroupement (linux/unix)
-GZ	Format de compression simple (souvent avec tar)
 ICMP	Protocole de diagnostic réseau (utilisé par la commande ping)
 IGMP	Protocole de gestion de groupes multicast sur un réseau ip
 NTP	Synchronisation de l’horloge des systèmes via un serveur de temps

@@ -37,23 +37,25 @@ $id = htmlspecialchars($_GET["grille"]);
 $grille = new Grille($hauteur, $largeur, $id);
 $grille->current();
 
-$definitions_horizontales = [];
-foreach ($grille->lignes as $y => $mots) {
-    $definitions_horizontales[$y] = [];
-    foreach ($mots as $mot) {
-        $definitions = $dico[strlen($mot)][$mot];
-        if (count($definitions)) {
-            $definitions_horizontales[$y][] = $definitions[mt_rand(0, count($definitions) - 1)];
+if ($grille->valid()) {
+    $definitions_horizontales = [];
+    foreach ($grille->lignes as $y => $mots) {
+        $definitions_horizontales[$y] = [];
+        foreach ($mots as $mot) {
+            $definitions = $dico[strlen($mot)][$mot];
+            if (count($definitions)) {
+                $definitions_horizontales[$y][] = $definitions[mt_rand(0, count($definitions) - 1)];
+            }
         }
     }
-}
-$definitions_verticales = [];
-foreach ($grille->colonnes as $x => $mots) {
-    $definitions_verticales[$x] = [];
-    foreach ($mots as $mot) {
-        $definitions = $dico[strlen($mot)][$mot];
-        if (count($definitions)) {
-            $definitions_verticales[$x][] = $definitions[mt_rand(0, count($definitions) - 1)];
+    $definitions_verticales = [];
+    foreach ($grille->colonnes as $x => $mots) {
+        $definitions_verticales[$x] = [];
+        foreach ($mots as $mot) {
+            $definitions = $dico[strlen($mot)][$mot];
+            if (count($definitions)) {
+                $definitions_verticales[$x][] = $definitions[mt_rand(0, count($definitions) - 1)];
+            }
         }
     }
 }
