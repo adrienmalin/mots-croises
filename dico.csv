@@ -3043,7 +3043,7 @@ VM	Simulation logicielle d’un système informatique qui fonctionnent sur un or
 MICROSERVICES	Architecture décomposant une application en services indépendants.
 AZURE	Plateforme de cloud computing proposant une large gamme de services (calcul, stockage, bases de données, intelligence artificielle, etc.) permettant aux entreprises et développeurs de créer, héberger et gérer des applications de manière flexible et évolutique, s’intégrant souvent avec l’écosystème Microsoft.
 MIGRATION	Processus de transfert de données, d’applications ou de systèmes d’un environnement à un autre, comme lors du passage d’une infrastructure locale vers le cloud, d’une version logicielle ancienne vers une nouvelle, ou du changement de plateforme, tout en assurant la continuité et l’intégrité des informations.
-NAS	Dispositif de stockage connecté au réseau qui permet de centraliser et partager des données entre plusieurs utilisateurs ou appareils, offrant un accès facilité et une gestion simplifiée des fichiers via le réseau local ou internet
+NAS	Dispositif de stockage connecté au réseau
 NGINX	Serveur web et proxy inverse open source léger et haute performance, conçu pour gérer simultanément un grand nombre de connexions, idéal pour servir des sites web statiques, gérer le load balancing et agir comme passerelle vers des applications web.
 NLP	Intelligence artificielle traitant interaction langage humain-machine.
 NOSQL	Bases de données non relationnelles pour flexibilité et scalabilité.
