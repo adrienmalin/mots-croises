@@ -51,7 +51,7 @@ foreach ($grille->lignes as $y => $mots) {
     foreach ($mots as $mot) {
         $definitions = $dico[strlen($mot)][$mot];
         if (count($definitions)) {
-            $definitions_horizontales[$y][] = array_pop($definitions);
+            $definitions_horizontales[$y][] = $definitions[mt_rand(0, count($definitions) - 1)];
         }
     }
 }
@@ -61,7 +61,7 @@ foreach ($grille->colonnes as $x => $mots) {
     foreach ($mots as $mot) {
         $definitions = $dico[strlen($mot)][$mot];
         if (count($definitions)) {
-            $definitions_verticales[$x][] = array_pop($definitions);
+            $definitions_verticales[$x][] = $definitions[mt_rand(0, count($definitions) - 1)];
         }
     }
 }
