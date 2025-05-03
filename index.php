@@ -1,14 +1,8 @@
 <?php
 
-if (!isset($_GET["grille"])) {
-    $_GET["grille"] = uniqid();
-    header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
-    exit;
-}
-
-
 include_once "dico.php";
 include_once "Grille.php";
+
 
 const HAUTEUR_DEFAUT = 7;
 const HAUTEUR_MIN = 2;
@@ -32,12 +26,23 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
         "max_range" => LARGEUR_MAX
     ]
 ]);
-$id = htmlspecialchars($_GET["grille"]);
+
+if (isset($_GET["grille"])) {
+    $id = htmlspecialchars($_GET["grille"]);
+} else {
+    $id = uniqid();
+}
 
 $grille = new Grille($hauteur, $largeur, $id);
 $grille->current();
 
 if ($grille->valid()) {
+    if (!isset($_GET["grille"])) {
+        $_GET["grille"] = $id;
+        header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
+        exit;
+    }
+
     $definitions_horizontales = [];
     foreach ($grille->lignes as $y => $mots) {
         $definitions_horizontales[$y] = [];
