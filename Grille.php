@@ -3,15 +3,6 @@
 include_once "dico.php";
 
 
-function melanger_cles($tableau)
-{
-    uksort($tableau, function ($a, $b) {
-        return mt_rand(-1, 1);
-    });
-    return $tableau;
-}
-
-
 class Grille implements Iterator, ArrayAccess {
     public $grille;
     public $hauteur;
@@ -90,10 +81,13 @@ class Grille implements Iterator, ArrayAccess {
         $lettres_suivantes_colonne = $this->lettres_suivantes[$this->hauteur];
         for ($y2 = 0; $y2 < $y; $y2++)
             $lettres_suivantes_colonne = $lettres_suivantes_colonne[$this->grille[$y2][$x]];
-        $lettres_communes = melanger_cles(array_intersect_key(
+        $lettres_communes = array_intersect_key(
             $lettres_suivantes_ligne,
             $lettres_suivantes_colonne
-        ));
+        );
+        uksort($lettres_communes, function ($a, $b) {
+            return mt_rand(-1, 1);
+        });
 
         foreach ($lettres_communes as $lettre => $_) {
             $this->grille[$y][$x] = $lettre;
