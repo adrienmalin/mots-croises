@@ -99,22 +99,21 @@ class Grille implements Iterator, ArrayAccess {
             $this->grille[$y][$x] = $lettre;
 
             $this->lignes[$y] = [];
-            $mots = [];
-            if ($x == $this->largeur - 1) $mots = explode(" ", $this->get_ligne($y, $this->largeur));
-            else if ($lettre == " ") $mots = explode(" ", $this->get_ligne($y, $x));
-            foreach ($mots as $rang => $mot) {
-                if (strlen($mot) <= 1) continue;
-                if (in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
-                $this->lignes[$y][$rang] = $mot;
+            if ($x == $this->largeur - 1) $this->lignes[$y] = explode(" ", $this->get_ligne($y, $this->largeur));
+            else if ($lettre == " ") $this->lignes[$y] = explode(" ", $this->get_ligne($y, $x));
+            if (count($this->lignes[$y])) {
+                $mot = array_pop($this->lignes[$y]);
+                if (strlen($mot) >= 1 && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue;
+                $this->lignes[$y][] = $mot;
             }
+
             $this->colonnes[$x] = [];
-            $mots = [];
-            if ($y == $this->hauteur - 1) $mots = explode(" ", $this->get_colonne($x, $this->hauteur));
-            else if ($lettre == " ") $mots = explode(" ", $this->get_colonne($x, $y));
-            foreach ($mots as $rang => $mot) {
-                if (strlen($mot) == 1) continue;
-                if (in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
-                $this->colonnes[$x][$rang] = $mot;
+            if ($y == $this->hauteur - 1) $this->colonnes[$x] = explode(" ", $this->get_colonne($x, $this->hauteur));
+            else if ($lettre == " ") $this->colonnes[$x] = explode(" ", $this->get_colonne($x, $y));
+            if (count($this->colonnes[$x])) {
+                $mot = array_pop($this->colonnes[$x]);
+                if (strlen($mot) >= 1 && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue;
+                $this->colonnes[$x][] = $mot;
             }
 
             if ($i < $this->nb_positions) {
