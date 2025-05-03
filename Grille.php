@@ -98,7 +98,7 @@ class Grille implements Iterator, ArrayAccess {
         foreach ($lettres_communes as $lettre => $_) {
             $this->grille[$y][$x] = $lettre;
 
-            $this->lignes[$y] = [];
+            if ($x == 0) $this->lignes[$y] = [];
             if ($x == $this->largeur - 1) $this->lignes[$y] = explode(" ", $this->get_ligne($y, $this->largeur));
             else if ($lettre == " ") $this->lignes[$y] = explode(" ", $this->get_ligne($y, $x));
             if (count($this->lignes[$y])) {
@@ -107,7 +107,7 @@ class Grille implements Iterator, ArrayAccess {
                 $this->lignes[$y][] = $mot;
             }
 
-            $this->colonnes[$x] = [];
+            if ($y == 0) $this->colonnes[$x] = [];
             if ($y == $this->hauteur - 1) $this->colonnes[$x] = explode(" ", $this->get_colonne($x, $this->hauteur));
             else if ($lettre == " ") $this->colonnes[$x] = explode(" ", $this->get_colonne($x, $y));
             if (count($this->colonnes[$x])) {
