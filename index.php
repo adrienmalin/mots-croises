@@ -100,7 +100,7 @@ if ($grille->valid()) {
                 </tbody>
             </table>
         </h1>
-        <h1 class="small width">Mots■croisés</h1>
+        <h1 class="small width">Mots▣croisés</h1>
         <div class="grille-et-definitions">
             <?php if ($grille->valid()): ?>
                 <div class="grille">
