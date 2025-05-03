@@ -25,7 +25,7 @@ class Grille implements Iterator, ArrayAccess {
         $this->lettres_suivantes = [];
         foreach ($hauteur == $largeur ? [$hauteur] : [$hauteur, $largeur] as $longueur) {
             $this->lettres_suivantes[$longueur] = [];
-            foreach (mots_espaces($longueur, $hauteur == $largeur ? MAX_MOTS : MAX_MOTS/2) as $mots) {
+            foreach (mots_permutes($longueur) as $mots) {
                 $mot = implode(" ", $mots);
                 $ref = &$this->lettres_suivantes[$longueur];
                 for ($i = 0; $i < $longueur; $i++) {

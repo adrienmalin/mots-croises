@@ -3,9 +3,8 @@
 
 const MIN_LETTRES_MOT_1 = 2;
 const MIN_LETTRES_MOT_2 = 1;
-const MAX_MOTS = 1000000;
 
-$dico = [[]];
+$dico = [[""]];
 if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
     $header = fgetcsv($lecteur, 0, "\t");
     while (($ligne = fgetcsv($lecteur, 0, "\t")) !== FALSE) {
@@ -32,24 +31,39 @@ if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
     fclose($lecteur);
 }
 
-function mots_espaces($longueur, $nb_mots_restants=MAX_MOTS)
+function mots_espaces($longueur)
 {
     global $dico;
 
     foreach ($dico[$longueur] as $mot => $definition) {
         yield [$mot];
-        if (--$nb_mots_restants <= 0) return;
     }
     for ($i = MIN_LETTRES_MOT_1; ($j = $longueur - $i - 1) >= MIN_LETTRES_MOT_2; $i++) {
         foreach ($dico[$i] as $mot => $definition) {
-            foreach (mots_espaces($j, $nb_mots_restants) as $mots) {
+            foreach (mots_espaces($j) as $mots) {
                 if (!in_array($mot, $mots)) {
                     yield [$mot, ...$mots];
-                    if (--$nb_mots_restants <= 0) return;
-                    yield [...$mots, $mot];
-                    if (--$nb_mots_restants <= 0) return;
                 }
             }
         }
+    }
+}
+
+function permutations(array $elements)
+{
+    if (count($elements) <= 1) {
+        yield $elements;
+    } else {
+        foreach (permutations(array_slice($elements, 1)) as $permutation) {
+            foreach (range(0, count($elements) - 1) as $i) {
+                yield [...array_slice($permutation, 0, $i), $elements[0], ...array_slice($permutation, $i)];
+            }
+        }
+    }
+}
+
+function mots_permutes($longueur) {
+    foreach (mots_espaces($longueur) as $mots) {
+        yield from permutations($mots);
     }
 }
