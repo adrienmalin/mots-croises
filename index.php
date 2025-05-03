@@ -65,7 +65,7 @@ if ($grille->valid()) {
 
 <head>
     <meta charset="utf-8">
-    <title>Mots croisés</title>
+    <title>MOTS■CROISÉS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,7 +100,7 @@ if ($grille->valid()) {
                 </tbody>
             </table>
         </h1>
-        <h1 class="small width">Mots croisés</h1>
+        <h1 class="small width">Mots■croisés</h1>
         <div class="grille-et-definitions">
             <?php if ($grille->valid()): ?>
                 <div class="grille">
@@ -133,7 +133,7 @@ if ($grille->valid()) {
                 </div>
                 <div class="definitions horizontales">
                     <h2>Horizontalement</h2>
-                    <ol>
+                    <ol type="1">
                         <?php foreach ($definitions_horizontales as $y => $definitions): ?>
                             <li>
                                 <?php if (count($definitions) == 1): ?>
@@ -184,6 +184,7 @@ if ($grille->valid()) {
     </form>
 
     <script src="script.js"></script>
+    <script>navigator?.serviceWorker.register('service-worker.js')</script>
 </body>
 
 </html>
