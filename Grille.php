@@ -98,22 +98,29 @@ class Grille implements Iterator, ArrayAccess {
         foreach ($lettres_communes as $lettre => $_) {
             $this->grille[$y][$x] = $lettre;
 
-            if ($x == 0) $this->lignes[$y] = [];
-            if ($x == $this->largeur - 1) $this->lignes[$y] = explode(" ", $this->get_ligne($y, $this->largeur));
-            else if ($lettre == " ") $this->lignes[$y] = explode(" ", $this->get_ligne($y, $x));
-            if (count($this->lignes[$y])) {
-                $mot = array_pop($this->lignes[$y]);
-                if (strlen($mot) >= 1 && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue;
-                $this->lignes[$y][] = $mot;
+            $mots = [];
+            if ($x == $this->largeur - 1) $mots = explode(" ", $this->get_ligne($y, $this->largeur));
+            else if ($lettre == " ") $mots = explode(" ", $this->get_ligne($y, $x));
+            $mots = array_filter($mots, function($mot) {
+                return strlen($mot) > 1;
+            });
+            if (count($mots) >= 1) {
+                $dernier_mot = array_pop($mots);
+                $this->lignes[$y] = $mots;
+                if (in_array($dernier_mot, array_merge(...$this->lignes, ...$this->colonnes))) continue;
+                else $this->lignes[$y][] = $dernier_mot;
             }
 
-            if ($y == 0) $this->colonnes[$x] = [];
-            if ($y == $this->hauteur - 1) $this->colonnes[$x] = explode(" ", $this->get_colonne($x, $this->hauteur));
-            else if ($lettre == " ") $this->colonnes[$x] = explode(" ", $this->get_colonne($x, $y));
-            if (count($this->colonnes[$x])) {
-                $mot = array_pop($this->colonnes[$x]);
-                if (strlen($mot) >= 1 && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue;
-                $this->colonnes[$x][] = $mot;
+
+            if ($y == $this->hauteur - 1) {
+                $mots = explode(" ", $this->get_colonne($x, $this->hauteur));
+                foreach ($mots as $rang => $mot) {
+                    if (strlen($mot) <= 1) continue;
+                    if (in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
+                    else $this->colonnes[$x][$rang] = $mot;
+                }
+            } else {
+                $this->colonnes[$x] = [];
             }
 
             if ($i < $this->nb_positions) {
