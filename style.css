@@ -288,7 +288,10 @@ h2 {
   }
   
   .definitions li.non-selectionee {
-    display: none;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
   }
 }
 
