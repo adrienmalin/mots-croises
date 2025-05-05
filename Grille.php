@@ -2,26 +2,22 @@
 include_once "dico.php";
 
 
-class Grille implements Iterator, ArrayAccess {
+class Grille implements ArrayAccess {
     public $grille;
     public $hauteur;
     public $largeur;
-    private $grilles;
     private $lettres_suivantes;
     private $positions;
     private $nb_positions;
-    public $lignes;
-    public $colonnes;
+    public $lignes = [];
+    public $colonnes = [];
+    public $valide = false;
 
-    public function __construct($hauteur, $largeur, $id = "")
+    public function __construct($hauteur, $largeur)
     {
-        $this->hauteur = $hauteur;
-        $this->largeur = $largeur;
-        $this->grille = array_fill(0, $hauteur, array_fill(0, $largeur, ''));
-        $this->lignes = [];
-        $this->colonnes = [];
-
-        $this->lettres_suivantes = tries(max($hauteur, $largeur));
+        $this->hauteur   = $hauteur;
+        $this->largeur   = $largeur;
+        $this->grille    = array_fill(0, $hauteur, array_fill(0, $largeur, ''));
 
         $this->positions = [];
         for ($y = 0; $y < $hauteur; $y++) {
@@ -30,8 +26,15 @@ class Grille implements Iterator, ArrayAccess {
         }
         $this->nb_positions = count($this->positions);
 
-        mt_srand($id == "" ? null : crc32($id));
-        $this->grilles = $this->gen_grilles();
+        $this->lettres_suivantes = tries(max($hauteur, $largeur));
+    }
+
+    public function genere($id) {
+        mt_srand(crc32($id));
+
+        $grilles = $this->gen_grilles();
+        $grilles->current();
+        return $grilles->valid();
     }
 
     public function get_ligne($y, $largeur)
@@ -52,11 +55,6 @@ class Grille implements Iterator, ArrayAccess {
 
     public function gen_grilles($i = 0, $lettres_suivantes_ligne = NULL)
     {
-        if ($i == $this->nb_positions) {
-            yield $this;
-            return;
-        }
-
         [$x, $y] = $this->positions[$i];
 
         if ($x == 0) {
@@ -101,7 +99,7 @@ class Grille implements Iterator, ArrayAccess {
                 $this->colonnes[$x] = [];
             }
 
-            if ($i < $this->nb_positions) {
+            if ($i < $this->nb_positions - 1) {
                 yield from $this->gen_grilles($i + 1, $lettres_suivantes_ligne->noeud[$lettre]);
             } else {
                 yield $this;
@@ -117,28 +115,51 @@ class Grille implements Iterator, ArrayAccess {
         return hash('sha256', $string);
     }
 
-    public function current(): mixed
-    {
-        return $this->grilles->current();
+    public function save() {
+        session_start();
+
+        $_SESSION["$this->largeur;$this->hauteur;$id"] = implode(
+            "",
+            array_map(
+                function ($ligne) {
+                    implode("", $ligne);
+                },
+                $this->grille
+            )
+        );
     }
 
-    public function key(): mixed {
-        return $this->grilles->key();
+    public function load($id) {
+        session_start();
+
+        if (!isset($_SESSION["$this->largeur;$this->hauteur;$id"])) {
+            return false;
+        }
+
+        foreach (str_split( $_SESSION["$this->largeur;$this->hauteur;$id"], $this->largeur) as $y => $ligne) {
+            foreach(str_split($ligne) as $x => $lettre) {
+                $this->grille[$y][$x] = $lettre;
+            }
+        }
+        
+        for ($y = 0; $y < $this->hauteur; $y++) {
+            $mots = explode(" ", $this->get_ligne($y, $this->largeur));
+            $this->lignes[$y] = array_filter($mots, function($mot) {
+                return strlen($mot) >= 2;
+            });
+        }
+        
+        for ($x = 0; $x < $this->largeur; $x++) {
+            $mots = explode(" ", $this->get_colonne($x, $this->hauteur));
+            $this->colonnes[$y] = array_filter($mots, function($mot) {
+                return strlen($mot) >= 2;
+            });
+        }
+
+        return true;
     }
 
-    public function next(): void {
-        $this->grilles->next();
-    }
 
-    public function rewind(): void {
-        $this->grilles->rewind();
-    }
-
-    public function valid(): bool
-    {
-        return $this->grilles->valid();
-    }
-    
     public function offsetExists(mixed $offset): bool {
         return isset($this->grille[$offset]);
     }
@@ -154,5 +175,4 @@ class Grille implements Iterator, ArrayAccess {
     public function offsetUnset(mixed $offset): void {
         unset($this->grille[$offset]);
     }
-
 }

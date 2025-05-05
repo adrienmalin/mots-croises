@@ -1,13 +1,4 @@
 <?php
-
-
-if (!isset($_GET["grille"])) {
-    $_GET["grille"] = uniqid();
-    header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
-    exit;
-}
-
-
 include_once "dico.php";
 include_once "Grille.php";
 
@@ -36,12 +27,25 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
     ]
 ]);
 
+$grille = new Grille($hauteur, $largeur);
+
+if (!isset($_GET["grille"])) {
+    do {
+        $id = uniqid();
+    } while (!$grille->genere($id));
+
+    $grille->save();
+
+    $_GET["grille"] = $id;
+    header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
+    exit;
+}
+
 $id = htmlspecialchars($_GET["grille"]);
 
-$grille = new Grille($hauteur, $largeur, $id);
-$grille->current();
+$grille_valide = $grille->load($id) || $grille->genere($id);
 
-if ($grille->valid()) {
+if ($grille_valide) {
     if (!isset($_GET["grille"])) {
         $_GET["grille"] = $id;
         header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
@@ -75,7 +79,7 @@ if ($grille->valid()) {
 
 <head>
     <meta charset="utf-8">
-    <title>□□□□■□□□□□□□</title>
+    <title>MOTS■CROISES</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,9 +114,9 @@ if ($grille->valid()) {
                 </tbody>
             </table>
         </h1>
-        <h1 class="small width">Mots▣croisés</h1>
+        <h1 class="small width">Mots■croisés</h1>
         <div class="grille-et-definitions">
-            <?php if ($grille->valid()): ?>
+            <?php if ($grille_valide): ?>
                 <div class="grille">
                     <table>
                         <tr>
