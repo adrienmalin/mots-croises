@@ -12,7 +12,6 @@ class Grille implements ArrayAccess {
     public $lignes = [];
     public $colonnes = [];
     public $valide = false;
-    private $id;
 
     public function __construct($hauteur, $largeur)
     {
@@ -100,15 +99,17 @@ class Grille implements ArrayAccess {
         }
     }
 
-    public function genere($id) {
+    public function genere() {
+        session_regenerate_id();
+        $id = session_id();
         mt_srand(crc32($id));
 
         $grilles = $this->gen_grilles();
         $grilles->current();
 
         if ($grilles->valid()) {
-            $this->save($id);
-            return true;
+            $this->save();
+            return $id;
         } else {
             return false;
         }
@@ -122,8 +123,7 @@ class Grille implements ArrayAccess {
         return hash('sha256', $string);
     }
 
-    public function save($id) {
-        session_id($id);
+    public function save() {
         session_start(["use_cookies" => false]);
 
         $_SESSION["$this->largeur,$this->hauteur"] = implode(
@@ -135,7 +135,6 @@ class Grille implements ArrayAccess {
                 $this->grille
             )
         );
-        var_dump($_SESSION);
     }
 
     public function load($id) {
@@ -143,7 +142,6 @@ class Grille implements ArrayAccess {
         session_start(["use_cookies" => false]);
 
         if (!isset($_SESSION["$this->largeur,$this->hauteur"])) {
-            var_dump($_SESSION);
             return false;
         }
 
