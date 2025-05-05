@@ -12,6 +12,7 @@ class Grille implements ArrayAccess {
     public $lignes = [];
     public $colonnes = [];
     public $valide = false;
+    private $id;
 
     public function __construct($hauteur, $largeur)
     {
@@ -27,14 +28,6 @@ class Grille implements ArrayAccess {
         $this->nb_positions = count($this->positions);
 
         $this->lettres_suivantes = tries(max($hauteur, $largeur));
-    }
-
-    public function genere($id) {
-        mt_srand(crc32($id));
-
-        $grilles = $this->gen_grilles();
-        $grilles->current();
-        return $grilles->valid();
     }
 
     public function get_ligne($y, $largeur)
@@ -107,6 +100,20 @@ class Grille implements ArrayAccess {
         }
     }
 
+    public function genere($id) {
+        mt_srand(crc32($id));
+
+        $grilles = $this->gen_grilles();
+        $grilles->current();
+
+        if ($grilles->valid()) {
+            $this->save($id);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function hash()
     {
         $string = "";
@@ -115,28 +122,32 @@ class Grille implements ArrayAccess {
         return hash('sha256', $string);
     }
 
-    public function save() {
-        session_start();
+    public function save($id) {
+        session_id($id);
+        session_start(["use_cookies" => false]);
 
-        $_SESSION["$this->largeur;$this->hauteur;$id"] = implode(
+        $_SESSION["$this->largeur,$this->hauteur"] = implode(
             "",
             array_map(
                 function ($ligne) {
-                    implode("", $ligne);
+                    return implode("", $ligne);
                 },
                 $this->grille
             )
         );
+        var_dump($_SESSION);
     }
 
     public function load($id) {
-        session_start();
+        session_id($id);
+        session_start(["use_cookies" => false]);
 
-        if (!isset($_SESSION["$this->largeur;$this->hauteur;$id"])) {
+        if (!isset($_SESSION["$this->largeur,$this->hauteur"])) {
+            var_dump($_SESSION);
             return false;
         }
 
-        foreach (str_split( $_SESSION["$this->largeur;$this->hauteur;$id"], $this->largeur) as $y => $ligne) {
+        foreach (str_split($_SESSION["$this->largeur,$this->hauteur"], $this->largeur) as $y => $ligne) {
             foreach(str_split($ligne) as $x => $lettre) {
                 $this->grille[$y][$x] = $lettre;
             }
@@ -151,7 +162,7 @@ class Grille implements ArrayAccess {
         
         for ($x = 0; $x < $this->largeur; $x++) {
             $mots = explode(" ", $this->get_colonne($x, $this->hauteur));
-            $this->colonnes[$y] = array_filter($mots, function($mot) {
+            $this->colonnes[$x] = array_filter($mots, function($mot) {
                 return strlen($mot) >= 2;
             });
         }
