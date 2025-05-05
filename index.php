@@ -1,13 +1,21 @@
 <?php
 
+
+if (!isset($_GET["grille"])) {
+    $_GET["grille"] = uniqid();
+    header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
+    exit;
+}
+
+
 include_once "dico.php";
 include_once "Grille.php";
 
 
-const HAUTEUR_DEFAUT = 7;
+const HAUTEUR_DEFAUT = 6;
 const HAUTEUR_MIN = 2;
 const HAUTEUR_MAX = 10;
-const LARGEUR_DEFAUT = 7;
+const LARGEUR_DEFAUT = 6;
 const LARGEUR_MIN = 2;
 const LARGEUR_MAX = 10;
 
@@ -19,6 +27,7 @@ $hauteur = filter_input(INPUT_GET, 'lignes', FILTER_VALIDATE_INT, [
         "max_range" => HAUTEUR_MAX
     ]
 ]);
+
 $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
     "options" => [
         "default" => LARGEUR_DEFAUT,
@@ -27,11 +36,7 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
     ]
 ]);
 
-if (isset($_GET["grille"])) {
-    $id = htmlspecialchars($_GET["grille"]);
-} else {
-    $id = uniqid();
-}
+$id = htmlspecialchars($_GET["grille"]);
 
 $grille = new Grille($hauteur, $largeur, $id);
 $grille->current();
@@ -44,9 +49,9 @@ if ($grille->valid()) {
     }
 
     $definitions_horizontales = [];
-    foreach ($grille->lignes as $y => $mots) {
+    for ($y = 0; $y < $hauteur; $y++) {
         $definitions_horizontales[$y] = [];
-        foreach ($mots as $mot) {
+        foreach ($grille->lignes[$y] as $mot) {
             $definitions = $dico[strlen($mot)][$mot];
             if (count($definitions)) {
                 $definitions_horizontales[$y][] = $definitions[mt_rand(0, count($definitions) - 1)];
@@ -54,9 +59,9 @@ if ($grille->valid()) {
         }
     }
     $definitions_verticales = [];
-    foreach ($grille->colonnes as $x => $mots) {
+    for ($x = 0 ; $x < $largeur; $x++) {
         $definitions_verticales[$x] = [];
-        foreach ($mots as $mot) {
+        foreach ($grille->colonnes[$x] as $mot) {
             $definitions = $dico[strlen($mot)][$mot];
             if (count($definitions)) {
                 $definitions_verticales[$x][] = $definitions[mt_rand(0, count($definitions) - 1)];
@@ -70,7 +75,7 @@ if ($grille->valid()) {
 
 <head>
     <meta charset="utf-8">
-    <title>MOTS CROISÉS</title>
+    <title>⬜⬜⬜⬜⬛⬜⬜⬜⬜⬜⬜⬜</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -128,7 +133,7 @@ if ($grille->valid()) {
                                     <?php else: ?>
                                         <td class="case blanche">
                                             <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>"
-                                                title="<?= "→ " . strip_tags(implode("\n→ ", $definitions_horizontales[$y])) . "\n↓ " . strip_tags(implode("\n↓ ", $definitions_verticales[$x])) ?>" />
+                                                title="<?= strip_tags("→ " . implode("\n→ ", $definitions_horizontales[$y]) . "\n↓ " . implode("\n↓ ", $definitions_verticales[$x])) ?>" />
                                         </td>
                                     <?php endif; ?>
                                 <?php endfor; ?>
@@ -141,14 +146,16 @@ if ($grille->valid()) {
                     <ol type="1">
                         <?php foreach ($definitions_horizontales as $y => $definitions): ?>
                             <li>
-                                <?php if (count($definitions) == 1): ?>
-                                    <?= $definitions[0] ?>
-                                <?php else: ?>
-                                    <ol>
-                                        <?php foreach ($definitions as $definition) : ?>
-                                            <li><?= $definition ?></li>
-                                        <?php endforeach ?>
-                                    </ol>
+                                <?php if (count($definitions)): ?>
+                                    <?php if (count($definitions) == 1): ?>
+                                        <?= $definitions[0] ?>
+                                    <?php else: ?>
+                                        <ol>
+                                            <?php foreach ($definitions as $definition) : ?>
+                                                <li><?= $definition ?></li>
+                                            <?php endforeach ?>
+                                        </ol>
+                                    <?php endif ?>
                                 <?php endif ?>
                             </li>
                         <?php endforeach; ?>
@@ -159,14 +166,16 @@ if ($grille->valid()) {
                     <ol type="A">
                         <?php foreach ($definitions_verticales as $x => $definitions): ?>
                             <li>
-                                <?php if (count($definitions) == 1): ?>
-                                    <?= $definitions[0] ?>
-                                <?php else: ?>
-                                    <ol>
-                                        <?php foreach ($definitions as $definition) : ?>
-                                            <li><?= $definition ?></li>
-                                        <?php endforeach ?>
-                                    </ol>
+                                <?php if (count($definitions)): ?>
+                                    <?php if (count($definitions) == 1): ?>
+                                        <?= $definitions[0] ?>
+                                    <?php else: ?>
+                                        <ol>
+                                            <?php foreach ($definitions as $definition) : ?>
+                                                <li><?= $definition ?></li>
+                                            <?php endforeach ?>
+                                        </ol>
+                                    <?php endif ?>
                                 <?php endif ?>
                             </li>
                         <?php endforeach; ?>

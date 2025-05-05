@@ -1,8 +1,10 @@
 <?php
+include_once "Trie.php";
 
 
-const MIN_LETTRES_MOT_1 = 2;
-const MIN_LETTRES_MOT_2 = 1;
+const MIN_PREMIER_MOT = 1;
+const MIN_MOTS_SUIVANTS = 1;
+
 
 $dico = [[""]];
 if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
@@ -31,39 +33,21 @@ if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
     fclose($lecteur);
 }
 
-function mots_espaces($longueur)
-{
+function tries($longueur_max) {
     global $dico;
 
-    foreach ($dico[$longueur] as $mot => $definition) {
-        yield [$mot];
-    }
-    for ($i = MIN_LETTRES_MOT_1; ($j = $longueur - $i - 1) >= MIN_LETTRES_MOT_2; $i++) {
-        foreach ($dico[$i] as $mot => $definition) {
-            foreach (mots_espaces($j) as $mots) {
-                if (!in_array($mot, $mots)) {
-                    yield [$mot, ...$mots];
-                }
+    $_tries = [[]];
+    for ($longueur = 1; $longueur <= $longueur_max; $longueur++) {
+        $_tries[$longueur] = new Trie();
+        foreach ($dico[$longueur] as $mot => $definition) {
+            $_tries[$longueur][str_split($mot)] = [];
+        }
+        for ($position_espace = MIN_PREMIER_MOT; $position_espace + MIN_MOTS_SUIVANTS < $longueur; $position_espace++) {
+            $mots_suivants = $_tries[$longueur - $position_espace - 1];
+            foreach ($dico[$position_espace] as $premier_mot => $definition) {
+                $_tries[$longueur][str_split($premier_mot . " ")] = $mots_suivants;
             }
         }
     }
-}
-
-function permutations(array $elements)
-{
-    if (count($elements) <= 1) {
-        yield $elements;
-    } else {
-        foreach (permutations(array_slice($elements, 1)) as $permutation) {
-            foreach (range(0, count($elements) - 1) as $i) {
-                yield [...array_slice($permutation, 0, $i), $elements[0], ...array_slice($permutation, $i)];
-            }
-        }
-    }
-}
-
-function mots_permutes($longueur) {
-    foreach (mots_espaces($longueur) as $mots) {
-        yield from permutations($mots);
-    }
+    return $_tries;
 }

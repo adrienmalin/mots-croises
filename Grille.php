@@ -1,6 +1,8 @@
 <?php
-
 include_once "dico.php";
+
+
+const MAX_ESSAIS = 0;
 
 
 class Grille implements Iterator, ArrayAccess {
@@ -22,20 +24,7 @@ class Grille implements Iterator, ArrayAccess {
         $this->lignes = [];
         $this->colonnes = [];
 
-        $this->lettres_suivantes = [];
-        foreach ($hauteur == $largeur ? [$hauteur] : [$hauteur, $largeur] as $longueur) {
-            $this->lettres_suivantes[$longueur] = [];
-            foreach (mots_permutes($longueur) as $mots) {
-                $mot = implode(" ", $mots);
-                $ref = &$this->lettres_suivantes[$longueur];
-                for ($i = 0; $i < $longueur; $i++) {
-                    $lettre = $mot[$i];
-                    if (!isset($ref[$lettre])) $ref[$lettre] = [];
-                    $ref = &$ref[$lettre];
-                }
-                $ref = [];
-            }
-        }
+        $this->lettres_suivantes = tries(max($hauteur, $largeur));
 
         $this->positions = [];
         for ($y = 0; $y < $hauteur; $y++) {
@@ -45,7 +34,7 @@ class Grille implements Iterator, ArrayAccess {
         $this->nb_positions = count($this->positions);
 
         mt_srand($id == "" ? null : crc32($id));
-        $this->grilles = $this->generateur();
+        $this->grilles = $this->generateur(0);
     }
 
     public function get_ligne($y, $largeur)
@@ -64,10 +53,8 @@ class Grille implements Iterator, ArrayAccess {
         return $colonne;
     }
 
-    public function generateur($i = 0)
+    public function generateur($i, $lettres_suivantes_ligne = NULL)
     {
-        global $dico;
-
         if ($i == $this->nb_positions) {
             yield $this;
             return;
@@ -75,42 +62,45 @@ class Grille implements Iterator, ArrayAccess {
 
         [$x, $y] = $this->positions[$i];
 
-        $lettres_suivantes_ligne = $this->lettres_suivantes[$this->largeur];
-        for ($x2 = 0; $x2 < $x; $x2++)
-            $lettres_suivantes_ligne = $lettres_suivantes_ligne[$this->grille[$y][$x2]];
+        if ($x) {
+            $lettres_suivantes_ligne = $lettres_suivantes_ligne->noeud[$this->grille[$y][$x-1]];
+        } else {
+            $lettres_suivantes_ligne = $this->lettres_suivantes[$this->largeur];
+        }
+
         $lettres_suivantes_colonne = $this->lettres_suivantes[$this->hauteur];
         for ($y2 = 0; $y2 < $y; $y2++)
-            $lettres_suivantes_colonne = $lettres_suivantes_colonne[$this->grille[$y2][$x]];
-        $lettres_communes = array_intersect_key(
-            $lettres_suivantes_ligne,
-            $lettres_suivantes_colonne
+            $lettres_suivantes_colonne = $lettres_suivantes_colonne->noeud[$this->grille[$y2][$x]];
+        $lettres_communes = array_intersect(
+            array_keys($lettres_suivantes_ligne->noeud),
+            array_keys($lettres_suivantes_colonne->noeud)
         );
-        uksort($lettres_communes, function ($a, $b) {
+        usort($lettres_communes, function ($a, $b) {
             return mt_rand(-1, 1);
         });
+        if (MAX_ESSAIS) $lettres_communes = array_slice($lettres_communes, 0, MAX_ESSAIS);
 
-        foreach ($lettres_communes as $lettre => $_) {
+        foreach ($lettres_communes as $lettre) {
             $this->grille[$y][$x] = $lettre;
 
             $mots = [];
             if ($x == $this->largeur - 1) $mots = explode(" ", $this->get_ligne($y, $this->largeur));
             else if ($lettre == " ") $mots = explode(" ", $this->get_ligne($y, $x));
-            $mots = array_filter($mots, function($mot) {
-                return strlen($mot) > 1;
+            else $mots = [];
+            $this->lignes[$y] = array_filter($mots, function($mot) {
+                return strlen($mot) >= 2;
             });
-            if (count($mots) >= 1) {
-                $dernier_mot = array_pop($mots);
-                $this->lignes[$y] = $mots;
-                if (in_array($dernier_mot, array_merge(...$this->lignes, ...$this->colonnes))) continue;
-                else $this->lignes[$y][] = $dernier_mot;
+            if (count($this->lignes[$y])) {
+                $mot = array_pop($this->lignes[$y]);
+                if (strlen($mot > 2) && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue;
+                else $this->lignes[$y][] = $mot;
             }
-
 
             if ($y == $this->hauteur - 1) {
                 $mots = explode(" ", $this->get_colonne($x, $this->hauteur));
                 foreach ($mots as $rang => $mot) {
-                    if (strlen($mot) <= 1) continue;
-                    if (in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
+                    if (strlen($mot) < 2) continue;
+                    if (strlen($mot > 2) && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
                     else $this->colonnes[$x][$rang] = $mot;
                 }
             } else {
@@ -118,7 +108,7 @@ class Grille implements Iterator, ArrayAccess {
             }
 
             if ($i < $this->nb_positions) {
-                yield from $this->generateur($i + 1);
+                yield from $this->generateur($i + 1, $lettres_suivantes_ligne);
             } else {
                 yield $this;
             }
