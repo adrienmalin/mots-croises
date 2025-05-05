@@ -2,9 +2,6 @@
 include_once "dico.php";
 
 
-const MAX_ESSAIS = 0;
-
-
 class Grille implements Iterator, ArrayAccess {
     public $grille;
     public $hauteur;
@@ -34,7 +31,7 @@ class Grille implements Iterator, ArrayAccess {
         $this->nb_positions = count($this->positions);
 
         mt_srand($id == "" ? null : crc32($id));
-        $this->grilles = $this->generateur(0);
+        $this->grilles = $this->gen_grilles();
     }
 
     public function get_ligne($y, $largeur)
@@ -53,7 +50,7 @@ class Grille implements Iterator, ArrayAccess {
         return $colonne;
     }
 
-    public function generateur($i, $lettres_suivantes_ligne = NULL)
+    public function gen_grilles($i = 0, $lettres_suivantes_ligne = NULL)
     {
         if ($i == $this->nb_positions) {
             yield $this;
@@ -62,9 +59,7 @@ class Grille implements Iterator, ArrayAccess {
 
         [$x, $y] = $this->positions[$i];
 
-        if ($x) {
-            $lettres_suivantes_ligne = $lettres_suivantes_ligne->noeud[$this->grille[$y][$x-1]];
-        } else {
+        if ($x == 0) {
             $lettres_suivantes_ligne = $this->lettres_suivantes[$this->largeur];
         }
 
@@ -78,7 +73,6 @@ class Grille implements Iterator, ArrayAccess {
         usort($lettres_communes, function ($a, $b) {
             return mt_rand(-1, 1);
         });
-        if (MAX_ESSAIS) $lettres_communes = array_slice($lettres_communes, 0, MAX_ESSAIS);
 
         foreach ($lettres_communes as $lettre) {
             $this->grille[$y][$x] = $lettre;
@@ -108,7 +102,7 @@ class Grille implements Iterator, ArrayAccess {
             }
 
             if ($i < $this->nb_positions) {
-                yield from $this->generateur($i + 1, $lettres_suivantes_ligne);
+                yield from $this->gen_grilles($i + 1, $lettres_suivantes_ligne->noeud[$lettre]);
             } else {
                 yield $this;
             }
