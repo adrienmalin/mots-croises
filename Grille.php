@@ -66,10 +66,13 @@ class Grille implements ArrayAccess
     {
         [$x, $y] = $this->positions[$i];
 
+        // Recherche de la prochaine lettre possible sur la case courante
+        // en ligne
         if ($x == 0) {
             $lettres_ligne = $this->lettres_suivantes[$this->largeur];
         }
 
+        // en colonne
         $lettres_colonne = $this->lettres_suivantes[$this->hauteur];
         for ($y2 = 0; $y2 < $y; $y2++) {
             $lettres_colonne = $lettres_colonne->noeud[$this->grille[$y2][$x]];
@@ -89,6 +92,16 @@ class Grille implements ArrayAccess
         foreach ($lettres_communes as $lettre => $_) {
             $this->grille[$y][$x] = $lettre;
 
+            // Omission des lettres isolées
+            if ($lettre == " " &&
+                ($y - 2 < 0 || $this->grille[$y - 2][$x] == " ") &&
+                ($y - 1 < 0 || $x - 1 < 0 || $this->grille[$y - 1][$x - 1] == " ") &&
+                ($y - 1 < 0 || $x + 1 >= $this->largeur || $this->grille[$y - 1][$x + 1] == " ")
+            )   {
+                continue;
+            }
+
+            // Omission des doublons
             $mots = [];
             if ($x == $this->largeur - 1) $mots = explode(" ", $this->get_ligne($y, $this->largeur));
             else if ($lettre == " ") $mots = explode(" ", $this->get_ligne($y, $x));
