@@ -11,7 +11,6 @@ class Grille implements ArrayAccess {
     private $nb_positions;
     public $lignes = [];
     public $colonnes = [];
-    public $valide = false;
 
     public function __construct($hauteur, $largeur)
     {
