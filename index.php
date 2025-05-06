@@ -29,7 +29,7 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
 
 $grille = new Grille($hauteur, $largeur);
 
-if (!isset($_GET["grille"])) {
+if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
     do {
         $id = uniqid();
     } while (!$grille->genere($id));
