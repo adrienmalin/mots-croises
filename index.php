@@ -43,6 +43,7 @@ $id = htmlspecialchars($_GET["grille"]);
 
 $grille_valide = $grille->load($id) || $grille->genere();
 
+mt_srand(crc32($id));
 if ($grille_valide) {
     mt_srand(crc32($id));
 
