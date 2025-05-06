@@ -2,7 +2,23 @@
 include_once "dico.php";
 
 
-class Grille implements ArrayAccess {
+$randmax = mt_getrandmax() + 1;
+function gaussienne($moyenne = 0, $ecartType = 1.0): float {
+    global $randmax;
+    
+    $u = 0;
+    $v = 0;
+
+    $u = (mt_rand() + 1) / $randmax;
+    $v = (mt_rand() + 1) / $randmax;
+
+    $z = sqrt(-2.0 * log($u)) * cos(2.0 * M_PI * $v);
+    return $z * $ecartType + $moyenne;
+}
+
+
+class Grille implements ArrayAccess
+{
     public $grille;
     public $hauteur;
     public $largeur;
@@ -33,7 +49,7 @@ class Grille implements ArrayAccess {
     public function get_ligne($y, $largeur)
     {
         $ligne = "";
-        for ($x = 0; $x < $largeur; $x++) 
+        for ($x = 0; $x < $largeur; $x++)
             $ligne .= $this->grille[$y][$x];
         return $ligne;
     }
@@ -46,33 +62,38 @@ class Grille implements ArrayAccess {
         return $colonne;
     }
 
-    public function gen_grilles($i = 0, $lettres_suivantes_ligne = NULL)
+    public function gen_grilles($i = 0, $lettres_ligne = NULL)
     {
         [$x, $y] = $this->positions[$i];
 
         if ($x == 0) {
-            $lettres_suivantes_ligne = $this->lettres_suivantes[$this->largeur];
+            $lettres_ligne = $this->lettres_suivantes[$this->largeur];
         }
 
-        $lettres_suivantes_colonne = $this->lettres_suivantes[$this->hauteur];
-        for ($y2 = 0; $y2 < $y; $y2++)
-            $lettres_suivantes_colonne = $lettres_suivantes_colonne->noeud[$this->grille[$y2][$x]];
-        $lettres_communes = array_intersect(
-            array_keys($lettres_suivantes_ligne->noeud),
-            array_keys($lettres_suivantes_colonne->noeud)
+        $lettres_colonne = $this->lettres_suivantes[$this->hauteur];
+        for ($y2 = 0; $y2 < $y; $y2++) {
+            $lettres_colonne = $lettres_colonne->noeud[$this->grille[$y2][$x]];
+        }
+        $lettres_communes = array_intersect_key(
+            $lettres_ligne->noeud,
+            $lettres_colonne->noeud
         );
-        usort($lettres_communes, function ($a, $b) {
-            return mt_rand(-1, 1);
+        foreach ($lettres_communes as $lettre => $_) {
+            $lettres_communes[$lettre] = count($lettres_ligne->noeud[$lettre]) * count($lettres_colonne->noeud[$lettre]) * gaussienne(1, 5);
+        }
+        uksort($lettres_communes, function($a, $b) use ($lettres_communes) {
+            return $lettres_communes[$b] <=> $lettres_communes[$a];
         });
+        $lettres_communes = array_slice($lettres_communes, 0, 3);
 
-        foreach ($lettres_communes as $lettre) {
+        foreach ($lettres_communes as $lettre => $_) {
             $this->grille[$y][$x] = $lettre;
 
             $mots = [];
             if ($x == $this->largeur - 1) $mots = explode(" ", $this->get_ligne($y, $this->largeur));
             else if ($lettre == " ") $mots = explode(" ", $this->get_ligne($y, $x));
             else $mots = [];
-            $this->lignes[$y] = array_filter($mots, function($mot) {
+            $this->lignes[$y] = array_filter($mots, function ($mot) {
                 return strlen($mot) >= 2;
             });
             if (count($this->lignes[$y])) {
@@ -93,14 +114,15 @@ class Grille implements ArrayAccess {
             }
 
             if ($i < $this->nb_positions - 1) {
-                yield from $this->gen_grilles($i + 1, $lettres_suivantes_ligne->noeud[$lettre]);
+                yield from $this->gen_grilles($i + 1, $lettres_ligne->noeud[$lettre]);
             } else {
                 yield $this;
             }
         }
     }
 
-    public function genere($id) {
+    public function genere($id)
+    {
         mt_srand(crc32($id));
 
         $grilles = $this->gen_grilles();
@@ -122,7 +144,8 @@ class Grille implements ArrayAccess {
         return hash('sha256', $string);
     }
 
-    public function save($id) {
+    public function save($id)
+    {
         session_id($id);
         session_start(["use_cookies" => false]);
 
@@ -138,7 +161,8 @@ class Grille implements ArrayAccess {
         var_dump($_SESSION);
     }
 
-    public function load($id) {
+    public function load($id)
+    {
         session_id($id);
         session_start(["use_cookies" => false]);
 
@@ -148,21 +172,21 @@ class Grille implements ArrayAccess {
         }
 
         foreach (str_split($_SESSION["$this->largeur,$this->hauteur"], $this->largeur) as $y => $ligne) {
-            foreach(str_split($ligne) as $x => $lettre) {
+            foreach (str_split($ligne) as $x => $lettre) {
                 $this->grille[$y][$x] = $lettre;
             }
         }
-        
+
         for ($y = 0; $y < $this->hauteur; $y++) {
             $mots = explode(" ", $this->get_ligne($y, $this->largeur));
-            $this->lignes[$y] = array_filter($mots, function($mot) {
+            $this->lignes[$y] = array_filter($mots, function ($mot) {
                 return strlen($mot) >= 2;
             });
         }
-        
+
         for ($x = 0; $x < $this->largeur; $x++) {
             $mots = explode(" ", $this->get_colonne($x, $this->hauteur));
-            $this->colonnes[$x] = array_filter($mots, function($mot) {
+            $this->colonnes[$x] = array_filter($mots, function ($mot) {
                 return strlen($mot) >= 2;
             });
         }
@@ -171,19 +195,23 @@ class Grille implements ArrayAccess {
     }
 
 
-    public function offsetExists(mixed $offset): bool {
+    public function offsetExists(mixed $offset): bool
+    {
         return isset($this->grille[$offset]);
     }
 
-    public function offsetGet(mixed $offset): mixed {
+    public function offsetGet(mixed $offset): mixed
+    {
         return $this->grille[$offset];
     }
 
-    public function offsetSet(mixed $offset, mixed $value): void {
+    public function offsetSet(mixed $offset, mixed $value): void
+    {
         $this->grille[$offset] = $value;
     }
 
-    public function offsetUnset(mixed $offset): void {
+    public function offsetUnset(mixed $offset): void
+    {
         unset($this->grille[$offset]);
     }
 }

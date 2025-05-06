@@ -29,7 +29,7 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
 
 $grille = new Grille($hauteur, $largeur);
 
-if (!isset($_GET["grille"])) {
+if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
     do {
         $id = uniqid();
     } while (!$grille->genere($id));
@@ -43,6 +43,7 @@ $id = htmlspecialchars($_GET["grille"]);
 
 $grille_valide = $grille->load($id) || $grille->genere($id);
 
+mt_srand(crc32($id));
 if ($grille_valide) {
     $definitions_horizontales = [];
     for ($y = 0; $y < $hauteur; $y++) {

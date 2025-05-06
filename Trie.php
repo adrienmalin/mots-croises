@@ -1,9 +1,9 @@
 <?php
 
 
-class Trie implements ArrayAccess, IteratorAggregate //, Countable //, Iterator
-{
+class Trie implements ArrayAccess, IteratorAggregate, Countable {
     public array $noeud = [];
+    private $nb_branches = 0;
 
     public function offsetSet($cles, $valeur): void {
         if (!count($cles)) {
@@ -11,6 +11,7 @@ class Trie implements ArrayAccess, IteratorAggregate //, Countable //, Iterator
         }
         $cle = array_shift($cles);
         if (!isset($this->noeud[$cle])) $this->noeud[$cle] = new Trie();
+        $this->nb_branches++;
         if (count($cles)) {
             $this->noeud[$cle]->offsetSet($cles, $valeur);
         } else {
@@ -47,8 +48,12 @@ class Trie implements ArrayAccess, IteratorAggregate //, Countable //, Iterator
     public function offsetUnset($cles): void {
         if ($this->offsetExists($cles)) {
             $cle = array_shift($cles);
+            $this->nb_branches--;
             if (count($cles)) {
                 $this->noeud[$cle]->offsetUnset($cles);
+                if (count($this->noeud[$cle]) == 0) {
+                    unset($this->noeud[$cle]);
+                }
             } else {
                 unset($this->noeud[$cle]);
             }
@@ -66,5 +71,10 @@ class Trie implements ArrayAccess, IteratorAggregate //, Countable //, Iterator
                 yield $cle => $branche;
             }
         }
+    }
+
+    // Countable
+    public function count(): int {
+        return $this->nb_branches;
     }
 }
