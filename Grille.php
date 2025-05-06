@@ -59,6 +59,9 @@ class Grille implements ArrayAccess {
             array_keys($lettres_suivantes_ligne->noeud),
             array_keys($lettres_suivantes_colonne->noeud)
         );
+        foreach($lettres_communes as $lettre => $_) {
+            $lettres_communes[$lettre] = count($lettres_suivantes_colonne[$lettre]) * count($lettres_suivantes_colonne[$lettre]);
+        }
         usort($lettres_communes, function ($a, $b) {
             return mt_rand(-1, 1);
         });
