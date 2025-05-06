@@ -31,8 +31,8 @@ $grille = new Grille($hauteur, $largeur);
 
 if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
     do {
-        $id = $grille->genere();
-    } while (!$id);
+        $id = uniqid();
+    } while (!$grille->genere($id));
 
     $_GET["grille"] = $id;
     header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
@@ -41,11 +41,10 @@ if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
 
 $id = htmlspecialchars($_GET["grille"]);
 
-$grille_valide = $grille->load($id) || $grille->genere();
+$grille_valide = $grille->load($id) || $grille->genere($id);
 
+mt_srand(crc32($id));
 if ($grille_valide) {
-    mt_srand(crc32($id));
-
     $definitions_horizontales = [];
     for ($y = 0; $y < $hauteur; $y++) {
         $definitions_horizontales[$y] = [];

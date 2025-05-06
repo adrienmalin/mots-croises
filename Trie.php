@@ -1,8 +1,7 @@
 <?php
 
 
-class Trie implements ArrayAccess, IteratorAggregate, Countable
-{
+class Trie implements ArrayAccess, IteratorAggregate, Countable {
     public array $noeud = [];
     private $nb_branches = 0;
 
@@ -79,5 +78,3 @@ class Trie implements ArrayAccess, IteratorAggregate, Countable
         return $this->nb_branches;
     }
 }
-
-
