@@ -171,7 +171,6 @@ class Grille implements ArrayAccess
                 $this->grille
             )
         );
-        var_dump($_SESSION);
     }
 
     public function load($id)
@@ -180,7 +179,6 @@ class Grille implements ArrayAccess
         session_start(["use_cookies" => false]);
 
         if (!isset($_SESSION["$this->largeur,$this->hauteur"])) {
-            var_dump($_SESSION);
             return false;
         }
 

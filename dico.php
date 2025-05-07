@@ -31,8 +31,8 @@ function dico($longueur_max) {
                 break;
             }
 
-            $mot = str_split(strtoupper($mot));
-            $longueur = count($mot);
+            $mot = strtoupper($mot);
+            $longueur = strlen($mot);
             if (!isset($dico[$longueur])) $dico[$longueur] = new Trie();
             if (!isset($dico[$longueur][$mot])) $dico[$longueur][$mot] = [];
             if (strlen($definition)) $dico[$longueur][$mot][] = $definition;
@@ -50,9 +50,9 @@ function mots_espaces($longueur_max) {
     for ($longueur = 1; $longueur <= $longueur_max; $longueur++) {
         for ($position_espace = MIN_PREMIER_MOT; $position_espace + MIN_MOTS_SUIVANTS < $longueur; $position_espace++) {
             $mots_suivants = $dico[$longueur - $position_espace - 1];
-            foreach ($dico[$position_espace] as $premier_mot => $definition) {
+            foreach ($dico[$position_espace]->arrayIterator() as $premier_mot => $definition) {
                 $premier_mot[] = " ";
-                $dico[$longueur][$premier_mot] = $mots_suivants;
+                $dico[$longueur]->arraySet($premier_mot, $mots_suivants);
             }
         }
     }
