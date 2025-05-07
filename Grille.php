@@ -22,7 +22,7 @@ class Grille implements ArrayAccess
     public $grille;
     public $hauteur;
     public $largeur;
-    private $lettres_suivantes;
+    public $dico;
     private $positions;
     private $nb_positions;
     public $lignes = [];
@@ -43,7 +43,7 @@ class Grille implements ArrayAccess
         }
         $this->nb_positions = count($this->positions);
 
-        $this->lettres_suivantes = tries(max($hauteur, $largeur));
+        $this->dico = mots_espaces(max($hauteur, $largeur));
     }
 
     public function get_ligne($y, $largeur)
@@ -69,11 +69,11 @@ class Grille implements ArrayAccess
         // Recherche de la prochaine lettre possible sur la case courante
         // en ligne
         if ($x == 0) {
-            $lettres_ligne = $this->lettres_suivantes[$this->largeur];
+            $lettres_ligne = $this->dico[$this->largeur];
         }
 
         // en colonne
-        $lettres_colonne = $this->lettres_suivantes[$this->hauteur];
+        $lettres_colonne = $this->dico[$this->hauteur];
         for ($y2 = 0; $y2 < $y; $y2++) {
             $lettres_colonne = $lettres_colonne->branches[$this->grille[$y2][$x]];
         }
@@ -93,11 +93,11 @@ class Grille implements ArrayAccess
             $this->grille[$y][$x] = $lettre;
 
             // Omission des lettres isolées
-            if ($lettre == " " &&
-                ($y - 2 < 0 || $this->grille[$y - 2][$x] == " ") &&
-                ($y - 1 < 0 || $x - 1 < 0 || $this->grille[$y - 1][$x - 1] == " ") &&
-                ($y - 1 < 0 || $x + 1 >= $this->largeur || $this->grille[$y - 1][$x + 1] == " ")
-            )   {
+            if ($lettre == " "
+                && ($y - 2 < 0 || $this->grille[$y - 2][$x] == " ")
+                && ($y - 1 < 0 || $x - 1 < 0 || $this->grille[$y - 1][$x - 1] == " ")
+                && ($y - 1 < 0 || $x + 1 >= $this->largeur || $this->grille[$y - 1][$x + 1] == " ")
+            ) {
                 continue;
             }
 
