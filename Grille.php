@@ -2,6 +2,9 @@
 include_once "dico.php";
 
 
+const ECART_TYPE_ALEA = 5;
+
+
 $randmax = mt_getrandmax() + 1;
 function gaussienne($moyenne = 0, $ecartType = 1.0): float {
     global $randmax;
@@ -82,7 +85,7 @@ class Grille implements ArrayAccess
             $lettres_colonne->branches
         );
         foreach ($lettres_communes as $lettre => $_) {
-            $lettres_communes[$lettre] = count($lettres_ligne->branches[$lettre]) * count($lettres_colonne->branches[$lettre]) * gaussienne(1, 5);
+            $lettres_communes[$lettre] = count($lettres_ligne->branches[$lettre]) * count($lettres_colonne->branches[$lettre]) * gaussienne(1, ECART_TYPE_ALEA);
         }
         uksort($lettres_communes, function($a, $b) use ($lettres_communes) {
             return $lettres_communes[$b] <=> $lettres_communes[$a];
