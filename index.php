@@ -49,7 +49,7 @@ if ($grille_valide) {
     for ($y = 0; $y < $hauteur; $y++) {
         $definitions_horizontales[$y] = [];
         foreach ($grille->lignes[$y] as $mot) {
-            $definitions = $dico[strlen($mot)][$mot];
+            $definitions = $dico[strlen($mot)][str_split($mot)];
             if (count($definitions)) {
                 $definitions_horizontales[$y][] = $definitions[mt_rand(0, count($definitions) - 1)];
             }
@@ -59,7 +59,7 @@ if ($grille_valide) {
     for ($x = 0 ; $x < $largeur; $x++) {
         $definitions_verticales[$x] = [];
         foreach ($grille->colonnes[$x] as $mot) {
-            $definitions = $dico[strlen($mot)][$mot];
+            $definitions = $dico[strlen($mot)][str_split($mot)];
             if (count($definitions)) {
                 $definitions_verticales[$x][] = $definitions[mt_rand(0, count($definitions) - 1)];
             }

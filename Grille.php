@@ -75,14 +75,14 @@ class Grille implements ArrayAccess
         // en colonne
         $lettres_colonne = $this->lettres_suivantes[$this->hauteur];
         for ($y2 = 0; $y2 < $y; $y2++) {
-            $lettres_colonne = $lettres_colonne->noeud[$this->grille[$y2][$x]];
+            $lettres_colonne = $lettres_colonne->branches[$this->grille[$y2][$x]];
         }
         $lettres_communes = array_intersect_key(
-            $lettres_ligne->noeud,
-            $lettres_colonne->noeud
+            $lettres_ligne->branches,
+            $lettres_colonne->branches
         );
         foreach ($lettres_communes as $lettre => $_) {
-            $lettres_communes[$lettre] = count($lettres_ligne->noeud[$lettre]) * count($lettres_colonne->noeud[$lettre]) * gaussienne(1, 5);
+            $lettres_communes[$lettre] = count($lettres_ligne->branches[$lettre]) * count($lettres_colonne->branches[$lettre]) * gaussienne(1, 5);
         }
         uksort($lettres_communes, function($a, $b) use ($lettres_communes) {
             return $lettres_communes[$b] <=> $lettres_communes[$a];
@@ -127,7 +127,7 @@ class Grille implements ArrayAccess
             }
 
             if ($i < $this->nb_positions - 1) {
-                yield from $this->gen_grilles($i + 1, $lettres_ligne->noeud[$lettre]);
+                yield from $this->gen_grilles($i + 1, $lettres_ligne->branches[$lettre]);
             } else {
                 yield $this;
             }

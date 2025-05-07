@@ -24,9 +24,9 @@ if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
                 $definition .= " <small><em>$auteur</em></small>";
             break;
         }
-        $mot = strtoupper($mot);
-        $longueur = strlen($mot);
-        if (!isset($dico[$longueur])) $dico[$longueur] = [];
+        $mot = str_split(strtoupper($mot));
+        $longueur = count($mot);
+        if (!isset($dico[$longueur])) $dico[$longueur] = new Trie();
         if (!isset($dico[$longueur][$mot])) $dico[$longueur][$mot] = [];
         if (strlen($definition)) $dico[$longueur][$mot][] = $definition;
     }
@@ -38,14 +38,12 @@ function tries($longueur_max) {
 
     $_tries = [[]];
     for ($longueur = 1; $longueur <= $longueur_max; $longueur++) {
-        $_tries[$longueur] = new Trie();
-        foreach ($dico[$longueur] as $mot => $definition) {
-            $_tries[$longueur][str_split($mot)] = [];
-        }
+        $_tries[$longueur] = $dico[$longueur];
         for ($position_espace = MIN_PREMIER_MOT; $position_espace + MIN_MOTS_SUIVANTS < $longueur; $position_espace++) {
             $mots_suivants = $_tries[$longueur - $position_espace - 1];
             foreach ($dico[$position_espace] as $premier_mot => $definition) {
-                $_tries[$longueur][str_split($premier_mot . " ")] = $mots_suivants;
+                $premier_mot[] = " ";
+                $_tries[$longueur][$premier_mot] = $mots_suivants;
             }
         }
     }

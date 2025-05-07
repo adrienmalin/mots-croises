@@ -725,7 +725,7 @@ EAU	Doit quitter son château pour aller à la chasse	Yannick Le Nagard
 EAU	Sa fleur n'a pas besoin d'être arrosée	Yannick Le Nagard
 EAU	Doit être calme pour bien réfléchir	Bernard Philippet
 EAU	On peut se désaltérer quand on est arrivé à ce point-là	Georges Perec
-EAUDEVIE	Marc aux canards ?	Bernard Philippet
+EAUDEVIE	Marc aux canards ? (3 mots)	Bernard Philippet
 EAUX	Perdues avant d’aller au travail	Arcane
 EAUX	Perte d'un travail	Palamède
 EBOUEURS	Hommes de main payés pour des enlèvements	Bernard Philippet
@@ -1914,7 +1914,7 @@ RIDES	Avec le temps, elles gagnent sur tous les fronts	Roger La Ferté
 RIDOIR	Provoque des tensions à bord	Lionel Leteur
 RIEN	N’habille que les plus belles	Marc Aussitot
 RIEN	Ne va plus au casino	Chantal de Séréville
-RIEN	Ne va plus à monte carlo	Max Favalelli
+RIEN	Ne va plus à Monte Carlo	Max Favalelli
 RIMAILLEUR	Cherche ses pieds sur ses doigts	Georges Perec
 RIME	Pour elle le crime est parfait	Lionel Leteur
 RINCE	Mouille ou à sec	Thierry Larsan
@@ -2988,6 +2988,8 @@ VEDETTE	Personne qui travaille dur pour être reconnue et qui porte ensuite de g
 VIEILLIR	Quand on dit "Tu" à tout le monde, et que tout le monde nous dit "Vous"	Marcel Pagnol
 VOYELLES	Ce qui reste quand on a enlevé toutes les consonnes
 ANPUTE	Il lui manque effectivement une jambe	Georges Perec
+GATEUX	Il a les défauts de l'enfance sans en avoir les agréments	Max Favalelli
+BAINDESIEGE	Avec lui, la lune est dans l'eau (3 mots)	Max Favalelli
 AINE	Fin de semaine
 IS	Sur la Tille
 IO	Bête à manger du foin
@@ -3076,3 +3078,10 @@ RTP	Transport en temps réel des flux audio/vidéo
 MPLS	Transmission rapide des paquets basée sur des étiquettes réseau
 PPP	Connexion point à point (ex : anciens modems, accès internet bas débit)
 IPSEC	Sécurisation des communications ip par chiffrement
+FAUX    Son usage est répréhensible au masculin mais pas au féminin.
+FORET   Il a fait son trou ou elle a de plus en plus de trous.
+LIMA    Rogna tout en restant capitale.
+NESS    Monstrueux mais ne se laissait pas corrompre.
+PUER    Cogne à Paris ou chassait les mouches à Rome.*
+RATA    Ne réussit pas ou n’est pas réussi.
+TRIAS   Choisis ou vieux avec plein de dépôts.
