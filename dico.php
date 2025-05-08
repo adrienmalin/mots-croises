@@ -25,13 +25,6 @@ function dico($longueur_max) {
 
             $mot = $ligne[0];
             $definitions = array_slice($ligne, 1);
-            
-            foreach ($definitions as $i => $definition) {
-                if (strpos($definition, "@") !== false) {
-                    [$definition, $auteur] = explode("@", $definition);
-                    $definitions[$i] = "$definition <small><em>$auteur</em></small>";
-                }
-            }
 
             $mot = str_replace("-", CASE_NOIRE, $mot);
             $mot = $transliterator->transliterate($mot);
@@ -39,7 +32,7 @@ function dico($longueur_max) {
                 $mots = explode(CASE_NOIRE, $mot);
                 $nb_mots = count($mots);
                 $mot = implode("", $mots);
-                $definition .= " <small>($nb_mots mots)</small>";
+                $definition .= "#$nb_mots";
             }
 
             $dico[strlen($mot)][$mot] = $definitions;
