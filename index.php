@@ -122,9 +122,9 @@ if ($grille_valide) {
                             <tr>
                                 <th><?= $y + 1 ?></th>
                                 <?php for ($x = 0; $x < $largeur; $x++): ?>
-                                    <?php if ($grille[$y][$x] == " "): ?>
+                                    <?php if ($grille[$y][$x] == CASE_NOIRE): ?>
                                         <td class="case noire">
-                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" value=" " disabled />
+                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" value=CASE_NOIRE disabled />
                                         </td>
                                     <?php else: ?>
                                         <td class="case blanche">

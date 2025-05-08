@@ -96,18 +96,18 @@ class Grille implements ArrayAccess
             $this->grille[$y][$x] = $lettre;
 
             // Omission des lettres isolées
-            if ($lettre == " "
-                && ($y - 2 < 0 || $this->grille[$y - 2][$x] == " ")
-                && ($y - 1 < 0 || $x - 1 < 0 || $this->grille[$y - 1][$x - 1] == " ")
-                && ($y - 1 < 0 || $x + 1 >= $this->largeur || $this->grille[$y - 1][$x + 1] == " ")
+            if ($lettre == CASE_NOIRE
+                && ($y - 2 < 0 || $this->grille[$y - 2][$x] == CASE_NOIRE)
+                && ($y - 1 < 0 || $x - 1 < 0 || $this->grille[$y - 1][$x - 1] == CASE_NOIRE)
+                && ($y - 1 < 0 || $x + 1 >= $this->largeur || $this->grille[$y - 1][$x + 1] == CASE_NOIRE)
             ) {
                 continue;
             }
 
             // Omission des doublons
             $mots = [];
-            if ($x == $this->largeur - 1) $mots = explode(" ", $this->get_ligne($y, $this->largeur));
-            else if ($lettre == " ") $mots = explode(" ", $this->get_ligne($y, $x));
+            if ($x == $this->largeur - 1) $mots = explode(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
+            else if ($lettre == CASE_NOIRE) $mots = explode(CASE_NOIRE, $this->get_ligne($y, $x));
             else $mots = [];
             $this->lignes[$y] = array_filter($mots, function ($mot) {
                 return strlen($mot) >= 2;
@@ -119,7 +119,7 @@ class Grille implements ArrayAccess
             }
 
             if ($y == $this->hauteur - 1) {
-                $mots = explode(" ", $this->get_colonne($x, $this->hauteur));
+                $mots = explode(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
                 foreach ($mots as $rang => $mot) {
                     if (strlen($mot) < 2) continue;
                     if (strlen($mot > 2) && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
@@ -192,14 +192,14 @@ class Grille implements ArrayAccess
         }
 
         for ($y = 0; $y < $this->hauteur; $y++) {
-            $mots = explode(" ", $this->get_ligne($y, $this->largeur));
+            $mots = explode(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
             $this->lignes[$y] = array_filter($mots, function ($mot) {
                 return strlen($mot) >= 2;
             });
         }
 
         for ($x = 0; $x < $this->largeur; $x++) {
-            $mots = explode(" ", $this->get_colonne($x, $this->hauteur));
+            $mots = explode(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
             $this->colonnes[$x] = array_filter($mots, function ($mot) {
                 return strlen($mot) >= 2;
             });

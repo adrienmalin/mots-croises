@@ -2,6 +2,7 @@
 include_once "Trie.php";
 
 
+const CASE_NOIRE = " ";
 const MIN_PREMIER_MOT = 1;
 const MIN_MOTS_SUIVANTS = 1;
 
@@ -32,10 +33,10 @@ function dico($longueur_max) {
                 }
             }
 
-            $mot = str_replace("-", " ", $mot);
+            $mot = str_replace("-", CASE_NOIRE, $mot);
             $mot = $transliterator->transliterate($mot);
-            if (strpos($mot, " ") !== false) {
-                $mots = explode(" ", $mot);
+            if (strpos($mot, CASE_NOIRE) !== false) {
+                $mots = explode(CASE_NOIRE, $mot);
                 $nb_mots = count($mots);
                 $mot = implode("", $mots);
                 $definition .= " <small>($nb_mots mots)</small>";
@@ -55,7 +56,7 @@ function mots_espaces($longueur_max) {
         for ($position_espace = MIN_PREMIER_MOT; $position_espace + MIN_MOTS_SUIVANTS < $longueur; $position_espace++) {
             $mots_suivants = $dico[$longueur - $position_espace - 1];
             foreach ($dico[$position_espace]->arrayIterator() as $premier_mot => $definition) {
-                $premier_mot[] = " ";
+                $premier_mot[] = CASE_NOIRE;
                 $dico[$longueur]->arraySet($premier_mot, $mots_suivants);
             }
         }
