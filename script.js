@@ -6,7 +6,7 @@ async function sha256(text) {
   return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-let inputs = grilleForm.querySelectorAll(".grille input");
+let inputs = Array.from(grilleForm.querySelectorAll(".grille input"));
 let largeur = Number(colonnes.value);
 let nb_cases = inputs.length;
 let index = 0;

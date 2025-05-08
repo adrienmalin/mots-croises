@@ -195,6 +195,7 @@ if ($grille_valide) {
                         <?php endforeach; ?>
                     </ol>
                 </div>
+                <input type="hidden" id="solution_hashee" value="<?= $grille->hash() ?>" />
             <?php else: http_response_code(500); ?>
                 <h3 class="erreur">Erreur de génération de la grille</h3>
             <?php endif ?>
@@ -204,9 +205,9 @@ if ($grille_valide) {
             <img src="favicon.svg" width="16" height="16">
             <button type="submit">Nouvelle grille</button>
             de
-            <input type="number" id="lignes"<?= isset($_GET["lignes"])? 'name="lignes"': "" ?> value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>"/>
+            <input type="number" id="lignes"<?= isset($_GET["lignes"])? ' name="lignes"': "" ?> value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>"/>
             lignes et
-            <input type="number" id="colonnes"<?= isset($_GET["colonnes"])? 'name="colonnes"': "" ?> value="<?= $largeur ?>" min="<?=LARGEUR_MIN?>" max="<?=LARGEUR_MAX?>"/>
+            <input type="number" id="colonnes"<?= isset($_GET["colonnes"])? ' name="colonnes"': "" ?> value="<?= $largeur ?>" min="<?=LARGEUR_MIN?>" max="<?=LARGEUR_MAX?>"/>
             colonnes
         </div>
     </form>
