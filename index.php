@@ -97,7 +97,7 @@ if ($grille_valide) {
 
 <head>
     <meta charset="utf-8">
-    <title>MOTS■CROISES</title>
+    <title>🄼🄾🅃🅂🄲🅁🄾🄸🅂🄴🅂</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
