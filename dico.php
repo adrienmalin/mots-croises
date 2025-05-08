@@ -54,7 +54,7 @@ function dico($longueur_max) {
         }
         fclose($lecteur);
     }
-
+    
     return $dico;
 }
 
