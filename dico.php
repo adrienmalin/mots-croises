@@ -37,7 +37,6 @@ function dico($longueur_max) {
             }
 
             $mot = $ligne[0];
-            $definitions = array_slice($ligne, 1);
             
             $mot = str_replace("-", " ", $mot);
             $mot = $transliterator->transliterate($mot);
