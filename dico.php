@@ -22,32 +22,26 @@ function dico($longueur_max) {
                 || strlen($ligne[0]) > $longueur_max
             ) continue;
 
-            switch(count($ligne)) {
-                case 1:
-                    [$mot] = $ligne;
-                    $definition = "";
-                break;
-                case 2:
-                    [$mot, $definition] = $ligne;
-                break;
-                case 3:
-                    [$mot, $definition, $auteur] = $ligne;
-                    $definition .= " <small><em>$auteur</em></small>";
-                break;
-            }
+            $mot = $ligne[0];
+            $definitions = array_slice($ligne, 1);
             
+            foreach ($definitions as $i => $definition) {
+                if (strpos($definition, "@") !== false) {
+                    [$definition, $auteur] = explode("@", $definition);
+                    $definitions[$i] = "$definition <small><em>$auteur</em></small>";
+                }
+            }
+
             $mot = str_replace("-", " ", $mot);
             $mot = $transliterator->transliterate($mot);
             if (strpos($mot, " ") !== false) {
                 $mots = explode(" ", $mot);
                 $nb_mots = count($mots);
                 $mot = implode("", $mots);
-                $definition .= " ($nb_mots mots)";
+                $definition .= " <small>($nb_mots mots)</small>";
             }
 
-            $longueur = strlen($mot);
-            if (!isset($dico[$longueur][$mot])) $dico[$longueur][$mot] = [];
-            if (strlen($definition)) $dico[$longueur][$mot][] = $definition;
+            $dico[strlen($mot)][$mot] = $definitions;
         }
         fclose($lecteur);
     }
