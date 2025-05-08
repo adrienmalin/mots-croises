@@ -32,7 +32,9 @@ function dico($longueur_max) {
                 $mots = explode(CASE_NOIRE, $mot);
                 $nb_mots = count($mots);
                 $mot = implode("", $mots);
-                $definition .= "#$nb_mots";
+                foreach($definitions as $i => $definition) {
+                    $definitions[$i] = "$definition#$nb_mots";
+                }
             }
 
             $dico[strlen($mot)][$mot] = $definitions;

@@ -53,11 +53,15 @@ if ($grille_valide) {
                 $definition = $definitions[mt_rand(0, count($definitions) - 1)];
                 if (strpos($definition, "#") !== false) {
                     [$definition, $nb_mots] = explode("#", $definition);
-                    $definition .= " <small>($nb_mots mots)</small>";
+                    $nb_mots = " <small>($nb_mots mots)</small>";
+                } else {
+                    $nb_mots = "";
                 }
                 if (strpos($definition, "@") !== false) {
                     [$definition, $auteur] = explode("@", $definition);
-                    $definition .= " <small><em>$auteur</em></small>";
+                    $auteur = " <small><em>$auteur</em></small>";
+                } else {
+                    $auteur = "";
                 }
                 $definitions_horizontales[$y][] = $definition;
             }
@@ -72,13 +76,17 @@ if ($grille_valide) {
                 $definition = $definitions[mt_rand(0, count($definitions) - 1)];
                 if (strpos($definition, "#") !== false) {
                     [$definition, $nb_mots] = explode("#", $definition);
-                    $definition .= " <small>($nb_mots mots)</small>";
+                    $nb_mots = " <small>($nb_mots mots)</small>";
+                } else {
+                    $nb_mots = "";
                 }
                 if (strpos($definition, "@") !== false) {
                     [$definition, $auteur] = explode("@", $definition);
-                    $definition .= " <small><em>$auteur</em></small>";
+                    $auteur = " <small><em>$auteur</em></small>";
+                } else {
+                    $auteur = "";
                 }
-                $definitions_verticales[$x][] = $definition;
+                $definitions_verticales[$x][] = $definition . $nb_mots . $auteur;
             }
         }
     }
