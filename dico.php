@@ -35,8 +35,6 @@ function dico($longueur_max) {
                     $definition .= " <small><em>$auteur</em></small>";
                 break;
             }
-
-            $mot = $ligne[0];
             
             $mot = str_replace("-", " ", $mot);
             $mot = $transliterator->transliterate($mot);
