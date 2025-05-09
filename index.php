@@ -27,17 +27,42 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
 ]);
 
 $grille = new Grille($hauteur, $largeur);
-
+$basedir = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"].dirname($_SERVER["DOCUMENT_URI"]);
 if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
     do {
         $id = uniqid();
     } while (!$grille->genere($id));
 
     $_GET["grille"] = $id;
-    header("Location: " . dirname($_SERVER['DOCUMENT_URI']) . "?" . http_build_query($_GET));
+    header("Location: $basedir/?" . http_build_query($_GET));
     exit;
 }
+?>
+<!DOCTYPE HTML>
+<html lang="fr-FR" dir="ltr" prefix="og: https://ogp.me/ns#">
 
+<head>
+    <meta charset="utf-8">
+    <title>🄼🄾🅃🅂▣🄲🅁🄾🄸🅂🄴🅂</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="🄼🄾🅃🅂 🄲🅁🄾🄸🅂🄴🅂" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta property="og:title" content="🄼🄾🅃🅂 🄲🅁🄾🄸🅂🄴🅂"/>
+    <meta property="og:type" content="game"/>
+    <meta property="og:url" content="<?=$basedir?>"/>
+    <meta property="og:image" content="<?=$basedir?>/thumbnail.png"/>
+    <meta property="og:image:width" content="192"/>
+    <meta property="og:image:height" content="192"/>
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:site_name" content="<?=$_SERVER["HTTP_HOST"]?>"/>
+</head>
+
+<?php
 $id = htmlspecialchars($_GET["grille"]);
 
 $grille_valide = $grille->load($id) || $grille->genere($id);
@@ -92,16 +117,6 @@ if ($grille_valide) {
     }
 }
 ?>
-<!DOCTYPE HTML>
-<html lang="fr-FR">
-
-<head>
-    <meta charset="utf-8">
-    <title>🄼□□🅂■🄲□□□🅂□🄴🅂</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 
 <body>
     <form id="grilleForm" method="get" location=".">
@@ -210,7 +225,7 @@ if ($grille_valide) {
         </div>
         
         <div class="nouvelle-grille">
-            <img src="favicon.svg" width="16" height="16">
+            <img src="favicons/favicon.svg" width="16" height="16">
             <button type="submit">Nouvelle grille</button>
             de
             <input type="number" id="lignes"<?= isset($_GET["lignes"])? ' name="lignes"': "" ?> value="<?= $hauteur ?>" min="<?=HAUTEUR_MIN?>" max="<?=HAUTEUR_MAX?>"/>

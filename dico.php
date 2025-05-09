@@ -3,14 +3,12 @@ include_once "Trie.php";
 
 
 const CASE_NOIRE = " ";
-const MIN_PREMIER_MOT = 1;
-const MIN_MOTS_SUIVANTS = 1;
 
 
 function dico($longueur_max) {
     $transliterator = Transliterator::createFromRules(':: Any-Latin; :: Latin-ASCII; :: NFD; :: [:Nonspacing Mark:] Remove; :: Upper(); :: NFC;', Transliterator::FORWARD);
     
-    $dico = [[""]];
+    $dico = [[new Trie()]];
     for ($longueur = 0; $longueur <= $longueur_max; $longueur++) {
         $dico[] = new Trie();
     }
@@ -48,7 +46,7 @@ function dico($longueur_max) {
 function mots_espaces($longueur_max) {
     $dico = dico($longueur_max);
     for ($longueur = 1; $longueur <= $longueur_max; $longueur++) {
-        for ($position_espace = MIN_PREMIER_MOT; $position_espace + MIN_MOTS_SUIVANTS < $longueur; $position_espace++) {
+        for ($position_espace = 1; $position_espace + 1 < $longueur; $position_espace++) {
             $mots_suivants = $dico[$longueur - $position_espace - 1];
             foreach ($dico[$position_espace]->arrayIterator() as $premier_mot => $definition) {
                 $premier_mot[] = CASE_NOIRE;
