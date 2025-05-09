@@ -52,7 +52,7 @@ if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="🄼🄾🅃🅂 🄲🅁🄾🄸🅂🄴🅂" />
     <link rel="manifest" href="site.webmanifest" />
-    <meta property="og:title" content="🄼🄾🅃🅂 🄲🅁🄾🄸🅂🄴🅂"/>
+    <meta property="og:title" content="🄼🄾🅃🅂▣🄲🅁🄾🄸🅂🄴🅂"/>
     <meta property="og:type" content="game"/>
     <meta property="og:url" content="<?=$basedir?>"/>
     <meta property="og:image" content="<?=$basedir?>/thumbnail.png"/>
