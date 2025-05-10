@@ -42,54 +42,20 @@ if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
     $grille_valide = $grille->load($id) || $grille->genere($id);
 }
 
-mt_srand(crc32($id));
-if ($grille_valide) {
-    $definitions_horizontales = [];
-    for ($y = 0; $y < $hauteur; $y++) {
-        $definitions_horizontales[$y] = [];
-        foreach ($grille->lignes[$y] as $mot) {
-            $definitions = $grille->dico[strlen($mot)][$mot];
-            if (count($definitions)) {
-                $definition = $definitions[mt_rand(0, count($definitions) - 1)];
-                if (strpos($definition, "#") !== false) {
-                    [$definition, $nb_mots] = explode("#", $definition);
-                    $nb_mots = " <small>($nb_mots mots)</small>";
-                } else {
-                    $nb_mots = "";
-                }
-                if (strpos($definition, "@") !== false) {
-                    [$definition, $auteur] = explode("@", $definition);
-                    $auteur = " <small><em>$auteur</em></small>";
-                } else {
-                    $auteur = "";
-                }
-                $definitions_horizontales[$y][] = $definition;
-            }
-        }
+function formatter_definition($definition) {
+    if (strpos($definition, "#") !== false) {
+        [$definition, $nb_mots] = explode("#", $definition);
+        $nb_mots = " <small>($nb_mots mots)</small>";
+    } else {
+        $nb_mots = "";
     }
-    $definitions_verticales = [];
-    for ($x = 0 ; $x < $largeur; $x++) {
-        $definitions_verticales[$x] = [];
-        foreach ($grille->colonnes[$x] as $mot) {
-            $definitions = $grille->dico[strlen($mot)][$mot];
-            if (count($definitions)) {
-                $definition = $definitions[mt_rand(0, count($definitions) - 1)];
-                if (strpos($definition, "#") !== false) {
-                    [$definition, $nb_mots] = explode("#", $definition);
-                    $nb_mots = " <small>($nb_mots mots)</small>";
-                } else {
-                    $nb_mots = "";
-                }
-                if (strpos($definition, "@") !== false) {
-                    [$definition, $auteur] = explode("@", $definition);
-                    $auteur = " <small><em>$auteur</em></small>";
-                } else {
-                    $auteur = "";
-                }
-                $definitions_verticales[$x][] = $definition . $nb_mots . $auteur;
-            }
-        }
+    if (strpos($definition, "@") !== false) {
+        [$definition, $auteur] = explode("@", $definition);
+        $auteur = " <small><em>$auteur</em></small>";
+    } else {
+        $auteur = "";
     }
+    return $definition;
 }
 ?>
 <!DOCTYPE HTML>
@@ -168,7 +134,7 @@ if ($grille_valide) {
                                     <?php else: ?>
                                         <td class="case blanche">
                                             <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>"
-                                                title="<?= strip_tags("→ " . implode("\n→ ", $definitions_horizontales[$y]) . "\n↓ " . implode("\n↓ ", $definitions_verticales[$x])) ?>" />
+                                                title="<?= strip_tags("→ " . implode("\n→ ", array_map("formatter_definition", $grille->definitions["horizontales"][$y])) . "\n↓ " . implode("\n↓ ", array_map("formatter_definition", $grille->definitions["verticales"][$x]))) ?>" />
                                         </td>
                                     <?php endif; ?>
                                 <?php endfor; ?>
@@ -179,15 +145,15 @@ if ($grille_valide) {
                 <div class="definitions horizontales">
                     <h2>Horizontalement</h2>
                     <ol type="1">
-                        <?php foreach ($definitions_horizontales as $y => $definitions): ?>
+                        <?php foreach ($grille->definitions["horizontales"] as $y => $definitions): ?>
                             <li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
-                                        <?= $definitions[0] ?>
+                                        <?= formatter_definition($definitions[0]) ?>
                                     <?php else: ?>
                                         <ol>
                                             <?php foreach ($definitions as $definition) : ?>
-                                                <li><?= $definition ?></li>
+                                                <li><?= formatter_definition($definition) ?></li>
                                             <?php endforeach ?>
                                         </ol>
                                     <?php endif ?>
@@ -199,15 +165,15 @@ if ($grille_valide) {
                 <div class="definitions verticales">
                     <h2>Verticalement</h2>
                     <ol type="A">
-                        <?php foreach ($definitions_verticales as $x => $definitions): ?>
+                        <?php foreach ($grille->definitions["verticales"] as $x => $definitions): ?>
                             <li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
-                                        <?= $definitions[0] ?>
+                                        <?= formatter_definition($definitions[0]) ?>
                                     <?php else: ?>
                                         <ol>
                                             <?php foreach ($definitions as $definition) : ?>
-                                                <li><?= $definition ?></li>
+                                                <li><?= formatter_definition($definition) ?></li>
                                             <?php endforeach ?>
                                         </ol>
                                     <?php endif ?>

@@ -31,7 +31,7 @@ class Grille implements ArrayAccess
     public $lignes = [];
     public $colonnes = [];
     public $valide = false;
-    private $id;
+    public $definitions = [];
 
     public function __construct($hauteur, $largeur)
     {
@@ -73,6 +73,28 @@ class Grille implements ArrayAccess
         $grilles->current();
 
         if ($grilles->valid()) {
+            $this->definitions = [
+                "horizontales" => [],
+                "verticales" => []
+            ];
+            foreach($this->lignes as $y => $mots) {
+                $this->definitions["horizontales"][$y] = [];
+                foreach($mots as $mot) {
+                    $definitions = $this->dico[strlen($mot)][$mot];
+                    if (count($definitions)) {
+                        $this->definitions["horizontales"][$y][] = $definitions[mt_rand(0, count($definitions) - 1)];
+                    }
+                }
+            }
+            foreach($this->colonnes as $x => $mots) {
+                $this->definitions["verticales"][$x] = [];
+                foreach($mots as $mot) {
+                    $definitions = $this->dico[strlen($mot)][$mot];
+                    if (count($definitions)) {
+                        $this->definitions["verticales"][$x][] = $definitions[mt_rand(0, count($definitions) - 1)];
+                    }
+                }
+            }
             $this->save($id);
             return true;
         } else {
@@ -181,22 +203,8 @@ class Grille implements ArrayAccess
         session_id("$this->largeur,$this->hauteur,$id");
         session_start(["use_cookies" => false]);
 
-        $_SESSION["grille"] = (string)$this;
-        $_SESSION["dico"] = [];
-        foreach ($this->lignes as $y => $mots) {
-            foreach($mots as $mot) {
-                $longueur = strlen($mot);
-                if (!isset($_SESSION["dico"][$longueur])) $_SESSION["dico"][$longueur] = [];
-                $_SESSION["dico"][$longueur][$mot] = $this->dico[$longueur][$mot];
-            }
-        }
-        foreach ($this->colonnes as $y => $mots) {
-            foreach($mots as $mot) {
-                $longueur = strlen($mot);
-                if (!isset($_SESSION["dico"][$longueur])) $_SESSION["dico"][$longueur] = [];
-                $_SESSION["dico"][$longueur][$mot] = $this->dico[$longueur][$mot];
-            }
-        }
+        $_SESSION["grille"] = $this->grille;
+        $_SESSION["definitions"] = $this->definitions;
     }
 
     public function load($id)
@@ -208,27 +216,8 @@ class Grille implements ArrayAccess
             return false;
         }
 
-        foreach (explode(PHP_EOL, $_SESSION["grille"]) as $y => $ligne) {
-            foreach (str_split($ligne) as $x => $lettre) {
-                $this->grille[$y][$x] = $lettre;
-            }
-        }
-
-        for ($y = 0; $y < $this->hauteur; $y++) {
-            $mots = explode(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
-            $this->lignes[$y] = array_filter($mots, function ($mot) {
-                return strlen($mot) >= 2;
-            });
-        }
-
-        for ($x = 0; $x < $this->largeur; $x++) {
-            $mots = explode(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
-            $this->colonnes[$x] = array_filter($mots, function ($mot) {
-                return strlen($mot) >= 2;
-            });
-        }
-
-        $this->dico = $_SESSION["dico"];
+        $this->grille = $_SESSION["grille"];
+        $this->definitions = $_SESSION["definitions"];
 
         return true;
     }
