@@ -26,16 +26,17 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
     ]
 ]);
 
+$grille_valide = false;
 $grille = new Grille($hauteur, $largeur);
 $basedir = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"].dirname($_SERVER["DOCUMENT_URI"]);
 if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
     do {
         $id = uniqid();
     } while (!$grille->genere($id));
+    $grille_valide = true;
 
     $_GET["grille"] = $id;
     header("Location: $basedir/?" . http_build_query($_GET));
-    exit;
 }
 ?>
 <!DOCTYPE HTML>
@@ -65,7 +66,7 @@ if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
 <?php
 $id = htmlspecialchars($_GET["grille"]);
 
-$grille_valide = $grille->load($id) || $grille->genere($id);
+$grille_valide = $grille_valide || $grille->load($id) || $grille->genere($id);
 
 mt_srand(crc32($id));
 if ($grille_valide) {
