@@ -67,7 +67,7 @@ class Grille implements ArrayAccess
     {
         mt_srand(crc32($id));
 
-        $this->dico = mots_espaces(max($this->hauteur, $this->largeur));
+        if (!isset($this->dico)) $this->dico = mots_espaces(max($this->hauteur, $this->largeur));
 
         $grilles = $this->gen_grilles();
         $grilles->current();
