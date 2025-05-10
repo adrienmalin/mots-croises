@@ -101,15 +101,15 @@ if ($grille_valide) {
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
-    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="apercu.svg.php?grille=<?=$id?>&lignes=<?=$hauteur?>&colonnes=<?=$largeur?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="apercu.png.php?grille=<?=$id?>&lignes=<?=$hauteur?>&colonnes=<?=$largeur?>&largeur=96&hauteur=96" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="🄼🄾🅃🅂 🄲🅁🄾🄸🅂🄴🅂" />
     <link rel="manifest" href="site.webmanifest" />
     <meta property="og:title" content="🄼🄾🅃🅂▣🄲🅁🄾🄸🅂🄴🅂"/>
     <meta property="og:type" content="game"/>
     <meta property="og:url" content="<?=$basedir?>"/>
-    <meta property="og:image" content="<?=$basedir?>/apercu.php?grille=<?=$id?>&lignes=<?=$hauteur?>&colonnes=<?=$largeur?>&largeur=1200&hauteur=630"/>
+    <meta property="og:image" content="<?=$basedir?>/apercu.png.php?grille=<?=$id?>&lignes=<?=$hauteur?>&colonnes=<?=$largeur?>&largeur=1200&hauteur=630"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     <meta property="og:locale" content="fr_FR"/>

@@ -21,8 +21,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="8.3124997"
-     inkscape:cx="28.57143"
-     inkscape:cy="30.977445"
+     inkscape:cx="32"
+     inkscape:cy="32"
      inkscape:window-width="1536"
      inkscape:window-height="793"
      inkscape:window-x="0"
@@ -32,19 +32,19 @@
   <path
      fill="#ffffff"
      stroke="#000000"
-     stroke-width="2.03093"
+     stroke-width="2"
      stroke-miterlimit="10"
-     d="m 62.968825,7.9076 v 48.183453 a 6.8777723,6.877772 0 0 1 -6.876426,6.87777 H 7.9089443 a 6.8777723,6.877772 0 0 1 -6.87777,-6.876424 V 7.9076 A 6.8777723,6.877772 0 0 1 7.9075973,1.0311743 H 56.092399 A 6.8777723,6.877772 0 0 1 62.968825,7.9076 Z M 46.910816,17.089183 H 31.999999 v 14.910816 h 14.910817 z"
+     d="m 63,8 v 48 a 7,7 0 0 1 -7,7 H 8 a 7,7 0 0 1 -7,-7 V 9 A 7,7 0 0 1 8,1 H 56 A 7,7 0 0 1 63,8 Z M 47,17 H 32 v 15 h 15 z"
      id="path1" />
   <path
-     d="M 46.910816,17.089183 H 31.999999 v 14.910816 h 14.910817 z"
+     d="M 47,17 H 32 v 15 h 15 z"
      id="path2"
-     style="stroke-width:1.34646" />
+     style="stroke-width:1" />
   <path
      fill="none"
      stroke="#000000"
-     stroke-width="2.06235"
+     stroke-width="2"
      stroke-miterlimit="10"
-     d="M 46.910816,62.968823 V 31.999999 m 0,-14.910815 V 1.0311743 M 31.999999,62.968823 V 31.999999 m 0,-14.910815 V 1.0311743 m -16.058011,0 V 62.968823 M 46.910816,31.999999 h 16.058009 m -30.968826,0 H 1.0311743 M 62.968825,46.910815 H 1.0311743 M 62.968825,15.941991 H 1.0311743"
+     d="M 47,63 V 32 m 0,-15 V 1 M 32,63 V 32 m 0,-15 V 1 m -16,0 V 63 M 47,32 h 16 m -31,0 H 1 M 63,47 H 1 M 63,16 H 1"
      id="path3" />
 </svg>
