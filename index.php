@@ -26,48 +26,21 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
     ]
 ]);
 
-$grille_valide = false;
 $grille = new Grille($hauteur, $largeur);
 $basedir = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"].dirname($_SERVER["DOCUMENT_URI"]);
 
-if (isset($_GET["grille"]) || $_GET["grille"] == "") {
-    $id = htmlspecialchars($_GET["grille"]);
-} else {
+if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
     do {
         $id = uniqid();
-    } while (!$grille->genere($id));
-    $grille_valide = true;
+        $grille_valide = $grille->genere($id);
+    } while (!$grille_valide);
 
     $_GET["grille"] = $id;
     header("Location: $basedir/?" . http_build_query($_GET));
+} else {
+    $id = htmlspecialchars($_GET["grille"]);
+    $grille_valide = $grille->load($id) || $grille->genere($id);
 }
-?>
-<!DOCTYPE HTML>
-<html lang="fr-FR" dir="ltr" prefix="og: https://ogp.me/ns#">
-
-<head>
-    <meta charset="utf-8">
-    <title>🄼🄾🅃🅂▣🄲🅁🄾🄸🅂🄴🅂</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
-    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="🄼🄾🅃🅂 🄲🅁🄾🄸🅂🄴🅂" />
-    <link rel="manifest" href="site.webmanifest" />
-    <meta property="og:title" content="🄼🄾🅃🅂▣🄲🅁🄾🄸🅂🄴🅂"/>
-    <meta property="og:type" content="game"/>
-    <meta property="og:url" content="<?=$basedir?>"/>
-    <meta property="og:image" content="<?=$basedir?>/thumbnail.php?grille=<?=$id?>&lignes=<?=$hauteur?>&colonnes=<?=$largeur?>&largeur=1200&hauteur=630"/>
-    <meta property="og:image:width" content="1200"/>
-    <meta property="og:image:height" content="630"/>
-    <meta property="og:locale" content="fr_FR"/>
-    <meta property="og:site_name" content="<?=$_SERVER["HTTP_HOST"]?>"/>
-</head>
-
-<?php
-$grille_valide = $grille_valide || $grille->load($id) || $grille->genere($id);
 
 mt_srand(crc32($id));
 if ($grille_valide) {
@@ -119,6 +92,29 @@ if ($grille_valide) {
     }
 }
 ?>
+<!DOCTYPE HTML>
+<html lang="fr-FR" dir="ltr" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8">
+    <title>🄼🄾🅃🅂▣🄲🅁🄾🄸🅂🄴🅂</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="🄼🄾🅃🅂 🄲🅁🄾🄸🅂🄴🅂" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta property="og:title" content="🄼🄾🅃🅂▣🄲🅁🄾🄸🅂🄴🅂"/>
+    <meta property="og:type" content="game"/>
+    <meta property="og:url" content="<?=$basedir?>"/>
+    <meta property="og:image" content="<?=$basedir?>/apercu.php?grille=<?=$id?>&lignes=<?=$hauteur?>&colonnes=<?=$largeur?>&largeur=1200&hauteur=630"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:site_name" content="<?=$_SERVER["HTTP_HOST"]?>"/>
+</head>
 
 <body>
     <form id="grilleForm" method="get" location=".">
