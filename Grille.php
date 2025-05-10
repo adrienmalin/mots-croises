@@ -174,22 +174,26 @@ class Grille implements ArrayAccess
 
     public function save($id)
     {
-        session_id($id);
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            session_write_close();
+        }
+
+        session_id("$this->largeur,$this->hauteur,$id");
         session_start(["use_cookies" => false]);
 
-        $_SESSION["$this->largeur,$this->hauteur"] = (string)$this;
+        $_SESSION["grille"] = (string)$this;
     }
 
     public function load($id)
     {
-        session_id($id);
+        session_id("$this->largeur,$this->hauteur,$id");
         session_start(["use_cookies" => false]);
 
-        if (!isset($_SESSION["$this->largeur,$this->hauteur"])) {
+        if (!isset($_SESSION["grille"])) {
             return false;
         }
 
-        foreach (explode(PHP_EOL, $_SESSION["$this->largeur,$this->hauteur"]) as $y => $ligne) {
+        foreach (explode(PHP_EOL, $_SESSION["grille"]) as $y => $ligne) {
             foreach (str_split($ligne) as $x => $lettre) {
                 $this->grille[$y][$x] = $lettre;
             }

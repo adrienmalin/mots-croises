@@ -6,8 +6,8 @@ class Trie implements ArrayAccess, IteratorAggregate, Countable {
     private $nb_branches = 0;
 
     public function arraySet($cles, $valeur) {
-        $this->nb_branches++;
         $cle = $cles[0];
+        $this->nb_branches++;
         $cles = array_slice($cles, 1);
         if ($cles == []) {
             $this->branches[$cle] = $valeur;

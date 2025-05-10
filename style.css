@@ -108,6 +108,7 @@ h2 {
 }
 
 .grille input[disabled] {
+  color: black;
   background-color: black;
 }
 

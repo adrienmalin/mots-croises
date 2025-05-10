@@ -29,7 +29,10 @@ $largeur = filter_input(INPUT_GET, 'colonnes', FILTER_VALIDATE_INT, [
 $grille_valide = false;
 $grille = new Grille($hauteur, $largeur);
 $basedir = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"].dirname($_SERVER["DOCUMENT_URI"]);
-if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
+
+if (isset($_GET["grille"]) || $_GET["grille"] == "") {
+    $id = htmlspecialchars($_GET["grille"]);
+} else {
     do {
         $id = uniqid();
     } while (!$grille->genere($id));
@@ -56,16 +59,14 @@ if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
     <meta property="og:title" content="🄼🄾🅃🅂▣🄲🅁🄾🄸🅂🄴🅂"/>
     <meta property="og:type" content="game"/>
     <meta property="og:url" content="<?=$basedir?>"/>
-    <meta property="og:image" content="<?=$basedir?>/thumbnail.png"/>
-    <meta property="og:image:width" content="192"/>
-    <meta property="og:image:height" content="192"/>
+    <meta property="og:image" content="<?=$basedir?>/thumbnail.php?grille=<?=$id?>&lignes=<?=$hauteur?>&colonnes=<?=$largeur?>&largeur=1200&hauteur=630"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
     <meta property="og:locale" content="fr_FR"/>
     <meta property="og:site_name" content="<?=$_SERVER["HTTP_HOST"]?>"/>
 </head>
 
 <?php
-$id = htmlspecialchars($_GET["grille"]);
-
 $grille_valide = $grille_valide || $grille->load($id) || $grille->genere($id);
 
 mt_srand(crc32($id));
