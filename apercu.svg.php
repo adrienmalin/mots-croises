@@ -10,7 +10,7 @@ $cote = 20;
 // Dimensions du SVG
 $width = $colonnes * $cote; // Largeur proportionnelle au nombre de colonnes
 $height = $lignes * $cote;  // Hauteur proportionnelle au nombre de lignes
-$rectRadius = 7;        // Rayon des coins arrondis du rectangle
+$rectRadius = 20;        // Rayon des coins arrondis du rectangle
 
 // Création du document XML
 $doc = new DOMDocument('1.0', 'UTF-8');

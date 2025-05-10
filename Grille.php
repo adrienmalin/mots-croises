@@ -45,8 +45,6 @@ class Grille implements ArrayAccess
                 $this->positions[] = [$x, $y];
         }
         $this->nb_positions = count($this->positions);
-
-        $this->dico = mots_espaces(max($hauteur, $largeur));
     }
 
     public function get_ligne($y, $largeur)
@@ -63,6 +61,23 @@ class Grille implements ArrayAccess
         for ($y = 0; $y < $hauteur; $y++)
             $colonne .= $this->grille[$y][$x];
         return $colonne;
+    }
+
+    public function genere($id)
+    {
+        mt_srand(crc32($id));
+
+        $this->dico = mots_espaces(max($this->hauteur, $this->largeur));
+
+        $grilles = $this->gen_grilles();
+        $grilles->current();
+
+        if ($grilles->valid()) {
+            $this->save($id);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function gen_grilles($i = 0, $lettres_ligne = NULL)
@@ -137,21 +152,6 @@ class Grille implements ArrayAccess
         }
     }
 
-    public function genere($id)
-    {
-        mt_srand(crc32($id));
-
-        $grilles = $this->gen_grilles();
-        $grilles->current();
-
-        if ($grilles->valid()) {
-            $this->save($id);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public function hash()
     {
         $string = "";
@@ -182,6 +182,21 @@ class Grille implements ArrayAccess
         session_start(["use_cookies" => false]);
 
         $_SESSION["grille"] = (string)$this;
+        $_SESSION["dico"] = [];
+        foreach ($this->lignes as $y => $mots) {
+            foreach($mots as $mot) {
+                $longueur = strlen($mot);
+                if (!isset($_SESSION["dico"][$longueur])) $_SESSION["dico"][$longueur] = [];
+                $_SESSION["dico"][$longueur][$mot] = $this->dico[$longueur][$mot];
+            }
+        }
+        foreach ($this->colonnes as $y => $mots) {
+            foreach($mots as $mot) {
+                $longueur = strlen($mot);
+                if (!isset($_SESSION["dico"][$longueur])) $_SESSION["dico"][$longueur] = [];
+                $_SESSION["dico"][$longueur][$mot] = $this->dico[$longueur][$mot];
+            }
+        }
     }
 
     public function load($id)
@@ -212,6 +227,8 @@ class Grille implements ArrayAccess
                 return strlen($mot) >= 2;
             });
         }
+
+        $this->dico = $_SESSION["dico"];
 
         return true;
     }
