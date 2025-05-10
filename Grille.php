@@ -160,13 +160,9 @@ class Grille implements ArrayAccess
         return hash('sha256', $string);
     }
 
-    public function save($id)
-    {
-        session_id($id);
-        session_start(["use_cookies" => false]);
-
-        $_SESSION["$this->largeur,$this->hauteur"] = implode(
-            "",
+    public function __toString() {
+        return implode(
+            PHP_EOL,
             array_map(
                 function ($ligne) {
                     return implode("", $ligne);
@@ -174,6 +170,14 @@ class Grille implements ArrayAccess
                 $this->grille
             )
         );
+    }
+
+    public function save($id)
+    {
+        session_id($id);
+        session_start(["use_cookies" => false]);
+
+        $_SESSION["$this->largeur,$this->hauteur"] = (string)$this;
     }
 
     public function load($id)
@@ -185,7 +189,7 @@ class Grille implements ArrayAccess
             return false;
         }
 
-        foreach (str_split($_SESSION["$this->largeur,$this->hauteur"], $this->largeur) as $y => $ligne) {
+        foreach (explode(PHP_EOL, $_SESSION["$this->largeur,$this->hauteur"]) as $y => $ligne) {
             foreach (str_split($ligne) as $x => $lettre) {
                 $this->grille[$y][$x] = $lettre;
             }
