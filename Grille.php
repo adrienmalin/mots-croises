@@ -25,11 +25,11 @@ class Grille implements ArrayAccess
     public $grille;
     public $hauteur;
     public $largeur;
-    public $dico;
+    private $dico;
     private $positions;
     private $nb_positions;
-    public $lignes = [];
-    public $colonnes = [];
+    private $lignes = [];
+    private $colonnes = [];
     public $valide = false;
     public $definitions = [];
 
@@ -38,13 +38,6 @@ class Grille implements ArrayAccess
         $this->hauteur   = $hauteur;
         $this->largeur   = $largeur;
         $this->grille    = array_fill(0, $hauteur, array_fill(0, $largeur, ''));
-
-        $this->positions = [];
-        for ($y = 0; $y < $hauteur; $y++) {
-            for ($x = 0; $x < $largeur; $x++)
-                $this->positions[] = [$x, $y];
-        }
-        $this->nb_positions = count($this->positions);
     }
 
     public function get_ligne($y, $largeur)
@@ -67,7 +60,18 @@ class Grille implements ArrayAccess
     {
         mt_srand(crc32($id));
 
-        if (!isset($this->dico)) $this->dico = mots_espaces(max($this->hauteur, $this->largeur));
+        if (!isset($this->dico)) {
+            $this->dico = mots_espaces(max($this->hauteur, $this->largeur));
+        }
+
+        if (!isset($this->positions)) {
+            $this->positions = [];
+            for ($y = 0; $y < $hauteur; $y++) {
+                for ($x = 0; $x < $largeur; $x++)
+                    $this->positions[] = [$x, $y];
+            }
+            $this->nb_positions = count($this->positions);
+        }
 
         $grilles = $this->gen_grilles();
         $grilles->current();
@@ -194,6 +198,18 @@ class Grille implements ArrayAccess
         );
     }
 
+    public function __serialize(): array {
+        return [
+            "grille" => $this->grille,
+            "definitions" => $this->definitions
+        ];
+    }
+
+    public function __unserialize(array $data): void {
+        $this->grille = $data["grille"];
+        $this->definitions = $data["definitions"];
+    }
+
     public function save($id)
     {
         if (session_status() === PHP_SESSION_ACTIVE) {
@@ -203,8 +219,7 @@ class Grille implements ArrayAccess
         session_id("$this->largeur,$this->hauteur,$id");
         session_start(["use_cookies" => false]);
 
-        $_SESSION["grille"] = $this->grille;
-        $_SESSION["definitions"] = $this->definitions;
+        $_SESSION = serialize($this);
     }
 
     public function load($id)
@@ -216,8 +231,7 @@ class Grille implements ArrayAccess
             return false;
         }
 
-        $this->grille = $_SESSION["grille"];
-        $this->definitions = $_SESSION["definitions"];
+        unserialize($_SESSION);
 
         return true;
     }
