@@ -134,7 +134,7 @@ function formatter_definition($definition) {
                                     <?php else: ?>
                                         <td class="case blanche">
                                             <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>"
-                                                title="<?= strip_tags("→ " . implode("\n→ ", array_map("formatter_definition", $grille->definitions["horizontales"][$y])) . "\n↓ " . implode("\n↓ ", array_map("formatter_definition", $grille->definitions["verticales"][$x]))) ?>" />
+                                                title="<?= strip_tags("→ " . implode("\n→ ", array_map("formatter_definition", $grille->definitions["horizontales"][$y] ?? [])) . "\n↓ " . implode("\n↓ ", array_map("formatter_definition", $grille->definitions["verticales"][$x] ?? []))) ?>" />
                                         </td>
                                     <?php endif; ?>
                                 <?php endfor; ?>

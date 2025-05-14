@@ -66,8 +66,8 @@ class Grille implements ArrayAccess
 
         if (!isset($this->positions)) {
             $this->positions = [];
-            for ($y = 0; $y < $hauteur; $y++) {
-                for ($x = 0; $x < $largeur; $x++)
+            for ($y = 0; $y < $this->hauteur; $y++) {
+                for ($x = 0; $x < $this->largeur; $x++)
                     $this->positions[] = [$x, $y];
             }
             $this->nb_positions = count($this->positions);
