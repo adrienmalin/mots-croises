@@ -35,26 +35,28 @@ for (let input of inputs) {
   };
 
   input.onkeydown = function (event) {
-    next_input = null;
-    switch (event.key) {
-      case "ArrowUp":
-        next_input = inputs[(input.index - largeur + nb_cases) % nb_cases];
-        break;
-      case "ArrowDown":
-        next_input = inputs[(input.index + largeur) % nb_cases];
-        break;
-      case "ArrowLeft":
-        next_input = inputs[(input.index - 1 + nb_cases) % nb_cases];
-        break;
-      case "ArrowRight":
-        next_input = inputs[(input.index + 1) % nb_cases];
-        break;
-    }
-    if (next_input) {
-      next_input.focus();
-      next_input.select();
-      event.preventDefault();
-    }
+    next_input = input;
+    do {
+      switch (event.key) {
+        case "ArrowUp":
+          next_input = inputs[(next_input.index - largeur + nb_cases) % nb_cases];
+          break;
+        case "ArrowDown":
+          next_input = inputs[(next_input.index + largeur) % nb_cases];
+          break;
+        case "ArrowLeft":
+          next_input = inputs[(next_input.index - 1 + nb_cases) % nb_cases];
+          break;
+        case "ArrowRight":
+          next_input = inputs[(next_input.index + 1) % nb_cases];
+          break;
+        default:
+          return;
+      }
+    } while (next_input.disabled)
+    event.preventDefault();
+    next_input.focus();
+    next_input.select();
   };
 
   input.oninput = function (event) {

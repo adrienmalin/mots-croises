@@ -85,33 +85,35 @@ function formatter_definition($definition) {
 <body>
     <form id="grilleForm" method="get" location=".">
         <h1 class="large width">
-            <table>
-                <tbody>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td>M</td>
-                    </tr>
-                    <tr>
-                        <td>c</td>
-                        <td>r</td>
-                        <td>o</td>
-                        <td>i</td>
-                        <td>s</td>
-                        <td>é</td>
-                        <td>s</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td>t</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td>s</td>
-                    </tr>
-                </tbody>
-            </table>
+            <a href=".">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>M</td>
+                        </tr>
+                        <tr>
+                            <td>c</td>
+                            <td>r</td>
+                            <td>o</td>
+                            <td>i</td>
+                            <td>s</td>
+                            <td>é</td>
+                            <td>s</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>t</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </a>
         </h1>
-        <h1 class="small width">Mots■croisés</h1>
+        <h1 class="small width"><a href=".">Mots■croisés</a></h1>
         <div class="grille-et-definitions">
             <?php if ($grille_valide): ?>
                 <div class="grille">
@@ -129,11 +131,11 @@ function formatter_definition($definition) {
                                 <?php for ($x = 0; $x < $largeur; $x++): ?>
                                     <?php if ($grille[$y][$x] == CASE_NOIRE): ?>
                                         <td class="case noire">
-                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" value="<?= CASE_NOIRE ?>" disabled />
+                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" disabled />
                                         </td>
                                     <?php else: ?>
                                         <td class="case blanche">
-                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" pattern="[A-Z]" placeholder="<?= $grille[$y][$x] ?>"
+                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" pattern="[A-Z]"
                                                 title="<?= strip_tags("→ " . implode("\n→ ", array_map("formatter_definition", $grille->definitions["horizontales"][$y] ?? [])) . "\n↓ " . implode("\n↓ ", array_map("formatter_definition", $grille->definitions["verticales"][$x] ?? []))) ?>" />
                                         </td>
                                     <?php endif; ?>
