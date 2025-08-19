@@ -55,7 +55,7 @@ function formatter_definition($definition) {
     } else {
         $auteur = "";
     }
-    return $definition;
+    return $definition . $nb_mots . $auteur;
 }
 ?>
 <!DOCTYPE HTML>
