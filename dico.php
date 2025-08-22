@@ -1,4 +1,5 @@
 <?php
+
 include_once "Trie.php";
 
 
@@ -48,9 +49,9 @@ function mots_espaces($longueur_max) {
     for ($longueur = $longueur_max; $longueur >= 2; $longueur--) {
         for ($position_espace = $longueur - 1; $position_espace >= 1; $position_espace--) {
             $mots_suivants = $dico[$longueur - $position_espace - 1];
-            foreach ($dico[$position_espace]->arrayIterator() as $premier_mot => $definition) {
+            foreach ($dico[$position_espace] as $premier_mot => $definition) {
                 $premier_mot[] = CASE_NOIRE;
-                $dico[$longueur]->arraySet($premier_mot, $mots_suivants);
+                $dico[$longueur][$premier_mot] = $mots_suivants;
             }
         }
     }

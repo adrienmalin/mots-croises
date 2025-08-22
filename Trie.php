@@ -52,39 +52,45 @@ class Trie implements ArrayAccess, IteratorAggregate, Countable {
         }
     }
 
-    public function arrayIterator() {
+    // ArrayAccess
+    public function offsetSet($array, $valeur): void {
+        if (is_string($array)) {
+            $array = str_split($array);
+        }
+        $this->arraySet($array, $valeur);
+    }
+
+    public function offsetExists($array): bool {
+        if (is_string($array)) {
+            $array = str_split($array);
+        }
+        return $this->arrayExists($array);
+    }
+
+    public function &offsetGet($array): mixed {
+        if (is_string($array)) {
+            $array = str_split($array);
+        }
+        return $this->arrayGet($array);
+    }
+
+    public function offsetUnset($array): void {
+        if (is_string($array)) {
+            $array = str_split($array);
+        }
+        $this->arrayUnset($array);
+    }
+
+    // IteratorAggregate
+    public function getIterator(): Traversable {
         foreach ($this->branches as $cle => $branche) {
             if ($branche instanceof Trie) {
-                foreach($branche->arrayIterator() as $sous_cles => $feuille) {
+                foreach($branche->getIterator() as $sous_cles => $feuille) {
                     yield array_merge([$cle], $sous_cles) => $feuille;
                 }
             } else {
                 yield [$cle] => $branche;
             }
-        }
-    }
-
-    // ArrayAccess
-    public function offsetSet($string, $valeur): void {
-        $this->arraySet(str_split($string), $valeur);
-    }
-
-    public function offsetExists($string): bool {
-        return $this->arrayExists(str_split($string));
-    }
-
-    public function &offsetGet($string): mixed {
-        return $this->arrayGet(str_split($string));
-    }
-
-    public function offsetUnset($string): void {
-        $this->arrayUnset(str_split($string));
-    }
-
-    // IteratorAggregate
-    public function getIterator(): Traversable {
-        foreach($this->arrayIterator() as $array => $valeur) {
-            yield implode("", $array) => $valeur;
         }
     }
 

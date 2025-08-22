@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 include_once "Grille.php";
 
 
@@ -131,7 +136,7 @@ function formatter_definition($definition) {
                                 <?php for ($x = 0; $x < $largeur; $x++): ?>
                                     <?php if ($grille[$y][$x] == CASE_NOIRE): ?>
                                         <td class="case noire">
-                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" disabled />
+                                            <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" value="<?= CASE_NOIRE ?>" disabled />
                                         </td>
                                     <?php else: ?>
                                         <td class="case blanche">
@@ -154,9 +159,9 @@ function formatter_definition($definition) {
                                         <?= formatter_definition($definitions[0]) ?>
                                     <?php else: ?>
                                         <ol>
-                                            <?php foreach ($definitions as $definition) : ?>
-                                                <li><?= formatter_definition($definition) ?></li>
-                                            <?php endforeach ?>
+                                        <?php foreach ($definitions as $definition) : ?>
+                                            <li><?= formatter_definition($definition) ?></li>
+                                        <?php endforeach ?>
                                         </ol>
                                     <?php endif ?>
                                 <?php endif ?>
