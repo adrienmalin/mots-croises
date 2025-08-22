@@ -134,13 +134,19 @@ class Grille implements ArrayAccess
             $this->grille[$y][$x] = $lettre;
 
             // Omission des lettres isolées
-            if ($lettre == CASE_NOIRE
-                && ($y - 2 < 0 || $this->grille[$y - 2][$x] == CASE_NOIRE)
-                && ($y - 1 < 0 || $x - 1 < 0 || $this->grille[$y - 1][$x - 1] == CASE_NOIRE)
-                && ($y - 1 < 0 || $x + 1 >= $this->largeur || $this->grille[$y - 1][$x + 1] == CASE_NOIRE)
-            ) {
-                continue;
-            }
+            if ($lettre == CASE_NOIRE) {
+                if (($y < 2 || $this->grille[$y - 2][$x] == CASE_NOIRE)
+                    && ($y < 1 || $x == 0 || $this->grille[$y - 1][$x - 1] == CASE_NOIRE)
+                    && ($y < 1 || $x + 1 >= $this->largeur || $this->grille[$y - 1][$x + 1] == CASE_NOIRE)
+                ) continue;
+                if ($y == $this->hauteur - 1
+                    && ($x < 2 || $this[$y][$x - 2] == CASE_NOIRE)
+                    && ($x < 1 || $this[$y - 1][$x - 1] == CASE_NOIRE)
+                ) continue;
+            } else if ($x == $this->largeur - 1 && $y == $this->hauteur - 1
+             && $this[$y][$x - 1] == CASE_NOIRE
+             && $this[$y-1][$x] == CASE_NOIRE
+            ) continue;
 
             // Omission des doublons
             $mots = [];
