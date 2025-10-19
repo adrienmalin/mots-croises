@@ -13,7 +13,7 @@ ABER	Liquide encaissé@Dédale	Trou breton, mais allemand@Yannick Le Nagard	Vall
 ABOIEMENT	Cri de l’homme quand il se transforme en loup garou	Bruit d'une caravane qui passe
 ABOLITION	La censure pour l'échafaud@Antoine Block
 ABORD	Souvent donné en prime@Michel Laclos	Prime pour une première rencontre@Thierry Larsan
-ABORIGENES	Personnes de moindre importance qui encombrent les paysages d’un pays nouvellement découvert@Ambrose Bierce	Personnes de moindre importance qui encombrent les paysages d'un pays nouvellement découvert.@Ambrose Bierce
+ABORIGENES	Personnes de moindre importance qui encombrent les paysages d’un pays nouvellement découvert@Ambrose Bierce	Personnes de moindre importance qui encombrent les paysages d'un pays nouvellement découvert@Ambrose Bierce
 ABREVIATION	Mot court incompréhensible qui désigne un mot long
 ABRI	L’orage lui amène des clients@Tristan Bernard
 ABRICOTIER	Un arbre qui vous met à l'abri des tempêtes marines ?@Jacques Drillon
@@ -185,7 +185,7 @@ ARBRISSEAU	Petit fût@Jacques Drillon
 ARBUSTE	Un débutant dans le charme@Michel Laclos
 ARC	C’est un beau rôle, même s’il faut le bûcher@Georges Perec	Elle a quitté la campagne pour la campagne@Robert Scipion
 ARCHEOLOGUE	Professionnel des profondeurs intimes	Meilleur mari qu'une femme puisse espérer : plus elle vieillit, plus il s'intéresse à elle@Agatha Christie
-ARCHEVEQUE	Dignitaire ecclésiastique, plus saint d'un degré qu'un évêque.@Ambrose Bierce
+ARCHEVEQUE	Dignitaire ecclésiastique, plus saint d'un degré qu'un évêque@Ambrose Bierce
 ARCHIDUC	A moins de problèmes avec ses chaussettes que son épouse@Michel Laclos
 ARCHITECTE	Pas assez macho pour être ingénieur, pas assez gay pour être designer
 ARDEUR	État particulier de l’amour sans l’expérience@Ambrose Bierce	Etat particulier de l'amour sans l'expérience@Ambrose Bierce
@@ -281,7 +281,7 @@ AURICULAIRE	Le petit rapporteur@Marc Aussitot
 AUTEL	Table de chevet@Bernard Philippet
 AUTEUR	Écrivain pistonné qui a des amis éditeurs	Ecrivain avec des amis éditeurs
 AUTO	Ses ailes ne facilitent pas son vol@Chantal de Séréville
-AUTOBUS	Grand véhicule qui transporte des moutons et roule plus vite lorsqu’on le rate que lorsqu’on est assis dedans	Véhicule qui roule deux fois plus vite quand on court après que quand on est assis dedans@Wikipourri	Véhicule qui roule deux fois plus vite quand on court après que lorsque l'on est assis dedans
+AUTOBUS	Grand véhicule qui transporte des moutons et roule plus vite lorsqu’on le rate que lorsqu’on est assis dedans	Véhicule qui roule deux fois plus vite quand on court après que lorsqu'on est dedans@Pierre Desproges
 AUTODAFE	Technique de brûlage de culture@Marc Aussitot
 AUTODIDACTES	N’ont eu de leçons à recevoir de personne@Michel Laclos
 AUTOPSIE	Fait ouvrir le feu@Michel Laclos	Travailler à mort@Vincent Labbé	Tête à tête avec un cadavre pour arriver à le faire parler
@@ -304,7 +304,7 @@ AVIONNEUR	Fait coucou@Yannick Le Nagard
 AVIONS	Dans l’armée de l’air ou dans l’auxiliaire@Michel Laclos
 AVIRONS	Permettent de progresser quand on suit des cours@Lucien Lacau
 AVIS	Tranché, il n’est pas forcément partagé@Bernard Philippet	La division survient justement quand on ne le partage pas@Pangloss
-AVOCAT	Bon pour la défense sauf s'il est général@Michel Laclos	Il sort en robe de chambre@Didier Léonard	Collègue du médecin capable de signer de plus grosses ordonnances que lui	Personne qui écrit un document de 10.000 mots et l'intitule " Sommaire ".@Franz Kafka.
+AVOCAT	Bon pour la défense sauf s'il est général@Michel Laclos	Il sort en robe de chambre@Didier Léonard	Collègue du médecin capable de signer de plus grosses ordonnances que lui	Personne qui écrit un document de 10.000 mots et l'intitule " Sommaire "@Franz Kafka.
 AVOIR	Bien possédé ou bien posséder@Bernard Philippet	Il fond quand on le croque@Lucien Lacau
 AVOUER	Confesser une faute@Ambrose Bierce	Dévoiler les fautes d'autrui est un grand devoir imposé par l'amour de la vérité@Ambrose Bierce
 AVRIL	Pour être apprécié son poisson doit être cru@Pierre Longchamp,	Mois qui réjouit les amateurs de poisson
@@ -314,7 +314,7 @@ B
 BA	Bonne action de scout
 BABA	Soufflé ou ne ressemble pas du tout à un soufflé@Georges Perec	Pâtisserie ou soufflé@Michel Laclos	Gâteau imbibé de rhum et dont on reste stupéfait
 BABY	Ne se prend quand même pas au berceau@Pangloss
-BABYSITTERADOLESCENTSTENUSDESECONDUIRECOMMEDESADULTES,DEMANIEREACEQUELESADULTESQUISORTENTPUISSENTSECOMPORTERCOMMEDESADOLESCENTS.	 (24 mots)
+BABYSITTER	Adolescent(e)s devant se conduire comme des adultes de façon à ce que les adultes qui sortent puissent se comporter comme des adolescents@Pierre Desproges
 BACCHUS	Divinité complaisante inventée par les anciens pour excuser leurs excès de boisson@Ambrose Bierce
 BACON	De l’art et du cochon@Philippe Dupuis
 BADERNES	On ne les a jamais connues jeunes@Philippe Dupuis
@@ -329,12 +329,12 @@ BAIL	Temps qui paraît long@Marc Aussitot
 BAIN DE SIEGE	Avec lui, la lune est dans l'eau@Max Favalelli
 BAL	Pour l'ouvrir, il faut tourner@Lucien Lacau	Ne s'ouvre pas tout seul@Jean-Paul Vanden Branden
 BANLIEUE	Avant-centre@Michel Laclos
-BANQUIER	Homme respectable, surtout s’il vous prête@Léon Bloy	Il te prête un parapluie par beau temps et te le reprend lorsqu'il commence à pleuvoir@Mark Twain.	Personne qui serait d'accord pour vous consentir un prêt à la condition que vous lui apportiez la preuve que vous n'en avez pas besoin
-BAPTEME	Rite sacré d'une telle efficacité que celui qui trouve le chemin du ciel sans l'avoir reçu sera plongé dans les affres de la détresse pour l'éternité.@Ambrose Bierce
+BANQUIER	Homme respectable, surtout s’il vous prête@Léon Bloy	Il te prête un parapluie par beau temps et te le reprend lorsqu'il commence à pleuvoir@Mark Twain.	Personne qui serait d'accord pour vous consentir un prêt à la condition que vous lui apportiez la preuve que vous n'en avez pas besoin@Pierre Desproges
+BAPTEME	Rite sacré d'une telle efficacité que celui qui trouve le chemin du ciel sans l'avoir reçu sera plongé dans les affres de la détresse pour l'éternité@Ambrose Bierce
 BAR	On y trouve à boire et à manger@Georges Perec	S’il préfère l’eau, les familiers de l’autre pas forcément@Lionel Leteur	Ses piliers ne le soutiennent pas@Pangloss	Ses piliers sont souvent ronds@Sport Cérébral	Est un corps plongé dans un liquide ou procure un liquide à plonger dans un corps@Lionel Leteur	Rade où l'on écluse@Bernard Philippet	Mesure ou débite la pression@Marc Aussitot	Loup de mer
 BARBE	Bouc ou cheval@Michel Laclos	Poils qui sont habituellement coupés par ceux qui estiment à juste titre que la coutume chinoise de se raser la tête est absurde@Ambrose Bierce
 BARI	N’aimerait pas être appelée pouilleuse@Georges Perec
-BAROMETRE	Instrument ingénieux qui indique la sorte de temps que nous sommes en train de subir.@Ambrose Bierce
+BAROMETRE	Instrument ingénieux qui indique la sorte de temps que nous sommes en train de subir@Ambrose Bierce
 BARREAU	Est commun à l'avocat et au détenu@Bernard Philippet
 BAS	File facilement sur une seule jambe@Julien Soulié
 BASSINER	Chauffer les pieux ou casser les pieds@Sport Cérébral
@@ -392,6 +392,7 @@ BOUILLABAISSE	Permet de facturer la rouille au prix du fer forgé
 BOUILLON	Peut venir d'une poule ou fournir des pilons@Georges Perec
 BOULET	La mort dans l’âme
 BOULEVARD	Pas toujours un théâtre de maris honnêtes@Michel Vanobost
+BOYSCOUT	Un enfant habillé comme un couillon, commandé par un couillon habillé comme un enfant@Pierre Desproges
 BRADYPE	Aï
 BRAVOS	Monnaie avec laquelle la populace paie ceux qui flattent et la dévorent@Ambrose Bierce
 BRAVOURE	N'a pas de bas morceaux@Lionel Leteur
@@ -405,7 +406,7 @@ BRISE	Note de frais@Robert Scipion
 BROC	S'alimente aux fontaines ou dans les greniers selon la prononciation@Marc Aussitot
 BROCELIANDE	L'endroit idéal pour organiser une table ronde@Marc Aussitot
 BRU	Au nom du fils@Michel Laclos	Barboteuse d’enfant@Dédale	Porte un anneau dans un cercle@Sport Cérébral	Elue pour un futur arrondissement@Bernard Philippet	Une fille pas propre mais toujours belle@Bernard Philippet	C'était la belle-fille	Femme du fils
-BRUIT	Peut transpirer avant même de courir@Max Favalelli	Puanteur dans l'oreille. Musique non domestiquée. Produit principal et signe authentique de civilisation.@Ambrose Bierce
+BRUIT	Peut transpirer avant même de courir@Max Favalelli	Puanteur dans l'oreille. Musique non domestiquée. Produit principal et signe authentique de civilisation@Ambrose Bierce
 BU	Son futur est inévitable@Michel Laclos
 BUDGET	Jamais en équilibre@Gustave Flaubert
 BUFFET	On y met les petits plats dans les grands@Jean Teularge
@@ -443,6 +444,7 @@ CANOE	Avec lui c’est la pagaie@Philippe Dupuis
 CANON	Instrument utilisé dans la rectification des frontières nationales@Ambrose Bierce
 CANTINIERE	Pro rata@Yannick Le Nagard
 CAP	Cerbère facile à contourner@Pangloss
+CAPITALISTE	Personne qui se rend en voiture climatisée de son bureau climatisé à son club climatisé pour y prendre un bain de vapeur@Pierre Desproges
 CAPTIVE	Charme ou n'est pas charmée par sa situation@Michel Laclos
 CAR	Un moyen de transport très justifié@Jacques Drillon	Est plus grand en français qu'en anglais@Thierry Larsan	Unit des idées ou des localités@Tristan Bernard
 CARABINE	22, ce n’est pas pour les poulets, plutôt pour les lapins@Marc Aussitot
@@ -487,7 +489,7 @@ CESSE	Tombe s'il s'agit du vent, mais pas de la pluie@Pangloss
 CESURES	Elles imposent la loi du silence au milieu@Corinne Beltz
 CETOINE	Dorée sur des roses@Michel Laclos
 CEZANNE	Réussissait bien les pommes à l'huile@Michel Laclos
-CHANDAIL	Vêtement que doit porter un enfant lorsque sa mère a froid
+CHANDAIL	Vêtement que doit porter un enfant lorsque sa mère a froid@Pierre Desproges
 CHAPERON	Boulet de canon@Lionel Leteur
 CHARITE	Ce qu’on fait en grande pompe, mais surtout pas trop souvent@Léon Bloy
 CHARRETTE	Moyen de transport de son boulot à pôle emploi@Laurent Baffie
@@ -543,7 +545,7 @@ COLLABORATION	Plus profitable à Erckmann-Chatrian qu’à Drieu la Rochelle@Rob
 COMA	Dépassé sans s'en rendre compte@Jean Teularge
 COMBATTANT	Parfois en retraite avant d’être en retraite@Marc Aussitot
 COMEDIE	Le métier du politicien, la science du médecin, le savoir des critiques, la religion des prédicateurs à sensation, en un mot le monde@Ambrose Bierce
-COMESTIBLE	Susceptible d’être mangé et digéré. Comme un ver pour un crapaud, un crapaud pour un serpent, un serpent pour un cochon, un cochon pour l'homme et l'homme pour le ver.@Ambrose Bierce
+COMESTIBLE	Susceptible d’être mangé et digéré. Comme un ver pour un crapaud, un crapaud pour un serpent, un serpent pour un cochon, un cochon pour l'homme et l'homme pour le ver@Ambrose Bierce
 COMMISSURE	En bouche un coin@Julien Soulié
 COMMITE	Individus qui ne peuvent rien faire individuellement et se réunissent pour décider qu'ils ne peuvent rien faire ensemble
 COMPATRIOTE	Palme pour bergman@Bernard Philippet
@@ -564,7 +566,7 @@ CONSERVATEUR	Homme politique qui a une passion pour les maux existants, à ne pa
 CONSIDERATIONS	Distinguées dans les lettres@Michel Laclos
 CONSOLATION	Lorsque l'on constate qu'un homme meilleur est plus infortuné que soi@Ambrose Bierce
 CONSONNES	Dans le vin mais pas dans l'eau@Thierry Larsan
-CONSULTANT	Celui qui retire la montre de ton poignet, te donne l'heure et te fait payer le service
+CONSULTANT	Se dit de celui qui consulte ta montre, te dit l'heure et te fait payer la prestation@Pierre Desproges
 CONSULTER	Rechercher l'approbation d'autrui pour un projet déjà bien arrêté@Ambrose Bierce
 CONTAGIEUSE	Facile à attraper@Lucien Lacau
 CONTRACEPTION	permet d'éviter la grossesse grâce à des tactiques diverses : pilules, diaphragme, préservatif... ou passer beaucoup de temps avec les enfants des autres.
@@ -626,7 +628,7 @@ CULTURE	La culture c'est comme un parachute, quand on en a pas, on s'écrase@Pie
 CUPIDE	Que la braise enflamme@Guy Hachette
 CURE	Il soigne l’âme, elle soigne le corps@Bernard Philippet
 CURES	Pour l’âme ou pour le corps@Robert Scipion
-CURIOSITE	Vilain défaut de l'esprit féminin. L'envie de savoir si oui ou non une femme se consume de curiosité est l'une des passions les plus actives et les plus insatiables de l'âme masculine.@Ambrose Bierce
+CURIOSITE	Vilain défaut de l'esprit féminin. L'envie de savoir si oui ou non une femme se consume de curiosité est l'une des passions les plus actives et les plus insatiables de l'âme masculine@Ambrose Bierce
 CURISTE	S'il prend l'eau c'est qu'il est en mauvais état@Philippe Harang
 CUTI	On l’attend au virage@Lionel Leteur	Test cutané
 CV	Raccourci pour chasseur de têtes@Philippe Harang
@@ -639,7 +641,7 @@ DALLE	Coulée avant de faire surface@Didier Léonard
 DAM	Châtiment des réprouvés	Dommage pour les anciens
 DAMEES	C'est plutôt grâce aux demoiselles qu'elles se sont tassées@Jacques Drillon
 DAN	Degré de qualification dans les arts martiaux
-DANSE	Plaisir pour les souris, travail pour les rats@Philippe Dupuis	Frustration verticale d'un désir horizontal
+DANSE	Plaisir pour les souris, travail pour les rats@Philippe Dupuis	Frustration verticale d'un désir horizontal@Pierre Desproges
 DATE	Est à prendre pour plus tard@Corinne Beltz
 DATTE	Produit de régime@Michel Laclos	Solidaires du régime@Michel Laclos
 DCA	Vide ses canons sur le zinc@Bernard Philippet
@@ -682,7 +684,7 @@ DESTINEE	Justification du tyran pour ses crimes, excuse de l'imbécile pour ses 
 DETENTE	Pour faire parler la poudre, ou s'en abstenir@Philippe Harang
 DETTE	Se contracte dès qu’on tape@Sport Cérébral
 DETTES	S'éteignent avec de la braise@Thierry Larsan
-DEUXFOIS	une fois de trop.@Ambrose Bierce (2 mots)
+DEUXFOIS	une fois de trop@Ambrose Bierce (2 mots)
 DEVALISER	Désole ou ravit le commerçant, selon le cas@Lionel Leteur
 DEVOLU	Fait pour être jeté@Tristan Bernard
 DHCP	Attribue automatiquement une adresse IP aux appareils d’un réseau
@@ -698,7 +700,7 @@ DIERESE	S'entend bien en criant@Lionel Leteur
 DIESE	Hausse le ton
 DIESEL	On réalise soudain qu'il n'est pas super@Hervé Hardouin
 DIEU	Met sur les rotules@Michel Laclos	Un cercle dont le centre est partout et la circonférence nulle part@Voltaire
-DIFFAMER	Mentir à propos de quelqu'un. Dire la vérité à propos de quelqu'un.@Ambrose Bierce
+DIFFAMER	Mentir à propos de quelqu'un. Dire la vérité à propos de quelqu'un@Ambrose Bierce
 DIME	Vieil impôt féodal versé à l'Église
 DINDE	Elle peut comprendre la farce, mais rarement l’humour@Pangloss
 DIPLOMATE	Celui qui te dit d'aller te faire foutre d'une telle façon que tu as très envie de commencer le voyage
@@ -759,7 +761,7 @@ ECLIPSEE	Si une étoile peut l'être, une star n'aime pas l'être@Lionel Leteur
 ECO	La classe sans la classe@Hervé Hardouin
 ECOLE	Plus elle est grande, plus il est difficile d'y entrer@Lucien Lacau
 ECONOMISER	Mettre des espèces devenant rares dans des réserves@Michel Laclos
-ECONOMISTE	Expert qui saura demain pourquoi ce qu'il a prédit hier n'est pas arrivé aujourd'hui	Quelqu'un qui ne sait pas de quoi il parle, et vous fait sentir que c'est de votre faute
+ECONOMISTE	Expert qui saura demain pourquoi ce qu'il a prédit hier n'est pas arrivé aujourd'hui@Pierre Desproges	Quelqu'un qui ne sait pas de quoi il parle, et vous fait sentir que c'est de votre faute
 ECOSSAIS	Homme qui, avant d'envoyer son pyjama à la blanchisserie fourre une chaussette dans chaque poche@Ambrose Bierce
 ECOT	Liquide versé après le café@Dédale	Participation financière	Quote-part d'un repas
 ECOUTE	Un ventre affamé n’a pas sa place à sa table@Max Favalelli
@@ -1013,7 +1015,7 @@ EYELINER	Coquetterie dans l'œil@Julien Soulié
 F	
 FA	Note répété en fanfare@Corinne Beltz	Note près du sol
 FACHEUX	Un homme en érection qui se dirige vers un mur et dont la première chose qui l'atteint est le nez
-FACILE	Femme qui a pour morale sexuelle celle des hommes
+FACILE	Se dit d'une femme qui a la moralité sexuelle d'un homme@Pierre Desproges
 FADE	Plat à table@Sport Cérébral
 FAIREAPPEL	En termes de justice, demander que l’on remette les dés dans le cornet pour un nouveau lancer.  (2 mots)@Ambrose Bierce
 FAIREPLAISIR	Poser les fondations d'une structure de contrainte. (2 mots)@Ambrose Bierce
@@ -1067,7 +1069,7 @@ FRAC	Exige le fric pour le fric@Julien Soulié
 FREINAGE	Use la gomme en ne la mettant plus@Yannick Le Nagard
 FRIGIDE	Terme utilisé par l'homme pour décrire la femme qui a moins d'appétit sexuel que lui
 FRITES	Accompagnement de plats inventé par un tennisman qui, par erreur, a servi avec une pomme de terre
-FRONTIERES	En géographie politique, ligne imaginaire entre deux nations, séparant les droits imaginaires de l'une des droits imaginaires de l'autre.@Ambrose Bierce
+FRONTIERES	En géographie politique, ligne imaginaire entre deux nations, séparant les droits imaginaires de l'une des droits imaginaires de l'autre@Ambrose Bierce
 FTP	Permet le transfert de fichiers entre ordinateurs via un réseau
 FUEL	Domestique et chauffeur@Michel Laclos	Domestique payé avant même d'avoir servi@Lionel Leteur
 FUMISTERIE	Une orientation professionnelle pas très sérieuse@Jacques Drillon
@@ -1153,6 +1155,7 @@ GUIGNE	Reluque mais n'a pas forcément le mauvais œil@Jacques Drillon
 GUILLEDOU	Est couru par le coureur@Thierry Larsan
 GUIMBARDE	Instrument non musical, dont on joue en le saisissant fébrilement avec les dents et en tentant de l'écarter avec le doigt@Ambrose Bierce
 GYMNASTE	Individu qui met sa cervelle dans ses muscles@Ambrose Bierce
+GYNECOLOGUE	Personne qui travaille là où les autres s'amusent@Pierre Desproges
 H	
 HABITUDE	Entrave à la liberté@Ambrose Bierce	Le plus grand ennemi de l'Amour
 HACHETTE	Jeune hache, que les indiens nomment tomahawk@Ambrose Bierce
@@ -1292,7 +1295,7 @@ INSENSIBLE	Doué d'une grande force d'âme pour supporter les maux qui s'abatten
 INSERER	Exaucer une prière@Michel Laclos
 INSURRECTION	Révolution qui a échoué@Ambrose Bierce	Tentative infructueuse pour substituer le désordre à un mauvais gouvernement@Ambrose Bierce
 INTEGRISTE	Individu qui veut piété plus haut que son culte@Alphonse Allais
-INTELLECTUEL	Individu capable de penser pendant plus de deux heures à autre chose que le sexe	intellectuel homme qui utilise plus de mots que nécessaire pour raconter plus qu'il ne sait@Eisenhower	Quelqu'un qui entre dans une bibliothèque même quand il ne pleut pas@André Roussin
+INTELLECTUEL	Se dit d'un individu capable de penser pendant plus de deux heures à autre chose qu'au sexe@Pierre Desproges	intellectuel homme qui utilise plus de mots que nécessaire pour raconter plus qu'il ne sait@Eisenhower	Quelqu'un qui entre dans une bibliothèque même quand il ne pleut pas@André Roussin
 INTER	Téléphone interurbain
 INTERESSANTE	Vocable utilisé par un homme pour décrire une femme qui le laisse conduire la conversation à sa guise
 INTERETS	Ils grossissent à l'usure@Thierry Larsan
@@ -1351,7 +1354,7 @@ JACTA	Parla en argot, pas en latin@Michel Laclos
 JALOUX	Qui s'intéresse indûment à la préservation de quelque chose qui ne peut être perdu que s'il n'est pas bien gardé@Ambrose Bierce
 JAN	Table de jeu de trictrac
 JAR	Sable du fond des rivières
-JARRETIERE	Ruban élastique destiné à empêcher une femme de sortir de ses bas et de désoler le pays.@Ambrose Bierce
+JARRETIERE	Ruban élastique destiné à empêcher une femme de sortir de ses bas et de désoler le pays@Ambrose Bierce
 JAS	Barre transversale d'une ancre	Bergerie dans les Alpes et le midi de la France
 JASPE	Roche employée en joaillerie
 JAZZ	Cinq hommes jouant des airs différents sur une même scène
@@ -1516,7 +1519,7 @@ LUSTRES	Années lumière@Jacques Drillon
 LUT	Enduit très résistant	Bien utile pour faire le joint
 LUTRINS	Ne sont pas toujours des aigles@Sport Cérébral
 LUXE	Race de poule@Robert Scipion
-LYCEE	1/ Ecole antique où l'on s'entretenait de philosophie. 2/ Ecole moderne où l'on discute de football.@Ambrose Bierce
+LYCEE	1/ Ecole antique où l'on s'entretenait de philosophie. 2/ Ecole moderne où l'on discute de football@Ambrose Bierce
 M	
 MACARONI	Pâte en tube@Michel Laclos
 MACHICOULIS	Servait à verser l'huile sur la salade@Bernard Philippet
@@ -1530,7 +1533,7 @@ MAJUSCULE	Capitale d'etat@Dédale
 MALAISE	Indonésienne ou ça ne va pas@Jean Teularge
 MALFAITEUR	Facteur principal dans le progrès de la race humaine@Ambrose Bierce
 MALHEUR	Bon à quelque chose@Marc Aussitot
-MAMMIFERES	Famille d'animaux vertébrés dont les femelles allaitent naturellement les petits, mais dont la version instruite et civilisée utilise une nourrice ou un biberon.@Ambrose Bierce
+MAMMIFERES	Famille d'animaux vertébrés dont les femelles allaitent naturellement les petits, mais dont la version instruite et civilisée utilise une nourrice ou un biberon@Ambrose Bierce
 MANCHE	Mauvais conducteur@Marc Aussitot
 MANCHETTE	Concerne triplement un auteur de la série noire faisant du karaté en première page d’un journal@Georges Perec
 MANET	Artiste à l’olympia@Arcane
@@ -1543,7 +1546,7 @@ MARAT	Rencontra une femme fatale@Jean Teularge	Fut emporté par une lame en se b
 MARECHAL	A bien mérité le bâton@Max Favalelli
 MAREE	Mouvement de grève@Michel Laclos
 MARI	Personne qui, après avoir dîné, est chargée de s'occuper de l'assiette@Ambrose Bierce
-MARIAGE	Un oui pour un nom@Jean Teularge	État ou condition d’une communauté comportant un maître, une maîtresse et deux esclaves, l’ensemble ne faisant que deux personnes@Ambrose Bierce	Communauté composée d'un maître, d'une maîtresse et de deux esclaves, ce qui fait en tout deux personnes@Ambrose Bierce	Chose sacrée, à condition qu’elle ne dérange pas l’héritage@Léon Bloy	Partager à deux tous les problèmes que l'on n'aurait jamais eu tout seul	Acte religieux qui consiste à créer un crucifié de plus, et une vierge de moins	Union qui permet à deux personnes de supporter des choses qu'ils n'auraient pas eu besoin de supporter s'ils étaient restes seuls
+MARIAGE	Un oui pour un nom@Jean Teularge	Communauté composée d'un maître, d'une maîtresse et de deux esclaves, l’ensemble ne faisant que deux personnes@Ambrose Bierce	Chose sacrée, à condition qu’elle ne dérange pas l’héritage@Léon Bloy	Partager à deux tous les problèmes que l'on n'aurait jamais eu tout seul	Acte religieux qui consiste à créer un crucifié de plus, et une vierge de moins	Union qui permet à deux personnes de supporter des ennuis qu'ils n'auraient pas eus, s'ils étaient restés seuls@Pierre Desproges
 MARIELLE	Il a souvent été sur les planches, mais cette sœur de christine était sur d'autres planches@Jacques Drillon
 MARINADES	Pour les cuissots mais pas pour les cuisseaux@Georges Perec
 MARSEILLAISE	Son accent est aussi reconnaissable que ses accents@Robert Scipion
@@ -1581,6 +1584,7 @@ MI	Note de musique avant fa	Coupe ce qui suit
 MIE	Où se dépose la gelée matinale@André Counson	Ancienne fiancée	Au cœur du pain	Partie molle du pain
 MIEL	Produit que l'on trouve en rayons@Michel Laclos
 MIEN	Je suis le seul à pouvoir en mettre@Bernard Philippet	Qui m'appartient si j'arrive à le retenir ou à l'attraper@Ambrose Bierce
+MIGRAINE	Contraceptif le plus utilisé par les femmes@Pierre Desproges
 MILAN	Noir dans le ciel, rouge et noir sur l'herbe@Yannick Le Nagard
 MILIEU	Moins bien fréquenté que le centre@Philippe Dupuis
 MILLENAIRE	Période d'un millier d'années, quand le couvercle peut être revissé avec tous les réformistes en dessous@Ambrose Bierce
@@ -1633,7 +1637,7 @@ MUR	On le fait à la sauvette@Tristan Bernard	Fait pour sortir ou empêcher de s
 MURET	Trop facile à sauter pour être enceinte ?@Didier Léonard
 MUSE	Inspiratrice d'un artiste
 MYE	Mollusque bivalve comestible
-MYTHOLOGIE	Ensemble des croyances d'un peuple primitif concernant ses origines, sa préhistoire, ses héros, ses dieux, etc... à ne pas confondre avec les récits véridiques qui sont inventés par la suite.@Ambrose Bierce
+MYTHOLOGIE	Ensemble des croyances d'un peuple primitif concernant ses origines, sa préhistoire, ses héros, ses dieux, etc... à ne pas confondre avec les récits véridiques qui sont inventés par la suite@Ambrose Bierce
 N	
 NA	Exclamation d'enfant gâté	Caprice juvénile	Non d'un petit bonhomme	Sodium
 NAGE	Occupation de lieu@Dédale	Avance faite en liquide@Michel Laclos
@@ -1660,14 +1664,14 @@ NAVET	Ne connaît du rush que le pluriel@Corinne Beltz
 NAVIGATION	Elle a ses vapeurs@Georges Perec
 NB	Nota bene en abrégé
 NE	Est venu après le travail@Marc Aussitot
-NEANMOINS	Sphinx.@Wikipourri
+NEANMOINS	Sphinx@Wikipourri
 NEC	Plus ultra pour le plus extra
 NECROLOGIE	Liste des partis@Michel Laclos
 NEE	Maligne si pas d’hier@Sport Cérébral	Sortie d'enceinte@Lucien Lacau
 NEF	Ne coule pas à paris@Michel Laclos	Plus vénérée quand elle est immobile@Tristan Bernard	Navire à voile du Moyen Âge	Partie d'une église
 NEGLIGE	Il n'habille guère ou est mal habillé@Jacques Drillon
 NEGLIGENCES	Arrêts de rigueur@Michel Laclos
-NEGOCIANT	Personne engagée dans une démarche commerciale. Une démarche commerciale est une action dans laquelle la chose démarchée est un dollar.@Ambrose Bierce
+NEGOCIANT	Personne engagée dans une démarche commerciale. Une démarche commerciale est une action dans laquelle la chose démarchée est un dollar@Ambrose Bierce
 NEGRESSES	Les romancières en ont-elles ?@Georges Perec
 NEIGE	Sa chute en prépare d’autres@Tristan Bernard
 NEIGES	Moins solides quand elles sont en fonte@Sport Cérébral
@@ -1700,7 +1704,7 @@ NID	Panier d’œufs@Marc Aussitot	Se fait petit à petit@Michel Laclos	Œuvre p
 NIE	Parle pour ne rien dire@Dédale	Infirme ou dément@Guy Hachette
 NIELLE	Incrustation noire	Maladie des céréales
 NIET	Tintin au pays des soviets@Marc Aussitot	Sort si ça rase poutine@Didier Léonard
-NIHILISTE	Russe qui nie l'existence de tout sauf de Tolstoï. Le fondateur du mouvement est Tolstoï.@Ambrose Bierce
+NIHILISTE	Russe qui nie l'existence de tout sauf de Tolstoï. Le fondateur du mouvement est Tolstoï@Ambrose Bierce
 NIL	Tout pour les egyptiens, rien pour les romains@Sport Cérébral	Grand fleuve d'Afrique
 NINAS	Petit cigare fait de débris de tabac
 NINI	Opéra à la bastille@Michel Laclos
@@ -1739,7 +1743,7 @@ NULLIPARE	Femme sans travail@Michel Deineko
 NUMERAIRE	Du liquide solide@Philippe Dupuis
 NURSE	Garde du trésor ou agent de change@Corinne Beltz	Surveille l'évolution des changes@Hervé Hardouin	Lange l'ange@Bernard Philippet
 NUS	Habillent la cimaise@Corinne Beltz
-NYMPHOMANE	Terme utilisé par certains hommes pour désigner une femme qui a envie de faire l'amour plus souvent qu'eux
+NYMPHOMANE	Terme utilisé par certains hommes pour désigner une femme qui a envie de faire l'amour plus souvent qu'eux@Pierre Desproges
 O	
 OB	Fleuve de Sibérie
 OBESE	Familier du grand patron@Bernard Philippet	Collectionne les livres
@@ -1802,7 +1806,7 @@ OPE	Ouverture ou entrée d'opéra@Dédale	Trou ménagé dans un mur et destiné 
 OPEN	Un espoir pour l'espoir@Hervé Hardouin
 OPERA	Produisit un effet@Georges Perec	Salle des coffres@Didier Léonard	Pièce représentant la vie d'un autre monde, dont les habitants n'ont pas de discours mais des chansons, pas de mouvements mais des gestes, pas de postures, mais des attitudes@Ambrose Bierce	Groupe d'individus qui chantent au lieu de parler
 OPERETTE	Elle a généralement l’air gai et plein d’entrain@Michel Laclos
-OPIACE	Qui déverrouille la porte de la geôle de l'identité. Elle donne sur la cour de la prison.@Ambrose Bierce
+OPIACE	Qui déverrouille la porte de la geôle de l'identité. Elle donne sur la cour de la prison@Ambrose Bierce
 OPINION	N'a pas besoin d'être tranchée pour être partagée@Yannick Le Nagard
 OPPORTUNITE	Occasion favorable pour saisir une déception@Ambrose Bierce
 OPPOSITION	En politique, le parti qui empêche le gouvernement d'aller battre la campagne avec incohérence, en lui coupant les jarrets@Ambrose Bierce
@@ -1834,7 +1838,8 @@ ORLE	Bordure en héraldique
 ORNICAR	Personnage de fiction grammaticale@Marc Aussitot	On ne sait décidément pas où il est@Yannick Le Nagard
 ORSAY	Gare à la peinture@Michel Laclos
 ORTEIL	Appendice servant à détecter coins de portes et pieds de tables	Appendice servant a détecter les coins de portes@Wikipourri
-ORTHOGRAPHE	La science qui épelle avec l'oeil à la place de l'oreille. Défendue avec plus de chaleur que de lumière par quelques échappés d'asiles.@Ambrose Bierce
+ORTHOGRAPHE	La science qui épelle avec l'oeil à la place de l'oreille. Défendue avec plus de chaleur que de lumière par quelques échappés d'asiles@Ambrose Bierce
+ORTHODONTISTE	Magicien qui vous met dans la bouche, une partie de ce qu'il vous retire des poches@Pierre Desproges
 ORTIES	As de pique@Claude Abitbol
 OS	Avec un suaire quand ils n’ont pas de linceul@Georges Perec	Reliefs des côtes@Michel Laclos	Carpe mais pas dans un bassin@Michel Laclos	Carpe que les carpes n'ont pas@Hervé Hardouin	Système d’exploitation (Windows, Linux, macOS, etc.) permettant d’utiliser l’ordinateur.	Régal de mâtin
 OSE	Salé et dessalé@Julien Soulié
@@ -1877,7 +1882,7 @@ PAL	Honorable ici, déshonorant là@Tristan Bernard	Dans l'écu, ce n'est pas do
 PALINDROME	Ressasser par les deux bouts@Philippe Dupuis
 PANCHO	Villa au Mexique
 PANOPLIE	Cela ne saurait être la tenue d'adam@Thierry Larsan
-PANTALON	Éclipse de lune	Habillement inférieur du mâle adulte civilisé. Le vêtement est tubulaire et dépourvu de charnières aux points de flexion. Il fut inventé, probablement, par un humoriste.@Ambrose Bierce
+PANTALON	Éclipse de lune	Habillement inférieur du mâle adulte civilisé. Le vêtement est tubulaire et dépourvu de charnières aux points de flexion. Il fut inventé, probablement, par un humoriste@Ambrose Bierce
 PAON	Roule des mécaniques grâce à ses roues@Jean-Paul Vanden Branden
 PAPA	Homme qui ne croit pas aux moyens contraceptifs
 PAPESSE	Une femme sérieuse comme il n'en existe pas@Bernard Philippet
@@ -1887,7 +1892,7 @@ PAREFEU	N'est pas comme on pourrait le croire une façon d'embaumer@Marc Aussito
 PARENTS	Deux personnes qui t'apprennent à marcher et à parler pour ensuite te dire de t'asseoir et de fermer ta gueule. 	Deux personnes qui montrent à un enfant à parler et à marcher, pour ensuite lui dire de fermer sa gueule et de s'asseoir
 PARESSE	Suspension d'activité totalement injustifiée chez un inférieur@Ambrose Bierce	Habitude de se reposer avant la fatigue
 PARIA	Intouchable ou chercha à toucher@Bernard Philippet	Exclu ou engagea@Julien Soulié
-PARLEMENT	Mot étrange formé de deux verbes: <em>parler</em> et <em>mentir</em>
+PARLEMENT	Mot étrange formé de deux verbes: <em>parler</em> et <em>mentir</em>@Pierre Desproges
 PAROLE	Les paroles seules comptent : tout le reste est bavardage
 PARQUET	Reçoit les plinthes ou les plaintes@Jean Teularge
 PARTICIPES	Lu et approuvé@Lucien Lacau
@@ -1937,10 +1942,10 @@ PERMIS	Comporte des points de suspension@Marc Aussitot
 PERS	Entre bleu et vert
 PERSAN	Chat ou langue de shah@Sport Cérébral
 PERSEVERANCE	Vertu obscure qui permet la médiocrité d'obtenir un succès sans gloire@Ambrose Bierce	Humble vertu qui permet aux médiocres de parvenir à un succès peu glorieux@Ambrose Bierce
-PERTE	Peut être sèche, même si elle concerne du liquide@Chantal de Séréville	Privation de ce que nous possédons, ou ne possédons pas. C'est dans ce deuxième sens que l'on dit d'un candidat battu qu'il a "perdu les élections".@Ambrose Bierce
+PERTE	Peut être sèche, même si elle concerne du liquide@Chantal de Séréville	Privation de ce que nous possédons, ou ne possédons pas. C'est dans ce deuxième sens que l'on dit d'un candidat battu qu'il a "perdu les élections"@Ambrose Bierce
 PESE	Regarde un fléau
 PESO	Monnaie d'Amérique latine
-PESSIMISTE	Optimiste qui a l'expérience
+PESSIMISTE	Optimiste qui a l'expérience@Pierre Desproges
 PETER	Eternuer dans ses sous-vêtements
 PETIT	Belle enseigne pour une boutique, comme inspirant la confiance@Gustave Flaubert
 PETRIT	Travaille sa flûte
@@ -1956,7 +1961,7 @@ PHYSICIEN	QUANTIQUE Un homme aveugle dans une chambre obscure cherchant un chat 
 PI	N’est pas un nombre rond, quoique…@Jean-Paul Vanden Branden	Chiffre rond	Lettre et également nombre	Constante mathématique du cercle
 PIAF	Grande chanteuse ou petit chanteur@Jean-Paul Vanden Branden
 PIANISTES	S’il n’y avait pas de facteurs, comment pourrait-on connaître leur adresse ?@Michel Laclos
-PIANO	Plus cher s’il a toute sa queue@Michel Laclos	Moins cher quand il est droit@Tristan Bernard	Ustensile de salon destiné à avoir raison du visiteur impénitent. Il fonctionne en déprimant les touches de l'instrument et le moral de l'auditoire.@Ambrose Bierce	Instrument du chef
+PIANO	Plus cher s’il a toute sa queue@Michel Laclos	Moins cher quand il est droit@Tristan Bernard	Ustensile de salon destiné à avoir raison du visiteur impénitent. Il fonctionne en déprimant les touches de l'instrument et le moral de l'auditoire@Ambrose Bierce	Instrument du chef
 PIE	Oiseau dont les dispositions pour le vol ont conduit certains à supposer qu'on pourrait lui apprendre à parler@Ambrose Bierce
 PIECES	Plus petit à la plage qu’en ville@Philippe Dupuis
 PIECETTES	Gain de manche@Didier Léonard
@@ -2019,7 +2024,7 @@ PONT	Avec des piles pour aller en face@Bernard Philippet	Ce n'est pas parce qu'i
 PONTE	Des œufs ou une huile@Michel Laclos
 POP	Permet de télécharger les e-mails depuis un serveur pour les lire hors ligne
 PORT	Endroit où les bateaux sont à l’abri des tempêtes et exposés à la furie des douanes@Ambrose Bierce
-PORTECLE	Invention très pratique permettant de perdre toutes ses clés d'un coup au lieu de les perdre une par une. (2 mots) (2 mots)
+PORTECLE	Invention très pratique permettant de perdre toutes ses clés d'un coup au lieu de les perdre une par une. (2 mots)
 POSITIONINCONFORTABLE	Prix de la constance dans ses opinions. (2 mots)@Ambrose Bierce
 POSSESSIF	Caractérise un certain ton et un certain son@Georges Perec
 POSSESSIVE	Terme utilisé par l'homme pour décrire la femme qui attend de la vie plus que des rapports sexuels suffisamment fréquents
@@ -2038,7 +2043,7 @@ PRESENTABLE	Hideusement arrangé selon les manières de l'époque et de l'endroi
 PRESIDENCE	Le cochon le plus gras du champ de la politique@Ambrose Bierce
 PRET	Plus intéressant s'il est sans intérêt@Yannick Le Nagard
 PRETENTIEUSE	Qualificatif utilisé pour décrire une femme qui souhaite rester vierge jusqu'au mariage
-PRETREPERSONNEQUETOUTLEMONDEAPPELLE"PERE",SAUFSESENFANTSQUIL'APPELLENT"MONONCLE".	 (15 mots)
+PRETRE Personne que tout le monde appelle "Père", sauf ses enfants qu'ils appellent "mon oncle"
 PRIAPISME	Ne va pas sans un excès de raideur@Georges Perec	Développement durable@Michel Vanobost
 PRIER	Demander que les lois de l'univers soient annulées en faveur d'un unique pétitionnaire, indigne de son propre aveu@Ambrose Bierce
 PRIMIPARITE	Premier arrondissement@Julien Soulié
@@ -2051,7 +2056,8 @@ PROCEDURE	Machine dans laquelle vous entrez tel un cochon et dont vous ressortez
 PROCHAIN	celui qu'on nous ordonne d'aimer comme nous-mêmes et qui s'emploie par tous les moyens à nous rendre désobéissant@Ambrose Bierce
 PRODUITS	Leur vie commence vraiment quand ils sont finis@Lionel Leteur
 PROGRAMME	Un menu ne contenant en principe aucun morceau de bœuf@Thierry Larsan
-PROGRAMMEUR	Celui qui résout un problème que vous n'aviez pas, d'une façon que vous ne comprenez pas
+PROGRAMMEUR	Personne qui résout, de manière incompréhensible, un problème que tu ignorais avoir@Pierre Desproges
+PROGRES	Doctrine qui consiste à compliquer ce qui est simple@Pierre Desproges
 PROIE	Casse-croûte à emporter@Michel Laclos	Repas à emporter@Michel Laclos
 PROLETAIRE	Se plaint trop pour ce qu’il vaut@Léon Bloy
 PROMIS	Futur du passé@Pangloss
@@ -2065,9 +2071,9 @@ PSEUDO	Appellation qui n'est pas d'origine@Pangloss
 PSOAS	Muscle de la cuisse
 PSYCHANALYSE	Un examen auquel on est sûr de se faire étendre@Robert Scipion
 PSYCHIATRE	Un type qui vous pose un tas de questions dispendieuses, que votre femme vous pose pour rien;	Homme intelligent qui aide les gens à devenir cinglés
-PSYCHOLOGUE	Celui qui regarde les autres quand une jolie femme entre dans une pièce
+PSYCHOLOGUE	Celui qui regarde les autres quand une jolie femme entre dans une pièce@Pierre Desproges
 PUBLIER	Dans les affaires littéraires, devenir le point de mire dans le viseur de la critique@Ambrose Bierce
-PUERCOGNEAPARISOUCHASSAITLESMOUCHESAROME.*	 (13 mots)
+PUER	Cogner à Paris ou chasser les mouches à Rome
 PUR	Se dit du porc mais pas du cochon@Dédale
 PUTAIN	Virgule marseillaise@Wikipourri
 PUTSCH	Coup de main pas toujours apprécié@Michel Laclos
@@ -2114,7 +2120,6 @@ RASEUR	Personne qui parle quand vous souhaitez qu’elle écoute@Ambrose Bierce	
 RASOIR	Arme tranchante à feu@Bernard Philippet
 RAT	Personne ne tient à être fait comme lui@Georges Perec	Fait des entrechats@Philippe Dupuis	Pas chaud pour ce qui est frais@Pierre Olivier	Bouffe le blé ou en prend grand soin@Julien Soulié	Fréquente des caves mais aussi des bibliothèques@Michel Laclos	Il se montre pingre avec sa souris@Sélection du Reader's Digest	A l'hôtel, mais pas en tant qu'étoile@Philippe Harang
 RATA	Ne réussit pas ou n'est guère une réussite@Robert Scipion
-RATANEREUSSITPASOUN'ESTPASREUSSI.	 (11 mots)
 RATE	Abats ou manque@Thierry Larsan
 RATISSAGE	Beaucoup plus inoffensif au jardin qu’en campagne@Georges Perec
 RATON	Dilate la rate@Marc Aussitot
@@ -2123,8 +2128,8 @@ RATURE	Le commencement et la fin de toute littérature@Georges Perec
 RAVI	On ne l'est pas quand on l'est@Hervé Hardouin
 RDP	Connexion à distance à un bureau windows
 REA	Permet de lever ou de se relever@Bernard Philippet
-REALISME	Art de dépeindre la nature telle qu'elle est vue par les crapauds. Charme qui ressort d'un paysage peint par une taupe, ou d'une histoire écrite par un asticot.@Ambrose Bierce
-REALITE	Le songe d'un philosophe fou. Ce qui resterait dans la coupe si l'on devenait pur esprit. Le noyau d'un vide.@Ambrose Bierce	Substitut pour ceux qui ne supportent pas la drogue
+REALISME	Art de dépeindre la nature telle qu'elle est vue par les crapauds. Charme qui ressort d'un paysage peint par une taupe, ou d'une histoire écrite par un asticot@Ambrose Bierce
+REALITE	Le songe d'un philosophe fou. Ce qui resterait dans la coupe si l'on devenait pur esprit. Le noyau d'un vide@Ambrose Bierce	Substitut pour ceux qui ne supportent pas la drogue
 REBELLE	Personne qui proposait une forme nouvelle de désordre politique, et qui a échoué dans sa tentative pour l'imposer@Ambrose Bierce
 RECALER	Etendre après avoir fait sécher@Pangloss
 RECEL	Détention pouvant conduire à la détention@Jean-Paul Vanden Branden
@@ -2184,7 +2189,7 @@ RESTO	Là, ce n'est pas le chef qui commande@Hervé Hardouin
 RETENUE	Supplément de travail ou réduction de salaire@Lucien Lacau
 REUNION	D'ANCIENS ELEVES Réunion où vos anciens copains sont devenus si chauves et si gras qu'ils ont du mal à vous reconnaître
 REUSSITES	Vous pouvez en connaître aux échecs et des échecs en les faisant@Jean Teularge
-REVEIL	MATIN Invention servant à réveiller des adultes sans bébé
+REVEIL Instrument inventé pour réveiller les gens qui n'ont pas de jeunes enfants@Pierre Desproges
 REVENUS	Rentrés ou rentrées@Jean Rossat
 REVERS	C'est quand il les réussit que le tennisman les évite@Hervé Hardouin
 REVIENS	Nom courant d’une chose prêtée@Marc Aussitot
@@ -2266,7 +2271,7 @@ SALOPE	Qualifie une femme qui a des rapports intimes avec tout le monde, sauf l'
 SAMOURAI	Solitaire dans le cinéma français mais pas dans le cinéma japonais@Michel Laclos
 SAND	S'est fait un nom en privant d'eau son jules@Georges Perec
 SANG	Rouge même s'il est bleu@Yannick Le Nagard
-SANGFROIDCHOSEFACILEAAVOIRAUMOISDEDECEMBRE(2MOTS).	 (11 mots)
+SANG FROID Chose facile à avoir au mois de décembre
 SANITAIRE	On ne tire pas sur ce cordon@Marc Aussitot
 SANSABRI	Ne trouve peut-être pas l’étoile si belle@Sport Cérébral
 SANSEVERINA	Elle aimait trop le parmesan@Robert Scipion
@@ -2277,7 +2282,7 @@ SAPIN	Beau de l'air@Bernard Philippet
 SAR	Poisson ou dauphin@Philippe Harang	Poisson de Méditerranée
 SARCELLES	Quelques oiseaux ou beaucoup de gens@Georges Perec
 SARCOPHAGE	Bière de luxe@Lucien Lacau
-SARDINE	A pu fréquenter les bars avant d’aller en boîte@Philippe Dupuis	Perd la tête quand on la met en boîte@Michel Laclos	L'adjudant en prend pour son grade@Marc Aussitot	N'est plus au large quand elle n'y est plus@Max Favalelli	Petit poisson sans tête qui vit dans l'huile
+SARDINE	A pu fréquenter les bars avant d’aller en boîte@Philippe Dupuis	Perd la tête quand on la met en boîte@Michel Laclos	L'adjudant en prend pour son grade@Marc Aussitot	N'est plus au large quand elle n'y est plus@Max Favalelli	Petit poisson sans tête qui vit dans l'huile@Pierre Desproges
 SARI	Costume féminin indien
 SARMENT	Bois du vin@Jean-Paul Vanden Branden
 SAS	Bassin entre deux écluses	Chambre étanche
@@ -2307,7 +2312,7 @@ SEC	Mieux pour le gâteau que pour le pain@Thierry Larsan	Paradoxal quand il s'a
 SECHE	Ne va pas en cours ou n'en a plus@Jacques Drillon
 SECHERESSE	Preuve de trop de chaleur, ou manque total de chaleur ?@Yves Dautreil	Arrive sans précipitation@Michel Laclos
 SECHOIR	Une salle d’examens remplie de cancres ?@Georges Perec
-SECRET	Quelque chose que l'on ne dit qu'à une seule personne à la fois
+SECRET	Information que l'on ne communique qu'à une seule personne à la fois@Pierre Desproges
 SECRETAIRE	A deux bras ou quatre pieds@Bernard Philippet
 SECRETES	Répands, mais non répandues@Bernard Philippet
 SEDUIRE	Tomber en courant@Dédale
@@ -2389,7 +2394,7 @@ SLIP	Porte un petit bateau ou un grand navire@Jacques Bens	Sape un fondement@Ber
 SMTP	Sert à envoyer des e-mails entre serveurs
 SNMP	Supervision et gestion des équipements réseau
 SNOB	Fait des manières
-SNOBISME	S'acheter des choses que l'on n'aime pas avec de l'argent que l'on n'a pas, dans le but d'impressionner des gens que l'on n'aime pas
+SNOBISME	Action de s'acheter des choses que l'on n'aime pas avec de l'argent qu'on n'a pas dans le but d'impressionner des gens qu'on n'aime pas@Pierre Desproges
 SOBRIETE	Condition qui vous rend le coup de foudre presque impossible
 SOC	Pièce tranchante de la charrue	Casse-croûte campagnard
 SOCIETE	Système ingénieux pour obtenir des bénéfices individuels sans responsabilité individuelle@Ambrose Bierce
@@ -2402,7 +2407,7 @@ SOLO	Passage à voix unique@Michel Laclos
 SOMMELIER	Ses propos sont souvent très crus@Philippe Dupuis
 SOMMETS	Points communs à g7 et k2@Lionel Leteur
 SON	Trouve preneur@Bernard Philippet
-SORCIERE	1/ Horrible et repoussante vieille femme, en perverse activité avec le diable. 2/ Belle et attirante jeune personne, dont les perverses activités dépassent le diable.@Ambrose Bierce
+SORCIERE	1/ Horrible et repoussante vieille femme, en perverse activité avec le diable. 2/ Belle et attirante jeune personne, dont les perverses activités dépassent le diable@Ambrose Bierce
 SORT	S’acoquine volontiers@Robert Scipion
 SORTS	Sont jetés avant d'avoir servi@Pangloss
 SOS	De quelque côté qu’on le prenne, c’est toujours un appel pressant@Georges Perec	Morse marin@Dédale
@@ -2418,7 +2423,7 @@ SOUTENEUR	Son casse-croûte vient de sa mie@Marc Aussitot
 SPA	Bain à bulles
 SPARADRAP	Une bande spécialisée dans les petites coupures@Marc Aussitot
 SPECIALISTE	Quelqu'un qui sait tout sur quelque chose et rien sur tout le reste@Ambrose Bierce
-SPERMATOZOIDEGERMEMASCULIND'UNEMALADIESEXUELLEMENTTRANSMISSIBLETRESCOURANTEAPPELEEGROSSESSE.	 (11 mots)
+SPERMATOZOIDE Germe masculin d'une maladie sexeullement transmissible très courante appelée grossesse
 SPERME	Liquide qu'on peut déposer à la banque@Julien Soulié	Eau de vie
 SPI	Claque en cinglant@Sport Cérébral	Grande voile d'avant
 SPIRITE	Cherche à faire preuve d’esprits en se mettant à table@Michel Laclos
@@ -2474,7 +2479,7 @@ SURMENAGE	Trouble grave qui affecte de hauts fonctionnaires publics quand ils ve
 SURREALISTE	Breton manifestement@Pangloss
 SUS	Invitation à l'attaque
 SUZE	Ne fait comme son homologue que lorsqu’on en sert !@Robert Scipion
-SYNONYME	Mot qui remplace celui dont l'orthographe nous échappe@ça c'est vrai !!! lol! 
+SYNONYME	Mot à écrire à la place de celui dont on n'est pas certain de l'orthographe@Pierre Desproges
 T	
 TA	Avec le bac son passage n’est guère prisé@Corinne Beltz
 TABLEAU	Représentation en deux dimensions de quelque chose d’inintéressant en trois@Ambrose Bierce
@@ -2614,7 +2619,7 @@ TRAVERSIN	En tête de page@Georges Perec	Long en large@Antoine Block
 TREMA	Est toujours présent à noël@Corinne Beltz	Il domine le centre du zaïre@Corinne Beltz	Est en phase finale dans une crise aiguë@Corinne Beltz	Points communs au shintoïsme et au maoïsme@Yves Dautreil	Grains de maïs@Dédale	Signe d'archaïsme@Julien Soulié	Signe de naïveté@Lucien Lacau	Signe de paranoïa@Lucien Lacau	Pour israël comme pour le goï@Antoine Block
 TRESOR	Son comptable n'est pas dans son île@Jacques Drillon
 TRESORIER	Conservateur des espèces@Lucien Lacau
-TRIASCHOISISOUVIEUXAVECPLEINDEDEPOTS.	 (10 mots)
+TRIAS Choisi ou vieux avec plein de pots
 TRINGLE	Suspendue et mise au placard@Jean Teularge
 TRIP	Voyage par le rail@Didier Léonard	Voyage mouvementé
 TROIS	S'emploie pour la règle plus souvent que pour le ménage@Philippe Harang	Cardinal contre les mousquetaires@Didier Léonard
@@ -2624,7 +2629,7 @@ TROUILLOMETRE	Il est souvent à zéro@Jean-Paul Vanden Branden
 TROUSSEES	Les poules le sont différemment des cocottes@Georges Perec
 TSAR	Le dernier vit rouge	Ancien souverain russe
 TSE	Demi-mouche
-TSETSE	Ses victimes lui doivent des sommes considérables (2 mots).@Pangloss (2 mots)	C'est quand elle a fini de voler qu'elle se met à piquer (2 mots).@Lucien Lacau (2 mots)
+TSETSE	Ses victimes lui doivent des sommes considérables (2 mots)@Pangloss	C'est quand elle a fini de voler qu'elle se met à piquer (2 mots)@Lucien Lacau
 TSF	Pour en avoir des nouvelles, il fallait d'abord la mettre au courant@Michel Laclos	Ancienne radio
 TU	Familier et secret@Dédale	Entre proches ou même pas aux proches@Jean Teularge	Dit à personne ou seulement aux amis@Bernard Philippet
 TUB	Cuvette de bain
@@ -2647,7 +2652,7 @@ ULTIMATUM	Avant guerre@Georges Perec
 ULTRAVIOLET	Ne saurait désigner un évêque conservateur@Georges Perec
 ULVE	Salade de mer
 UNAU	Animal paresseux	Mammifère arboricole
-UNCADAVRE	produit fini dont nous sommes la matière première.@Ambrose Bierce (2 mots)
+CADAVRE	Produit fini dont nous sommes la matière première@Ambrose Bierce
 UNETELLE	Machine@Vincent Labbé
 UNI	Sans fleurs ni couronnes@Dédale	D’un ton qui n’en admet pas d’autre@Marc Aussitot
 UNIFORME	Source d’ennui ou d’ennuis pour le contrevenant@Marc Aussitot	Sur le corps de tout un corps@Pangloss
@@ -2707,7 +2712,7 @@ VATENGUERRE	N'aime pas qu'on lui fiche la paix@Marc Aussitot
 VAU	Pièce qui supporte une voute en construction
 VE	Cale de mécanique
 VEAU	Cow boy@Bernard Philippet
-VEDETTE	Sur la scène ou la seine@Michel Laclos	Personne qui travaille dur pour être reconnue et qui porte ensuite de grosses lunettes noires pour ne pas être reconnue
+VEDETTE	Sur la scène ou la seine@Michel Laclos	Personne qui travaille dur toute sa vie pour être connue, et qui porte ensuite de grosses lunettes noires pour ne pas être reconnue. @Pierre Desproges
 VEGETARIENNE	Les plaisirs de la chair lui sont inconnus@Marc Aussitot
 VEILLEUSE	Loupiote pour un loupiot@Thierry Larsan
 VEINE	Cave pleine de rouge@Robert Scipion
@@ -2739,7 +2744,7 @@ VIEIL	Pour un arbre ou un acacia, mais pas un bouleau@Marc Aussitot
 VIEILLESSE	Période de notre existence pendant laquelle nous composons avec les vices que nous chérissons encore, en vitupérant ceux que nous n'osons plus pratiquer@Ambrose Bierce
 VIEILLIR	Quand on dit "Tu" à tout le monde, et que tout le monde nous dit "Vous"@Marcel Pagnol
 VIELE	Instrument de musique à cordes frottées
-VIERGEFORETOULAMAINDEL'HOMMEN'AJAMAISMISLEPIED.	 (12 mots)
+VIERGE	Forêt où la main de l'homme n'a jamais mis le pied
 VIGO	Célèbre grâce à ses galions ou à ses péniches@Michel Laclos
 VIL	Ça ne vaut pas cher	N'inspire que du mépris
 VILAIN	Ses jeux viennent toujours du manuel@Robert Scipion
@@ -2814,7 +2819,7 @@ ZANNI	Bouffon de la comédie italienne
 ZANZI	Jeu de hasard à trois dés
 ZEBU	Grand bovidé domestique de l'Inde
 ZEE	Saint-pierre
-ZELE	Maladie nerveuse qui afflige les jeunes et les inexpérimentés. Passion qui ne s’élance que pour mieux s’étaler.@Ambrose Bierce
+ZELE	Maladie nerveuse qui afflige les jeunes et les inexpérimentés. Passion qui ne s’élance que pour mieux s’étaler@Ambrose Bierce
 ZEN	École bouddhiste
 ZENITH	Coordonnée astronomique	Point culminant
 ZERO	Niveau à bulle@Philippe Harang

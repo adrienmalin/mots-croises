@@ -47,7 +47,7 @@ function dico($longueur_max) {
 function mots_espaces($longueur_max) {
     $dico = dico($longueur_max);
     for ($longueur = $longueur_max; $longueur >= 2; $longueur--) {
-        for ($position_espace = $longueur - 1; $position_espace >= 1; $position_espace--) {
+        for ($position_espace = $longueur - 2; $position_espace >= 1; $position_espace--) {
             $mots_suivants = $dico[$longueur - $position_espace - 1];
             foreach ($dico[$position_espace] as $premier_mot => $definition) {
                 $premier_mot[] = CASE_NOIRE;

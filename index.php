@@ -3,10 +3,10 @@
 include_once "Grille.php";
 
 
-const HAUTEUR_DEFAUT = 8;
+const HAUTEUR_DEFAUT = 7;
 const HAUTEUR_MIN = 2;
 const HAUTEUR_MAX = 10;
-const LARGEUR_DEFAUT = 8;
+const LARGEUR_DEFAUT = 7;
 const LARGEUR_MIN = 2;
 const LARGEUR_MAX = 10;
 
