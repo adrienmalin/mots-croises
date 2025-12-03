@@ -83,7 +83,11 @@ class Grille implements ArrayAccess
                 foreach($mots as $mot) {
                     $definitions = $this->dico[strlen($mot)][$mot];
                     if (count($definitions)) {
-                        $this->definitions["horizontales"][$y][] = $definitions[mt_rand(0, count($definitions) - 1)];
+                        $definition = $definitions[mt_rand(0, count($definitions) - 1)];
+                        if (isset($definitions["nb_mots"])) {
+                            $definition["nb_mots"] = $definitions["nb_mots"];
+                        }
+                        $this->definitions["horizontales"][$y][] = $definition;
                     }
                 }
             }
@@ -92,7 +96,11 @@ class Grille implements ArrayAccess
                 foreach($mots as $mot) {
                     $definitions = $this->dico[strlen($mot)][$mot];
                     if (count($definitions)) {
-                        $this->definitions["verticales"][$x][] = $definitions[mt_rand(0, count($definitions) - 1)];
+                        $definition = $definitions[mt_rand(0, count($definitions) - 1)];
+                        if (isset($definitions["nb_mots"])) {
+                            $definition["nb_mots"] = $definitions["nb_mots"];
+                        }
+                        $this->definitions["verticales"][$x][] = $definition;
                     }
                 }
             }

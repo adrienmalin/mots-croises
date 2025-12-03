@@ -4,6 +4,9 @@ include_once "Trie.php";
 
 
 const CASE_NOIRE = " ";
+const DEFINITION = 0;
+const AUTEUR     = 1;
+const NB_MOTS    = 2;
 
 
 function dico($longueur_max) {
@@ -13,7 +16,7 @@ function dico($longueur_max) {
     for ($longueur = 0; $longueur <= $longueur_max; $longueur++) {
         $dico[] = new Trie();
     }
-    if (($lecteur = fopen("dico.csv", "r")) !== FALSE) {
+    if (($lecteur = fopen("dico.tsv", "r")) !== FALSE) {
         $entete = fgetcsv($lecteur, 0, "\t");
         while (($ligne = fgetcsv($lecteur, 0, "\t")) !== FALSE) {
             if (
@@ -23,7 +26,7 @@ function dico($longueur_max) {
             ) continue;
 
             $mot = $ligne[0];
-            $definitions = array_slice($ligne, 1);
+            $definition = array_slice($ligne, 1);
 
             $mot = str_replace("-", CASE_NOIRE, $mot);
             $mot = $transliterator->transliterate($mot);
@@ -31,12 +34,16 @@ function dico($longueur_max) {
                 $mots = explode(CASE_NOIRE, $mot);
                 $nb_mots = count($mots);
                 $mot = implode("", $mots);
-                foreach($definitions as $i => $definition) {
-                    $definitions[$i] = "$definition#$nb_mots";
-                }
+            } else {
+                $nb_mots = 1;
             }
 
-            $dico[strlen($mot)][$mot] = $definitions;
+            if (array_key_exists($mot, $dico)) {
+                $dico[strlen($mot)][$mot][] = $definition;
+            } else {
+                $dico[strlen($mot)][$mot] = [$definition];
+                if ($nb_mots > 1) $dico[strlen($mot)][$mot]["nb_mots"] = $nb_mots;
+            }
         }
         fclose($lecteur);
     }

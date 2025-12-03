@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 include_once "Grille.php";
 
 
@@ -44,19 +48,19 @@ if (!isset($_GET["grille"]) || $_GET["grille"] == "") {
 }
 
 function formatter_definition($definition) {
-    if (strpos($definition, "#") !== false) {
-        [$definition, $nb_mots] = explode("#", $definition);
+    if (isset($definition["nb_mots"]) && $definition["nb_mots"] > 1){
+        $nb_mots = $definition["nb_mots"];
         $nb_mots = " <small>($nb_mots mots)</small>";
     } else {
         $nb_mots = "";
     }
-    if (strpos($definition, "@") !== false) {
-        [$definition, $auteur] = explode("@", $definition);
+    if (array_key_exists(AUTEUR, $definition)) {
+        $auteur = $definition[AUTEUR];
         $auteur = " <small><em>$auteur</em></small>";
     } else {
         $auteur = "";
     }
-    return $definition . $nb_mots . $auteur;
+    return $definition[DEFINITION] . $nb_mots . $auteur;
 }
 ?>
 <!DOCTYPE HTML>
