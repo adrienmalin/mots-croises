@@ -2,7 +2,7 @@
 include_once "dico.php";
 
 
-const ECART_TYPE = 5;
+const ECART_TYPE = 5.0;
 
 
 $randmax = mt_getrandmax() + 1;
@@ -131,10 +131,13 @@ class Grille implements ArrayAccess
             $lettres_colonne->branches
         );
         foreach ($lettres_communes as $lettre => $_) {
-            $lettres_communes[$lettre] = count($lettres_ligne->branches[$lettre]) * count($lettres_colonne->branches[$lettre]) * gaussienne(1, ECART_TYPE);
+            $lettres_communes[$lettre] = log(count($lettres_ligne->branches[$lettre])) * count($lettres_colonne->branches[$lettre]) * gaussienne(ECART_TYPE, ECART_TYPE);
         }
         uksort($lettres_communes, function($a, $b) use ($lettres_communes) {
             return $lettres_communes[$b] <=> $lettres_communes[$a];
+        });
+        uksort($lettres_communes, function($a, $b) {
+            return $a == CASE_NOIRE;
         });
         $lettres_communes = array_slice($lettres_communes, 0, 3);
 
