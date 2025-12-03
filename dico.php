@@ -9,7 +9,7 @@ const CASE_NOIRE = " ";
 function dico($longueur_max) {
     $transliterator = Transliterator::createFromRules(':: Any-Latin; :: Latin-ASCII; :: NFD; :: [:Nonspacing Mark:] Remove; :: Upper(); :: NFC;', Transliterator::FORWARD);
     
-    $dico = [[new Trie()]];
+    $dico = [];
     for ($longueur = 0; $longueur <= $longueur_max; $longueur++) {
         $dico[] = new Trie();
     }
