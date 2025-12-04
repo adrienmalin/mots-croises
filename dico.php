@@ -6,7 +6,6 @@ include_once "Trie.php";
 const CASE_NOIRE = " ";
 const DEFINITION = 0;
 const AUTEUR     = 1;
-const NB_MOTS    = 2;
 
 
 function dico($longueur_max) {
@@ -51,10 +50,10 @@ function dico($longueur_max) {
     return $dico;
 }
 
-function mots_espaces($longueur_max) {
+function mots_espaces($longueur_max, $longueur_min=1) {
     $dico = dico($longueur_max);
-    for ($longueur = $longueur_max; $longueur >= 2; $longueur--) {
-        for ($position_espace = $longueur - 2; $position_espace >= 1; $position_espace--) {
+    for ($longueur = $longueur_max; $longueur >= $longueur_min + 1; $longueur--) {
+        for ($position_espace = $longueur - $longueur_min - 1; $position_espace >= $longueur_min; $position_espace--) {
             $mots_suivants = $dico[$longueur - $position_espace - 1];
             foreach ($dico[$position_espace] as $premier_mot => $definition) {
                 $premier_mot[] = CASE_NOIRE;

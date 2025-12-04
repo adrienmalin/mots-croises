@@ -57,7 +57,7 @@ function formatter_definition($definition) {
     } else {
         $auteur = "";
     }
-    return $definition[DEFINITION] . $nb_mots . $auteur;
+    return ucfirst($definition[DEFINITION]) . $nb_mots . $auteur;
 }
 ?>
 <!DOCTYPE HTML>

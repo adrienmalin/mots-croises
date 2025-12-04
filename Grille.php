@@ -137,9 +137,9 @@ class Grille implements ArrayAccess
             return $lettres_communes[$b] <=> $lettres_communes[$a];
         });
         uksort($lettres_communes, function($a, $b) {
-            return $a == CASE_NOIRE;
+            return ($a == CASE_NOIRE)? 1 : -1;
         });
-        $lettres_communes = array_slice($lettres_communes, 0, 3);
+        $lettres_communes = array_slice($lettres_communes, 0, 2);
 
         foreach ($lettres_communes as $lettre => $_) {
             $this->grille[$y][$x] = $lettre;

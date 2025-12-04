@@ -1,23 +1,27 @@
 <?php
 
 
-class Trie implements ArrayAccess, IteratorAggregate, Countable {
+class Trie implements ArrayAccess, IteratorAggregate, Countable
+{
     public array $branches = [];
     private $nb_branches = 0;
 
-    public function arraySet($cles, $valeur) {
+    public function arraySet($cles, $valeur)
+    {
         $cle = $cles[0];
         $this->nb_branches++;
         $cles = array_slice($cles, 1);
         if ($cles == []) {
             $this->branches[$cle] = $valeur;
         } else {
-            if (!isset($this->branches[$cle])) $this->branches[$cle] = new Trie();
+            if (!isset($this->branches[$cle]))
+                $this->branches[$cle] = new Trie();
             $this->branches[$cle]->arraySet($cles, $valeur);
         }
     }
 
-    public function arrayExists($cles) {
+    public function arrayExists($cles)
+    {
         $cle = $cles[0];
         $cles = array_slice($cles, 1);
         if ($cles == []) {
@@ -27,7 +31,8 @@ class Trie implements ArrayAccess, IteratorAggregate, Countable {
         }
     }
 
-    public function &arrayGet($cles) {
+    public function &arrayGet($cles)
+    {
         $cle = $cles[0];
         $cles = array_slice($cles, 1);
         if ($cles == []) {
@@ -37,7 +42,8 @@ class Trie implements ArrayAccess, IteratorAggregate, Countable {
         }
     }
 
-    public function arrayUnset($cles) {
+    public function arrayUnset($cles)
+    {
         $cle = $cles[0];
         $cles = array_slice($cles, 1);
         if ($cles == []) {
@@ -53,28 +59,32 @@ class Trie implements ArrayAccess, IteratorAggregate, Countable {
     }
 
     // ArrayAccess
-    public function offsetSet($array, $valeur): void {
+    public function offsetSet($array, $valeur): void
+    {
         if (is_string($array)) {
             $array = str_split($array);
         }
         $this->arraySet($array, $valeur);
     }
 
-    public function offsetExists($array): bool {
+    public function offsetExists($array): bool
+    {
         if (is_string($array)) {
             $array = str_split($array);
         }
         return $this->arrayExists($array);
     }
 
-    public function &offsetGet($array): mixed {
+    public function &offsetGet($array): mixed
+    {
         if (is_string($array)) {
             $array = str_split($array);
         }
         return $this->arrayGet($array);
     }
 
-    public function offsetUnset($array): void {
+    public function offsetUnset($array): void
+    {
         if (is_string($array)) {
             $array = str_split($array);
         }
@@ -82,10 +92,11 @@ class Trie implements ArrayAccess, IteratorAggregate, Countable {
     }
 
     // IteratorAggregate
-    public function getIterator(): Traversable {
+    public function getIterator(): Traversable
+    {
         foreach ($this->branches as $cle => $branche) {
             if ($branche instanceof Trie) {
-                foreach($branche->getIterator() as $sous_cles => $feuille) {
+                foreach ($branche->getIterator() as $sous_cles => $feuille) {
                     yield array_merge([$cle], $sous_cles) => $feuille;
                 }
             } else {
@@ -95,7 +106,8 @@ class Trie implements ArrayAccess, IteratorAggregate, Countable {
     }
 
     // Countable
-    public function count(): int {
+    public function count(): int
+    {
         return $this->nb_branches;
     }
 }
