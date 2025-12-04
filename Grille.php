@@ -16,6 +16,26 @@ function gaussienne($moyenne = 0, $ecartType = 1.0): float {
     return $z * $ecartType + $moyenne;
 }
 
+function explode_pos(string $separator, string $string): array {
+    $mots = [];
+    $mot = "";
+    $longueur = strlen($string);
+
+    for ($i = 0; $i < $longueur; $i++) {
+        $lettre = $string[$i];
+        if ($lettre == $separator) {
+            $mots[$i] = $mot;
+            $mot = "";
+        } else {
+            $mot .= $lettre;
+        }
+    }
+
+    $mots[$i] = $mot;
+
+    return $mots;
+}
+
 
 class Grille implements ArrayAccess
 {
@@ -80,27 +100,27 @@ class Grille implements ArrayAccess
             ];
             foreach($this->lignes as $y => $mots) {
                 $this->definitions["horizontales"][$y] = [];
-                foreach($mots as $mot) {
+                foreach($mots as $fin => $mot) {
                     $definitions = $this->dico[strlen($mot)][$mot];
                     if (count($definitions)) {
                         $definition = $definitions[mt_rand(0, count($definitions) - 1)];
                         if (isset($definitions["nb_mots"])) {
                             $definition["nb_mots"] = $definitions["nb_mots"];
                         }
-                        $this->definitions["horizontales"][$y][] = $definition;
+                        $this->definitions["horizontales"][$y][$fin] = $definition;
                     }
                 }
             }
             foreach($this->colonnes as $x => $mots) {
                 $this->definitions["verticales"][$x] = [];
-                foreach($mots as $mot) {
+                foreach($mots as $fin => $mot) {
                     $definitions = $this->dico[strlen($mot)][$mot];
                     if (count($definitions)) {
                         $definition = $definitions[mt_rand(0, count($definitions) - 1)];
                         if (isset($definitions["nb_mots"])) {
                             $definition["nb_mots"] = $definitions["nb_mots"];
                         }
-                        $this->definitions["verticales"][$x][] = $definition;
+                        $this->definitions["verticales"][$x][$fin] = $definition;
                     }
                 }
             }
@@ -161,8 +181,8 @@ class Grille implements ArrayAccess
 
             // Omission des doublons
             $mots = [];
-            if ($x == $this->largeur - 1) $mots = explode(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
-            else if ($lettre == CASE_NOIRE) $mots = explode(CASE_NOIRE, $this->get_ligne($y, $x));
+            if ($x == $this->largeur - 1) $mots = explode_pos(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
+            else if ($lettre == CASE_NOIRE) $mots = explode_pos(CASE_NOIRE, $this->get_ligne($y, $x));
             else $mots = [];
             $this->lignes[$y] = array_filter($mots, function ($mot) {
                 return strlen($mot) >= 2;
@@ -174,7 +194,7 @@ class Grille implements ArrayAccess
             }
 
             if ($y == $this->hauteur - 1) {
-                $mots = explode(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
+                $mots = explode_pos(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
                 foreach ($mots as $rang => $mot) {
                     if (strlen($mot) < 2) continue;
                     if (strlen($mot > 2) && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;

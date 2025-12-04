@@ -59,6 +59,13 @@ function formatter_definition($definition) {
     }
     return ucfirst($definition[DEFINITION]) . $nb_mots . $auteur;
 }
+
+function mot_courant($mots, $position) {
+    foreach ($mots as $fin => $mot) {
+        if ($position <= $fin) return $mot;
+    }
+    return [];
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="fr-FR" dir="ltr" prefix="og: https://ogp.me/ns#">
@@ -137,8 +144,18 @@ function formatter_definition($definition) {
                                         </td>
                                     <?php else: ?>
                                         <td class="case blanche">
+                                            <?php
+                                                $title = "";
+                                                $definition_horizontale = mot_courant($grille->definitions["horizontales"][$y], $x);
+                                                $definition_verticale = mot_courant($grille->definitions["verticales"][$x], $y);
+                                                if (isset($definition_horizontale[0])) $title .= "→ " . $definition_horizontale[0];
+                                                if (isset($definition_horizontale[1])) $title .= " (" . $definition_horizontale[1] . ")";
+                                                if (isset($definition_verticale[0])) $title .= "\n ↓ " . $definition_verticale[0];
+                                                if (isset($definition_verticale[1])) $title .= " (" . $definition_verticale[1] . ")";
+                                                $title = htmlspecialchars($title);
+                                            ?>
                                             <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" pattern="[A-Z]"
-                                                title="<?= strip_tags("→ " . implode("\n→ ", array_map("formatter_definition", $grille->definitions["horizontales"][$y] ?? [])) . "\n↓ " . implode("\n↓ ", array_map("formatter_definition", $grille->definitions["verticales"][$x] ?? []))) ?>" />
+                                                title="<?=$title?>" />
                                         </td>
                                     <?php endif; ?>
                                 <?php endfor; ?>
@@ -153,7 +170,7 @@ function formatter_definition($definition) {
                             <li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
-                                        <?= formatter_definition($definitions[0]) ?>
+                                        <?= formatter_definition(reset($definitions)) ?>
                                     <?php else: ?>
                                         <ol>
                                         <?php foreach ($definitions as $definition) : ?>
@@ -173,7 +190,7 @@ function formatter_definition($definition) {
                             <li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
-                                        <?= formatter_definition($definitions[0]) ?>
+                                        <?= formatter_definition(reset($definitions)) ?>
                                     <?php else: ?>
                                         <ol>
                                             <?php foreach ($definitions as $definition) : ?>
