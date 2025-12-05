@@ -145,14 +145,14 @@ function mot_courant($mots, $position) {
                                     <?php else: ?>
                                         <td class="case blanche">
                                             <?php
-                                                $title = "";
+                                                $title = [];
                                                 $definition_horizontale = mot_courant($grille->definitions["horizontales"][$y], $x);
                                                 $definition_verticale = mot_courant($grille->definitions["verticales"][$x], $y);
-                                                if (isset($definition_horizontale[0])) $title .= "→ " . $definition_horizontale[0];
-                                                if (isset($definition_horizontale[1])) $title .= " (" . $definition_horizontale[1] . ")";
-                                                if (isset($definition_verticale[0])) $title .= "\n↓  " . $definition_verticale[0];
-                                                if (isset($definition_verticale[1])) $title .= " (" . $definition_verticale[1] . ")";
-                                                $title = htmlspecialchars($title);
+                                                if (isset($definition_horizontale[0])) $title[0] = "→ " . $definition_horizontale[0];
+                                                if (isset($definition_horizontale[1])) $title[0] .= " (" . $definition_horizontale[1] . ")";
+                                                if (isset($definition_verticale[0])) $title[1] = "↓  " . $definition_verticale[0];
+                                                if (isset($definition_verticale[1])) $title[1] .= " (" . $definition_verticale[1] . ")";
+                                                $title = htmlspecialchars(implode("\n", $title));
                                             ?>
                                             <input id="<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1" pattern="[A-Z]"
                                                 title="<?=$title?>" />

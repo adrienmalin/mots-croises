@@ -99,6 +99,7 @@ class Grille implements ArrayAccess
                 "verticales" => []
             ];
             foreach($this->lignes as $y => $mots) {
+                $mots = explode_pos(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
                 $this->definitions["horizontales"][$y] = [];
                 foreach($mots as $fin => $mot) {
                     $definitions = $this->dico[strlen($mot)][$mot];
@@ -112,6 +113,7 @@ class Grille implements ArrayAccess
                 }
             }
             foreach($this->colonnes as $x => $mots) {
+                $mots = explode_pos(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
                 $this->definitions["verticales"][$x] = [];
                 foreach($mots as $fin => $mot) {
                     $definitions = $this->dico[strlen($mot)][$mot];
@@ -182,8 +184,8 @@ class Grille implements ArrayAccess
 
             // Omission des doublons
             $mots = [];
-            if ($x == $this->largeur - 1) $mots = explode_pos(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
-            else if ($lettre == CASE_NOIRE) $mots = explode_pos(CASE_NOIRE, $this->get_ligne($y, $x));
+            if ($x == $this->largeur - 1) $mots = explode(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
+            else if ($lettre == CASE_NOIRE) $mots = explode(CASE_NOIRE, $this->get_ligne($y, $x));
             else $mots = [];
             $this->lignes[$y] = array_filter($mots, function ($mot) {
                 return strlen($mot) >= 2;
@@ -195,9 +197,9 @@ class Grille implements ArrayAccess
             }
 
             if ($y == $this->hauteur - 1) {
-                $mots = explode_pos(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
+                $mots = explode(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
                 foreach ($mots as $rang => $mot) {
-                    //if (strlen($mot) < 2) continue;
+                    if (strlen($mot) < 2) continue;
                     if (strlen($mot > 2) && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
                     else $this->colonnes[$x][$rang] = $mot;
                 }
