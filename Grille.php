@@ -20,19 +20,20 @@ function explode_pos(string $separator, string $string): array {
     $mots = [];
     $mot = "";
     $longueur = strlen($string);
+    $debut = 0;
 
     for ($i = 0; $i < $longueur; $i++) {
         $lettre = $string[$i];
         if ($lettre == $separator) {
-            $mots[$i] = $mot;
+            $mots[] = ["mot" => $mot, "debut" => $debut, "fin" => $i - 1, "longueur" => $i - $debut];
             $mot = "";
+            $debut = $i + 1;
         } else {
             $mot .= $lettre;
         }
     }
 
-    $mots[$i] = $mot;
-
+    $mots[] = ["mot" => $mot, "debut" => $debut, "fin" => $longueur - 1, "longueur" => $longueur - $debut];
     return $mots;
 }
 
@@ -101,29 +102,35 @@ class Grille implements ArrayAccess
             for ($y = 0; $y < $this->hauteur; $y++) {
                 $mots = explode_pos(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
                 $this->definitions["horizontales"][$y] = [];
-                foreach($mots as $fin => $mot) {
-                    $definitions = $this->dico[strlen($mot)][$mot];
+                foreach($mots as $mot) {
+                    $definitions = $this->dico[$mot["longueur"]][$mot["mot"]];
                     if (count($definitions)) {
                         $definition = $definitions[mt_rand(0, count($definitions) - 1)];
-                        if (isset($definitions["nb_mots"])) {
-                            $definition["nb_mots"] = $definitions["nb_mots"];
-                        }
-                        $this->definitions["horizontales"][$y][$fin] = $definition;
+                        if (isset($definition[DEFINITION])) $mot["definition"] = $definition[DEFINITION];
+                        if (isset($definition[AUTEUR])) $mot["auteur"] = $definition[AUTEUR];
                     }
+                    if (isset($definitions["nb_mots"])) {
+                        $mot["nb_mots"] = $definitions["nb_mots"];
+                    }
+                    unset($mot["mot"]);
+                    $this->definitions["horizontales"][$y][] = $mot;
                 }
             }
             for ($x = 0; $x < $this->largeur; $x++) {
                 $mots = explode_pos(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
                 $this->definitions["verticales"][$x] = [];
-                foreach($mots as $fin => $mot) {
-                    $definitions = $this->dico[strlen($mot)][$mot];
+                foreach($mots as $mot) {
+                    $definitions = $this->dico[$mot["longueur"]][$mot["mot"]];
                     if (count($definitions)) {
                         $definition = $definitions[mt_rand(0, count($definitions) - 1)];
-                        if (isset($definitions["nb_mots"])) {
-                            $definition["nb_mots"] = $definitions["nb_mots"];
-                        }
-                        $this->definitions["verticales"][$x][$fin] = $definition;
+                        if (isset($definition[DEFINITION])) $mot["definition"] = $definition[DEFINITION];
+                        if (isset($definition[AUTEUR])) $mot["auteur"] = $definition[AUTEUR];
                     }
+                    if (isset($definitions["nb_mots"])) {
+                        $mot["nb_mots"] = $definitions["nb_mots"];
+                    }
+                    unset($mot["mot"]);
+                    $this->definitions["verticales"][$x][] = $mot;
                 }
             }
             $this->save($id);
