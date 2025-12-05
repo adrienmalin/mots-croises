@@ -98,7 +98,7 @@ class Grille implements ArrayAccess
                 "horizontales" => [],
                 "verticales" => []
             ];
-            foreach($this->lignes as $y => $mots) {
+            for ($y = 0; $y < $this->hauteur; $y++) {
                 $mots = explode_pos(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
                 $this->definitions["horizontales"][$y] = [];
                 foreach($mots as $fin => $mot) {
@@ -112,7 +112,7 @@ class Grille implements ArrayAccess
                     }
                 }
             }
-            foreach($this->colonnes as $x => $mots) {
+            for ($x = 0; $x < $this->largeur; $x++) {
                 $mots = explode_pos(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
                 $this->definitions["verticales"][$x] = [];
                 foreach($mots as $fin => $mot) {
