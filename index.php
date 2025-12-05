@@ -64,6 +64,18 @@ function mot_courant($mots, $position) {
     }
     return [];
 }
+
+function debuts($definitions) {
+    $debut = 0;
+    $retour = [];
+    foreach ($definitions as $fin => $definition) {
+        if ($fin - $debut > 1) {
+            $retour[$debut] = $definition;
+        }
+        $debut = $fin + 1;
+    }
+    return $retour;
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="fr-FR" dir="ltr" prefix="og: https://ogp.me/ns#">
@@ -166,26 +178,25 @@ function mot_courant($mots, $position) {
                     <ol type="1">
                         <?php
                         foreach ($grille->definitions["horizontales"] as $y => $definitions):
-                            $definitions = array_filter(
-                            $definitions, function($definition) { 
-                                    return isset($definition[0]); 
-                            });
+                            $definitions = debuts($definitions);
                         ?>
-                            <label for="A<?=$y + 1?>"><li>
+                            <li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
+                                    <label for="A<?=$y + 1?>">
                                         <?= formatter_definition(reset($definitions)) ?>
+                                    </label>
                                     <?php else: ?>
                                         <ol>
-                                        <?php foreach ($definitions as $definition) : ?>
-                                            <?php if (isset($definition[0])): ?>
+                                        <?php foreach ($definitions as $debut => $definition) : ?>
+                                            <label for="<?=chr($debut + 0x41)?><?=$y + 1?>">
                                             <li><?= formatter_definition($definition) ?></li>
-                                            <?php endif ?>
+                                            </label>
                                         <?php endforeach ?>
                                         </ol>
                                     <?php endif ?>
                                 <?php endif ?>
-                            </li></label>
+                            </li>
                         <?php endforeach; ?>
                     </ol>
                 </div>
@@ -194,26 +205,25 @@ function mot_courant($mots, $position) {
                     <ol type="A">
                         <?php
                         foreach ($grille->definitions["verticales"] as $x => $definitions):
-                            $definitions = array_filter(
-                            $definitions, function($definition) { 
-                                    return isset($definition[0]); 
-                            });
+                            $definitions = debuts($definitions);
                         ?>
-                            <label for="<?=chr($x + 0x41)?>1"><li>
+                            <li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
-                                        <?= formatter_definition(reset($definitions)) ?>
+                                    <label for="<?=chr($x + 0x41)?>1">
+                                    <?= formatter_definition(reset($definitions)) ?>
+                                    </label>
                                     <?php else: ?>
                                         <ol>
-                                            <?php foreach ($definitions as $definition) : ?>
-                                                <?php if (isset($definition[0])): ?>
-                                                <li><?= formatter_definition($definition) ?></li>
-                                                <?php endif ?>
-                                            <?php endforeach ?>
+                                        <?php foreach ($definitions as $debut => $definition) : ?>
+                                            <label for="<?=chr($x + 0x41)?><?=$debut + 1?>">
+                                            <li><?= formatter_definition($definition) ?></li>
+                                            </label>
+                                        <?php endforeach ?>
                                         </ol>
                                     <?php endif ?>
                                 <?php endif ?>
-                            </li></label>
+                            </li>
                         <?php endforeach; ?>
                     </ol>
                 </div>

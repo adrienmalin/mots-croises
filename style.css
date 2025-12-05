@@ -177,6 +177,10 @@ h2 {
   opacity: 30%;
 }
 
+.definitions label {
+  cursor: pointer;
+}
+
 .erreur {
   text-align: center;
 }
