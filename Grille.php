@@ -150,6 +150,7 @@ class Grille implements ArrayAccess
             $lettres_ligne->branches,
             $lettres_colonne->branches
         );
+        // Sélection des candidats les plus fertiles
         foreach ($lettres_communes as $lettre => $_) {
             $lettres_communes[$lettre] = log(count($lettres_ligne->branches[$lettre])) * count($lettres_colonne->branches[$lettre]) * gaussienne(ECART_TYPE, ECART_TYPE);
         }
@@ -196,7 +197,7 @@ class Grille implements ArrayAccess
             if ($y == $this->hauteur - 1) {
                 $mots = explode_pos(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
                 foreach ($mots as $rang => $mot) {
-                    if (strlen($mot) < 2) continue;
+                    //if (strlen($mot) < 2) continue;
                     if (strlen($mot > 2) && in_array($mot, array_merge(...$this->lignes, ...$this->colonnes))) continue 2;
                     else $this->colonnes[$x][$rang] = $mot;
                 }

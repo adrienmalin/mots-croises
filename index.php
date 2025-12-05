@@ -150,7 +150,7 @@ function mot_courant($mots, $position) {
                                                 $definition_verticale = mot_courant($grille->definitions["verticales"][$x], $y);
                                                 if (isset($definition_horizontale[0])) $title .= "→ " . $definition_horizontale[0];
                                                 if (isset($definition_horizontale[1])) $title .= " (" . $definition_horizontale[1] . ")";
-                                                if (isset($definition_verticale[0])) $title .= "\n ↓ " . $definition_verticale[0];
+                                                if (isset($definition_verticale[0])) $title .= "\n↓  " . $definition_verticale[0];
                                                 if (isset($definition_verticale[1])) $title .= " (" . $definition_verticale[1] . ")";
                                                 $title = htmlspecialchars($title);
                                             ?>
@@ -174,7 +174,9 @@ function mot_courant($mots, $position) {
                                     <?php else: ?>
                                         <ol>
                                         <?php foreach ($definitions as $definition) : ?>
+                                            <?php if (isset($definition[0])): ?>
                                             <li><?= formatter_definition($definition) ?></li>
+                                            <?php endif ?>
                                         <?php endforeach ?>
                                         </ol>
                                     <?php endif ?>
@@ -194,7 +196,9 @@ function mot_courant($mots, $position) {
                                     <?php else: ?>
                                         <ol>
                                             <?php foreach ($definitions as $definition) : ?>
+                                                <?php if (isset($definition[0])): ?>
                                                 <li><?= formatter_definition($definition) ?></li>
+                                                <?php endif ?>
                                             <?php endforeach ?>
                                         </ol>
                                     <?php endif ?>
