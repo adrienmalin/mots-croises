@@ -170,8 +170,8 @@ function definition_courante($definitions, $position) {
 ?>
                                 <input id="case-<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1"
                                     pattern="[A-Z]" title="<?= $title ?>"
-                                    data-iddh="<?= isset($definition_horizontale["definition"])? "dh$y.$iddh" : "" ?>"
-                                    data-iddv="<?= isset($definition_verticale["definition"])? "dh$x.$iddv" : "" ?>"
+                                    data-iddh="<?= isset($definition_horizontale["definition"])? "dh-$y.$iddh" : "" ?>"
+                                    data-iddv="<?= isset($definition_verticale["definition"])? "dv-$x.$iddv" : "" ?>"
                                 />
                             </td>
 <?php               endif; ?>
@@ -192,14 +192,14 @@ function definition_courante($definitions, $position) {
 <?php           if (count($definitions)): ?>
 <?php               if (count($definitions) == 1): ?>
 <?php                   foreach ($definitions as $id => $definition): ?>
-                            <label id="<?= "dh$y.$id" ?>" for="case-1<?= $y + 1 ?>">
+                            <label id="<?= "dh-$y.$id" ?>" for="case-1<?= $y + 1 ?>">
                                 <?= formatter_definition($definition) ?>
                             </label>
 <?php                   endforeach ?>
 <?php               else: ?>
                             <ol>
 <?php                   foreach ($definitions as $id => $definition): ?>
-                                <label id="<?= "dh$y.$id" ?>" for="case-<?= chr($definition["debut"] + 0x41) ?><?= $y + 1 ?>">
+                                <label id="<?= "dh-$y.$id" ?>" for="case-<?= chr($definition["debut"] + 0x41) ?><?= $y + 1 ?>">
                                     <li><?= formatter_definition($definition) ?></li>
                                 </label>
 <?php                   endforeach ?>
@@ -222,14 +222,14 @@ function definition_courante($definitions, $position) {
 <?php           if (count($definitions)): ?>
 <?php               if (count($definitions) == 1): ?>
 <?php                   foreach ($definitions as $id => $definition): ?>
-                            <label id="<?= "dv$x.$id" ?>" for="case-<?= chr($x + 0x41) ?>1">
+                            <label id="<?= "dv-$x.$id" ?>" for="case-<?= chr($x + 0x41) ?>1">
                                 <?= formatter_definition($definition) ?>
                             </label>
 <?php                   endforeach ?>
 <?php               else: ?>
                             <ol>
 <?php                   foreach ($definitions as $id => $definition): ?>
-                                <label id="<?= "dv$x.$id" ?>" for="case-<?= chr($x + 0x41) ?><?= $definition["debut"] + 1 ?>">
+                                <label id="<?= "dv-$x.$id" ?>" for="case-<?= chr($x + 0x41) ?><?= $definition["debut"] + 1 ?>">
                                     <li><?= formatter_definition($definition) ?></li>
                                 </label>
 <?php                   endforeach ?>
