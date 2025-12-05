@@ -164,7 +164,13 @@ function mot_courant($mots, $position) {
                 <div class="definitions horizontales">
                     <h2>Horizontalement</h2>
                     <ol type="1">
-                        <?php foreach ($grille->definitions["horizontales"] as $y => $definitions): ?>
+                        <?php
+                        foreach ($grille->definitions["horizontales"] as $y => $definitions):
+                            $definitions = array_filter(
+                            $definitions, function($definition) { 
+                                    return isset($definition[0]); 
+                            });
+                        ?>
                             <li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
@@ -186,7 +192,13 @@ function mot_courant($mots, $position) {
                 <div class="definitions verticales">
                     <h2>Verticalement</h2>
                     <ol type="A">
-                        <?php foreach ($grille->definitions["verticales"] as $x => $definitions): ?>
+                        <?php
+                        foreach ($grille->definitions["verticales"] as $x => $definitions):
+                            $definitions = array_filter(
+                            $definitions, function($definition) { 
+                                    return isset($definition[0]); 
+                            });
+                        ?>
                             <li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
