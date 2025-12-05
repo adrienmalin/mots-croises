@@ -171,7 +171,7 @@ function mot_courant($mots, $position) {
                                     return isset($definition[0]); 
                             });
                         ?>
-                            <li>
+                            <label for="A<?=$y + 1?>"><li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
                                         <?= formatter_definition(reset($definitions)) ?>
@@ -185,7 +185,7 @@ function mot_courant($mots, $position) {
                                         </ol>
                                     <?php endif ?>
                                 <?php endif ?>
-                            </li>
+                            </li></label>
                         <?php endforeach; ?>
                     </ol>
                 </div>
@@ -199,7 +199,7 @@ function mot_courant($mots, $position) {
                                     return isset($definition[0]); 
                             });
                         ?>
-                            <li>
+                            <label for="<?=chr($x + 0x41)?>1"><li>
                                 <?php if (count($definitions)): ?>
                                     <?php if (count($definitions) == 1): ?>
                                         <?= formatter_definition(reset($definitions)) ?>
@@ -213,7 +213,7 @@ function mot_courant($mots, $position) {
                                         </ol>
                                     <?php endif ?>
                                 <?php endif ?>
-                            </li>
+                            </li></label>
                         <?php endforeach; ?>
                     </ol>
                 </div>
