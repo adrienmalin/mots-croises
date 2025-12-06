@@ -242,18 +242,6 @@ class Grille implements ArrayAccess
         );
     }
 
-    public function __serialize(): array {
-        return [
-            "grille" => $this->grille,
-            "definitions" => $this->definitions
-        ];
-    }
-
-    public function __unserialize(array $data): void {
-        $this->grille = $data["grille"];
-        $this->definitions = $data["definitions"];
-    }
-
     public function save($id)
     {
         if (session_status() === PHP_SESSION_ACTIVE) {
@@ -263,7 +251,8 @@ class Grille implements ArrayAccess
         session_id("$this->largeur,$this->hauteur,$id");
         session_start(["use_cookies" => false]);
 
-        $_SESSION["grille"] = serialize($this);
+        $_SESSION["grille"] = $this->grille;
+        $_SESSION["definitions"] = $this->definitions;
     }
 
     public function load($id)
@@ -271,11 +260,12 @@ class Grille implements ArrayAccess
         session_id("$this->largeur,$this->hauteur,$id");
         session_start(["use_cookies" => false]);
 
-        if (!isset($_SESSION["grille"])) {
+        if (!isset($_SESSION)) {
             return false;
         }
 
-        unserialize($_SESSION["grille"]);
+        $this->grille = $_SESSION["grille"];
+        $this->definitions = $_SESSION["definitions"];
 
         return true;
     }
