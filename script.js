@@ -17,18 +17,36 @@ for (let input of inputs) {
 
   input.onfocus = function (event) {
     for (li of document.querySelectorAll(
-      `.definitions.horizontales > ol > li:nth-child(${
-        input.y + 1
-      }), .definitions.verticales > ol > li:nth-child(${input.x + 1})`
+      `.definitions.horizontales > ol > li:nth-child(${input.y + 1}), .definitions.verticales > ol > li:nth-child(${input.x + 1})`
     )) {
       li.classList.add("selectionee");
     }
     for (li of document.querySelectorAll(
-      `.definitions.horizontales > ol > li:not(:nth-child(${
-        input.y + 1
-      })), .definitions.verticales > ol > li:not(:nth-child(${input.x + 1}))`
+      `.definitions.horizontales > ol > li:not(:nth-child(${input.y + 1})), .definitions.verticales > ol > li:not(:nth-child(${input.x + 1}))`
     )) {
       li.classList.add("non-selectionee");
+    }
+    if (input.dataset.iddh) {
+      for (li of document.querySelectorAll(`.definitions.horizontales ol li ol #${input.dataset.iddh}`)) {
+        for (liVoisin of li.parentElement.querySelectorAll("li")) {
+          if (liVoisin == li) {
+            liVoisin.classList.add("selectionee");
+          } else {
+            liVoisin.classList.add("non-selectionee");
+          }
+        }
+      }
+    }
+    if (input.dataset.iddv) {
+      for (li of document.querySelectorAll(`.definitions.verticales ol li ol #${input.dataset.iddv}`)) {
+        for (liVoisin of li.parentElement.querySelectorAll("li")) {
+          if (liVoisin == li) {
+            liVoisin.classList.add("selectionee");
+          } else {
+            liVoisin.classList.add("non-selectionee");
+          }
+        }
+      }
     }
 
     input.select();
@@ -79,21 +97,11 @@ for (let input of inputs) {
   };
 
   input.onblur = function (event) {
-    for (li of document.querySelectorAll(
-      `.definitions.horizontales > ol > li:nth-child(${
-        input.y + 1
-      }), .definitions.verticales > ol > li:nth-child(${input.x + 1})`
-    )) {
+    for (li of document.querySelectorAll(".definitions li")) {
       li.classList.remove("selectionee");
-    }
-    for (li of document.querySelectorAll(
-      `.definitions.horizontales > ol > li:not(:nth-child(${
-        input.y + 1
-      })), .definitions.verticales > ol > li:not(:nth-child(${input.x + 1}))`
-    )) {
       li.classList.remove("non-selectionee");
     }
-  };
+  }
 }
 
 for (let input of grilleForm.querySelectorAll(".nouvelle-grille input")) {

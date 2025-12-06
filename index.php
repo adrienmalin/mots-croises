@@ -170,8 +170,8 @@ function definition_courante($definitions, $position) {
 ?>
                                 <input id="case-<?= chr($x + 65) . ($y + 1) ?>" type="text" maxlength="1" size="1"
                                     pattern="[A-Z]" title="<?= $title ?>"
-                                    data-iddh="<?= isset($definition_horizontale["definition"])? "dh-$y.$iddh" : "" ?>"
-                                    data-iddv="<?= isset($definition_verticale["definition"])? "dv-$x.$iddv" : "" ?>"
+                                    data-iddh="<?= isset($definition_horizontale["definition"])? "dh-$y-$iddh" : "" ?>"
+                                    data-iddv="<?= isset($definition_verticale["definition"])? "dv-$x-$iddv" : "" ?>"
                                 />
                             </td>
 <?php               endif; ?>
@@ -188,25 +188,23 @@ function definition_courante($definitions, $position) {
                     return isset($definition["definition"]);
                 });
 ?>
-                        <li>
 <?php           if (count($definitions)): ?>
 <?php               if (count($definitions) == 1): ?>
 <?php                   foreach ($definitions as $id => $definition): ?>
-                            <label id="<?= "dh-$y.$id" ?>" for="case-1<?= $y + 1 ?>">
-                                <?= formatter_definition($definition) ?>
-                            </label>
+                            <li id="<?= "dh-$y-$id" ?>"><label for="case-A<?= $y + 1 ?>"><?= formatter_definition($definition) ?></label></li>
 <?php                   endforeach ?>
 <?php               else: ?>
+                        <li>
                             <ol>
 <?php                   foreach ($definitions as $id => $definition): ?>
-                                <label id="<?= "dh-$y.$id" ?>" for="case-<?= chr($definition["debut"] + 0x41) ?><?= $y + 1 ?>">
-                                    <li><?= formatter_definition($definition) ?></li>
-                                </label>
+                                <li id="<?= "dh-$y-$id" ?>">
+                                    <label for="case-<?= chr($definition["debut"] + 0x41) ?><?= $y + 1 ?>"><?= formatter_definition($definition) ?></label>
+                                </li>
 <?php                   endforeach ?>
                             </ol>
+                        </li>
 <?php               endif ?>
 <?php           endif ?>
-                        </li>
 <?php       endforeach ?>
                     </ol>
                 </div>
@@ -218,25 +216,23 @@ function definition_courante($definitions, $position) {
                     return isset($definition["definition"]);
                 });
 ?>
-                        <li>
 <?php           if (count($definitions)): ?>
 <?php               if (count($definitions) == 1): ?>
 <?php                   foreach ($definitions as $id => $definition): ?>
-                            <label id="<?= "dv-$x.$id" ?>" for="case-<?= chr($x + 0x41) ?>1">
-                                <?= formatter_definition($definition) ?>
-                            </label>
+                        <li id="<?= "dv-$x-$id" ?>"><label for="case-<?= chr($x + 0x41) ?>1"><?= formatter_definition($definition) ?></label></li>
 <?php                   endforeach ?>
 <?php               else: ?>
+                        <li>
                             <ol>
 <?php                   foreach ($definitions as $id => $definition): ?>
-                                <label id="<?= "dv-$x.$id" ?>" for="case-<?= chr($x + 0x41) ?><?= $definition["debut"] + 1 ?>">
-                                    <li><?= formatter_definition($definition) ?></li>
-                                </label>
+                                <li id="<?= "dv-$x-$id" ?>">
+                                    <label for="case-<?= chr($x + 0x41) ?><?= $definition["debut"] + 1 ?>"><?= formatter_definition($definition) ?></label>
+                                </li>
 <?php                   endforeach ?>
                             </ol>
+                        </li>
 <?php               endif ?>
 <?php           endif ?>
-                        </li>
 <?php       endforeach ?>
                     </ol>
                 </div>
@@ -251,11 +247,9 @@ function definition_courante($definitions, $position) {
                 <img src="favicons/favicon.svg" width="16" height="16">
                 <button type="submit">Nouvelle grille</button>
                 de
-                <input type="number" id="lignes" <?= isset($_GET["lignes"]) ? ' name="lignes"' : "" ?>
-                    value="<?= $hauteur ?>" min="<?= HAUTEUR_MIN ?>" max="<?= HAUTEUR_MAX ?>" />
+                <input type="number" id="lignes" <?= isset($_GET["lignes"]) ? ' name="lignes"' : "" ?> value="<?= $hauteur ?>" min="<?= HAUTEUR_MIN ?>" max="<?= HAUTEUR_MAX ?>" />
                 lignes et
-                <input type="number" id="colonnes" <?= isset($_GET["colonnes"]) ? ' name="colonnes"' : "" ?>
-                    value="<?= $largeur ?>" min="<?= LARGEUR_MIN ?>" max="<?= LARGEUR_MAX ?>" />
+                <input type="number" id="colonnes" <?= isset($_GET["colonnes"]) ? ' name="colonnes"' : "" ?> value="<?= $largeur ?>" min="<?= LARGEUR_MIN ?>" max="<?= LARGEUR_MAX ?>" />
                 colonnes
             </div>
         </form>
