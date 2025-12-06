@@ -263,7 +263,7 @@ class Grille implements ArrayAccess
         session_id("$this->largeur,$this->hauteur,$id");
         session_start(["use_cookies" => false]);
 
-        $_SESSION = serialize($this);
+        $_SESSION["grille"] = serialize($this);
     }
 
     public function load($id)
@@ -275,7 +275,7 @@ class Grille implements ArrayAccess
             return false;
         }
 
-        unserialize($_SESSION);
+        unserialize($_SESSION["grille"]);
 
         return true;
     }
