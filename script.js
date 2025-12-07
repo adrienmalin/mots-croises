@@ -48,8 +48,6 @@ for (let input of inputs) {
         }
       }
     }
-
-    input.select();
   };
 
   input.onkeydown = function (event) {

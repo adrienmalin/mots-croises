@@ -191,7 +191,7 @@ function definition_courante($definitions, $position) {
 <?php           if (count($definitions)): ?>
 <?php               if (count($definitions) == 1): ?>
 <?php                   foreach ($definitions as $id => $definition): ?>
-                            <li id="<?= "dh-$y-$id" ?>"><label for="case-A<?= $y + 1 ?>"><?= formatter_definition($definition) ?></label></li>
+                        <li id="<?= "dh-$y-$id" ?>"><label for="case-A<?= $y + 1 ?>"><?= formatter_definition($definition) ?></label></li>
 <?php                   endforeach ?>
 <?php               else: ?>
                         <li>
@@ -204,6 +204,8 @@ function definition_courante($definitions, $position) {
                             </ol>
                         </li>
 <?php               endif ?>
+<?php           else: ?>
+                        <li></li>
 <?php           endif ?>
 <?php       endforeach ?>
                     </ol>
@@ -232,6 +234,8 @@ function definition_courante($definitions, $position) {
                             </ol>
                         </li>
 <?php               endif ?>
+<?php           else: ?>
+                        <li></li>
 <?php           endif ?>
 <?php       endforeach ?>
                     </ol>
