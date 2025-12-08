@@ -17,37 +17,36 @@ for (let input of inputs) {
 
   input.onfocus = function (event) {
     for (li of document.querySelectorAll(
-      `.definitions.horizontales > ol > li:nth-child(${input.y + 1}), .definitions.verticales > ol > li:nth-child(${input.x + 1})`
+      `.definitions.horizontales > ol > li:nth-child(${input.y + 1})`
     )) {
       li.classList.add("selectionee");
+      for (liEnfant of li.querySelectorAll("li")) {
+        if (liEnfant.id == input.dataset.iddh) {
+          liEnfant.classList.add("selectionee");
+        } else {
+          liEnfant.classList.add("non-selectionee");
+        }
+      }
+    }
+    for (li of document.querySelectorAll(
+      `.definitions.verticales > ol > li:nth-child(${input.x + 1})`
+    )) {
+      li.classList.add("selectionee");
+      for (liEnfant of li.querySelectorAll("li")) {
+        if (liEnfant.id == input.dataset.iddv) {
+          liEnfant.classList.add("selectionee");
+        } else {
+          liEnfant.classList.add("non-selectionee");
+        }
+      }
     }
     for (li of document.querySelectorAll(
       `.definitions.horizontales > ol > li:not(:nth-child(${input.y + 1})), .definitions.verticales > ol > li:not(:nth-child(${input.x + 1}))`
     )) {
       li.classList.add("non-selectionee");
     }
-    if (input.dataset.iddh) {
-      for (li of document.querySelectorAll(`.definitions.horizontales ol li ol #${input.dataset.iddh}`)) {
-        for (liVoisin of li.parentElement.querySelectorAll("li")) {
-          if (liVoisin == li) {
-            liVoisin.classList.add("selectionee");
-          } else {
-            liVoisin.classList.add("non-selectionee");
-          }
-        }
-      }
-    }
-    if (input.dataset.iddv) {
-      for (li of document.querySelectorAll(`.definitions.verticales ol li ol #${input.dataset.iddv}`)) {
-        for (liVoisin of li.parentElement.querySelectorAll("li")) {
-          if (liVoisin == li) {
-            liVoisin.classList.add("selectionee");
-          } else {
-            liVoisin.classList.add("non-selectionee");
-          }
-        }
-      }
-    }
+
+    input.select();
   };
 
   input.onkeydown = function (event) {
