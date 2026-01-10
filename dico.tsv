@@ -31,7 +31,9 @@ ABREVIATION	Mot court incompréhensible qui désigne un mot long
 ABRI	L’orage lui amène des clients	Tristan Bernard
 ABRICOTIER	Un arbre qui vous met à l'abri des tempêtes marines ?	Jacques Drillon
 ABSENCE	Lorsque la chose ou la personne n’est pas là où on le souhaite
-ABSENT	Particulièrement exposé au dénigrement ; calomnié ; définitivement dans son tort ; oublié de la considération et de l'affection de chacun	Ambrose Bierce
+ABSENT	Particulièrement exposé au dénigrement	Ambrose Bierce
+ABSENT	Calomnié	Ambrose Bierce
+ABSENT	Définitivement dans son tort	Ambrose Bierce
 ABSIDIOLE	Toujours rayonnante et presque toujours flamboyante	Georges Perec
 ABSTENTION	Extinction de voix	Robert Scipion
 ABSURDITE	Affirmation manifestement incompatible avec notre propre opinion	Ambrose Bierce
@@ -484,7 +486,7 @@ AVIS	La division survient justement quand on ne le partage pas	Pangloss
 AVOCAT	Bon pour la défense sauf s'il est général	Michel Laclos
 AVOCAT	Il sort en robe de chambre	Didier Léonard
 AVOCAT	Collègue du médecin capable de signer de plus grosses ordonnances que lui
-AVOCAT	"Personne qui écrit un document de 10.000 mots et l'intitule "" Sommaire """	Franz Kafka.
+AVOCAT	Personne qui écrit un document de 10 000 mots et l'intitule "Sommaire"	Franz Kafka
 AVOIR	Bien possédé ou bien posséder	Bernard Philippet
 AVOIR	Il fond quand on le croque	Lucien Lacau
 AVOUER	Confesser une faute	Ambrose Bierce
@@ -517,7 +519,7 @@ BAL	Pour l'ouvrir, il faut tourner	Lucien Lacau
 BAL	Ne s'ouvre pas tout seul	Jean-Paul Vanden Branden
 BANLIEUE	Avant-centre	Michel Laclos
 BANQUIER	Homme respectable, surtout s’il vous prête	Léon Bloy
-BANQUIER	Il te prête un parapluie par beau temps et te le reprend lorsqu'il commence à pleuvoir	Mark Twain.
+BANQUIER	Il te prête un parapluie par beau temps et te le reprend lorsqu'il commence à pleuvoir	Mark Twain
 BANQUIER	Personne qui serait d'accord pour vous consentir un prêt à la condition que vous lui apportiez la preuve que vous n'en avez pas besoin	Pierre Desproges
 BAPTEME	Rite sacré d'une telle efficacité que celui qui trouve le chemin du ciel sans l'avoir reçu sera plongé dans les affres de la détresse pour l'éternité	Ambrose Bierce
 BAR	On y trouve à boire et à manger	Georges Perec
@@ -794,7 +796,7 @@ COCO	Individu suspect
 COCO	Rouge familier
 COCU	Victime des rapports d’une moitié avec un tiers	L’Express
 COCU	Homme qui a une femme et un meilleur ami
-COEUR	Siège de la passion chez les femmes. Ceci montre bien le respect des règles de l'adaptation dans l'évolution féminine, la femme n'ayant, on le sait, ni queue ni tête.
+COEUR	Siège de la passion chez les femmes. Ceci montre bien le respect des règles de l'adaptation dans l'évolution féminine, la femme n'ayant, on le sait, ni queue ni tête
 COI	Coït interrompu	Sport Cérébral
 COI	Silencieux et tranquille
 COIN	Se bouche en soufflant	Michel Laclos
@@ -820,7 +822,7 @@ CONDOLEANCE	Manière de démontrer que le deuil est un moindre mal à côté de 
 CONFERENCIER	Homme qui met sa main dans sa poche, sa langue dans votre oreille et sa foi dans votre patience	Ambrose Bierce
 CONFIANCE	Liberté que l'on accorde à une personne pour qu'elle fasse des bêtises
 CONNAISSANCE	Personne que l’on connaît assez pour lui emprunter de l’argent, mais pas assez pour lui en prêter	Ambrose Bierce
-CONSCIENCE	Voix intérieure qui vous dit de ne pas faire une chose... une fois que cette chose est faite.
+CONSCIENCE	Voix intérieure qui vous dit de ne pas faire une chose... une fois que cette chose est faite
 CONSCIENCE	Ce qui vous fait penser que quelqu'un peut regarder quand vous allez faire quelque chose de mal
 CONSCIENCE	Ce qui vous empêche de jouir de vos péchés
 CONSCIENCE	Cette chose pénible entre les siestes
@@ -835,7 +837,7 @@ CONSONNES	Dans le vin mais pas dans l'eau	Thierry Larsan
 CONSULTANT	Se dit de celui qui consulte ta montre, te dit l'heure et te fait payer la prestation	Pierre Desproges
 CONSULTER	Rechercher l'approbation d'autrui pour un projet déjà bien arrêté	Ambrose Bierce
 CONTAGIEUSE	Facile à attraper	Lucien Lacau
-CONTRACEPTION	permet d'éviter la grossesse grâce à des tactiques diverses : pilules, diaphragme, préservatif... ou passer beaucoup de temps avec les enfants des autres.
+CONTRACEPTION	permet d'éviter la grossesse grâce à des tactiques diverses : pilules, diaphragme, préservatif... ou passer beaucoup de temps avec les enfants des autres
 CONVERSATION	Il faut être au moins deux pour la soutenir	Lucien Lacau
 CONVERSATION	Foire où chacun propose ses petits articles mentaux, chaque exposant étant trop préoccupé par l'arrangement de ses propres marchandises pour s'intéresser à celles de ses voisins	Ambrose Bierce
 CONVICTION	Intime à la cour	Lucien Lacau
@@ -856,7 +858,7 @@ COUCHETTE	Vous permet, en somme, d’être en train	Georges Perec
 COUCHETTE	Grâce à elle on peut être en train couenne	Tour de cochon
 COULANT	S’accorde à nœud	Lionel Leteur
 COUP DE FOUDRE	Ce qui arrive lorsque se rencontrent deux personnes très excitées, mais peu sélectives
-COUPE PAPIER	"Lame pour ""les trois mousquetaires"""	Thierry Larsan
+COUPE PAPIER	Lame pour <em>les Trois mousquetaires</em>	Thierry Larsan
 COUPEROSE	Ne désigne absolument pas une espèce de sécateur	Georges Perec
 COUR	Plat agréable à faire	Michel Laclos
 COUR	S'annonce aux messieurs, se fait aux dames	Bernard Philippet
@@ -914,7 +916,7 @@ CUITE	Ne sera plus jamais crue	Michel Laclos
 CUITE	Prise à coups de canons	Dédale
 CUITE	Peut être mémorable et ne laisser aucun souvenir	Pangloss
 CUL	Séant est plus séant	Michel Laclos
-CULTURE	La culture c'est comme un parachute, quand on en a pas, on s'écrase	Pierre Desproges.
+CULTURE	La culture c'est comme un parachute, quand on en a pas, on s'écrase	Pierre Desproges
 CUPIDE	Que la braise enflamme	Guy Hachette
 CURE	Il soigne l’âme, elle soigne le corps	Bernard Philippet
 CURES	Pour l’âme ou pour le corps	Robert Scipion
@@ -1048,10 +1050,10 @@ DOL	Manœuvres frauduleuses
 DOL	Tromperie dans un contrat
 DOMICILE	Fixe avec adresse	Michel Laclos
 DOMICILE	Il faut en élire un pour voter	Sport Cérébral
-DON JUAN	"Nom propre devenu commun, et qualifiant un homme dont la bonté naturelle le pousse à participer au bonheur d'un maximum de représentantes de l'autre sexe dans le temps le plus réduit possible. Au féminin, ce mot se transforme en ""SALOPE"". On ignore pourquoi."
+DON JUAN	Nom propre devenu commun, et qualifiant un homme dont la bonté naturelle le pousse à participer au bonheur d'un maximum de représentantes de l'autre sexe dans le temps le plus réduit possible. Au féminin, ce mot se transforme en <em>salope</em>. On ignore pourquoi."
 DONA	Sol d’hernani	Michel Laclos
 DORE	Brillant illustrateur	Michel Laclos
-DORMEUR	"Celui dont la devise est : ""Après une grasse matinée, rien ne vaut une bonne sieste avant d'aller se coucher"""
+DORMEUR	Celui dont la devise est : "Après une grasse matinée, rien ne vaut une bonne sieste avant d'aller se coucher"
 DORTOIR	A plus ou moins de pages	Michel Laclos
 DOS	Pas satisfait dans la plénitude	Robert Scipion
 DOS	Partie de votre ami que vous avez le privilège de contempler quand vous êtes dans l'ennui	Ambrose Bierce
@@ -1354,7 +1356,7 @@ ERG	Étendue désertique
 ERIC	Tabarly le portait à l'endroit comme à l'envers	Hervé Hardouin
 ERIGNE	Écarteur chirurgical
 ERIGNE	Pince utile au chirurgien
-ERINE	"Variante de ""érigne"""
+ERINE	Variante de <em>érigne</em>
 ERMITAGE	Maison de retraite	Julien Soulié
 ERMITE	Homme en retraite
 ERODE	Vieilli autant que s'il avait un h	Yannick Le Nagard
@@ -1588,7 +1590,7 @@ FOI	Cric de montagne	Corinne Beltz
 FOI	Croyance sans preuve dans ce qui est affirmé par quelqu'un qui parle sans savoir, ou qui pense sans comparer	Ambrose Bierce
 FOLK	Chansons interminables décrivant en détail de tragiques naufrages du temps de la marine à voile
 FONCTIONNAIRE	Celui qui n'a plus de montre
-FONCTIONNAIRE	C'est un peu comme bouquin dans une bibliothèque : plus t'es placé haut, moins souvent tu sers !	Coluche.
+FONCTIONNAIRE	C'est un peu comme bouquin dans une bibliothèque : plus t'es placé haut, moins souvent tu sers !	Coluche
 FOOTBALL	Ce que toute femme épouse sans le savoir
 FOOTBALLEUR	Il vaut mieux qu'il n'ait pas qu'un seul but dans sa vie	Robert Scipion
 FOR	Au fond de soi-même
@@ -1743,7 +1745,7 @@ HERE	Jeune cerf
 HERE	Pauvre malheureux
 HERITE	Récupère la braise du feu	Michel Laclos
 HERITE	Passe de perte à profit	Marc Aussitot
-HERITIER	Un homme qui vous prend le pouls chaque fois qu'il vous serre la main	Catherine Nay.
+HERITIER	Un homme qui vous prend le pouls chaque fois qu'il vous serre la main	Catherine Nay
 HERITIERE	Parti	Georges Perec
 HERNIE	Sortie de la chambre ou vous oblige à la garder	Philippe Dupuis
 HEROINE	Blanche-neige ou blanche neige	Jean Richir
@@ -1849,7 +1851,7 @@ IMPOSE	Mis dans l’assiette
 IMPOSITION	Se fait avec les mains ou avec des feuilles	Michel Laclos
 IMPOSTEUR	Candidat rival à des honneurs publics	Ambrose Bierce
 IMPOSTURE	La vie du commerce, l’âme de la religion, le leurre de la galanterie et le fondement du pouvoir politique	Ambrose Bierce
-IMPRIMEUR	Homme qui ne manque pas de caractère et qui cherche à faire bonne impression	Serge Mirjean.
+IMPRIMEUR	Homme qui ne manque pas de caractère et qui cherche à faire bonne impression	Serge Mirjean
 IMPUNEMENT	Dans l'état d'esprit intermédiaire entre le moment de la faute et le moment de la punition	Ambrose Bierce
 IMPUNITE	Prospérité	Ambrose Bierce
 IN	Est à la mode
@@ -1967,7 +1969,7 @@ IO	Gardée par Argus
 IODE	Marin finissant dans un phare	Pangloss
 ION	Atome ou groupe d'atomes portant une charge électrique
 ION	Plus ou moins chargé
-IOT	Réseau d’objets connectés (capteurs, montres, appareils, etc.) interagissant via Internet.
+IOT	Réseau d’objets connectés (capteurs, montres, appareils, etc.) interagissant via Internet
 IOTA	Lettre grecque
 IOTA	Petite quantité
 IP	Ne manque pas d'adresse pour jouer au chat et à la souris	Julien Soulié
@@ -2078,7 +2080,7 @@ KORE	Statue de jeune fille grecque
 KORRIGAN	Nain des légendes bretonnes
 KOT	Chambre d'étudiant en Belgique
 KSAR	Village fortifié d'Afrique du Nord
-KSOUR	"Pluriel de ""ksar"""
+KSOUR	Pluriel de <em>ksar</em>
 KWA	Langue parlée en Afrique
 L
 LA	Article en réclame	Dédale
@@ -2124,7 +2126,7 @@ LEGITIME	Juste une moitié
 LEGS	Il est d'autant plus généreux que son auteur était avare	Dédale
 LEGUME	Potentat ou impotent	Philippe Harang
 LEGUME	Se féminise en grossissant	Philippe Dupuis
-LEI	"Pluriel de ""leu"""
+LEI	Pluriel de <em>leu</em>
 LENA	Fleuve de Sibérie
 LENDEMAIN	Bien des choses y sont remises	Georges Perec
 LENDEMAIN	Ne chante pas en solo	Didier Léonard
@@ -2255,7 +2257,7 @@ MACARONI	Pâte en tube	Michel Laclos
 MACHICOULIS	Servait à verser l'huile sur la salade	Bernard Philippet
 MACHINATION	Méthode employée par un adversaire pour faire échouer nos propres honorables efforts vers un objectif clair et estimable	Ambrose Bierce
 MACON	Spécialiste du gâchis
-MADEMOISELLE	"Titre attribué aux femmes non mariées, pour indiquer qu'elles sont ""sur le marché"""
+MADEMOISELLE	Titre attribué aux femmes non mariées, pour indiquer qu'elles sont "sur le marché"
 MAERL	Amendement marin
 MAERL	Sable de Bretagne
 MAGAZINES	Objets de consultation gratuite en cabinets médicaux	Lionel Leteur
@@ -2619,7 +2621,7 @@ OLE	Refrain d'aficionados
 OLECRANES	Permettent de jouer des coudes	Georges Perec
 OLEINE	Substance présente dans les huiles
 OLIVIER	Rameau ou messiaen	Michel Laclos
-OLLE	"Variante de ""olé"""
+OLLE	Variante de <em>olé</em>
 OMBRAGE	Ne se prend pas avec plaisir	Paul Roisin
 OMBRE	Objet d’un troc	Jean Teularge
 OMELETTE	Elle en bave après avoir été battue	Lucien Lacau
@@ -2710,7 +2712,7 @@ OS	Avec un suaire quand ils n’ont pas de linceul	Georges Perec
 OS	Reliefs des côtes	Michel Laclos
 OS	Carpe mais pas dans un bassin	Michel Laclos
 OS	Carpe que les carpes n'ont pas	Hervé Hardouin
-OS	Système d’exploitation (Windows, Linux, macOS, etc.) permettant d’utiliser l’ordinateur.
+OS	Système d’exploitation (Windows, Linux, macOS, etc.) permettant d’utiliser l’ordinateur
 OS	Régal de mâtin
 OSE	Salé et dessalé	Julien Soulié
 OSEILLE	Fait de la soupe ou de la galette	Michel Laclos
@@ -2787,7 +2789,7 @@ PAROLE	Les paroles seules comptent : tout le reste est bavardage
 PARQUET	Reçoit les plinthes ou les plaintes	Jean Teularge
 PARTICIPES	Lu et approuvé	Lucien Lacau
 PARTIR	Il vaut mieux le faire avec la caisse plutôt que d'elle	Jacques Drillon
-PARTOUSE	"Amour avec un grand ""tas"""	Patrick Sébastien
+PARTOUSE	Amour avec un grand "tas"	Patrick Sébastien
 PAS	Le deuxième est-il gratuit ?	Georges Perec
 PASTEUR	Homme du ministère ou homme de l'institut	Michel Laclos
 PAT	Nul aux échecs
@@ -2839,7 +2841,7 @@ PERS	Entre bleu et vert
 PERSAN	Chat ou langue de shah	Sport Cérébral
 PERSEVERANCE	Humble vertu qui permet aux médiocres de parvenir à un succès peu glorieux	Ambrose Bierce
 PERTE	Peut être sèche, même si elle concerne du liquide	Chantal de Séréville
-PERTE	"Privation de ce que nous possédons, ou ne possédons pas. C'est dans ce deuxième sens que l'on dit d'un candidat battu qu'il a ""perdu les élections"""	Ambrose Bierce
+PERTE	Privation de ce que nous possédons, ou ne possédons pas. C'est dans ce deuxième sens que l'on dit d'un candidat battu qu'il a "perdu les élections"	Ambrose Bierce
 PESE	Regarde un fléau
 PESO	Monnaie d'Amérique latine
 PESSIMISTE	Optimiste qui a l'expérience	Pierre Desproges
@@ -2929,7 +2931,7 @@ POISSONS	Engluons	Pangloss
 POKER	Jeu qui semble se jouer avec des cartes et dans un but que le lexicographe ignore absolument	Ambrose Bierce
 POLAR	Dévoré par les amateurs de poulets	Bernard Philippet
 POLE	On pourrait en baptiser un emile victor	Georges Perec
-POLICE	Refuge pour les alcooliques qu'on n'a pas voulu à la SNCF et aux PTT	Coluche.
+POLICE	Refuge pour les alcooliques qu'on n'a pas voulu à la SNCF et aux PTT	Coluche
 POLICHINELLE	Quand il n'est pas dans le tiroir, ses secrets sont connus de tout le monde	Jean Teularge
 POLISSONS	Pas sages ou faisons des passages répétés	Jean Teularge
 POLITESSE	La plus acceptable des hypocrisies	Ambrose Bierce
@@ -3071,8 +3073,11 @@ RATURE	Le commencement et la fin de toute littérature	Georges Perec
 RAVI	On ne l'est pas quand on l'est	Hervé Hardouin
 RDP	Connexion à distance à un bureau windows
 REA	Permet de lever ou de se relever	Bernard Philippet
-REALISME	Art de dépeindre la nature telle qu'elle est vue par les crapauds. Charme qui ressort d'un paysage peint par une taupe, ou d'une histoire écrite par un asticot	Ambrose Bierce
-REALITE	Le songe d'un philosophe fou. Ce qui resterait dans la coupe si l'on devenait pur esprit. Le noyau d'un vide	Ambrose Bierce
+REALISME	Art de dépeindre la nature telle qu'elle est vue par les crapauds	Ambrose Bierce
+REALISME	Charme qui ressort d'un paysage peint par une taupe, ou d'une histoire écrite par un asticot	Ambrose Bierce
+REALITE	Le songe d'un philosophe fou	Ambrose Bierce
+REALITE	Ce qui resterait dans la coupe si l'on devenait pur esprit	Ambrose Bierce
+REALITE	Le noyau d'un vide	Ambrose Bierce
 REALITE	Substitut pour ceux qui ne supportent pas la drogue
 REBELLE	Personne qui proposait une forme nouvelle de désordre politique, et qui a échoué dans sa tentative pour l'imposer	Ambrose Bierce
 RECALER	Etendre après avoir fait sécher	Pangloss
@@ -3100,7 +3105,7 @@ RELIGIEUSE	Evoque aussi bien un voile qu’une mante	Georges Perec
 RELIGION	Se décline en plusieurs fois	Bernard Philippet
 RELIURE	Exige des nerfs solides	Lucien Lacau
 REMARIAGE	C'est encore une union, ou plutôt une réunion	Georges Perec
-REMARIAGE	Triomphe de l'espoir sur l'expérience	Rita Rudner.
+REMARIAGE	Triomphe de l'espoir sur l'expérience	Rita Rudner
 REMI	Réalisa la conversion du franc	Lionel Leteur
 REMONTRANCE	Reproche effectué gentiment, comme avec un hachoir à viande	Ambrose Bierce
 REMUEMENAGE	Incident conjugal ?	Michel Laclos
@@ -3108,7 +3113,7 @@ RENALES	Des insuffisances pour julien sorel ?	Jacques Drillon
 RENARDEAU	Avant on ne l'appelait quand même pas goupillon !	Georges Perec
 RENDEZVOUS	Avec lui on hésite entre l'ordre intime et l'ordre intimé	Jacques Drillon
 RENFLOUEMENT	Sort des fonds ou en apporte	Philippe Dupuis
-RENGAINE	Un air qui commence par vous entrer par une oreille et qui finit par vous sortir par les yeux	"Raymond Devos, extrait du sketch ""Prêter l’oreille""."
+RENGAINE	Un air qui commence par vous entrer par une oreille et qui finit par vous sortir par les yeux	Raymond Devos
 RENI	Guide pour amateur d’art	Corinne Beltz
 RENTABLES	Quand les choses le sont c’est qu’il y a un certain rapport	Georges Perec
 RENTREE	Revenue ou revenu	Michel Laclos
@@ -3240,7 +3245,7 @@ SALADIER	La romaine s'y fatigue, pas la russe
 SALAIRE	Gain de place	Dédale
 SALE	Petit que les lentilles ne font pas grossir	Michel Laclos
 SALISSANT	Propre mais pas pour longtemps	Jacques Drillon
-SALOPE	"Qualifie une femme qui a des rapports intimes avec tout le monde, sauf l'homme qui utilise ce vocable. Voir aussi ""DON JUAN""."
+SALOPE	Qualifie une femme qui a des rapports intimes avec tout le monde, sauf l'homme qui utilise ce vocable. Voir aussi <em>DON JUAN</em>
 SAMOURAI	Solitaire dans le cinéma français mais pas dans le cinéma japonais	Michel Laclos
 SAND	S'est fait un nom en privant d'eau son jules	Georges Perec
 SANG	Rouge même s'il est bleu	Yannick Le Nagard
@@ -3412,9 +3417,9 @@ SOLEN	Couteau dans la lame	Guy Hachette
 SOLITAIRES	Certains brillent en société, d'autres l'évitent	Pangloss
 SOLO	Passage à voix unique	Michel Laclos
 SOMMELIER	Ses propos sont souvent très crus	Philippe Dupuis
-SOMMETS	Points communs à g7 et k2	Lionel Leteur
+SOMMETS	Points communs à G7 et K2	Lionel Leteur
 SON	Trouve preneur	Bernard Philippet
-SORCIERE	1/ Horrible et repoussante vieille femme, en perverse activité avec le diable. 2/ Belle et attirante jeune personne, dont les perverses activités dépassent le diable	Ambrose Bierce
+SORCIERE	1) Horrible et repoussante vieille femme, en perverse activité avec le diable. 2) Belle et attirante jeune personne, dont les perverses activités dépassent le diable	Ambrose Bierce
 SORT	S’acoquine volontiers	Robert Scipion
 SORTS	Sont jetés avant d'avoir servi	Pangloss
 SOS	De quelque côté qu’on le prenne, c’est toujours un appel pressant	Georges Perec
@@ -3799,10 +3804,10 @@ URNE	On y met les cendres du feu	Michel Laclos
 URNE	Fournit des vestes ou des écharpes	Lucien Lacau
 URNE	Est sortie pour faire un tour	Dédale
 URNE	Pleine d'espérance ou pleine de regrets	Jean Teularge
-UROLOGUE	"Médecin qui regarde ton ""affaire"" avec mépris, te la touche avec dégoût, et te présente une note d'honoraires comme s'il te l'avait satisfaite"
+UROLOGUE	Médecin qui regarde ton "affaire" avec mépris, te la touche avec dégoût, et te présente une note d'honoraires comme s'il te l'avait satisfaite
 URTICAIRE	Rougit la poire après les fraises	Michel Laclos
 URUBU	Pas autour, mais pas loin	Bernard Philippet
-URUS	"Variante d'""ure"""
+URUS	Variante d'"ure"
 US	Usages anciens ou sans âges	Marc Aussitot
 US	Anciennes traditions
 USAGES	Il est mal vu de s’asseoir dessus au salon	Corinne Beltz
@@ -3854,7 +3859,7 @@ VAU	Pièce qui supporte une voute en construction
 VE	Cale de mécanique
 VEAU	Cow boy	Bernard Philippet
 VEDETTE	Sur la scène ou la seine	Michel Laclos
-VEDETTE	Personne qui travaille dur toute sa vie pour être connue, et qui porte ensuite de grosses lunettes noires pour ne pas être reconnue. 	Pierre Desproges
+VEDETTE	Personne qui travaille dur toute sa vie pour être connue, et qui porte ensuite de grosses lunettes noires pour ne pas être reconnue	Pierre Desproges
 VEGETARIENNE	Les plaisirs de la chair lui sont inconnus	Marc Aussitot
 VEILLEUSE	Loupiote pour un loupiot	Thierry Larsan
 VEINE	Cave pleine de rouge	Robert Scipion
@@ -3887,7 +3892,7 @@ VIE	La faire la raccourcit	Robert Scipion
 VIE	On l'abrège en la faisant	Max Favalelli
 VIEIL	Pour un arbre ou un acacia, mais pas un bouleau	Marc Aussitot
 VIEILLESSE	Période de notre existence pendant laquelle nous composons avec les vices que nous chérissons encore, en vitupérant ceux que nous n'osons plus pratiquer	Ambrose Bierce
-VIEILLIR	"Quand on dit ""Tu"" à tout le monde, et que tout le monde nous dit ""Vous"""	Marcel Pagnol
+VIEILLIR	Quand on dit "Tu" à tout le monde, et que tout le monde nous dit "Vous"	Marcel Pagnol
 VIELE	Instrument de musique à cordes frottées
 VIERGE	Forêt où la main de l'homme n'a jamais mis le pied
 VIGO	Célèbre grâce à ses galions ou à ses péniches	Michel Laclos
@@ -3897,7 +3902,7 @@ VILAIN	Ses jeux viennent toujours du manuel	Robert Scipion
 VIN	Bourre son sac	Bernard Philippet
 VIN	A son rôle dans l'église, bien qu'il n'y soit sûrement pas baptisé	Lionel Leteur
 VIN	C'est dommage de l'avoir mauvais quand il est bon	Lionel Leteur
-VIN	"Jus de raisin fermenté connu de l'association des femmes chrétiennes sous le nom de ""boisson"" et quelquefois de ""rhum"""	Ambrose Bierce
+VIN	Jus de raisin fermenté connu de l'association des femmes chrétiennes sous le nom de "boisson" et quelquefois de "rhum"	Ambrose Bierce
 VIOLENCE	Se le faire, c'est parois s'empêcher de la faire	Michel Laclos
 VIOLON	Instrument qui titille les oreilles humaines par le frottement d’une queue d'un cheval sur les boyaux d'un chat	Ambrose Bierce
 VIRGULE	Peut être mise au point	Michel Laclos
@@ -3982,7 +3987,8 @@ ZANNI	Bouffon de la comédie italienne
 ZANZI	Jeu de hasard à trois dés
 ZEBU	Grand bovidé domestique de l'Inde
 ZEE	Saint-pierre
-ZELE	Maladie nerveuse qui afflige les jeunes et les inexpérimentés. Passion qui ne s’élance que pour mieux s’étaler	Ambrose Bierce
+ZELE	Maladie nerveuse qui afflige les jeunes et les inexpérimentés	Ambrose Bierce
+ZELE	Passion qui ne s’élance que pour mieux s’étaler	Ambrose Bierce
 ZEN	École bouddhiste
 ZENITH	Coordonnée astronomique
 ZENITH	Point culminant
