@@ -104,11 +104,16 @@ class Grille implements ArrayAccess
                 $this->definitions["horizontales"][$y] = [];
                 foreach($mots as $mot) {
                     $definitions = $this->dico[$mot["longueur"]][$mot["mot"]];
-                    var_dump($definitions);
                     if (count($definitions)) {
                         $definition = $definitions[mt_rand(0, count($definitions) - 1)];
-                        if (isset($definition["definition"])) $mot["definition"] = $definition["definition"];
-                        if (isset($definition["auteur"])) $mot["auteur"] = $definition["auteur"];
+                        if (is_array($definition)) {
+                            foreach ($definition as $auteur => $def) {
+                                $mot["definition"] = $def;
+                                $mot["auteur"] = $auteur;
+                            }
+                        } else if (is_string($definition)) {
+                            $mot["definition"] = $definition;
+                        }
                     }
                     if (isset($definitions["nb_mots"])) {
                         $mot["nb_mots"] = $definitions["nb_mots"];
@@ -124,8 +129,14 @@ class Grille implements ArrayAccess
                     $definitions = $this->dico[$mot["longueur"]][$mot["mot"]];
                     if (count($definitions)) {
                         $definition = $definitions[mt_rand(0, count($definitions) - 1)];
-                        if (isset($definition["definition"])) $mot["definition"] = $definition["definition"];
-                        if (isset($definition["auteur"])) $mot["auteur"] = $definition["auteur"];
+                        if (is_array($definition)) {
+                            foreach ($definition as $auteur => $def) {
+                                $mot["definition"] = $def;
+                                $mot["auteur"] = $auteur;
+                            }
+                        } else if (is_string($definition)) {
+                            $mot["definition"] = $definition;
+                        }
                     }
                     if (isset($definitions["nb_mots"])) {
                         $mot["nb_mots"] = $definitions["nb_mots"];

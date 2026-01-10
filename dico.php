@@ -30,17 +30,8 @@ function dico($longueur_max) {
 
         if (strlen($mot) > $longueur_max) continue;
 
-        $dico[strlen($mot)][$mot] = [];
+        $dico[strlen($mot)][$mot] = $definitions;
         if ($nb_mots > 1) $dico[strlen($mot)][$mot]["nb_mots"] = $nb_mots;
-        foreach ($definitions as $definition) {
-            if (is_array($definition)) {
-                foreach ($definition as $auteur => $def) {
-                    $dico[strlen($mot)][$mot][] = ["auteur" => $auteur, "definition" => $def];
-                }
-            } else if (is_string($definition)) {
-                $dico[strlen($mot)][$mot][] = ["definition" => $definition];
-            }
-        }
     }
     
     return $dico;
