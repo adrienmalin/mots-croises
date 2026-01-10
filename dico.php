@@ -4,8 +4,6 @@ include_once "Trie.php";
 
 
 const CASE_NOIRE = " ";
-const DEFINITION = 0;
-const AUTEUR     = 1;
 
 
 function dico($longueur_max) {
@@ -15,36 +13,34 @@ function dico($longueur_max) {
     for ($longueur = 0; $longueur <= $longueur_max; $longueur++) {
         $dico[] = new Trie();
     }
-    if (($lecteur = fopen("dico.tsv", "r")) !== FALSE) {
-        $entete = fgetcsv($lecteur, 0, "\t");
-        while (($ligne = fgetcsv($lecteur, 0, "\t")) !== FALSE) {
-            if (
-                $ligne[0] == NULL
-                || substr($ligne[0], 0, 1) == "#"
-                || strlen($ligne[0]) > $longueur_max
-            ) continue;
+    foreach (str_split("ABCDEFGHIJKLMNOPQRSTUVWXYZ") as $lettre) {
+        $dico[1][$lettre] = [];
+    }
 
-            $mot = $ligne[0];
-            $definition = array_slice($ligne, 1);
+    foreach (yaml_parse_file('dico.yaml') as $mot => $definitions) {
+        $mot = str_replace("-", CASE_NOIRE, $mot);
+        $mot = $transliterator->transliterate($mot);
+        if (strpos($mot, CASE_NOIRE) !== false) {
+            $mots = explode(CASE_NOIRE, $mot);
+            $nb_mots = count($mots);
+            $mot = implode("", $mots);
+        } else {
+            $nb_mots = 1;
+        }
 
-            $mot = str_replace("-", CASE_NOIRE, $mot);
-            $mot = $transliterator->transliterate($mot);
-            if (strpos($mot, CASE_NOIRE) !== false) {
-                $mots = explode(CASE_NOIRE, $mot);
-                $nb_mots = count($mots);
-                $mot = implode("", $mots);
-            } else {
-                $nb_mots = 1;
-            }
+        if (strlen($mot) > $longueur_max) continue;
 
-            if (array_key_exists($mot, $dico)) {
-                $dico[strlen($mot)][$mot][] = $definition;
-            } else {
-                $dico[strlen($mot)][$mot] = [$definition];
-                if ($nb_mots > 1) $dico[strlen($mot)][$mot]["nb_mots"] = $nb_mots;
+        $dico[strlen($mot)][$mot] = [];
+        if ($nb_mots > 1) $dico[strlen($mot)][$mot]["nb_mots"] = $nb_mots;
+        foreach ($definitions as $definition) {
+            if (is_array($definition)) {
+                foreach ($definition as $auteur => $def) {
+                    $dico[strlen($mot)][$mot][] = ["auteur" => $auteur, "definition" => $def];
+                }
+            } else if (is_string($definition)) {
+                $dico[strlen($mot)][$mot][] = ["definition" => $definition];
             }
         }
-        fclose($lecteur);
     }
     
     return $dico;
