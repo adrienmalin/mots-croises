@@ -29,8 +29,19 @@ function dico($longueur_max) {
         }
 
         if (strlen($mot) > $longueur_max) continue;
-
-        $dico[strlen($mot)][$mot] = $definitions;
+        
+        $dico[strlen($mot)][$mot] = [];
+        if (count($definitions)) {
+            $definition = $definitions[mt_rand(0, count($definitions) - 1)];
+            if (is_array($definition)) {
+                foreach ($definition as $auteur => $def) {
+                    $dico[strlen($mot)][$mot]["definition"] = $def;
+                    $dico[strlen($mot)][$mot]["auteur"] = $auteur;
+                }
+            } else if (is_string($definition)) {
+                $dico[strlen($mot)][$mot]["definition"] = $definition;
+            }
+        }
         if ($nb_mots > 1) $dico[strlen($mot)][$mot]["nb_mots"] = $nb_mots;
     }
     

@@ -103,46 +103,20 @@ class Grille implements ArrayAccess
                 $mots = explode_pos(CASE_NOIRE, $this->get_ligne($y, $this->largeur));
                 $this->definitions["horizontales"][$y] = [];
                 foreach($mots as $mot) {
-                    $definitions = $this->dico[$mot["longueur"]][$mot["mot"]];
-                    if (count($definitions)) {
-                        $definition = $definitions[mt_rand(0, count($definitions) - 1)];
-                        if (is_array($definition)) {
-                            foreach ($definition as $auteur => $def) {
-                                $mot["definition"] = $def;
-                                $mot["auteur"] = $auteur;
-                            }
-                        } else if (is_string($definition)) {
-                            $mot["definition"] = $definition;
-                        }
-                    }
-                    if (isset($definitions["nb_mots"])) {
-                        $mot["nb_mots"] = $definitions["nb_mots"];
-                    }
-                    unset($mot["mot"]);
-                    $this->definitions["horizontales"][$y][] = $mot;
+                    $definition = $this->dico[$mot["longueur"]][$mot["mot"]];
+                    $definition["debut"] = $mot["debut"];
+                    $definition["fin"] = $mot["fin"];
+                    $this->definitions["horizontales"][$y][] = $definition;
                 }
             }
             for ($x = 0; $x < $this->largeur; $x++) {
                 $mots = explode_pos(CASE_NOIRE, $this->get_colonne($x, $this->hauteur));
                 $this->definitions["verticales"][$x] = [];
                 foreach($mots as $mot) {
-                    $definitions = $this->dico[$mot["longueur"]][$mot["mot"]];
-                    if (count($definitions)) {
-                        $definition = $definitions[mt_rand(0, count($definitions) - 1)];
-                        if (is_array($definition)) {
-                            foreach ($definition as $auteur => $def) {
-                                $mot["definition"] = $def;
-                                $mot["auteur"] = $auteur;
-                            }
-                        } else if (is_string($definition)) {
-                            $mot["definition"] = $definition;
-                        }
-                    }
-                    if (isset($definitions["nb_mots"])) {
-                        $mot["nb_mots"] = $definitions["nb_mots"];
-                    }
-                    unset($mot["mot"]);
-                    $this->definitions["verticales"][$x][] = $mot;
+                    $definition = $this->dico[$mot["longueur"]][$mot["mot"]];
+                    $definition["debut"] = $mot["debut"];
+                    $definition["fin"] = $mot["fin"];
+                    $this->definitions["verticales"][$x][] = $definition;
                 }
             }
             $this->save($id);
